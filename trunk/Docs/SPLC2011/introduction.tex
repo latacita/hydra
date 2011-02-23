@@ -1,0 +1,121 @@
+%===============================================================================%
+% Author: Pablo Sánchez (pablo@lcc.uma.es; http://www.lcc.uma.es/~pablo)        %
+% Section : Introduction                                     Date: 19/11/2009   %
+% Version : 1.0                                                                 %
+% Conference: Caise 2010                                                        %
+%===============================================================================%
+
+%%% Schema to write a paper introduction
+%% Description of Purpose
+    % What problem, issue or question does this research address ?
+
+        % Feature modelling
+
+    % What limitations or failings of current understanding, knowledge, method, or
+    % technologies does this research resolve ?
+
+        % Modelling, configuration and validation of *clonable* features
+        % To the best of our knowledge, this is the only tool available that supports
+        % modelling, configuration and, overall, validation of cardinality-based feature models
+        % including clonable features, and overall, using constraints that involves clonable
+        % features
+
+    % What is the significance of the problem issue or question ?
+
+        % Clonable features open a new research path towards modelling structural
+        % variability, but it is rarely supported in state-of-art feature models
+
+%% Goal statement
+    % What new understanding, knowledge, methods or technologies will this research generate ?
+
+        % It extends user-defined constraints for feature models and provides a mechanism for
+        % validating it
+
+    % How this address the purpose of the work ?
+
+        % It allows to model, configure and overall validate feature models using user-defined
+        % constraints involving *clonable features*
+
+%% Approach
+    % What experiments, prototypes or studies will be done to achieve the stated goal ?
+
+        % We have constructed a new tool called Hydra, which supports our concepts, and
+        % we have carried out several experiments using well-known examples where clonable
+        % features are included, mainly a SmartHome case study, plus a Rich Client Application
+        % for Eclipse and examples taken from Czarnecki 2005 (SF@OOPSLA and SPE).
+
+    % How will achievement or contribution of the research be demonstrated or validated ?
+
+        % Expresiveness: Two case studies
+        % Correction: checking that expected results were according to our needs.
+
+%=============================================================================================================
+
+% Definition of feature models
+
+Feature models~\cite{kang:1990} are a well-known technique for modelling and analysing variability existing in a set of similar products. Feature models have been widely used in software product line (SPL) engineering~\cite{pohl:2005}, where they describe what features are available in a family of software products, what features are mandatory, what features are optional; and so forth.
+
+Nevertheless, the expressiveness of feature model is not enough for capturing all the relationships that can exist between features of a family of products. For instance, a feature model for a SmartHome software product line might specify two functionalities, such as Presence Simulation and Automatic Light Management are optional. But, Presence Simulation relies on cerain interfaces provided by Automatic Light Management. So, the selection of Presence Simulation requires the selection of Automatic Light Management. Therefore, it is often required that certain relationships, such as this one, have to be expressed externally to the feature model~\cite{kang:1990,czarnecki:2005d}. 
+
+% Typical examples of these constraints are \emph{dependencies} and \emph{mutual exclusion}.
+%=============================================================================================================%
+% NOTE(Pablo): Should I add more text about relationships?                                                    %
+% NOTE(Pablo): Not, I think it is enough for a Caise paper                                                    %  
+%=============================================================================================================%
+
+These \emph{external constraints} are often expressed, in state-of-art feature modelling tools, by means of some sort of expressions, usually logical expressions. Feature modelling tools also provided back-end reasoners that are able to check if a set of features satisfies these external constraints.
+
+Nevertheless, we realize when applying feature models to a SmartHome case study~\cite{ample:d52} in the context of the AMPLE project\footnote{http://www.ample-project.net}, that not all kind of variability can be capture using traditional feature models. For instance, that a SmartHome can have several floors and rooms is something that can be not captured using traditional feature models~\cite{kang:1990}.
+
+%=============================================================================================================%
+% NOTE(Pablo): This text is definitively out                                                                  %              %=============================================================================================================%
+% A dependency exists between two features, which we will call \imp{A} and \imp{B}, if when \imp{A}           %
+% is included in a certain product, \imp{B} must also be included. For instance, in a family of software      %
+% products for controlling automated houses, we can find several features, such as automatic light management,%
+% automatic heater management or presence simulation by programmed light switching on/off. In this case, the  %
+% presence simulation feature often requires % that the automatic light management functionality is also      %
+% present in the software, since the former one relies on a certain interface provided by the latter one.     %
+%                                                                                                             %
+% For instance, we might specify that if a certain feature \imp{A} is selected, another                       %
+% feature \imp{B} can not be selected, due to a bad interaction between these features.                       %
+%=============================================================================================================%
+% Contribution
+
+The concept of clonable feature, recently introduced by Czarnecki et al~\cite{czarnecki:2005}, overcomes this limitation. Nevertheless, expressions and reasoners for specifying and validating externally defined constraints have become obsolete with the incorporation of \emph{clonable features}, mainly because the semantics of logical expressions becomes sometimes undefined. To he best of our knowledge, there is not work that provides a mechanism for specifying and analysing external constraints involving clonable features. As a consequence, there is no tool which support the specification of external constraints involving clonable features.
+
+
+% Clonable features~\cite{czarnecki:2005} is new kind of feature, recently add to traditional feature models, which can 
+% appear a variable number of times in a certain product. Clonable features allow the modelling of structural variability. % For instance, using clonable features, we can model that automated houses have a variable number of floors and rooms. 
+% This increases the expressiveness of feature models, which can be now compared to arbitrary Ecore-based~\cite
+% {budinsky:2003} models~\cite{stephan:2008}. 
+% Nevertheless, expressions and reasoners for specifying and validating externally defined constraints have become obsolete 
+% with the incorporation of \emph{clonable features}, mainly because the semantics of logical expressions becomes sometimes 
+% undefined. As a consequence, to the best of our knowledge, there is no tool which support the specification of external 
+% constraints involving clonable features.
+
+To solve this shortcoming, this paper presents a new language and a reasoner for specifying and analysing constraints including clonable features can be involved in these constraints. The reasoner translates these constraints into a Constraint Satisfaction Problem (CSP)~\cite{tsang:1993}, and using available and efficient third-party libraries, such as Choco~\cite{rochart:2008}, we can analyse them.
+
+This language and the analyser have been included in  \emph{Hydra}\footnote{http://caosd.lcc.uma.es/spl/hydra}, our feature modelling tool, which provides full-support for the modelling, configuration and validation of feature models including clonable features.
+
+%============================================================================================================%
+% NOTE(Pablo): This is not of interest for the paper, so it has been suppressed.                             %                  %============================================================================================================%
+% State-of-art feature modelling tools only provides partial support for clonable features. Some of them     %
+% support modelling of clonable features, but few of them provides support for the configuration of clonable %
+% features; and, to the best of our knowledge, there is no tool that allows the specification and validation %
+% of constraints involving clonable features. Hydra is provided as an Eclipse plugin; it offers a full       %
+% graphical interfaces with facilites for a computer-assisted configuration of the feature models. Moreover, %
+% Hydra is based on well-known model-driven technologies, such as Ecore~\cite{budinsky:2003}, which eases    %
+% its interoperability with other tools.                                                                     %
+%============================================================================================================%
+
+% Validation
+ 
+To validate the language and the analyser, we have modelled, configured and validated, using Hydra, feature models for: (1) a SmartHome software product line, an industrial case study provided by Siemens AG in the context of the AMPLE project~\cite{ample:d52}; and (2) a graphical user interface, based on a domain specific language, presented in Santos et al~\cite{santos:2008}.
+
+%=================================================================================================================%
+% NOTE(Pablo): I am strongly convinced I need to find another suitable case study with strong requirements for    %
+%              structural variability                                                                             %
+% NOTE(Pablo): I have found it.
+%=================================================================================================================%
+
+After this introduction, this paper is structured as follows: Section~\ref{sec:motivation} provides some background on clonable features and analyse the research challenges they create. Section~\ref{sec:theLanguage} presents the new language for specifying constraints and how to analyse them. Section~\ref{sec:related} comments on related work. Section~\ref{sec:summary} concludes the paper, provides a critical reflection on the benefits of our approach. and outlines future work.

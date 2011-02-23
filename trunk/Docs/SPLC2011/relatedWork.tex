@@ -1,0 +1,48 @@
+%===============================================================================%
+% Section : Related Work                                     Date: 19/11/2009   %
+% Version : 1.0                                                                 %
+% Conference: Caise 2010                                                        %
+%===============================================================================%
+
+There are currently several tools that supports feature modelling. Table~\ref{} contains a high-level comparison of the most well-known feature modelling tools regarding support for clonable features and usability of the user interface. Most of them supports automatic validation of external constraints defined between features. The common technique used for validating a configuration of a feature model is to transform the feature model and the externally defined constraints
+
+
+But, as it will be described in this section, there is no tool, to the best of our knowledge, that supports validation of constraints involving clonable features.
+
+%\begin{table}
+%    \begin{center}
+%    \begin{tabular}{|l|c|c|c|c|}
+%        \hline
+%        Tool          & Usability &  \multicolumn{3}{c}{Clonable Features}    \\ \hline
+%        \multicolumn{2}{|c|}{\ }  &   Modelling  & Configuration & Validation \\ \hline
+%        FMP           & Low       &   \checkmark & $\times$      & $\times$   \\ \hline
+%        FaMa          &           &   $\times$   & $\times$      & $\times$   \\ \hline
+%        Moskkit       & High      &   \checkmark & $\times$      & $\times$   \\ \hline
+%        \hline
+%    \end{tabular}
+%    \end{center}
+%\end{table}
+
+%=============================================================================================================%
+% NOTE(Pablo): I need to explain some point before that feature models can be expressed as propositional      %
+%              formulas                                                                                       %
+%=============================================================================================================%
+
+% 2005
+Feature Modelling Plugin (FMP)~\cite{czarnecki:2005c} is an Ecore-based~\cite{} Eclipse plugin that supports modelling of cardinality-based feature models. Nevertheless, the configuration of clonable features is not supported at all (tool authors acknowledge that configuration facilities are currently unpredictable). FMP supports the specification of external constraints in the form of propositional logic formulas, but the semantics of clonable features in these constraints are simply unspecified. FMP uses JavaBDD~\cite{} as a back-end for analyzing and validating constraints in feature models. JavaBDD is an open-source Java library for manipulating Binary Decision Diagrams (BDDs), which are used to analyse the satisfiability of a set of propositional formulas, i.e., of a set of feature relationships and external constraints represented as a set of external formulas. Moreover, the Graphical User Interface (GUI) of FMP is based on the default tree-based representation of Ecore Models, which hinders usability and understability of feature models, overall when users need to deal with large scale models.
+
+Feature Model Analyzer (FaMA) is a framework for the automated analysis~\cite{} of feature models. Among the analysis included, we can find ... Nevertheless, FaMA analysis feature models created with other feature modelling tools.
+
+Since the state-of-art feature modelling tools do not support the specification of external constraints involving clonable features, FaMA, to the best of our knowledge, does not incoporate any kind of analysis for validating this kind of constraint.
+
+% Nevertheless, the ideas exposed through this paper might be easily integrated into FaMA, since FaMA claims to be % an extensible framework, and the CSP tool we are using, called Choco, it is already integrated into FaMA.
+
+
+Moskitt Feature Modeliing (MFM) is a graphical editor for feature models, based on the Mooskkit graphical  supports the graphical edition of feature models, including clonable features. Nevertheless, Moskitt only supports the specification of simple binary constraints between features, more specifically, the specification of \emph{requires}, i.e. \imp{A implies B}, and \emph{excludes} relationships. The semantics of these binary relationships when applied to clonable features is undefined.
+
+TO BE COMPLETED
+
+
+
+
+
