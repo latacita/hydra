@@ -1,0 +1,108 @@
+%=============================================================================%
+% Author: Pablo Sánchez                                                       %
+%        (p.sanchez@unican.es http://personales.unican.es/sanchezbp)          %  %                                                                             %
+% Section : Main File                                      Date: 23/02/2011   %
+% Version : 1.0                                                               %  %                                                                             %
+% Conference: SPLC 2011                                                       %
+%=============================================================================%
+
+\documentclass{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+
+\newcommand{\imp}[1]{{\small \sf #1}}
+
+\begin{document}
+
+%============================================================================%
+% \title{Hydra: Modelling, Configuring and Validating Clonable Features\thanks{This work has been supported by the  %
+% Spanish Ministry Project TIN2008-01942/TIN, the EC STREP Project AMPLE IST-033710 and the Junta de Andaluc{\'i}a  %
+% regional project FamWare TIC-5231}}                                                                               %
+%===================================================================================================================%
+
+%===========================================================================================================%
+% NOTA (Pablo): The novel contribution of the paper comes from the definition and validation of constraints %
+%               involving clonable features, so maybe this title is better                                  %                                                                %===========================================================================================================%
+% \title{Hydra: Analysis of constraints on feature models involving clonable features \thanks{This work
+%       has been supported by the Spanish Ministry Project TIN2008-01942/TIN, the EC STREP Project AMPLE
+%        IST-033710 and the Junta de Andaluc{\'i}a regional project FamWare TIC-5231}}
+%===========================================================================================================%
+
+%===========================================================================================================%
+% NOTA (Pablo): The novel contribution of the paper comes from the definition and *analysis* of constraints %
+%               involving clonable features, so maybe this title is better                                  %                                                                %===========================================================================================================%
+\title{Hydra: Analysis of constraints on clonable features\thanks{This work has been supported by the Spanish Ministry Project TIN2008-01942/TIN, the EC STREP Project AMPLE IST-033710 and the Junta de Andaluc{\'i}a regional project FamWare TIC-5231}}
+%===========================================================================================================%
+
+\author{Jos{}\'e Ram{\'o}n Salazar\inst{1} \and Pablo S{\'a}nchez\inst{2} \and Lidia Fuentes\inst{1}}
+
+\institute{
+	Dpto. Lenguajes y Ciencias de la Computaci{\'o}n\\
+	Universidad de M{\'a}laga, M{\'a}laga (Spain) \\
+	\email{\{salazar,lff\}@lcc.uma.es}
+	\and
+	Dpto. Matem{\'a}ticas, Estad{\'i}stica y Computaci{\'o}n \\
+	Universidad de Cantabria, Santander (Spain) \\
+	\email{p.sanchez@unican.es}
+}
+
+%\author{Lidia Fuentes \and Jos{\'e} Ram{\'o}n Salazar \and Pablo S{\'a}nchez}
+%%
+%\institute{
+%Dpto. Lenguajes y Ciencias de la Computaci{\'o}n\\
+%Universidad de M{\'a}laga, M{\'a}laga (Spain) \\
+%\email{\{lff,salazar,pablo\}@lcc.uma.es}
+%}
+
+%\titlerunning{}
+%\authorrunning{}
+
+\maketitle
+
+\begin{abstract}
+	\input{abstract}
+\end{abstract}
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+\input{introduction}
+
+\section{Why do we need clonable features?}
+\label{sec:motivation}
+
+\input{motivation}
+
+%========================================================================%
+% NOTA : Perhaps it is better to move this section at the end, mainly    %
+%        because to explain why our tool improves the state-of-art, we   %
+%        need to
+%========================================================================%
+
+\section{Expressing and validating constraints involving clonable features}
+\label{sec:theLanguage}
+
+\input{theLanguage}
+
+ \section{Tool support: Hydra}
+ \label{sec:theLanguage}
+
+ input{hydra}
+
+\section{Related Work}
+\label{sec:related}
+
+\input{relatedWork}
+
+\section{Conclusions, Discussion and Future Work}
+\label{sec:summary}
+
+\input{summary}
+
+\bibliographystyle{splncs}
+\bibliography{caise2010}
+
+
+\end{document}

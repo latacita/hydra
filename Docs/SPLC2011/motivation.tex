@@ -1,0 +1,97 @@
+%===============================================================================%
+% Section :                                      Date: 19/11/2009               %
+% Version : 1.0                                                                 %
+% Conference: Caise 2010                                                        %
+%===============================================================================%
+
+This section firstly introduces clonable features~\cite{czarnecki:2005d,czarnecki:2005} and explains the concepts and ideas behind them. Then, we explain why clonable features are important. Finally, we identify the research challenges created by clonable features.
+
+\subsection{Background: clonable features}
+
+\input{background}
+
+\subsection{New research challenges on clonable features}
+
+The creation of clonable features was initially an easy task, since it only required to add the notion of cardinality to each feature. Nevertheless, this has created several side-effects, since some concepts such as the semantics of a clonable feature selection, had to be reviewed and updated. This section identifies several problems, not currently solved to the best of our knowledge, regarding the specification of external constraints involving clonable features.
+
+Let us explain our motivating scenario. In Figure~\ref{fig:smartHomeFM}, house facilities can be selected at a house, floor or room level. Obviously, if we select the \imp{SmartEnergyMng} feature, this implies that the \imp{LightMng} and the \imp{HeaterMng} must also be selected. This need to be specified as a external constraint. There are also some other constraints between features, such as, for instance, if \imp{LightMng} is selected at the floor level, this facility must also be selected for each room contained in such a floor. 
+
+% Nevertheless, this had several consequences, since it was required to review an update well-established concepts related 
+% to feature modelling and to answer several research challenges that emerged as a consequence of introducing this new 
+% concept. Previous section described how clonable features are selected by means of a new cloning operation. This section 
+% identifies several problems, not currently solved to the best of our knowledge, regarding the specification of external 
+% constraints between features when some of the features involved in the constraint are clonable.
+
+When dealing with feature models without clonable features, the most usual way to express these external constraints is by means of propositional formulas, like \imp{SmartEnergyMng implies (LightMng and HeaterMng)}, where the features are the atoms for these formulas~\cite{batory:2005}. A feature is true when the feature is selected, and false when unselected. The main problem when dealing with clonable features is that this correspondence is not true anymore, since clonable features are not simply selected or unselected, they are cloned. So, the semantics of these logical expressions become undefined.
+
+For instance, let us suppose  \imp{A} and \imp{B} are clonable features. In this case, what would be the semantics of a external constraint like \imp{A implies B}? Does this means that one instance of \imp{A} implies the existence of at least one instance of \imp{B}? Or, otherwise, does it means that the existence of all potential \imp{A}s implies the existence of all potential \imp{B}s? So, the first research challenge we face is to decide what a clonable feature means in a logical formula.
+
+% Or maybe all potential \imp{A}s only implies the existence of one \imp{B}?
+
+Since clonable features has asscoiated a set of clones, we might want to specify properties that only applies to: (1) at least one element of the set; (2) to all the elements of the set that fulfill a certain constraint; or (3) all the elements. For instance, we might want to specify constraint such as: if \imp{HeaterMng} is selected per house level, at least one \imp{Room} must contain a \imp{Heater}. So, the second research challenge is to add quantification mechanisms to constraints involving clonable features.
+
+Moreover, we might want to specify constraints which must be evaluated for a particular subtree of the whole feature model, i.e. in a particular \emph{context}. For instance, if \imp{LightMng} has been selected as facility for a particular \imp{Room}, such a \imp{Room} must have at least one clone of \imp{Light}. If we specify a constraint ``\imp{LightMng} implies at least one \imp{Light}'', but we do not limit the scope in which this constraint is evaluated, this constraint might be true for the configurations of Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be false for Figure~\ref{fig:contexts} (a), since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has not \imp{Light} to control. This means this constraint must be evaluated for all rooms (notice we need again quantification) and using only the subtree below each \imp{Room}. Thus, the third research challenge is to specify the context where each constraint must be evaluated. 
+
+% Figure~\ref{fig:contexts} contains an example and a counterexample for this situation. 
+
+% i.e. we use the whole feature model for evaluating the constraint, this constraint will be true for the configuration of 
+% Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be not satisfied by the configuration of 
+% Figure~\ref{fig:contexts} (a) is not correct, since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has 
+% not \imp{Light} to control. 
+
+% Contexts are also useful for solve ambiguities when using feature references, since multiple copies of a same feature 
+% might appear at different part of a configuration model. For instance, does \imp{LightMng} refers to \imp{LightMng} for 
+% \imp{GeneralFacilities}, \imp{FloorFacilities} or \imp{RoomFacilities}. Using contexts, we can limit the scope of a name % to unambiguously refer to a certain feature. 
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \centering \includegraphics[width=.7\linewidth]{Figures/contexts(2).eps} \\
+  \caption{(a) Invalid configuration (b) Valid configuration (c) Multiple features}
+  \label{fig:contexts}
+\end{figure}
+
+Finally, when dealing with clonable feature, not only clonable features can appear more than one time in a configuration model. A feature can appear more than one time one of its ancestors is clonable. Figure~\ref{fig:contexts} (a) illustrates this situation. We call to a feature that can appear more than one time a \emph{multiple feature}. For instance, the feature \imp{FloorFacilities}, which is not clonable itself,  might appear several times in a configuration model as a consequence of the \imp{Floor} feature being cloned. This implies that \imp{FloorFacilities} also evaluates to a set of features when it is evaluated in the context of the entire configuration model. Nevertheless, it should be noticed that this feature can be evaluated to true or false if it is evaluated in the context of a \imp{Floor} feature, since it can appear only once in that context. So, a last research challenge is how to deal appropriately with \emph{multiple features}.
+
+Summarising, when dealing with clonable features, we need to address the following research challenges in order to properly express constraints between features:
+
+\begin{enumerate}
+    \item What a clonable feature means inside a constraint expression.
+    \item Add quantification mechanisms to constraints expressions.
+    \item Add the notion of contexts to constraints expressions and subexpressions.
+    \item Design a mechanism for properly dealing with clonable features.
+\end{enumerate}
+
+State-of-art tools only offer two operators, \imp{implies} and \imp{excludes}, and deal with simple propositional formulas. This is clearly not enough to address the research challenges described in this section.
+To solve this limitation, we have created an expressive language for expressing arbitrary complex constraints in a user-friendly fashion and we have implemented a reasoner able to decide if a set of external constraints, involving
+clonable or multiple features, is satisfied given a specific configuration of a feature model. The reasoner is also able to perform some extra task, such as deciding which features must be incorporated to a configuration in order to satisfy the external constraints. We have integrated this language and the reasoner in our feature modelling environment, which we have called \emph{Hydra}.
+
+Next section describes the language for expressing external constraints involving clonable features and the reasoner that analyse the satisfiability of these constraints.
+
+%\emph{Hydra}, a tool for modelling, configuring and validating cardinality-based features models, i.e. feature models
+% that contain \emph{clonable features}. This has implied we have had to review the way in which clonable features are
+% configured, and, overall, how user-defined constraints are defined and evaluated in the presence on clonable
+% features.
+
+%==================================================================================================%
+% NOTE(Pablo): Out                                                                                 %
+%==================================================================================================%
+
+% A typical feature modelling process would be as follows:
+%
+% \begin{enumerate}
+%    \item First of all, a feature model is created. A feature model is a tree representation of the features included in % a set of products and of the relationships between them.
+%    \item Since not all the relationships between features can be captured using simply the syntax provided by feature
+% models, it is often required to specify some external constraints, which restrict the way in which features in a
+% feature model can be selected. For instance, we might specify that if a certain feature \imp{A} is selected, another
+% feature \imp{B} can not be selected, due to a bad interaction between these features.
+%    \item Once we have created a feature model, we can use it for creating configurations, i.e. selection of features
+% that specify which particular features are, or it will be, included in a certain product.
+%    \item To ensure we are creating correct configurations, we need to validate that a configuration obeys the rules the % syntax of the feature model, and, in addition, it also satisfies the external defined constraints.
+% \end{enumerate}
+
+% Feature models have experimented several evolutions in last decade. Recently, Czarnecki et al~\cite{czarnecki:2005}
+% introduced the simple but powerful concept of \emph{clonable feature}. A clonable feature is a feature that can appear % with a variable number of instances in different products. For instance, when modelling automated houses, clonable
+% features are \emph{rooms} and \emph{floors}, since automated houses can have a variable number of floors and rooms.
+% The creation of clonable features was initially an easy tasks, since it only required to add a cardinality to each
+% feature contained in the feature model.
+
