@@ -1,8 +1,8 @@
 %=============================================================================%
 % Author: Pablo Sánchez                                                       %
-%        (p.sanchez@unican.es http://personales.unican.es/sanchezbp)          %  %                                                                             %
+%        (p.sanchez@unican.es http://personales.unican.es/sanchezbp)          %                                                                               %                                                                             %
 % Section : Main File                                      Date: 23/02/2011   %
-% Version : 1.0                                                               %  %                                                                             %
+% Version : 1.0                                                               %                                                                             %                                                                             %
 % Conference: SPLC 2011                                                       %
 %=============================================================================%
 
@@ -12,8 +12,10 @@
 
 \usepackage{graphicx}
 \usepackage{amsfonts}
+\usepackage{color}
 
 \newcommand{\imp}[1]{{\small \sf #1}}
+\newcommand{\todo}[1]{\color{red} TODO: #1 \color{black}}
 
 \begin{document}
 %
@@ -33,8 +35,8 @@ p.sanchez@unican.es}
 \IEEEauthorblockA{
 Dpto. Lenguajes y Ciencias de la Computaci\'{o}n \\
 Universidad de M\'{a}laga \\
-M\'{a}laga (M\'{a}laga, Spain)\\
-\{salazar,lff\}@lcc.uma.es}
+M\'{a}laga (M\'{a}laga, Spain) \\
+\{salazar, lff\}@lcc.uma.es}
 }
 
 \maketitle
@@ -44,7 +46,7 @@ M\'{a}laga (M\'{a}laga, Spain)\\
 \end{abstract}
 
 \begin{IEEEkeywords}
-	Some keywords
+Feature Models, Clonable Features, Constraint Analysis
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -52,7 +54,7 @@ M\'{a}laga (M\'{a}laga, Spain)\\
 
 \input{introduction}
 
-\section{Why do we need clonable features?}
+\section{Motivation}
 \label{sec:motivation}
 
 \input{motivation}
@@ -60,7 +62,7 @@ M\'{a}laga (M\'{a}laga, Spain)\\
 %========================================================================%
 % NOTA : Perhaps it is better to move this section at the end, mainly    %
 %        because to explain why our tool improves the state-of-art, we   %
-%        need to
+%        need to                                                         %
 %========================================================================%
 
 \section{Expressing and validating constraints involving clonable features}
@@ -68,10 +70,10 @@ M\'{a}laga (M\'{a}laga, Spain)\\
 
 \input{theLanguage}
 
- \section{Tool support: Hydra}
- \label{sec:theLanguage}
+\section{Tool Support: Hydra}
+\label{sec:theLanguage}
 
- input{hydra}
+% \input{hydra}
 
 \section{Related Work}
 \label{sec:related}
@@ -83,7 +85,7 @@ M\'{a}laga (M\'{a}laga, Spain)\\
 
 \input{summary}
 
-\bibliographystyle{splncs}
+\bibliographystyle{IEEEtrans}
 \bibliography{splc2011}
 
 \end{document}

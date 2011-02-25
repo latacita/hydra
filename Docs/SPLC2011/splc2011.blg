@@ -1,8 +1,48 @@
 This is BibTeX, Version 0.99cThe top-level auxiliary file: splc2011.aux
-I couldn't open style file splncs.bst
----line 52 of file splc2011.aux
- : \bibstyle{splncs
- :                 }
-I'm skipping whatever remains of this command
-I found no style file---while reading file splc2011.aux
-(There were 2 error messages)
+The style file: IEEEtrans.bst
+Database file #1: splc2011.bib
+I was expecting a `,' or a `}'---line 271 of file splc2011.bib
+ :   
+ :   year      = {2007},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 285 of file splc2011.bib
+ :   
+ :   year      = {2007},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 358 of file splc2011.bib
+ :   
+ :   year      = {2007},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 448 of file splc2011.bib
+ :   
+ :   year      = {2004},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 513 of file splc2011.bib
+ :   
+ :   TITLE     = {{Software Product Line Engineering: Foundations, Principles and Techniques}},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I'm ignoring czarnecki:2005c's extra "year" field
+--line 536 of file splc2011.bib
+Repeated entry---line 576 of file splc2011.bib
+ : @inproceedings{santos:2008
+ :                           ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 619 of file splc2011.bib
+ :   author    = {Guillaume Rochart}, 
+ :                                    ,
+I'm skipping whatever remains of this entry
+-- IEEEtranS.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for normal IEEE work.
+Warning--empty title in rochart:2008
+Warning--empty booktitle in rochart:2008
+Warning--empty year in rochart:2008
+
+Done.
+(There were 7 error messages)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.1.18)  23 FEB 2011 17:47
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.1.18)  25 FEB 2011 19:10
 entering extended mode
 **splc2011.tex
 
@@ -127,139 +127,97 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
+(C:\Escritura\Miktex\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(C:\Escritura\Miktex\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(C:\Escritura\Miktex\tex\latex\graphics\dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\splc2011.aux"
 
 LaTeX Warning: Label `sec:theLanguage' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 42.
  (C:\Escritura\Miktex\tex\latex\psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
 
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\abstract.tex")
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\introduction.tex"
-
-LaTeX Warning: Citation `kang:1990' on page 1 undefined on input line 56.
-
-
-LaTeX Warning: Citation `pohl:2005' on page 1 undefined on input line 56.
-
-
-LaTeX Warning: Citation `kang:1990' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Citation `czarnecki:2005d' on page 1 undefined on input line 58.
-
-
-
-LaTeX Warning: Citation `ample:d52' on page 1 undefined on input line 68.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
-(C:\Escritura\Miktex\tex\latex\amsfonts\umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+ (C:\Escritura\Miktex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
 (C:\Escritura\Miktex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
+Underfull \hbox (badness 1688) in paragraph at lines 80--83
+[][]\OT1/ptm/m/n/10 As the ex-pe-ri-enced reader prob-a-bly al-ready knows,
+ []
 
-LaTeX Warning: Citation `kang:1990' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `czarnecki:2005' on page 1 undefined on input line 84.
-
-
-LaTeX Warning: Citation `tsang:1993' on page 1 undefined on input line 96.
+[1
 
 
-LaTeX Warning: Citation `rochart:2008' on page 1 undefined on input line 96.
-
-
-LaTeX Warning: Citation `ample:d52' on page 1 undefined on input line 113.
-
-
-LaTeX Warning: Citation `santos:2008' on page 1 undefined on input line 113.
-
-) [1
-
-
-]
+])
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\motivation.tex"
-
-LaTeX Warning: Citation `czarnecki:2005d' on page 2 undefined on input line 7.
-
-
-LaTeX Warning: Citation `czarnecki:2005' on page 2 undefined on input line 7.
-
-
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\background.tex"
-
-LaTeX Warning: Citation `sanchez:2007' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `kang:1990' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `czarnecki:2005' on page 2 undefined on input line 10.
-
+011\shortcomings.tex"
 File: figures/FeatureModel.eps Graphic file (type eps)
-<figures/FeatureModel.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
+ <figures/FeatureModel.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-File: figures/configuration.eps Graphic file (type eps)
-<figures/configuration.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
-
- []
-
-
-LaTeX Warning: Citation `czarnecki:2005d' on page 2 undefined on input line 54.
-
-
-
-LaTeX Warning: Citation `czarnecki:2005' on page 2 undefined on input line 54.
-
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 67.
 (C:\Escritura\Miktex\tex\latex\psnfss\ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
+File: figures/configuration.eps Graphic file (type eps)
+ <figures/configuration.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
-LaTeX Warning: Citation `czarnecki:2005' on page 2 undefined on input line 76.
+ []
+
+)
+("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
+011\researchChallenges.tex" [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1194) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2])
-
-LaTeX Warning: Citation `batory:2005' on page 3 undefined on input line 25.
-
+ [3]
 File: Figures/contexts(2).eps Graphic file (type eps)
-<Figures/contexts(2).eps> [3])
+
+<Figures/contexts(2).eps>))
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\theLanguage.tex"
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
@@ -403,12 +361,9 @@ Overfull \hbox (38.08875pt too wide) in paragraph at lines 67--67
 
 )
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\validating.tex"
-
-LaTeX Warning: Citation `tsang:1993' on page 5 undefined on input line 10.
-
+011\validating.tex" [5]
 File: Figures/lowerUpperBounds.eps Graphic file (type eps)
-<Figures/lowerUpperBounds.eps> [5]
+ <Figures/lowerUpperBounds.eps>
 Underfull \hbox (badness 7963) in paragraph at lines 44--45
 \OML/cmm/m/it/10 FloorFacilities$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 RoomFacili
 ties$ \OT1/ptm/m/n/10 with do-main
@@ -463,7 +418,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 \OML/cmm/m/it/10 GroundFloor[]loorFacilities[]martEnergyMng$
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 [][]\OT1/ptm/m/n/10 We cre-ate the vari-ables $\OML/cmm/m/it/10 GroundFloor[]oo
 m$\OT1/ptm/m/n/10 ,
@@ -540,12 +495,12 @@ terMng,Facilities\_WindowMng))}[]
  []
 
 
-LaTeX Warning: Reference `eq:C05' on page 6 undefined on input line 73.
+LaTeX Warning: Reference `eq:C05' on page 7 undefined on input line 73.
 
 
-LaTeX Warning: Reference `eq:13' on page 6 undefined on input line 87.
+LaTeX Warning: Reference `eq:13' on page 7 undefined on input line 87.
 
-[6]
+
 Overfull \hbox (29.08855pt too wide) in paragraph at lines 94--94
 []             \OT1/pcr/m/n/7 implies(Bedroom\_HeaterMng,gt(Bedroom\_Heater,0))
 ))}[] 
@@ -558,14 +513,21 @@ Overfull \hbox (29.08855pt too wide) in paragraph at lines 94--94
 LaTeX Warning: Reference `' on page 7 undefined on input line 7.
 
 
-LaTeX Warning: Citation `czarnecki:2005c' on page 7 undefined on input line 32.
+Underfull \vbox (badness 1817) has occurred while \output is active []
 
-
-)
+ [7])
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\summary.tex")
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\splc2011.bbl")
+011\splc2011.bbl"
+Underfull \vbox (badness 1701) has occurred while \output is active []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 70--74
+[][]\OT1/ptm/m/n/9 A. L. San-tos, K. Koskimies, and A. Lopes, ``Au-to-
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -577,7 +539,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7]
+[8]
 ("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
 011\splc2011.aux")
 
@@ -588,12 +550,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1484 strings out of 495286
- 25512 string characters out of 3181048
- 77006 words of memory out of 3000000
- 4675 multiletter control sequences out of 15000+200000
+ 1679 strings out of 495286
+ 28843 string characters out of 3181048
+ 77827 words of memory out of 3000000
+ 4859 multiletter control sequences out of 15000+200000
  32219 words of font info for 80 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 26i,8n,22p,1293b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,9n,22p,1293b,305s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on splc2011.dvi (7 pages, 60984 bytes).
+Output written on splc2011.dvi (8 pages, 68404 bytes).
