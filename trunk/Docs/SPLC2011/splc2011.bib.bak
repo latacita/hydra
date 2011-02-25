@@ -555,7 +555,7 @@ Development (AOSD)},
   month     = {August}
 }
 
-@TECHREPORT{ample:d52,
+@TECHREPORT{ample:d52
   AUTHOR      = {Hugo Morganho and Catarina Gomes and Jo{\~a}o Paulo Piment{\~a}o and Rita Ribeiro and Christoph Pohl
 				 and Birgit Grammel and Rummler, Andreas and Christa Schwanninger and Ludger Fiege and Michael Jaeger},
   TITLE       = {{Requirement Specifications for Industrial Case Studies}},
