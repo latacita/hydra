@@ -9,10 +9,10 @@
 %============================================================================================
 % NOTE(Pablo): This is not required for SPLC 2011
 %============================================================================================
-% 
-% The creation of clonable features was initially an easy task, since it only required to add 
-% the notion of cardinality to each feature. Nevertheless, this has created several 
-% side-effects, since some concepts such as the semantics of a clonable feature selection, had % to be reviewed and updated. This section identifies several problems, not currently solved to % the best of our knowledge, regarding the specification of external constraints involving 
+%
+% The creation of clonable features was initially an easy task, since it only required to add
+% the notion of cardinality to each feature. Nevertheless, this has created several
+% side-effects, since some concepts such as the semantics of a clonable feature selection, had % to be reviewed and updated. This section identifies several problems, not currently solved to % the best of our knowledge, regarding the specification of external constraints involving
 % clonable features.
 %
 %============================================================================================
@@ -21,23 +21,29 @@
 % NOTE(Pablo): Too much verbose
 %============================================================================================
 %
-% Nevertheless, this had several consequences, since it was required to review an update 
-% well-established concepts related to feature modelling and to answer several research 
-% challenges that emerged as a consequence of introducing this new concept. Previous section 
-% described how clonable features are selected by means of a new cloning operation. This 
-% section identifies several problems, not currently solved to the best of our knowledge, 
-% regarding the specification of external constraints between features when some of the 
+% Nevertheless, this had several consequences, since it was required to review an update
+% well-established concepts related to feature modelling and to answer several research
+% challenges that emerged as a consequence of introducing this new concept. Previous section
+% described how clonable features are selected by means of a new cloning operation. This
+% section identifies several problems, not currently solved to the best of our knowledge,
+% regarding the specification of external constraints between features when some of the
 % features involved in the constraint are clonable.
 %
 %============================================================================================
 
-For instance, let us suppose  \imp{A} and \imp{B} are clonable features. In this case, what would be the semantics of a external constraint like \imp{A implies B}? Does this means that one instance of \imp{A} implies the existence of at least one instance of \imp{B}? Or, otherwise, does it means that the existence of all potential \imp{A}s implies the existence of all potential \imp{B}s? So, the first research challenge we face is to decide what a clonable feature means in a logical formula.
+Clonable features creates new challenges when the specification of cross-tree constraints is required. For instance, according to Figure~\ref{fig:smartHomeFM}, house facilities can be selected at a house, floor or room level. Therefore, a cross-tree constraint should specify if \imp{LightMng} has been selected at the floor level, this facility must also have been selected for each room belonging to that floor.
 
-% Or maybe all potential \imp{A}s only implies the existence of one \imp{B}?
+Since \imp{SmartEnergyMng} requires the \imp{HeaterMng} and \imp{WindowMng} features have been selected, other constraint should specify whenever \imp{SmartEnergyMng} has been selected at one level (e.g. for a specific floor), \imp{HeaterMng} and \imp{WindowMng} have also been selected at the same level (i.e. for that specific floor). Finally, we might want to specify more advanced constraints, like if \imp{Presence Simulation} is going to be included in a automated house, a 30\% of the rooms in the house at least must include automatic light management .
 
-Since clonable features has associated a set of clones, we might want to specify properties that only applies to: (1) at least one element of the set; (2) to all the elements of the set that fulfill a certain constraint; or (3) all the elements. For instance, we might want to specify constraint such as: if \imp{HeaterMng} is selected per house level, at least one \imp{Room} must contain a \imp{Heater}. So, the second research challenge is to add quantification mechanisms to constraints involving clonable features.
+In feature models, the most usual way to express cross-tree constraints is using propositional logic formulas, such as \imp{SmartEnergyMng implies (LightMng and HeaterMng)}, where the different features are the atoms for these formulas~\cite{batory:2005}. An atom is evaluated to true when the corresponding feature has been selected, otherwise it is false. The main problem when dealing with clonable features is that this correspondence cannot be used. Clonable features are not selected or unselected. Clonable are just cloned. So, the meaning of a atom related to a clonable feature becomes undefined. As a result, a propositional logical formula including clonable features can not be evaluated and it can not be determined when the corresponding constraint has been satisfied or violated.
 
-Moreover, we might want to specify constraints which must be evaluated for a particular subtree of the whole feature model, i.e. in a particular \emph{context}. For instance, if \imp{LightMng} has been selected as facility for a particular \imp{Room}, such a \imp{Room} must have at least one clone of \imp{Light}. If we specify a constraint ``\imp{LightMng} implies at least one \imp{Light}'', but we do not limit the scope in which this constraint is evaluated, this constraint might be true for the configurations of Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be false for Figure~\ref{fig:contexts} (a), since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has not \imp{Light} to control. This means this constraint must be evaluated for all rooms (notice we need again quantification) and using only the subtree below each \imp{Room}. Thus, the third research challenge is to specify the context where each constraint must be evaluated.
+For instance, let us suppose  \imp{A} and \imp{B} are clonable features. In this case, what would be the meaning of a external constraint like \imp{A implies B}? Does this means that one instance of \imp{A} implies the existence of at least one instance of \imp{B}? Or, on the other hand, does it means that the existence of all potential \imp{A}s implies the existence of all potential \imp{B}s? Or, why not, the existence of all potential \imp{A}s implies the existence of only one \imp{B}? So, the first research challenge we face is to decide what a clonable feature exactly means in a logical formula expressing a cross-tree constraint.
+
+Since each clonable feature really evaluates to a set of clones, we might want to specify properties that only applies to: (1) at least one element of the set; (2) to all the elements of the set that fulfill a certain constraint; or (3) all the elements of the set. For instance, we might want to specify constraint such as: if \imp{HeaterMng} is selected per house level, one \imp{Room} at least must contain one \imp{Heater} as a minimum. So, our second research challenge is to add quantification mechanisms to constraints involving clonable features.
+
+% Por aquí
+
+Moreover, as already commented we might want to specify constraints which must be evaluated for a particular subtree of the whole feature model, i.e. in a particular \emph{context}. For instance, if \imp{LightMng} has been selected as facility for a particular \imp{Room}, such a \imp{Room} must have one instance of the \imp{Light} feature at least. If we specified a constraint ``\imp{LightMng} implies \imp{Light}'' at least one, but we did not limit the scope in which this constraint is evaluated, this constraint might be true for the configurations of Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be false for Figure~\ref{fig:contexts} (a), since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has not \imp{Light} to control. This means this constraint must be evaluated for all rooms (notice we need again quantification) and using only the subtree below each \imp{Room}. Thus, the third research challenge is to specify the context where each constraint must be evaluated.
 
 % Figure~\ref{fig:contexts} contains an example and a counterexample for this situation.
 
