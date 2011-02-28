@@ -13,28 +13,28 @@
 \end{figure*}
 
 %============================================================================
-% NOTE (Pablo): This paragraph is left out for the SPLC 2011 version         
+% NOTE (Pablo): This paragraph is left out for the SPLC 2011 version
 %============================================================================
 %
-% Let us consider the example presented in the previous section of the SmartHome 
+% Let us consider the example presented in the previous section of the SmartHome
 % software product line. As commented before, a SmartHome can have a different
 % number of floors and rooms. This kind of variability is called
-% \emph{variability in structure}~\cite{sanchez:2007} and it can not be modelled 
-% using traditional feature models~\cite{kang:1990}. Traditional feature models 
-% can specify if a feature is mandatory or alternative, but not how many times a 
+% \emph{variability in structure}~\cite{sanchez:2007} and it can not be modelled
+% using traditional feature models~\cite{kang:1990}. Traditional feature models
+% can specify if a feature is mandatory or alternative, but not how many times a
 % feature can appear in a certain product.
-% 
-% This shortcoming can be solved using clonable features~\cite{czarnecki:2005}. A 
-% \emph{clonable feature} is a feature that can appear with a variable number of times in 
-% different products. A clonable feature is depicted like a normal feature but with a numerical % interval $[a..b] (a \ge b, b \in [0..*])$. This interval means that a product must appar at 
+%
+% This shortcoming can be solved using clonable features~\cite{czarnecki:2005}. A
+% \emph{clonable feature} is a feature that can appear with a variable number of times in
+% different products. A clonable feature is depicted like a normal feature but with a numerical % interval $[a..b] (a \ge b, b \in [0..*])$. This interval means that a product must appar at
 % least $a$ times and $b$ times as the maximum.
-% 
-% Feature models have experimented several evolutions in last decade. Recently, Czarnecki et 
-% al~\cite{czarnecki:2005} introduced the simple but powerful concept of \emph{clonable 
+%
+% Feature models have experimented several evolutions in last decade. Recently, Czarnecki et
+% al~\cite{czarnecki:2005} introduced the simple but powerful concept of \emph{clonable
 % feature}. A clonable feature is a feature that can appear with a variable number of instances % in different products. A clonable feature is depicted like a normal feature but with
-% a numerical interval $[a..b]$ above it. This interval means that a configuration of the 
-% feature model must have at least % $a$ instances of this feature and $b$ instances at the 
-% maximum. The upper bound can be $*$, which means there is no upper bound on the number of 
+% a numerical interval $[a..b]$ above it. This interval means that a configuration of the
+% feature model must have at least % $a$ instances of this feature and $b$ instances at the
+% maximum. The upper bound can be $*$, which means there is no upper bound on the number of
 % instances.
 %
 % The upper bound can be $*$, which means there is no upper bound on the number of instances.
@@ -50,38 +50,38 @@ We would like to comment the feature model might be simplified by using \emph{fe
 %============================================================================
 % NOTE (Pablo): This paragraph is left out for the SPLC 2011 version
 %============================================================================
-% 
-% It should be noticed that these houses can have, all of them, the same functionality; but 
-% they can be different because they have a different structure, i.e., a different number of 
-% instances of the features \imp{Floor}s and \imp{Rooms}. This kind of variability is called 
+%
+% It should be noticed that these houses can have, all of them, the same functionality; but
+% they can be different because they have a different structure, i.e., a different number of
+% instances of the features \imp{Floor}s and \imp{Rooms}. This kind of variability is called
 % \emph{variation in structure} or \emph{structural variability}~\cite{sanchez:2007}. Using
-% traditional feature models without clonable features, this kind of variability can not be 
-% properly captured, since  traditional feature models~\cite{kang:1990} can only express if a 
-% certain feature or functionality is mandatory, optional or alternative, but not in what 
+% traditional feature models without clonable features, this kind of variability can not be
+% properly captured, since  traditional feature models~\cite{kang:1990} can only express if a
+% certain feature or functionality is mandatory, optional or alternative, but not in what
 % number a certain feature can appear in a specific product.
 
 %=================================================================================================================%
 % TODO(Pablo): Add a some point of the text the semantics of references between features.                         %
 %=================================================================================================================%
 
-Figure~\ref{fig:smartHomeCfg} shows an example of configuration, or \emph{specialization}~\cite{czarnecki:2005e} of the feature model of Figure~\ref{fig:smartHomeFM}. 
+Figure~\ref{fig:smartHomeCfg} shows an example of configuration, or \emph{specialization}~\cite{czarnecki:2005e} of the feature model of Figure~\ref{fig:smartHomeFM}.
 
 The process of creating new instances of a clonable feature is called \emph{cloning}, and its semantics was clearly defined in Czarnecki et al~\cite{czarnecki:2005e}. This semantics specifies each time a new instance of a clonable feature is created, the subtree below the clonable feature is copied below this newly created feature. This subtree can then be configured as any other feature model. Changes in the subtree below an instance of a clonable feature have no influence on subtrees belonging to other instances. Therefore, each instance of a clonable feature can have its own configuration. To distinguish between different instances, or clones, of a same feature, we have opted for giving a different name to each instance. For instance, each instance of the \imp{Floor} feature has a different name (e.g. \imp{Ground}, \imp{First}), which indicates what floor is.
 
 The configuration depicted in represents a simple house, with two floors - a ground floor and a first floor, and three rooms- a kitchen and a living room in the first floor and a bedroom in the first floor. Window Managament has been selected for the whole house; whereas LightMng is only selected for the Kitchen and the Bedroom. Heater and Smart Energy Management has been included in the living room. It should be noticed that the usage of clonable features allows a more fine-grained configuration of software products. Due to the use of clones for the different floors and rooms, we can customise each floor and/or room individually.
 
-The reader could argue a Domain-Specific Language or Ecore model would be more useful for this case study than a feature. We will skip this question at this moment and we will come back to it in the discussion section. 
+The reader could argue a Domain-Specific Language or Ecore-based model would be more useful for this case study than a feature model. We will skip this question at this moment and we will come back to it in the discussion section.
 
 %============================================================================================
 % NOTE(Pablo): This paragraph is better placed in a discussion section
 %============================================================================================
-% 
+%
 % This would not be possible using traditional feature models, where we need to create
-% separate feature models for each floor and room and be responsible for manually managing 
+% separate feature models for each floor and room and be responsible for manually managing
 % and synchronising them, which can be a cumbersome and error prone tasks. Using feature
-%  models, these relationships are automatically specified and managed at the model level. For % instance, all feature models related to rooms of a same floor are subtrees of a same parent, % which is the clone for such a floor. For instance, all feature models related to rooms of a 
+%  models, these relationships are automatically specified and managed at the model level. For % instance, all feature models related to rooms of a same floor are subtrees of a same parent, % which is the clone for such a floor. For instance, all feature models related to rooms of a
 % same floor are subtrees of a same parent, which is the clone for such a floor.
-% 
+%
 % , which would able to specify these facilities at the house, floor or room level. Therefore, % to create a model similar to the one depicted in Figure~\ref{fig:smartHomeFM}, we would
 % have to create separate feature models for: (1) the whole house; (2) each individual floor;
 % and (3) each individual room. This might lead to scalability problems, as we would need to
@@ -105,11 +105,11 @@ The reader could argue a Domain-Specific Language or Ecore model would be more u
 %============================================================================================
 %
 % In this case, the process has been as follows: (1) we have create a clone for the \imp{Floor} % feature; and we have called it \imp{GroundFloor}. (2) We have removed the \imp{Floor} feature % as more clones were not required; (3) Similarly, we have created two clones of the \imp{Room} % feature, one for the \imp{Kitchen} and other one for the {Bedroom}. The subtree
-% below Room was cloned and copied below the \imp{Kitchen} and \imp{Bedroom} features. (4) 
-% Then, we have created clones for the devices which must be placed in each room according to 
-% the user requirements. (5) Finally, we have selected the \imp {WindowMng} facility for the 
+% below Room was cloned and copied below the \imp{Kitchen} and \imp{Bedroom} features. (4)
+% Then, we have created clones for the devices which must be placed in each room according to
+% the user requirements. (5) Finally, we have selected the \imp {WindowMng} facility for the
 % entire house; all the facilities for the \imp{Bedroom}; and no extra facilities, beyond \imp
-% {WindowMng}, for the \imp{Kitchen}. We have not defined any facility at the \imp{Floor} 
+% {WindowMng}, for the \imp{Kitchen}. We have not defined any facility at the \imp{Floor}
 % level.
 %
 %============================================================================================
@@ -118,20 +118,13 @@ The reader could argue a Domain-Specific Language or Ecore model would be more u
 % NOTE(Pablo): This has been removed for the sake of simplicity
 %============================================================================================
 %
-% This feature model makes also use of another advanced mechanisms for feature modelling, which % are \emph{feature references}~\cite{czarnecki:2005}. A feature reference is a feature that 
-% references another feature. In Figure~\ref{fig:smartHomeFM}, \imp{FloorFacilities} and 
-% \imp{RoomFacilities} are feature references. Both them refer to \imp{Facilities} (this 
-% relationship is not explicitly displayed in the diagram). The semantics of a feature 
+% This feature model makes also use of another advanced mechanisms for feature modelling, which % are \emph{feature references}~\cite{czarnecki:2005}. A feature reference is a feature that
+% references another feature. In Figure~\ref{fig:smartHomeFM}, \imp{FloorFacilities} and
+% \imp{RoomFacilities} are feature references. Both them refer to \imp{Facilities} (this
+% relationship is not explicitly displayed in the diagram). The semantics of a feature
 % reference is to replace the feature reference with the subtree with root in the feature that % is referenced. In our case, \imp{FloorFacilities} and \imp{RoomFacilities} would be replaced % with the subtree with root in \imp{Facilities}. Feature references help to avoid redundancies % in feature models, which contributes to scalability.
 %
 %============================================================================================
-
-Nevertheless, clonable features creates new challenges when the specification of cross-tree constraints is required. For instance, according to Figure~\ref{fig:smartHomeFM}, house facilities can be selected at a house, floor or room level. Therefore, a cross-tree constraint should specify if \imp{LightMng} has been selected at the floor level, this facility must also have been selected for each room belonging to that floor.
-
-Since \imp{SmartEnergyMng} requires the \imp{HeaterMng} and \imp{WindowMng} features have been selected, other constraint should specify whenever \imp{SmartEnergyMng} has been selected at one level (e.g. for a specific floor), \imp{HeaterMng} and \imp{WindowMng} have also been selected at the same level (i.e. for that specific floor). Moreover, we might want to specify more advanced constraints, like if \imp{Presence Simulation} is going to be included in a automated house, at least a 30\% of the rooms in the house must include automatic light management.
-
-In feature models, the most usual way to express cross-tree constraints is using propositional logic formulas, like \imp{SmartEnergyMng implies (LightMng and HeaterMng)}, where the different features are the atoms for these formulas~\cite{batory:2005}. A feature is evaluated to true when it has been selected, and false otherwise. The main problem when dealing with clonable features is that this correspondence is not useful anymore. Clonable features are not selected or unselected, they are simply cloned. So, the meaning of a atom related to clonable feature becomes undefined and, as a result, the formula can not be evaluated.     
-
 
 
 

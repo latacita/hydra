@@ -1,15 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.1.18)  25 FEB 2011 19:10
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.7.29)  25 FEB 2011 20:38
 entering extended mode
 **splc2011.tex
-
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\splc2011.tex"
-LaTeX2e <2009/09/24>
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\splc2011.tex"
+LaTeX2e <2005/12/01>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
-
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\IEEEtran.cls"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\IEEEtran.cls"
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -20,7 +16,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-(C:\Escritura\Miktex\tex\latex\psnfss\ot1ptm.fd
+(C:\UtilidadesEscritura\Miktex\tex\latex\psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -95,31 +91,31 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtranrubishbin=\box26
 )
 ** ATTENTION: Overriding command lockouts (line 11).
-(C:\Escritura\Miktex\tex\latex\graphics\graphicx.sty
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Escritura\Miktex\tex\latex\graphics\keyval.sty
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(C:\Escritura\Miktex\tex\latex\graphics\graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Escritura\Miktex\tex\latex\graphics\trig.sty
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Escritura\Miktex\tex\latex\00miktex\graphics.cfg
+(C:\UtilidadesEscritura\Miktex\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 90.
 
-(C:\Escritura\Miktex\tex\latex\graphics\dvips.def
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
-(C:\Escritura\Miktex\tex\latex\amsfonts\amsfonts.sty
+(C:\UtilidadesEscritura\Miktex\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -127,19 +123,18 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(C:\Escritura\Miktex\tex\latex\graphics\color.sty
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\Escritura\Miktex\tex\latex\00miktex\color.cfg
+(C:\UtilidadesEscritura\Miktex\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 130.
 
-(C:\Escritura\Miktex\tex\latex\graphics\dvipsnam.def
+(C:\UtilidadesEscritura\Miktex\tex\latex\graphics\dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\splc2011.aux"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\splc2011.aux"
 
 LaTeX Warning: Label `sec:theLanguage' multiply defined.
 
@@ -159,23 +154,23 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 42.
- (C:\Escritura\Miktex\tex\latex\psnfss\omsptm.fd
+ (C:\UtilidadesEscritura\Miktex\tex\latex\psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
 
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\abstract.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\introduction.tex"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\abstract.tex"
+)
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\introduction.
+tex"
 LaTeX Font Info:    Try loading font information for U+msa on input line 72.
- (C:\Escritura\Miktex\tex\latex\amsfonts\umsa.fd
+ (C:\UtilidadesEscritura\Miktex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
-(C:\Escritura\Miktex\tex\latex\amsfonts\umsb.fd
+(C:\UtilidadesEscritura\Miktex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 Underfull \hbox (badness 1688) in paragraph at lines 80--83
@@ -186,29 +181,35 @@ Underfull \hbox (badness 1688) in paragraph at lines 80--83
 
 
 ])
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\motivation.tex"
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\shortcomings.tex"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\motivation.te
+x"
+Underfull \hbox (badness 3199) in paragraph at lines 21--22
+\OT1/ptm/m/n/10 elling tools we faced dur-ing the de-vel-op-ment of a
+ []
+
+
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\shortcomings.
+tex"
 File: figures/FeatureModel.eps Graphic file (type eps)
  <figures/FeatureModel.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 67.
-(C:\Escritura\Miktex\tex\latex\psnfss\ot1phv.fd
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
+(C:\UtilidadesEscritura\Miktex\tex\latex\psnfss\ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 File: figures/configuration.eps Graphic file (type eps)
- <figures/configuration.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+<figures/configuration.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-)
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\researchChallenges.tex" [2]
+[2])
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\researchChall
+enges.tex"
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -218,12 +219,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Figures/contexts(2).eps Graphic file (type eps)
 
 <Figures/contexts(2).eps>))
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\theLanguage.tex"
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\expressing.tex"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\theLanguage.t
+ex"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\expressing.te
+x"
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
- (C:\Escritura\Miktex\tex\latex\psnfss\ot1pcr.fd
+ (C:\UtilidadesEscritura\Miktex\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Overfull \hbox (155.08846pt too wide) in paragraph at lines 28--28
@@ -360,8 +361,8 @@ Overfull \hbox (38.08875pt too wide) in paragraph at lines 67--67
  []
 
 )
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\validating.tex" [5]
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\validating.te
+x" [5]
 File: Figures/lowerUpperBounds.eps Graphic file (type eps)
  <Figures/lowerUpperBounds.eps>
 Underfull \hbox (badness 7963) in paragraph at lines 44--45
@@ -418,7 +419,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 \OML/cmm/m/it/10 GroundFloor[]loorFacilities[]martEnergyMng$
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 [][]\OT1/ptm/m/n/10 We cre-ate the vari-ables $\OML/cmm/m/it/10 GroundFloor[]oo
 m$\OT1/ptm/m/n/10 ,
@@ -476,7 +477,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 \OML/cmm/m/it/10 GroundFloor[]oomFacilities[]martEnergyMng$
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 52--53
 [][]\OT1/ptm/m/n/10 We cre-ate the vari-ables $\OML/cmm/m/it/10 Kitchen[]indow$
 \OT1/ptm/m/n/10 ,
@@ -507,21 +508,14 @@ Overfull \hbox (29.08855pt too wide) in paragraph at lines 94--94
  []
 
 ))
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\relatedWork.tex"
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\relatedWork.t
+ex"
 
 LaTeX Warning: Reference `' on page 7 undefined on input line 7.
 
-
-Underfull \vbox (badness 1817) has occurred while \output is active []
-
- [7])
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\summary.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\splc2011.bbl"
-Underfull \vbox (badness 1701) has occurred while \output is active []
-
+[7])
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\summary.tex")
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\splc2011.bbl"
 
 Underfull \hbox (badness 3861) in paragraph at lines 70--74
 [][]\OT1/ptm/m/n/9 A. L. San-tos, K. Koskimies, and A. Lopes, ``Au-to-
@@ -540,8 +534,8 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [8]
-("C:\Documents and Settings\Pablo\Mis documentos\SPL\FeatureModels\Papers\SPLC2
-011\splc2011.aux")
+("C:\Documents and Settings\Administrador\Mis documentos\SPLC2011\splc2011.aux"
+)
 
 LaTeX Warning: There were undefined references.
 
@@ -550,12 +544,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1679 strings out of 495286
- 28843 string characters out of 3181048
- 77827 words of memory out of 3000000
- 4859 multiletter control sequences out of 15000+200000
+ 1679 strings out of 495270
+ 28666 string characters out of 3179934
+ 77807 words of memory out of 3000000
+ 4875 multiletter control sequences out of 15000+200000
  32219 words of font info for 80 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  26i,9n,22p,1293b,305s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on splc2011.dvi (8 pages, 68404 bytes).
+Output written on splc2011.dvi (8 pages, 65744 bytes).
