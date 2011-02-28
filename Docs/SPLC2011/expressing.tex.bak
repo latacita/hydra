@@ -9,9 +9,10 @@
 % NOTE(Pablo): Check with the work I did in Santander and with the work I did   %
 %              at home                                                          %
 %===============================================================================%
+
 \begin{figure}
-	\begin{scriptsize}
-	\begin{verbatim}
+    \begin{scriptsize}
+    \begin{verbatim}
 00 <Constraint> ::= "true" | "false" | <SimpleFeature> | <Constraint> <BinaryOp> <Constraint> |
 01                  <UnaryOp> <Constraint> | "(" <Constraint> ")" | <ContextExp> |
 02                  <ComparisonExp>;
@@ -24,10 +25,10 @@
 09 <ComparisonOp>  ::= "<" | "<=" | "=" | "=>" | ">" | "!=";
 10 <NumericalExp>  ::= <MultiValueFeature> | "PositiveInteger" |
 11                     <MultiValueFeature> "[" <Constraint "]";
-	\end{verbatim}
-	\end{scriptsize}
-	\caption{Hydra Constraint Language Syntax}
-	\label{fig:languageSyntax}
+    \end{verbatim}
+    \end{scriptsize}
+    \caption{Hydra Constraint Language Syntax}
+    \label{fig:languageSyntax}
 \end{figure}
 
 Figure~\ref{fig:languageSyntax} contains the syntax of the language we propose for expressing constraints involving clonable features on feature models. A \emph{constraint} is a logical expression that evaluates to true or false. A constraint can be simply a literal \imp{true} or \imp{false} (Figure~\ref{fig:languageSyntax}), which evaluates to true and false, respectively. A constraint can also be a simple feature, i.e., a feature that can appear only once at maximum in a certain context. A \imp{SimpleFeature} evaluates to true if it is selected and, otherwise, to false.
@@ -47,7 +48,7 @@ Finally, in context expression with multivalue features, we can also use quantif
 We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the different external constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations.
 
 \begin{figure}[!tb]
-	\begin{verbatim}
+    \begin{verbatim}
 00 Facilities[SmartEnergy implies (HeaterMng and WindowMng)])
 01 Facilities[LightMng] implies (all Floor[FloorFacilities[LightMng]])
 02 Facilities[WindowMng] implies (all Floor[FloorFacilities[WindowMng]])
@@ -63,12 +64,11 @@ We have validated this language by applying it to the SmartHome case study. Tabl
 12 all Room[WindowMng implies (Window > 0)]
 13 all Room[HeaterMng implies (Heater > 0)]
 14 all Room[LightMng or HeaterMng or WindowMng]
-	\end{verbatim}
-	\caption{Constrains involving clonable features}
-	\label{fig:constraints}
+    \end{verbatim}
+    \caption{Constrains involving clonable features}
+    \label{fig:constraints}
 \end{figure}
 
 
 
 Next section describe how we can translate these expression into a Constraint Satisfaction Problem that we can solve with the help of third-party libraries.
-

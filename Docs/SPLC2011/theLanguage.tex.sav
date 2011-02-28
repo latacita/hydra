@@ -1,40 +1,40 @@
-%===============================================================================%
-% Author: Pablo Sánchez (pablo@lcc.uma.es; http://www.lcc.uma.es/~pablo)        %
-% Section : Expressing...                                    Date: 02/12/2009   %
-% Version : 1.0                                                                 %
-% Conference: Caise 2010                                                        %
-%===============================================================================%
+%============================================================================%
+% Author: Pablo Sánchez                                                      %
+%         p.sanchez@unican.es, http://personales.unican.es/sanchezbp         %
+% Section : The language                                   Date: 28/02/2011  %
+% Version : 1.0                                                              %
+% Conference: SPLC 2011                                                      %
+%============================================================================%
 
-%===============================================================================%
-% NOTE(Pablo): Check with the work I did in Santander and with the work I did   %
-%              at home                                                          %
-%===============================================================================%
-\begin{figure}
-	\begin{scriptsize}
+% \subsection{Expressing external constraints with clonable features}
+% \input{expressing}
+
+This section presents the language we propose for expressing constraints on feature models including clonable features. Figure~\ref{fig:languageSyntax} shows the syntax, in EBNF notation, for such a language.
+
+\begin{figure*}
+	\begin{center}
+	\begin{footnotesize}
 	\begin{verbatim}
 00 <Constraint> ::= "true" | "false" | <SimpleFeature> | <Constraint> <BinaryOp> <Constraint> |
-01                  <UnaryOp> <Constraint> | "(" <Constraint> ")" | <ContextExp> |
-02                  <ComparisonExp>;
-03 <BinaryOp>   ::= "and" | "or" | "xor" | "implies";
-04 <UnaryOp>    ::= "not";
-05 <ContextExp> ::= <SimpleFeature> "[" <Constraint> "]" |
-06                  "all" <MultiValueFeature> "[" <Constraint> "]" |
-07                  "any" <MultiValueFeature> "[" <Constraint> "]";
-08 <ComparisonExp> ::= <NumericalExp> <ComparisonOp> <NumericalExp>;
-09 <ComparisonOp>  ::= "<" | "<=" | "=" | "=>" | ">" | "!=";
-10 <NumericalExp>  ::= <MultiValueFeature> | "PositiveInteger" |
-11                     <MultiValueFeature> "[" <Constraint "]";
+01                  <UnaryOp> <Constraint> | "(" <Constraint> ")" | <ContextExp> | <ComparisonExp>;
+02 <BinaryOp>   ::= "and" | "or" | "xor" | "implies";
+03 <UnaryOp>    ::= "not";
+04 <ContextExp> ::= <SimpleFtr> "[" <Constraint> "]" | "all" <MultiValueFtr> "[" <Constraint> "]" |
+05                  "any" <MultiValueFtr> "[" <Constraint> "]";
+06 <ComparisonExp> ::= <NumericalExp> <ComparisonOp> <NumericalExp>;
+07 <ComparisonOp>  ::= "<" | "<=" | "=" | "=>" | ">" | "!=";
+08 <NumericalExp>  ::= <MultiValueFtr> | "SimpleArithmeticExp" | <MultiValueFtr> "[" <Constraint> "]";
 	\end{verbatim}
-	\end{scriptsize}
-	\caption{Hydra Constraint Language Syntax}
+	\end{footnotesize}
+	\end{center}
+	\caption{Syntax of the Hydra Constraint Language}
 	\label{fig:languageSyntax}
-\end{figure}
+\end{figure*}
 
-Figure~\ref{fig:languageSyntax} contains the syntax of the language we propose for expressing constraints involving clonable features on feature models. A \emph{constraint} is a logical expression that evaluates to true or false. A constraint can be simply a literal \imp{true} or \imp{false} (Figure~\ref{fig:languageSyntax}), which evaluates to true and false, respectively. A constraint can also be a simple feature, i.e., a feature that can appear only once at maximum in a certain context. A \imp{SimpleFeature} evaluates to true if it is selected and, otherwise, to false.
+A \emph{constraint} is a logical expression that evaluates to true or false. A constraint can be simply a literal, i.e \imp{true} or \imp{false} (Figure~\ref{fig:languageSyntax} line 00), which evaluates to true and false, respectively. A constraint can also be a simple feature, i.e. a feature that can appear only once as a maximum in a given context. A \imp{SimpleFeature} evaluates to true if it is selected, otherwise, it evaluates to false.
 
-%=================================================================================================================%
-% NOTE(Pablo): Compare with the Work I have already done in Cantabria or at home                                  % %=================================================================================================================%
-We call to those features that can appear more than once in a given context \imp{MultiValueFeature}s. These features are clonable features and multiple features, i.e., features which are not clonable but that can appear more than once because they a clonable ancestor, and therefore the subtree where they are placed can be cloned. A \imp{MultiValueFeature} evaluates to a positive integer, more specifically to the number of clones that currently exist of that feature in a given context of the configuration model. Then, we can use comparison operators, more specifically $<, <=, =, >=, >$ to compare on the number of existing clones. This comparison operators evaluates to true or false. Thus, we can embed this comparison expression into more complex logical expressions. This solves the first challenge we identified in previous section, which was how to evaluate clonable and multiple features.
+Clonable features and multiple features are represented in the syntax as \imp{MultiValueFtr}. 
+A \imp{MultiValueFtr} evaluates to a positive integer (zero included). This positive integer represents the number of clones of that feature that exist in a given context of a  configuration model. Then, we can use comparison operators, more specifically $<, <=, =, >=, >$ to compare on the number of existing clones. This comparison operators evaluates to true or false. Thus, we can embed this comparison expression into more complex logical expressions. This solves the first challenge we identified in previous section, which was how to evaluate clonable and multiple features.
 
 We can also specify the context that will be use to evaluate a given constraint. This can be made in several different ways. A context is specified by surrounding a constraint with brackets and given the name of a feature at the beginning of the expression (Figure~\ref{fig:languageSyntax}, lines 05-07 and line 11). There are several alternatives to evaluate a context expression. If the feature that serves as context is a simple feature, the constraint placed into brackets is evaluated using the subtree of the configuration model with root in the simple feature as context. The result of the \imp{ContextExpression} is the result of evaluating the \imp{Constraint}.
 
@@ -71,4 +71,22 @@ We have validated this language by applying it to the SmartHome case study. Tabl
 
 
 Next section describe how we can translate these expression into a Constraint Satisfaction Problem that we can solve with the help of third-party libraries.
+
+%============================================================================
+% NOTE(Pablo): I m not happy with this text here. It must be moved
+%============================================================================
+
+% For instance, we can write a constraint such as illustrated below.
+%
+% \begin{equation}
+% Room >= 3
+% \end{equation}
+%
+% This constraint would specify a business rule that states that automated houses, in order to % be cost-effective, must have at least three rooms. We add to the language the logical
+% operators $and, or, not$ and $implies$, with the usual semantics. Using this simple language, % we can express constraints on clonable features such as (1).
+
+
+
+
+
 
