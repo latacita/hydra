@@ -15,7 +15,7 @@
 \usepackage{color}
 
 \newcommand{\imp}[1]{{\small \sf #1}}
-\newcommand{\alter}[1]{\color{red} #1 \color{black}}
+\newcommand{\todo}[1]{\color{red} TODO: #1 \color{black}}
 
 \begin{document}
 %
@@ -65,15 +65,15 @@ Feature Models, Clonable Features, Constraint Analysis
 %        need to                                                         %
 %========================================================================%
 
-\section{Expressing and validating constraints involving clonable features}
+\section{A language for expressing constraints including clonable/multiple features}
 \label{sec:theLanguage}
 
 \input{theLanguage}
 
-\section{Tool Support: Hydra}
+\section{Analysis of constraints including clonable/multiple features}
 \label{sec:theLanguage}
 
-% \input{hydra}
+\input{analysis}
 
 \section{Related Work}
 \label{sec:related}

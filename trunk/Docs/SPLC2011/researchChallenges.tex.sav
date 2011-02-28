@@ -41,21 +41,14 @@ For instance, let us suppose  \imp{A} and \imp{B} are clonable features. In this
 
 Each clonable feature really evaluates to a set of clones. For instance, the feature \imp{Floor} in Figure~\ref{fig:smartHomeFM} actually evaluates to \imp{\{Ground, First \}}, instead of selected or unselected. Thus, we might want to specify properties that only applies to: (1) at least one element in that set (e.g. only to the \imp{Ground} floor); (2) to all the elements in that set that fulfill a certain constraint (e.g to all the floors with \imp{LightMng} selected in one room at least); or (3) all the elements in the set. This would allow us to express more complex constraints such as, such as: if \imp{HeaterMng} is selected per house level, one \imp{Room} at least must contain one \imp{Heater} as a minimum. So, our second research challenge is to add quantification mechanisms to constraints involving clonable features.
 
-%============================================================================================
-% TODO(Pablo): Redo this image using Hydra. It is quite hard to get Hydra working for this
-%              purpose        
-%============================================================================================
-
 \begin{figure}[!tb]
   % Requires \usepackage{graphicx}
   \centering \includegraphics[width=\linewidth]{Figures/contexts.eps} \\
-  \caption{(Left) Invalid configuration (Right) Valid configuration}
+  \caption{(a) Invalid configuration (b) Valid configuration}
   \label{fig:contexts}
 \end{figure}
 
-Moreover, as already commented in previous section, we might want to specify constraints which must be evaluated for a particular subtree of the whole feature model, i.e. in a particular \emph{context}. For instance, if \imp{LightMng} has been selected for a particular \imp{Room}, such a \imp{Room} must have one \imp{Light} at least. Thus, we should specify a constraint like ``\imp{LightMng} implies one \imp{Light} device at least''. If we do not limit the scope in which this constraint is evaluated, this constraint will be true for the configurations of Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be false for Figure~\ref{fig:contexts} (a), since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has not any \imp{Light} device to control. This means this constraint must be evaluated for all rooms (notice we are using again quantification) and using only the subtree below each \imp{Room}. 
-
-Thus, the third research challenge is how to specify the context where each constraint must be evaluated; and how to limit the evaluation and analysis
+Moreover, as already commented in previous section, we might want to specify constraints which must be evaluated for a particular subtree of the whole feature model, i.e. in a particular \emph{context}. For instance, if \imp{LightMng} has been selected for a particular \imp{Room}, such a \imp{Room} must have one \imp{Light} at least. Thus, we should specify a constraint like ``\imp{LightMng} implies one \imp{Light} at least''. If we do not limit the scope in which this constraint is evaluated, this constraint will be true for the configurations of Figure~\ref{fig:contexts} (a) and (b). Nevertheless, this constraint should be false for Figure~\ref{fig:contexts} (a), since \imp{r1:Room} has selected the \imp{LightMng} facility, but it has not \imp{Light} to control. This means this constraint must be evaluated for all rooms (notice we need again quantification) and using only the subtree below each \imp{Room}. Thus, the third research challenge is to specify the context where each constraint must be evaluated.
 
 % Figure~\ref{fig:contexts} contains an example and a counterexample for this situation.
 

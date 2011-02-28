@@ -1,38 +1,133 @@
-%===============================================================================%
-% Author: Pablo Sánchez (pablo@lcc.uma.es; http://www.lcc.uma.es/~pablo)        %
-% Section : Expressing and validating ...                    Date: 25/11/2009   %
-% Version : 1.0                                                                 %
-% Conference: Caise 2010                                                        %
-%===============================================================================%
+%============================================================================%
+% Author: Pablo Sánchez                                                      %
+%         p.sanchez@unican.es, http://personales.unican.es/sanchezbp         %
+% Section : The language                                   Date: 28/02/2011  %
+% Version : 1.0                                                              %
+% Conference: SPLC 2011                                                      %
+%============================================================================%
 
-This section presents the language we propose for expressing constraints on feature models involving clonable features and we explain how we can validate these constraints by transforming them into a Constraint Satisfaction Problem (CSP).
+% \subsection{Expressing external constraints with clonable features}
+% \input{expressing}
 
-\subsection{Expressing external constraints with clonable features}
+This section presents the language we propose for expressing constraints on feature models including clonable features. Figure~\ref{fig:languageSyntax} shows the syntax, in EBNF notation, for such a language.
 
-\input{expressing}
+\begin{figure*}
+	\begin{center}
+	\begin{footnotesize}
+	\begin{verbatim}
+00 <Constraint> ::= "true" | "false" | <SimpleFeature> | <Constraint> <BinaryOp> <Constraint> |
+01                  <UnaryOp> <Constraint> | "(" <Constraint> ")" | <ContextExp> | <ComparisonExp>;
+02 <BinaryOp>   ::= "and" | "or" | "xor" | "implies";
+03 <UnaryOp>    ::= "not";
+04 <ContextExp> ::= <SimpleFtr> "[" <Constraint> "]" | "all" <MultiValueFtr> "[" <Constraint> "]" |
+05                  "any" <MultiValueFtr> "[" <Constraint> "]";
+06 <ComparisonExp> ::= <NumericalExp> <ComparisonOp> <NumericalExp>;
+07 <ComparisonOp>  ::= "<" | "<=" | "=" | "=>" | ">" | "!=";
+08 <NumericalExp>  ::= <MultiValueFtr> | "SimpleArithmeticExp" | <MultiValueFtr> "[" <Constraint> "]";
+	\end{verbatim}
+	\end{footnotesize}
+	\end{center}
+	\caption{Syntax of the Hydra Constraint Language}
+	\label{fig:languageSyntax}
+\end{figure*}
 
-\subsection{Validation of external constraints with clonable features}
+A \emph{constraint} is a logical expression that evaluates to true or false. A constraint can be simply a literal, i.e \imp{true} or \imp{false} (Figure~\ref{fig:languageSyntax} line 00), which evaluates to true and false, respectively. A constraint can also be a simple feature, i.e. a feature that can appear only once as a maximum in a given context. A \imp{SimpleFeature} evaluates to true if it is selected, otherwise, it evaluates to false.
 
-\input{validating}
+Clonable features and multiple features are represented in the syntax as \imp{MultiValueFtr}. 
+A \imp{MultiValueFtr} evaluates to a positive integer (zero included). This positive integer represents the number of clones of that feature contained in a given context of a  configuration model. Since they are numbers, we can use comparison operators, more specifically $<, <=, =, >=, >$ to construct comparison expressions on the number of existing clones. In addition, we can also use these numerical values on basic arithmetic expression, i.e. we can sum, substract, multiply and divide these numerical values. These arithmetic expressions can be used as subexpressions, or operands, in comparison expressions. The comparison expressions evaluate to true or false. Thus, we can use a comparison expression as a subexpression of a more complex logical expression. This solves the first challenge we identified in previous section, which was how to evaluate clonable and multiple features.
 
+Using the language of Figure~\ref{fig:languageSyntax}, the context to evaluate a constraint can also be specified. This can be made in several ways. A context can be specified by surrounding a constraint with brackets and given the name of a feature at the beginning of that expression (Figure~\ref{fig:languageSyntax}, lines 04-05, line 08 at the end). The feature used as context can be a simple feature or, instead, it can be a clonable/multiple feature. In the first case, the constraint placed into brackets is evaluated using the subtree of the configuration model with root in the simple feature used as context.
 
-% Choco
+In this second case, we can use the operators \imp{all} and \imp{any}. If \imp{all} is used, 
+the constraint enclosed in brackets must be true for all the instances of the \imp{MultiValueFtr} used as context for the expression being true. Otherwise, it evaluates to false. If \imp{any} is used, the constraint enclosed in brackets must be true for one instance of the \imp{MultiValueFtr} used as context at least. If such an instance does not exist, the constraint expression evaluates to false. For instance, \imp{any Room[LightMng]} would be evaluated to true for the configuration model of Figure~\ref{fig:smartHomeCfg}, whereas \imp{all Room[LightMng]} would be evaluated to false. This solves the second research challenge identified in the previous section, which was how to deal with quantification mechanisms.
 
-%=================================================================================================================%
-% NOTE(Pablo): I m not happy with this text here. Maybe we can move it to a new section called case study         %
-%=================================================================================================================%
+Moreover, none of these operators might be used. In this latter case, the context expression evaluates to the number of instances of the \imp{MultiValueFtr} feature used as context for which the enclosed constraint is true.  For instance, the context expression \imp{Room[LightMng]} would evaluate to 2 for the configuration model depicted in Figure~\ref{fig:smartHomeCfg}, since \imp{LightMng} has been selected in two rooms, more specifically, in the \imp{Kitchen} and in the \imp{Bedroom}. This, as well as the contents of the previous paragraph, solve the third challenge described in the previous section, which was how to deal with contexts.
+ 
+%============================================================================================
+% NOTE(Pablo) : This is not of interest for the purpose of the paper
+%============================================================================================
+%
+% Our feature modelling tool, called \emph{Hydra} checks that each name refers exclusively to 
+% only one feature. If different features share the same name in the feature model, they need 
+% to be disambiguated using contexts.
+%
+%============================================================================================
 
+We would like to highlight that a feature can be simple in a given context and multiple in another context. For instance, \imp{LightMng} (see Figure~\ref{fig:smartHomeFM}) is simple in the context of \imp{GeneralFacilities} and multiple in the context of \imp{SmartHome}. This means that \imp{LightMng}, according to our syntax, can be used as a \imp{SimpleFtr} inside the \imp{Room} context; but it must be used as a \imp{MultiValueFtr} in the \imp{SmartHome} context. Therefore, \imp{Floor[LightMng]} would be not a well-formed constraint, whereas \imp{Room[LightMng]} would be. Therefore, a tool implementing this language should be aware of these details. This would solve the four research challenge identified in the previous section, which was how to deal with multiple features properly. We have taken into account this detail when implementing this language into our feature modelling tool called Hydra.
+
+%============================================================================================
+% NOTE(Pablo) : This is not of interest for the purpose of the paper
+%============================================================================================
+%
+% Hydra takes care of this by means  checking of what kind each feature is in a given context. % Basically, a feature is a multivalue feature if: (1) it is a clonable feature; or (2) in a 
+% given context, one of their ancestors is a clonable feature. Then, Hydra checks we are not 
+% using multivalue features as terminal symbols and that each multivalue feature is embedded in % a \imp{ComparisonExpression} which returns a boolean value at the end. 
+%
+%============================================================================================
+
+%============================================================================================
+% NOTE(Pablo) : This has become redundant
+%============================================================================================
+%
+% Finally, in context expression with multivalue features, we can also use quantification 
+% operators \imp{all} and \imp{any} to specify the number of clones of that feature for which 
+% the specified constraint must be true. Context expression using quantifiers evaluate to true % or false. An expression quantified by \imp{any} evaluates to true, if the constraint 
+% evaluates to true for at least the context provided by one clone of the multivalue feature. 
+% Otherwise, it evaluates to false. An expression quantified by \imp{all} evaluates to true, 
+% if the constraint evaluates to true in each contexts provided by all the clones of the 
+% multivalue feature. Otherwise, it evaluates to false. For instance, \imp{any Room[LightMng]} % would evaluate to true using the configuration model of Figure~\ref{fig:smartHomeCfg}, 
+% whereas \imp{all Room[LightMng]} would evaluate to false. This solves the second research 
+% challenge identified in the previous section, which was how to deal with quantification 
+% mechanisms.
+%
+%============================================================================================
+
+We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the cross-tree constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations. We have also applied it to the case studies mentioned in the introduction\footnote{These case studies can be found in \imp{TODO: provide URL}}.
+
+% Review, add the corresponding ones to Presence Simulation 
+
+\begin{figure*}[!tb]
+	\begin{center}
+	\begin{footnotesize}
+	\begin{verbatim}
+00 Facilities[SmartEnergy implies (HeaterMng and WindowMng)])
+01 Facilities[LightMng] implies (all Floor[FloorFacilities[LightMng]])
+02 Facilities[WindowMng] implies (all Floor[FloorFacilities[WindowMng]])
+03 Facilities[HeaterMng] implies (all Floor[FloorFacilities[HeaterMng]])
+04 Facilities[SmartEnergy] implies (all Floor[FloorFacilities[SmartEnergy]])
+05 all Floor[FloorFacilities[SmartEnergy implies (HeaterMng and WindowMng)])
+06 all Floor[FloorFacilities[LightMng] implies (all Room[LightMng])]
+07 all Floor[FloorFacilities[WindowMng] implies (all Room[WindowMng])]
+08 all Floor[FloorFacilities[HeaterMng] implies (all Room[HeaterMng])]
+09 all Floor[FloorFacilities[SmartEnergy] implies (all Room[SmartEnergy])]
+10 all Room[SmartEnergy implies (HeaterMng and WindowMng)]
+11 all Room[LightMng implies (Light > 0)]
+12 all Room[WindowMng implies (Window > 0)]
+13 all Room[HeaterMng implies (Heater > 0)]
+14 all Room[LightMng or HeaterMng or WindowMng]
+	\end{verbatim}
+	\end{footnotesize}
+	\end{center}
+	\caption{Cross-tree constraints for the Smart Home feature model}
+	\label{fig:constraints}
+\end{figure*}
+
+Next section describes how we can translate these expression into a Constraint Satisfaction Problem that can be solved using third-party libraries.
+
+%============================================================================
+% NOTE(Pablo): I m not happy with this text here. It must be moved
+%============================================================================
+%
 % For instance, we can write a constraint such as illustrated below.
 %
 % \begin{equation}
 % Room >= 3
 % \end{equation}
 %
-% This constraint would specify a business rule that states that automated houses, in order to be cost-effective, must
-% have at least three rooms. We add to the language the logical operators $and, or, not$ and $implies$, with the usual
-% semantics. Using this simple language, we can express constraints on clonable features such as (1).
-
-
+% This constraint would specify a business rule that states that automated houses, in order to % be cost-effective, must have at least three rooms. We add to the language the logical
+% operators $and, or, not$ and $implies$, with the usual semantics. Using this simple language, % we can express constraints on clonable features such as (1).
+%
+%============================================================================
 
 
 
