@@ -33,22 +33,22 @@ This section presents the language we propose for expressing constraints on feat
 
 A \emph{constraint} is a logical expression that evaluates to true or false. A constraint can be simply a literal, i.e \imp{true} or \imp{false} (Figure~\ref{fig:languageSyntax} line 00), which evaluates to true and false, respectively. A constraint can also be a simple feature, i.e. a feature that can appear only once as a maximum in a given context. A \imp{SimpleFeature} evaluates to true if it is selected, otherwise, it evaluates to false.
 
-Clonable features and multiple features are represented in the syntax as \imp{MultiValueFtr}. 
+Clonable features and multiple features are represented in the syntax as \imp{MultiValueFtr}.
 A \imp{MultiValueFtr} evaluates to a positive integer (zero included). This positive integer represents the number of clones of that feature contained in a given context of a  configuration model. Since they are numbers, we can use comparison operators, more specifically $<, <=, =, >=, >$ to construct comparison expressions on the number of existing clones. In addition, we can also use these numerical values on basic arithmetic expression, i.e. we can sum, substract, multiply and divide these numerical values. These arithmetic expressions can be used as subexpressions, or operands, in comparison expressions. The comparison expressions evaluate to true or false. Thus, we can use a comparison expression as a subexpression of a more complex logical expression. This solves the first challenge we identified in previous section, which was how to evaluate clonable and multiple features.
 
 Using the language of Figure~\ref{fig:languageSyntax}, the context to evaluate a constraint can also be specified. This can be made in several ways. A context can be specified by surrounding a constraint with brackets and given the name of a feature at the beginning of that expression (Figure~\ref{fig:languageSyntax}, lines 04-05, line 08 at the end). The feature used as context can be a simple feature or, instead, it can be a clonable/multiple feature. In the first case, the constraint placed into brackets is evaluated using the subtree of the configuration model with root in the simple feature used as context.
 
-In this second case, we can use the operators \imp{all} and \imp{any}. If \imp{all} is used, 
+In this second case, we can use the operators \imp{all} and \imp{any}. If \imp{all} is used,
 the constraint enclosed in brackets must be true for all the instances of the \imp{MultiValueFtr} used as context for the expression being true. Otherwise, it evaluates to false. If \imp{any} is used, the constraint enclosed in brackets must be true for one instance of the \imp{MultiValueFtr} used as context at least. If such an instance does not exist, the constraint expression evaluates to false. For instance, \imp{any Room[LightMng]} would be evaluated to true for the configuration model of Figure~\ref{fig:smartHomeCfg}, whereas \imp{all Room[LightMng]} would be evaluated to false. This solves the second research challenge identified in the previous section, which was how to deal with quantification mechanisms.
 
 Moreover, none of these operators might be used. In this latter case, the context expression evaluates to the number of instances of the \imp{MultiValueFtr} feature used as context for which the enclosed constraint is true.  For instance, the context expression \imp{Room[LightMng]} would evaluate to 2 for the configuration model depicted in Figure~\ref{fig:smartHomeCfg}, since \imp{LightMng} has been selected in two rooms, more specifically, in the \imp{Kitchen} and in the \imp{Bedroom}. This, as well as the contents of the previous paragraph, solve the third challenge described in the previous section, which was how to deal with contexts.
- 
+
 %============================================================================================
 % NOTE(Pablo) : This is not of interest for the purpose of the paper
 %============================================================================================
 %
-% Our feature modelling tool, called \emph{Hydra} checks that each name refers exclusively to 
-% only one feature. If different features share the same name in the feature model, they need 
+% Our feature modelling tool, called \emph{Hydra} checks that each name refers exclusively to
+% only one feature. If different features share the same name in the feature model, they need
 % to be disambiguated using contexts.
 %
 %============================================================================================
@@ -59,9 +59,9 @@ We would like to highlight that a feature can be simple in a given context and m
 % NOTE(Pablo) : This is not of interest for the purpose of the paper
 %============================================================================================
 %
-% Hydra takes care of this by means  checking of what kind each feature is in a given context. % Basically, a feature is a multivalue feature if: (1) it is a clonable feature; or (2) in a 
-% given context, one of their ancestors is a clonable feature. Then, Hydra checks we are not 
-% using multivalue features as terminal symbols and that each multivalue feature is embedded in % a \imp{ComparisonExpression} which returns a boolean value at the end. 
+% Hydra takes care of this by means  checking of what kind each feature is in a given context. % Basically, a feature is a multivalue feature if: (1) it is a clonable feature; or (2) in a
+% given context, one of their ancestors is a clonable feature. Then, Hydra checks we are not
+% using multivalue features as terminal symbols and that each multivalue feature is embedded in % a \imp{ComparisonExpression} which returns a boolean value at the end.
 %
 %============================================================================================
 
@@ -69,42 +69,45 @@ We would like to highlight that a feature can be simple in a given context and m
 % NOTE(Pablo) : This has become redundant
 %============================================================================================
 %
-% Finally, in context expression with multivalue features, we can also use quantification 
-% operators \imp{all} and \imp{any} to specify the number of clones of that feature for which 
-% the specified constraint must be true. Context expression using quantifiers evaluate to true % or false. An expression quantified by \imp{any} evaluates to true, if the constraint 
-% evaluates to true for at least the context provided by one clone of the multivalue feature. 
-% Otherwise, it evaluates to false. An expression quantified by \imp{all} evaluates to true, 
-% if the constraint evaluates to true in each contexts provided by all the clones of the 
-% multivalue feature. Otherwise, it evaluates to false. For instance, \imp{any Room[LightMng]} % would evaluate to true using the configuration model of Figure~\ref{fig:smartHomeCfg}, 
-% whereas \imp{all Room[LightMng]} would evaluate to false. This solves the second research 
-% challenge identified in the previous section, which was how to deal with quantification 
+% Finally, in context expression with multivalue features, we can also use quantification
+% operators \imp{all} and \imp{any} to specify the number of clones of that feature for which
+% the specified constraint must be true. Context expression using quantifiers evaluate to true % or false. An expression quantified by \imp{any} evaluates to true, if the constraint
+% evaluates to true for at least the context provided by one clone of the multivalue feature.
+% Otherwise, it evaluates to false. An expression quantified by \imp{all} evaluates to true,
+% if the constraint evaluates to true in each contexts provided by all the clones of the
+% multivalue feature. Otherwise, it evaluates to false. For instance, \imp{any Room[LightMng]} % would evaluate to true using the configuration model of Figure~\ref{fig:smartHomeCfg},
+% whereas \imp{all Room[LightMng]} would evaluate to false. This solves the second research
+% challenge identified in the previous section, which was how to deal with quantification
 % mechanisms.
 %
 %============================================================================================
 
-We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the cross-tree constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations. We have also applied it to the case studies mentioned in the introduction\footnote{These case studies can be found in \imp{TODO: provide URL}}.
+We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the cross-tree constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations. We have also applied it to the case studies mentioned in the introduction\footnote{These case studies can be found in \imp{TODO: provide URL}}. 
 
-% Review, add the corresponding ones to Presence Simulation 
+\imp{C01} specifies that if \imp{SmartEnergyMng} feature is selected for the whole house, the \imp{LightMng} feature and the \imp{WindowMng} must also be selected, since the first one depends on the latter ones. \imp{C05} specifies this constraint must be also satisfied at the floor facilities level for all the floors, and \imp{C10} does the same at the room level. \imp{C01-C04} specify that when a facility is selected for the whole house, it must also be selected for all the floors. \imp{C01-C04} specify the same relationship between the floor and the room levels.
+\imp{C11-C13} indicate when a facility is selected, one instances of the corresponding device to be controlled muts be added to the house. Finally, \imp{C14} specifies that for the \imp{PresenceSimulation} working properly, at least a quarter of the house rooms must have automatic control of the lights. It should be noticed that, to the best of our knowledge, this kind of constraint is not supported by any feature modelling tool or language.
+
+% Review, add the corresponding ones to Presence Simulation
 
 \begin{figure*}[!tb]
 	\begin{center}
 	\begin{footnotesize}
 	\begin{verbatim}
-00 Facilities[SmartEnergy implies (HeaterMng and WindowMng)])
-01 Facilities[LightMng] implies (all Floor[FloorFacilities[LightMng]])
-02 Facilities[WindowMng] implies (all Floor[FloorFacilities[WindowMng]])
-03 Facilities[HeaterMng] implies (all Floor[FloorFacilities[HeaterMng]])
-04 Facilities[SmartEnergy] implies (all Floor[FloorFacilities[SmartEnergy]])
-05 all Floor[FloorFacilities[SmartEnergy implies (HeaterMng and WindowMng)])
-06 all Floor[FloorFacilities[LightMng] implies (all Room[LightMng])]
-07 all Floor[FloorFacilities[WindowMng] implies (all Room[WindowMng])]
-08 all Floor[FloorFacilities[HeaterMng] implies (all Room[HeaterMng])]
-09 all Floor[FloorFacilities[SmartEnergy] implies (all Room[SmartEnergy])]
-10 all Room[SmartEnergy implies (HeaterMng and WindowMng)]
-11 all Room[LightMng implies (Light > 0)]
-12 all Room[WindowMng implies (Window > 0)]
-13 all Room[HeaterMng implies (Heater > 0)]
-14 all Room[LightMng or HeaterMng or WindowMng]
+C00 GeneralFacilities[SmartEnergyMng implies (HeaterMng and WindowMng)])
+C01 GeneralFacilities[LightMng] implies (all FloorFacilities[LightMng])
+C02 GeneralFacilities[WindowMng] implies (all FloorFacilities[WindowMng])
+C03 GeneralFacilities[HeaterMng] implies (all FloorFacilities[HeaterMng])
+C04 GeneralFacilities[SmartEnergy] implies (all Floor[FloorFacilities[SmartEnergy]])
+C05 all FloorFacilities[SmartEnergy implies (HeaterMng and WindowMng)])
+C06 all Floor[FloorFacilities[LightMng] implies (all Room[LightMng])]
+C07 all Floor[FloorFacilities[WindowMng] implies (all Room[WindowMng])]
+C08 all Floor[FloorFacilities[HeaterMng] implies (all Room[HeaterMng])]
+C09 all Floor[FloorFacilities[SmartEnergy] implies (all Room[SmartEnergy])]
+C10 all Room[SmartEnergy implies (HeaterMng and WindowMng)]
+C11 all Room[LightMng implies (Light > 0)]
+C12 all Room[WindowMng implies (Window > 0)]
+C13 all Room[HeaterMng implies (Heater > 0)]
+C14 PresenceSimulation implies ((Room[Light] / Room) * 100 >= 25) 
 	\end{verbatim}
 	\end{footnotesize}
 	\end{center}

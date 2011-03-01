@@ -73,14 +73,18 @@ Feature Models, Clonable Features, Constraint Analysis
 \section{Analysis of constraints including clonable/multiple features}
 \label{sec:theLanguage}
 
-\input{analysis}
+\input{validating}
+
+\section{Evaluation and Discussion}
+
+% \input{discussion}
 
 \section{Related Work}
 \label{sec:related}
 
 \input{relatedWork}
 
-\section{Conclusions, Discussion and Future Work}
+\section{ConclusionsFuture Work}
 \label{sec:summary}
 
 \input{summary}
