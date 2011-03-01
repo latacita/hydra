@@ -33,7 +33,7 @@
 
 Clonable features creates new challenges when the specification of cross-tree constraints is required. For instance, according to Figure~\ref{fig:smartHomeFM}, house facilities can be selected at a house, floor or room level. Therefore, a cross-tree constraint should specify if \imp{LightMng} has been selected at the floor level, this facility must also have been selected for each room belonging to that floor.
 
-Since \imp{SmartEnergyMng} requires the \imp{HeaterMng} and \imp{WindowMng} features have been selected, other constraint should specify whenever \imp{SmartEnergyMng} has been selected at one level (e.g. for a specific floor), \imp{HeaterMng} and \imp{WindowMng} have also been selected at the same level (i.e. for that specific floor). Finally, we might want to specify more advanced constraints, like if \imp{Presence Simulation} is going to be included in a automated house, a 30\% of the rooms in the house at least must include automatic light management .
+Since \imp{SmartEnergyMng} requires the \imp{HeaterMng} and \imp{WindowMng} features have been selected, other constraint should specify whenever \imp{SmartEnergyMng} has been selected at one level (e.g. for a specific floor), \imp{HeaterMng} and \imp{WindowMng} have also been selected at the same level (i.e. for that specific floor). Finally, we might want to specify more advanced constraints, like if \imp{Presence Simulation} is going to be included in a automated house, a 25\% of the rooms in the house at least must include automatic light management .
 
 In feature models, the most usual way to express cross-tree constraints is using propositional logic formulas, such as \imp{SmartEnergyMng implies (LightMng and HeaterMng)}, where the different features are the atoms for these formulas~\cite{batory:2005}. An atom is evaluated to true when the corresponding feature has been selected, otherwise it is false. The main problem when dealing with clonable features is that this correspondence cannot be used. Clonable features are not selected or unselected. Clonable are just cloned. So, the meaning of a atom related to a clonable feature becomes undefined. As a result, a propositional logical formula including clonable features can not be evaluated and it can not be determined when the corresponding constraint has been satisfied or violated.
 
@@ -43,7 +43,7 @@ Each clonable feature really evaluates to a set of clones. For instance, the fea
 
 %============================================================================================
 % TODO(Pablo): Redo this image using Hydra. It is quite hard to get Hydra working for this
-%              purpose        
+%              purpose
 %============================================================================================
 
 \begin{figure}[!tb]
@@ -60,14 +60,14 @@ Moreover, as already commented in previous section, we might want to specify con
 %              also be left out of the paper.
 %============================================================================================
 %
-% Contexts are also useful for solve ambiguities when using feature references, since multiple % copies of a same feature might appear at different part of a configuration model. For 
-% instance, does \imp{LightMng} refers to \imp{LightMng} for \imp{GeneralFacilities}, 
-% \imp{FloorFacilities} or \imp{RoomFacilities}. Using contexts, we can limit the scope of a 
+% Contexts are also useful for solve ambiguities when using feature references, since multiple % copies of a same feature might appear at different part of a configuration model. For
+% instance, does \imp{LightMng} refers to \imp{LightMng} for \imp{GeneralFacilities},
+% \imp{FloorFacilities} or \imp{RoomFacilities}. Using contexts, we can limit the scope of a
 % name to unambiguously refer to a certain feature.
 %
 %============================================================================================
 
-Finally, we would to like to point out that not only clonable features can have more than one instance per configuration of a feature model. All those features that have as an ancestor a clonable features can appear more than once in a configuration model. We will call to this kind of feature, i.e. non clonable features with a clonable ancestor, \emph{multiple features}. 
+Finally, we would to like to point out that not only clonable features can have more than one instance per configuration of a feature model. All those features that have as an ancestor a clonable features can appear more than once in a configuration model. We will call to this kind of feature, i.e. non clonable features with a clonable ancestor, \emph{multiple features}.
 Figure~\ref{fig:multipleFtr} illustrates this situation.In this case, the feature \imp{LightMng} below \imp{RoomFacilities} appears two times due to the \imp{Room} feature has been cloned twice. This implies that \imp{LightMng}, as well as the other features below \imp{Room}, also evaluate to a set of features instead of simply to true or false. Nevertheless, it should be noticed that these multiple features, oppositely to clonable features, can be evaluated to true or false if they are evaluated in a particular context.
 For example, the \imp{LightMng} feature in Figure~\ref{fig:multipleFtr} can be evaluated to true or false when it is evaluated in the context of a particular room. So, our last research challenge is how to deal appropriately with \emph{multiple features}.
 
@@ -93,13 +93,13 @@ To the best of our knowledge, there is currently no research work, and consequen
 %============================================================================================
 %
 % We have implemented a reasoner able to decide if a set of external constraints, involving
-% clonable or multiple features, is satisfied given a specific configuration of a feature 
+% clonable or multiple features, is satisfied given a specific configuration of a feature
 % model. The reasoner is also able to perform some extra task, such as deciding which features % must be incorporated to a configuration in order to satisfy the external constraints. We have % integrated this language and the reasoner in our feature modelling environment, which we have % called \emph{Hydra}.
 %
 %============================================================================================
 
 %============================================================================================
-% NOTE(Pablo) : We have reduced this paragraph. We are no presenting a tool, so this 
+% NOTE(Pablo) : We have reduced this paragraph. We are no presenting a tool, so this
 %               paragraph can be simply skipped
 %============================================================================================
 %
@@ -113,20 +113,20 @@ To the best of our knowledge, there is currently no research work, and consequen
 % A typical feature modelling process would be as follows:
 %
 % \begin{enumerate}
-%    \item First of all, a feature model is created. A feature model is a tree representation 
-%          of the features included in % a set of products and of the relationships between 
+%    \item First of all, a feature model is created. A feature model is a tree representation
+%          of the features included in % a set of products and of the relationships between
 %          them.
-%    \item Since not all the relationships between features can be captured using simply the 
-%          syntax provided by feature  models, it is often required to specify some external 
-%          constraints, which restrict the way in which features in a feature model can be 
-%          selected. For instance, we might specify that if a certain feature \imp{A} is 
-%          selected, another feature \imp{B} can not be selected, due to a bad interaction 
+%    \item Since not all the relationships between features can be captured using simply the
+%          syntax provided by feature  models, it is often required to specify some external
+%          constraints, which restrict the way in which features in a feature model can be
+%          selected. For instance, we might specify that if a certain feature \imp{A} is
+%          selected, another feature \imp{B} can not be selected, due to a bad interaction
 %          between these features.
-%    \item Once we have created a feature model, we can use it for creating configurations, 
-%          i.e. selection of features that specify which particular features are, or it will 
+%    \item Once we have created a feature model, we can use it for creating configurations,
+%          i.e. selection of features that specify which particular features are, or it will
 %          be, included in a certain product.
-%    \item To ensure we are creating correct configurations, we need to validate that a 
-%          configuration obeys the rules the % syntax of the feature model, and, in addition, 
+%    \item To ensure we are creating correct configurations, we need to validate that a
+%          configuration obeys the rules the % syntax of the feature model, and, in addition,
 %          it also satisfies the external defined constraints.
 % \end{enumerate}
 %
