@@ -69,8 +69,8 @@
 %==========================================================================================
 
 % What problem, issue or question does this research address ?
-Clonable features in features models are features with an multiplicity upper bound greater than 1~\cite{czarnecki:2002,czarnecki:2005e}. They are used to model features that can appear with a variable number of instances in the different products belonging to a same Software Product Line (SPL). Clonable features were introduced in Czarnecki et al~\cite{czarnecki:2002}, almost a decade ago, mainly due to practical and industrial reasons~\cite{czarnecki:2002}. In such a work, clonable features were used to model a SPL for implementing a standard of the European Space Agency for satellite communication. In this SPL, a software application might have several communication interfaces; and each service had to be individually configurable. Therefore, communication interface was included in the feature model as a clonable feature with several subfeatures. Since they were created, clonable features have been incorporated to several feature modelling tools, such as FMP\footnote{http://gsd.uwaterloo.ca/fmp}, Hydra\footnote{http://caosd.lcc.uma.es/spl/hydra/},  Moskitt Feature Modeller\footnote{http://www.pros.upv.es/mfm/} or
-xFeature\footnote{http://www.pnp-software.com/XFeature/}.
+Clonable features in features models are features with an multiplicity upper bound greater than 1~\cite{czarnecki:2002,czarnecki:2005e}. They are used to model features that can appear with a variable number of instances in the different products belonging to a same Software Product Line (SPL). Clonable features were introduced in Czarnecki et al~\cite{czarnecki:2002}, almost a decade ago, mainly due to practical and industrial reasons~\cite{czarnecki:2002}. In such a work, clonable features were used to model a SPL for implementing a standard of the European Space Agency for satellite communication. In this SPL, a software application might have several communication interfaces; and each service had to be individually configurable. Therefore, communication interface was included in the feature model as a clonable feature with several subfeatures. Since they were created, clonable features have been incorporated to several feature modelling tools, such as FMP\footnote{\url{http://gsd.uwaterloo.ca/fmp}}, Hydra\footnote{\url{http://caosd.lcc.uma.es/spl/hydra/}},  Moskitt Feature Modeller\footnote{\url{http://www.pros.upv.es/mfm/}} or
+xFeature\footnote{\url{http://www.pnp-software.com/XFeature/}}.
 
 % What limitations or failings of current understanding, knowledge,
 % method, or technologies does this research resolve ?
@@ -151,8 +151,7 @@ To overcome these shortcomings, this paper presents: (1) a language for specifyi
 % What experiments, prototypes or studies will be done to achieve the stated goal ?
 
 This language has been incorporated into our feature modelling tool, called \emph{Hydra}. We have also implemented several analysis operations~\cite{Benavides:2010} by transforming these constraints into a CSP problem, which is solved using a third-party library for CSP solving called Choco~\cite{rochart:2008}. More specifically, we have implemented
-\color{red}TO BE COMPLETED\color{black}.
-
+the \emph{valid configuration}, \emph{valid partial configuration}, \emph{void feature model}, \emph{dead features} and the \emph{promising partial configuration} analysis operations~\cite{Benavides:2010}.
 
 %===========================================================================================
 % NOTE(Pablo): This is not of interest for the paper, so it has been suppressed.                       %===========================================================================================
@@ -169,6 +168,4 @@ This language has been incorporated into our feature modelling tool, called \emp
 
 Using Hydra, the new language and the constraint analyser, we have modelled, configured and validated feature models for: (1) a SmartHome software product line based on an industrial case study~\cite{ample:d52}; (2) a graphical user interface, based on a domain specific language, presented in Santos et al~\cite{santos:2008}; a (3) the feature model for the satellite communication systems which initially motivated the addition of clonable features to feature models.
 
-\color{red}TO BE UPDATED AFTER FINISHING THE PAPER\color{black}
-
-After this introduction, this paper is structured as follows: Section~\ref{sec:motivation} provides some background on clonable features and analyse the research challenges they create. Section~\ref{sec:theLanguage} presents the new language for specifying constraints and how to analyse them. Section~\ref{sec:related} comments on related work. Section~\ref{sec:summary} concludes the paper, provides a critical reflection on the benefits of our approach. and outlines future work.
+After this introduction, this paper is structured as follows: Section~\ref{sec:motivation} describes the motivating scenario that gave birth to this work. Section~\ref{sec:theLanguage} presents the language we have created for expressing constraints including on feature models including clonable features. Section~\ref{sec:analysis} describes how this language can be mapped into a CSP, which allows the analysis of the specified constraints.  Section~\ref{sec:discussion} contains a brief discussion on the benefits of our approach. Finally, Section~\ref{sec:related} comments on related work and Section~\ref{sec:summary} summarises the paper and outlines future work.

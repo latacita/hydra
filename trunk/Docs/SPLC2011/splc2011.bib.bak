@@ -555,7 +555,7 @@ Development (AOSD)},
   month     = {August}
 }
 
-@TECHREPORT{ample:d52
+@TECHREPORT{ample:d52,
   AUTHOR      = {Hugo Morganho and Catarina Gomes and Jo{\~a}o Paulo Piment{\~a}o and Rita Ribeiro and Christoph Pohl
 				 and Birgit Grammel and Rummler, Andreas and Christa Schwanninger and Ludger Fiege and Michael Jaeger},
   TITLE       = {{Requirement Specifications for Industrial Case Studies}},
@@ -657,4 +657,16 @@ Development (AOSD)},
   number    = {6},
   year      = {2010},
   pages     = {615--636},
+}
+
+@inproceedings{kastner:2009,
+  author    = {Christian K{\"a}stner and Thomas Th{\"u}m and
+			   Gunter Saake and Janet Feigenspan and Thomas Leich and
+			   Fabian Wielgorz and Sven Apel},
+  title     = {{FeatureIDE: A Tool Framework for Feature-Oriented Software Development},
+  booktitle = {Proc. of the 31st Int. Conference on Software Engineering (ICSE)},
+  year      = {2009},
+  pages     = {611--614},
+  month     = {May},
+  address   = {Vancouver (British Columbia, Canada)},
 }

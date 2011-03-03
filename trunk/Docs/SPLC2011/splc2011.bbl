@@ -32,6 +32,30 @@ D.~Benavides, S.~Segura, and A.~R. Cort{\'e}s, ``{Automated Analysis of Feature
   Models 20 Years Later: A Literature Review},'' \emph{Information Systems},
   vol.~35, no.~6, pp. 615--636, 2010.
 
+\bibitem{benavides:2007}
+D.~Benavides, S.~Segura, P.~Trinidad, and A.~R. Cort{\'e}s, ``{FAMA: Tooling a
+  Framework for the Automated Analysis of Feature Models},'' in \emph{Proc. of
+  the 1st Int. Workshop on Variability Modelling of Software-Intensive Systems
+  (VaMoS)}, K.~Pohl, P.~Heymans, K.~C. Kang, and A.~Metzger, Eds., Limerick
+  (Ireland), January 2007, pp. 129--134.
+
+\bibitem{Beuche:2008}
+D.~Beuche, ``{Modeling and Building Software Product Lines with
+  Pure::Variants},'' in \emph{Proc. of the 12th Int. Software Product Lines
+  Conference (SPLC)}, Limerick (Ireland), September 2008, p. 358.
+
+\bibitem{budinsky:2003}
+F.~Budinsky, D.~Steinberg, E.~Merks, R.~Ellersick, and T.~J. Grose,
+  \emph{{Eclipse Modeling Framework}}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Addison-Wesley Professiona, August 2003.
+
+\bibitem{cetina:2009}
+C.~Cetina, P.~Trinidad, V.~Pelechano, A.~R. Cort{\'e}s, and D.~Benavides,
+  ``{Moskitt FM and FAMA FW: Taking Feature Models to the Next Level},'' in
+  \emph{Proc. of the XIV Jornadas de Ingenier\'{\i}a del Software y Bases de
+  Datos (JISBD)}, A.~Vallecillo and G.~Sagardui, Eds., San Sebasti{\'a}n,
+  (Spain), September 2009, pp. 285--288.
+
 \bibitem{czarnecki:2005c}
 K.~Czarnecki, M.~Antkiewicz, C.~H.~P. Kim, S.~Lau, and K.~Pietroszek, ``{FMP
   and FMP2RSM: Eclipse Plug-ins for Modelling Features Using Model
@@ -52,10 +76,21 @@ K.~Czarnecki, S.~Helsen, and U.~W. Eisenecker, ``{Formalizing Cardinality-based
   Feature Models and Their Specialization},'' \emph{Software Process:
   Improvement and Practice}, vol.~10, no.~1, pp. 7--29, 2005.
 
-\bibitem{czarnecki:2005}
+\bibitem{czarnecki:2005sc}
 ------, ``{Staged Configuration through Specialization and Multilevel
   Configuration of Feature Models},'' \emph{Software Process: Improvement and
   Practice}, vol.~10, no.~2, pp. 143--169, January-March 2005.
+
+\bibitem{ample:solution}
+I.~Groher, L.~Fiege, C.~Elsner, C.~Schwanninger, and M.~V\"{o}lter,
+  \emph{{Solution-Driven Software Product Line Engineering}}.
+
+\bibitem{kastner:2009}
+C.~K{\"a}stner, T.~Th{\"u}m, G.~Saake, J.~Feigenspan, T.~Leich, F.~Wielgorz,
+  and S.~Apel, ``{FeatureIDE: A Tool Framework for Feature-Oriented Software
+  Development},'' in \emph{Proc. of the 31st Int. Conference on Software
+  Engineering (ICSE)}, Vancouver (British Columbia, Canada), May 2009, pp.
+  611--614.
 
 \bibitem{ample:d52}
 H.~Morganho, C.~Gomes, J.~P. Piment{\~a}o, R.~Ribeiro, C.~Pohl, B.~Grammel,
@@ -64,13 +99,33 @@ H.~Morganho, C.~Gomes, J.~P. Piment{\~a}o, R.~Ribeiro, C.~Pohl, B.~Grammel,
   D5.2, March 2008.
 
 \bibitem{rochart:2008}
-G.~Rochart.
+G.~Rochart, ``{The CHOCO Constraint Programming Solver},'' in \emph{Proc. of
+  the Workshop Open-Source Software for Integer and Constraint Programming, 5th
+  Int. Conference on Integration of AI and OR Techniques in Constraint
+  Programming for Combinatorial Optimization Problems (CAPIOR)}, Paris
+  (France), May 2008.
+
+\bibitem{ample:product}
+P.~S\'{a}nchez, C.~Nebrera, L.~Fuentes, and V.~Gasiunas, \emph{Aspect-Oriented
+  Model-Driven Software Product Lines (The AMPLE way)}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cambridge University Press, September 2011, ch.
+  {Product-Driven Software Product Line Engineering}, in print.
 
 \bibitem{santos:2008}
 A.~L. Santos, K.~Koskimies, and A.~Lopes, ``{Automated Domain-Specific Modeling
   Languages for Generating Framework-Based Applications},'' in \emph{Proc. of
   the 12th Int. Conference of Software Product Lines (SPLC)}, Limerick
   (Ireland), September 2008, to appear.
+
+\bibitem{stephan:2008}
+M.~Stephan and M.~Antkiewicz, ``{Ecore.fmp: A Tool for Editing and
+  Instantiating Class Models as Feature Models},'' University of Waterloo,,
+  Tech. Rep. 2008-08, May 2008.
+
+\bibitem{trinidad:2008}
+P.~Trinidad, D.~Benavides, A.~R. Cort{\'e}s, S.~Segura, and A.~Jimenez, ``{FAMA
+  Framework},'' in \emph{Proc. of the 12th Int. Software Product Lines
+  Conference (SPLC)}, Limerick (Ireland), September 2008, p. 359.
 
 \bibitem{tsang:1993}
 E.~Tsang, \emph{{Foundations of Constraint Satisfaction}}.\hskip 1em plus 0.5em
