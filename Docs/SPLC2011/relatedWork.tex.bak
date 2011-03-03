@@ -8,7 +8,8 @@
 
 Several tools which support for feature modelling are currently available. Nevertheless, only some of them support clonable features; and, to the best of our knowledge, none of them provides proper support for analysis of cross-tree constraints including clonable/multiple features.
 
-Well-known tools, such as Feauture IDE~\cite{kastner:2009} or pure::variants~\cite{Beuche:2008} do not include support for clonable feature. Obviously, if they do not support clonable features, they do not include any support for its analysis.
+Well-known tools, such as Feauture IDE~\cite{} or pure::variants~\cite{} do not simply include 
+
 
 %=============================================================================
 % NOTE(Pablo): This is not of interest for the purpose of this paper
@@ -58,16 +59,13 @@ Feature Modelling Plugin (FMP)~\cite{czarnecki:2005c} is an Ecore-based~\cite{bu
 %
 %=============================================================================
 
-Feature Model Analyzer (FaMA) is a framework for the automated analysis of feature models~\cite{cetina:2009,trinidad:2008,benavides:2007}. It integrates different solvers, aiming to use the most efficient one depending upon the kind of analysis operation to be carried out. Although FaMA support a wide range of analysis operations, to the best of our knowledge it is not able to analyse cross-tree constraints specified using a language as expressive as proposed by us. Therefore, constraints containing quantifiers and contexts, for instances, can not be analysed using FaMA. Nevertheless, the ideas exposed through this paper might be easily integrated into FaMA, since FaMA claims to be an extensible framework, and the CSP library we are currently using, Choco, it is already integrated into FaMA.
+Feature Model Analyzer (FaMA) is a framework for the automated analysis~\cite{} of feature models. Among the analysis included, we can find ... Nevertheless, FaMA analysis feature models created with other feature modelling tools.
 
-Moskitt Feature Modelling (MFM)~\cite{cetina:2009} is a graphical editor for feature models. Moskkit supports clonable features. Nevertheless, Moskitt only supports the specification of simple binary constraints between features, more specifically, the specification of \emph{requires} and \emph{excludes} relationships. The semantics of these binary relationships when applied to clonable features is undefined.
+Since the state-of-art feature modelling tools do not support the specification of external constraints involving clonable features, FaMA, to the best of our knowledge, does not incoporate any kind of analysis for validating this kind of constraint.
 
-% El chino de BDD
+% Nevertheless, the ideas exposed through this paper might be easily integrated into FaMA, since FaMA claims to be % an extensible framework, and the CSP tool we are using, called Choco, it is already integrated into FaMA.
 
-% El chino de Alloy
-
-% vistazo rápido a Hugo Arboleda
-
+Moskitt Feature Modeliing (MFM) is a graphical editor for feature models, based on the Mooskkit graphical  supports the graphical edition of feature models, including clonable features. Nevertheless, Moskitt only supports the specification of simple binary constraints between features, more specifically, the specification of \emph{requires}, i.e. \imp{A implies B}, and \emph{excludes} relationships. The semantics of these binary relationships when applied to clonable features is undefined.
 
 
 

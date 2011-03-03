@@ -32,17 +32,19 @@ Repeated entry---line 576 of file splc2011.bib
  : @inproceedings{santos:2008
  :                           ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 619 of file splc2011.bib
- :   author    = {Guillaume Rochart}, 
- :                                    ,
+Warning--I'm ignoring trinidad:2008's extra "booktitle" field
+--line 706 of file splc2011.bib
+I was expecting a `,' or a `}'---line 738 of file splc2011.bib
+ :   
+ :   PUBLISHER = {Cambridge University Press},
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 -- IEEEtranS.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for normal IEEE work.
-Warning--empty title in rochart:2008
-Warning--empty booktitle in rochart:2008
-Warning--empty year in rochart:2008
+Warning--missing publisher in ample:solution
+Warning--empty year in ample:solution
 
 Done.
 (There were 7 error messages)

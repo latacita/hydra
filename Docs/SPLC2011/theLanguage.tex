@@ -82,7 +82,7 @@ We would like to highlight that a feature can be simple in a given context and m
 %
 %============================================================================================
 
-We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the cross-tree constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations. We have also applied it to the case studies mentioned in the introduction\footnote{These case studies can be found in \imp{TODO: provide URL}}. 
+We have validated this language by applying it to the SmartHome case study. Table~\ref{fig:constraints} shows the cross-tree constraints we have added to the feature model of Figure~\ref{fig:smartHomeFM} to avoid creating invalid configurations. We have also applied it to the case studies mentioned in the introduction\footnote{These case studies can be found in \materialUrl}.
 
 \imp{C01} specifies that if \imp{SmartEnergyMng} feature is selected for the whole house, the \imp{LightMng} feature and the \imp{WindowMng} must also be selected, since the first one depends on the latter ones. \imp{C05} specifies this constraint must be also satisfied at the floor facilities level for all the floors, and \imp{C10} does the same at the room level. \imp{C01-C04} specify that when a facility is selected for the whole house, it must also be selected for all the floors. \imp{C01-C04} specify the same relationship between the floor and the room levels.
 \imp{C11-C13} indicate when a facility is selected, one instances of the corresponding device to be controlled muts be added to the house. Finally, \imp{C14} specifies that for the \imp{PresenceSimulation} working properly, at least a quarter of the house rooms must have automatic control of the lights. It should be noticed that, to the best of our knowledge, this kind of constraint is not supported by any feature modelling tool or language.
@@ -107,7 +107,7 @@ C10 all Room[SmartEnergy implies (HeaterMng and WindowMng)]
 C11 all Room[LightMng implies (Light > 0)]
 C12 all Room[WindowMng implies (Window > 0)]
 C13 all Room[HeaterMng implies (Heater > 0)]
-C14 PresenceSimulation implies ((Room[Light] / Room) * 100 >= 25) 
+C14 PresenceSimulation implies ((Room[Light] / Room) * 100 >= 25)
 	\end{verbatim}
 	\end{footnotesize}
 	\end{center}
