@@ -1,0 +1,26 @@
+syntax(Model) "resources/expressions.ecore" {
+	Model:element(Model) -> ConstraintList;
+
+	ConstraintList -> (Constraint)*;
+	
+	Constraint -> Expression:composite(constraints) ws(empty) ";" ws(statement); 
+	
+	Expression -> Implies;
+	Expression -> Term;
+	
+	Term -> And;
+	Term -> Or;
+	Term -> Factor;
+	
+	Factor -> Feature;
+	Factor -> "(" ws(empty) Expression ws(empty) ")";
+	Factor -> Neg;
+	
+	Implies:element(Implies) -> Expression:composite(op1) ws(space) "implies" ws(space) Term:composite(op2);
+	And:element(And)     -> Term:composite(op1) ws(space) "and" ws(space) Factor:composite(op2);
+	Or:element(Or)     -> Term:composite(op1) ws(space) "or" ws(space) Factor:composite(op2);
+	Neg:element(Neg) -> "not" ws(space) Expression:composite(op);
+	
+	Feature:element(Feature) -> IDENTIFIER:composite(name);
+
+}
