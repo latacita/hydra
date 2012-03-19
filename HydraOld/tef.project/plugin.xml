@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="tef.project.TextEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="exp"
+            icon="icons/TSL.gif"
+            id="tef.project.texteditor"
+            name="text editor">
+      </editor>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="tef.project.generateAction"
+            nameFilter="*.exp"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="tef.project.tefmenu"
+               label="Constraint menu"
+               path="additions">
+            <separator
+                  name="tefSeparator">
+            </separator>
+         </menu>
+         <action
+               class="tef.project.GenerateInstanceAction"
+               enablesFor="1"
+               id="tef.project.generateInstanceAction"
+               label="Generate XML"
+               menubarPath="tef.project.tefmenu/tefSeparator">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
