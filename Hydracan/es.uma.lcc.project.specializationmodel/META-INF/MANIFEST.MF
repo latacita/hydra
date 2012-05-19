@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: es.uma.lcc.project.specializationmodel;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .,
+ library/choco-2.1.0-basic.jar
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;visibility:=reexport,
+ org.eclipse.draw2d;bundle-version="3.4.2"
+Bundle-ActivationPolicy: lazy
+Export-Package: specializationModel,
+ specializationModel.util

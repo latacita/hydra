@@ -1,0 +1,8 @@
+#Sun Oct 18 01:12:36 CEST 2009
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/specializationmodel.genmodel
+gmf_dashboard/domainModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/specializationmodel.ecore
+gmf_dashboard/generationModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/featuremodel.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/featuremodel.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/featuremodel.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/es.uma.lcc.project.featuremodel/model/featuremodel.gmftool
