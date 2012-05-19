@@ -1,0 +1,7 @@
+# Tracing options for the es.uma.lcc.project.specializationmodel.diagram plug-in
+
+# Common issues
+es.uma.lcc.project.specializationmodel.diagram/debug=false
+
+# Visual IDs
+es.uma.lcc.project.specializationmodel.diagram/debug/visualID=false

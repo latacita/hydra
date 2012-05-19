@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	
+	<extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
+		<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider"> 
+			<Priority name="High"/> 
+			<contribution> 
+				<predefinedEntry id="standardGroup/zoomTool" remove="true"/> 
+			</contribution> 
+		</paletteProvider> 
+	</extension> 
+	
+	<extension
+		id="topDownLayoutProvider"
+		name="TopDownLayoutProvider"
+         point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+      <layoutProvider 
+      		class="specializationModel.diagram.providers.SpecializationmodelDefaultLayoutProvider">
+         <Priority name="Medium"/>
+      </layoutProvider>
+   </extension>
+	
+	
+	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+		<contributionItemProvider checkPluginLoaded="false"
+    		class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider">
+        <Priority name="Low"/>
+        <popupContribution  id="remove_popup_menu_id" class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="specializationModel.diagram.edit.parts.FeatureEditPart"></popupStructuredContributionCriteria>
+            <popupStructuredContributionCriteria objectClass="specializationModel.diagram.edit.parts.ProjectEditPart"></popupStructuredContributionCriteria>
+            <popupStructuredContributionCriteria objectClass="specializationModel.diagram.edit.parts.RelationFeatureEditPart"></popupStructuredContributionCriteria>
+    	 	<popupPredefinedItem id="navigateGroup" remove="true"/>		
+    		<popupPredefinedItem id="addGroup" remove="true"/>
+    		<popupPredefinedItem id="filtersMenu" remove="true"/> 	
+           	</popupContribution>
+    	</contributionItemProvider>
+    </extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.commands"> 
+		<command description="Restore" id="my.restore.id" name="Restore"> 
+		</command> 
+	</extension>
+	
+	<extension point="org.eclipse.ui.menus"> 
+		<menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions"> 
+			<command commandId="my.restore.id" style="push"> 
+				<visibleWhen> 
+					<with variable="activeMenuSelection"> 
+						<iterate> 
+							<instanceof value="specializationModel.diagram.edit.parts.FeatureEditPart"> 
+							</instanceof> 
+						</iterate>  
+					</with> 
+				</visibleWhen> 
+			</command> 
+		</menuContribution> 
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters"> 
+		<propertyTester class="specializationModel.diagram.part.MyRestoreTester" id="my.restoretester.id" namespace="org.eclipse.debug.ui" properties="projectNature2" type="specializationModel.diagram.edit.parts.FeatureEditPart"> 
+		</propertyTester> 
+	</extension>
+	
+	
+	<extension point="org.eclipse.ui.handlers"> 
+		<handler class="specializationModel.diagram.part.MyRestoreHandler" commandId="my.restore.id"> 
+			<enabledWhen> 
+				<with variable="selection"> 
+					<iterate ifEmpty="false" operator="and"> 
+						<test property="org.eclipse.debug.ui.projectNature2" value="org.eclipse.jdt.core.javanature2"> 
+						</test> 
+					</iterate> 
+				</with> 
+			</enabledWhen> 
+		</handler> 
+	</extension>
+
+
+
+
+
+	<extension point="org.eclipse.ui.commands"> 
+		<command description="Unreference" id="my.unreference.id" name="Unreference"> 
+		</command> 
+	</extension>
+	
+	<extension point="org.eclipse.ui.menus"> 
+		<menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions"> 
+			<command commandId="my.unreference.id" style="push"> 
+				<visibleWhen> 
+					<with variable="activeMenuSelection"> 
+						<iterate> 
+							<instanceof value="specializationModel.diagram.edit.parts.FeatureEditPart"> 
+							</instanceof> 
+						</iterate>  
+					</with> 
+				</visibleWhen> 
+			</command> 
+		</menuContribution> 
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters"> 
+		<propertyTester class="specializationModel.diagram.part.MyUnreferenceTester" id="my.unreferencetester.id" namespace="org.eclipse.debug.ui" properties="projectNature3" type="specializationModel.diagram.edit.parts.FeatureEditPart"> 
+		</propertyTester> 
+	</extension>
+	
+	
+	<extension point="org.eclipse.ui.handlers"> 
+		<handler class="specializationModel.diagram.part.MyUnreferenceHandler" commandId="my.unreference.id"> 
+			<enabledWhen> 
+				<with variable="selection"> 
+					<iterate ifEmpty="false" operator="and"> 
+						<test property="org.eclipse.debug.ui.projectNature3" value="org.eclipse.jdt.core.javanature3"> 
+						</test> 
+					</iterate> 
+				</with> 
+			</enabledWhen> 
+		</handler> 
+	</extension>
+	
+    
+
+   <extension point="org.eclipse.team.core.fileTypes">
+      <?gmfgen generated="true"?>
+      <fileTypes
+         type="text"
+         extension="hydra_cfg_diagram">
+      </fileTypes>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="true"?>
+      <parser
+         type="hydra_cfg_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <?gmfgen generated="true"?>
+      <editor
+         id="specializationModel.diagram.part.SpecializationmodelDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/hydra_SM.png"
+         extensions="hydra_cfg_diagram"
+         default="true"
+         class="specializationModel.diagram.part.SpecializationmodelDiagramEditor"
+         matchingStrategy="specializationModel.diagram.part.SpecializationmodelMatchingStrategy"
+         contributorClass="specializationModel.diagram.part.SpecializationmodelDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="specializationModel.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/hydra_SM.png"
+  	     category="org.eclipse.ui.Examples"
+  	     class="specializationModel.diagram.part.SpecializationmodelCreationWizard"
+  	     id="specializationModel.diagram.part.SpecializationmodelCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            adaptable="false"
+            id="es.uma.lcc.project.specializationmodel.diagram.LoadResource"
+            objectClass="specializationModel.diagram.edit.parts.ProjectEditPart">
+         <action
+               class="specializationModel.diagram.part.SpecializationmodelLoadResourceAction"
+               enablesFor="1"
+               id="es.uma.lcc.project.specializationmodel.diagram.LoadResourceAction"
+               label="%loadResourceActionLabel"
+               menubarPath="additions">
+         </action>
+      </objectContribution>           
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="es.uma.lcc.project.specializationmodel.diagram.InitDiagram"
+            nameFilter="*.hydra_cfg"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="specializationModel.diagram.part.SpecializationmodelInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="es.uma.lcc.project.specializationmodel.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="SpecializationmodelPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="specializationModel.diagram.part.SpecializationmodelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="SpecializationmodelPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="specializationModel.diagram.part.SpecializationmodelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="SpecializationmodelRender">
+         <Priority name="Lowest"/>
+         <ViewId id="specializationModel.diagram.part.SpecializationmodelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="specializationModel.diagram.providers.SpecializationmodelMarkerNavigationProvider">
+         <MarkerType name="es.uma.lcc.project.specializationmodel.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Specializationmodel Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension point="org.eclipse.core.runtime.preferences">
+      <?gmfgen generated="true"?>
+      <initializer class="specializationModel.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.general"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.general"
+            class="specializationModel.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.appearance"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.appearance"
+            category="es.uma.lcc.project.specializationmodel.diagram.general"
+            class="specializationModel.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.connections"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.connections"
+            category="es.uma.lcc.project.specializationmodel.diagram.general"
+            class="specializationModel.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.printing"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.printing"
+            category="es.uma.lcc.project.specializationmodel.diagram.general"
+            class="specializationModel.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.rulersAndGrid"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.rulersAndGrid"
+            category="es.uma.lcc.project.specializationmodel.diagram.general"
+            class="specializationModel.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+      <page
+            id="es.uma.lcc.project.specializationmodel.diagram.pathmaps"
+            name="%preference.page.title.es.uma.lcc.project.specializationmodel.diagram.pathmaps"
+            category="es.uma.lcc.project.specializationmodel.diagram.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="es.uma.lcc.project.specializationmodel.diagram"
+            labelProvider="specializationModel.diagram.sheet.SpecializationmodelSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="es.uma.lcc.project.specializationmodel.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="es.uma.lcc.project.specializationmodel.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="specializationModel.diagram.sheet.SpecializationmodelPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <?gmfgen generated="true"?>
+      <viewProvider class="specializationModel.diagram.providers.SpecializationmodelViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Specializationmodel"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="specializationModel.diagram.providers.SpecializationmodelEditPartProvider">
+         <Priority name="Lowest"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="specializationModel.diagram.providers.SpecializationmodelModelingAssistantProvider">
+         <Priority name="Lowest"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+      <?gmfgen generated="true"?>
+      <IconProvider class="specializationModel.diagram.providers.SpecializationmodelIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="specializationModel.diagram.providers.SpecializationmodelParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.Project_1000"
+               name="%metatype.name.Project_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Project"
+               edithelper="specializationModel.diagram.edit.helpers.ProjectEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.Feature_2001"
+               name="%metatype.name.Feature_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Feature"
+               edithelper="specializationModel.diagram.edit.helpers.FeatureEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.FeatureGroup_2002"
+               name="%metatype.name.FeatureGroup_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FeatureGroup"
+               edithelper="specializationModel.diagram.edit.helpers.FeatureGroupEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.RelationFG_4001"
+               name="%metatype.name.RelationFG_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RelationFG"
+               edithelper="specializationModel.diagram.edit.helpers.RelationFGEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.RelationFeature_4002"
+               name="%metatype.name.RelationFeature_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RelationFeature"
+               edithelper="specializationModel.diagram.edit.helpers.RelationFeatureEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://specializationmodel">
+         <metamodelType
+               id="es.uma.lcc.project.specializationmodel.diagram.RelationSelected_4003"
+               name="%metatype.name.RelationSelected_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RelationSelected"
+               edithelper="specializationModel.diagram.edit.helpers.RelationSelectedEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="es.uma.lcc.project.specializationmodel.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="es.uma.lcc.project.specializationmodel.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="es.uma.lcc.project.specializationmodel.diagram.TypeContext">
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.Project_1000"/>
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.Feature_2001"/>
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.FeatureGroup_2002"/>
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.RelationFG_4001"/>
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.RelationFeature_4002"/>
+         <elementType ref="es.uma.lcc.project.specializationmodel.diagram.RelationSelected_4003"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="es.uma.lcc.project.specializationmodel.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="es.uma.lcc.project.specializationmodel.diagram"
+           properties="isURIEditorInput"
+           class="specializationModel.diagram.part.SpecializationmodelUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="es.uma.lcc.project.specializationmodel.diagram.DomainModelElementPropertyTester"
+           type="org.eclipse.emf.ecore.EObject"
+           namespace="es.uma.lcc.project.specializationmodel.diagram"
+           properties="isDomainModelElement"
+           class="specializationModel.diagram.part.SpecializationmodelDomainModelElementTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="es.uma.lcc.project.specializationmodel.diagram.resourceContent"/>
+			<contentExtension pattern="es.uma.lcc.project.specializationmodel.diagram.domainResourceContent"/>
+            <contentExtension pattern="es.uma.lcc.project.specializationmodel.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="es.uma.lcc.project.specializationmodel.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="es.uma.lcc.project.specializationmodel.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="specializationModel.diagram.navigator.SpecializationmodelNavigatorContentProvider" 
+            labelProvider="specializationModel.diagram.navigator.SpecializationmodelNavigatorLabelProvider"
+            icon="icons/obj16/hydra_SM.png"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="hydra_cfg_diagram"/>
+               </and>
+               <instanceof value="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="es.uma.lcc.project.specializationmodel.diagram.navigatorSorter" 
+               class="specializationModel.diagram.navigator.SpecializationmodelNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="hydra_cfg_diagram"/>
+                  </and>
+                  <instanceof value="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="es.uma.lcc.project.specializationmodel.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="specializationModel.diagram.navigator.SpecializationmodelDomainNavigatorContentProvider" 
+            labelProvider="specializationModel.diagram.navigator.SpecializationmodelDomainNavigatorLabelProvider"
+            icon="icons/obj16/hydra_SM.png"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="hydra_cfg"/>
+               </and>
+               <and>
+                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
+                  <test property="es.uma.lcc.project.specializationmodel.diagram.isDomainModelElement"/>
+               </and>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <and>
+       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
+       	       <test property="es.uma.lcc.project.specializationmodel.diagram.isDomainModelElement"/>
+       	    </and>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="es.uma.lcc.project.specializationmodel.diagram.navigatorActionProvider"
+            class="specializationModel.diagram.navigator.SpecializationmodelNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="es.uma.lcc.project.specializationmodel.diagram.navigatorLinkHelper"
+            class="specializationModel.diagram.navigator.SpecializationmodelNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="es.uma.lcc.project.specializationmodel.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="specializationModel.diagram.navigator.SpecializationmodelAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.emf.validation.constraintProviders">
+      <?gmfgen generated="true"?>
+            <category id="checks" mandatory="false" name="Feature Model Audit">
+         <![CDATA[]]>
+      </category>
+      <constraintProvider cache="true">
+         <package namespaceUri="http://specializationmodel"/>
+               <constraints categories="checks">
+                  <constraint id="sizeName"
+            lang="OCL"
+            name="sizeName"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check for size name]]></description>
+            <message><![CDATA[The size name must be great than zero]]></message>
+            <target class="specializationModel.Feature"/>
+         </constraint>
+                  <constraint id="checkname"
+            lang="OCL"
+            name="Checkname"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Feature.allInstances()->forAll(p1, p2 |  p1 <> p2 implies p1.name <> p2.name)]]>
+            <description><![CDATA[Check for repeated names]]></description>
+            <message><![CDATA[Names must be unique]]></message>
+            <target class="specializationModel.Feature"/>
+         </constraint>
+                  <constraint id="checkbound"
+            lang="OCL"
+            name="Check bounds"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[(self.upperBound < 0) or (self.lowerBound >= 0 and self.upperBound >= self.lowerBound)]]>
+            <description><![CDATA[Check bounds]]></description>
+            <message><![CDATA[Upperbound must be greater than lowerBound]]></message>
+            <target class="specializationModel.RelationFeature"/>
+         </constraint>
+                  <constraint id="checkboundFG"
+            lang="OCL"
+            name="Check bounds FG"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[(self.lowerBound >= 0 and self.upperBound >= 0 and self.upperBound >= self.lowerBound and upperBound <= self.children->size())]]>
+            <description><![CDATA[Check bounds FG]]></description>
+            <message><![CDATA[Upperbound must be greater than lowerBound]]></message>
+            <target class="specializationModel.FeatureGroup"/>
+         </constraint>
+                  <constraint id="emptySpace"
+            lang="Java" class="specializationModel.diagram.providers.SpecializationmodelValidationProvider$Adapter5"
+            name="Empty space"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            
+            <description><![CDATA[Check for the empty space]]></description>
+            <message><![CDATA[Forbidden empty space in the name]]></message>
+            <target class="specializationModel.Feature"/>
+         </constraint>
+                  </constraints>
+      </constraintProvider>
+   </extension>
+
+   <extension point="org.eclipse.emf.validation.constraintBindings">
+      <?gmfgen generated="true"?>
+      <clientContext default="false" id="es.uma.lcc.project.specializationmodel.diagramDefaultCtx">
+         <selector class="specializationModel.diagram.providers.SpecializationmodelValidationProvider$DefaultCtx"/>
+      </clientContext>
+      <binding context="es.uma.lcc.project.specializationmodel.diagramDefaultCtx">
+                  <constraint ref="es.uma.lcc.project.specializationmodel.diagram.sizeName"/>
+                  <constraint ref="es.uma.lcc.project.specializationmodel.diagram.checkname"/>
+                  <constraint ref="es.uma.lcc.project.specializationmodel.diagram.checkbound"/>
+                  <constraint ref="es.uma.lcc.project.specializationmodel.diagram.checkboundFG"/>
+                  <constraint ref="es.uma.lcc.project.specializationmodel.diagram.emptySpace"/>
+               </binding>
+
+   </extension>
+
+
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="specializationModel.diagram.part.SpecializationmodelDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="specializationModel.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="specializationModel.diagram.updateDiagram"
+         contextId="specializationModel.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension><extension id="ValidationContributionItemProvider" name="Validation"
+      point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+         class="specializationModel.diagram.providers.SpecializationmodelValidationProvider">
+         <Priority name="Low"/>
+         <partContribution id="specializationModel.diagram.part.SpecializationmodelDiagramEditorID">
+            <partMenuGroup menubarPath="/diagramMenu/" id="validationGroup"/>
+            <partAction id="validateAction" menubarPath="/diagramMenu/validationGroup"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension>
+<extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="specializationModel.diagram.providers.SpecializationmodelValidationDecoratorProvider">
+         <Priority name="Medium"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+</plugin>
