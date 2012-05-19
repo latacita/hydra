@@ -1,0 +1,3 @@
+Pasar de Operator, tirar con el warning de recursividad que no es problematico.
+Intentar hacer Operator solo con los numeros (tener en cuenta que una multiple feature puede ser un
+operador de esos numeros!!!)
