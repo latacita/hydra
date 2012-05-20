@@ -50,7 +50,7 @@ import specializationModel.SpecializationModelPackage;
 import specializationModel.diagram.part.MainStatus;
 import specializationModel.diagram.part.SpecializationmodelDiagramEditor;
 import specializationModel.diagram.part.SpecializationmodelDiagramEditorUtil;
-import specializationModel.diagram.validator.ChocoValidator;
+// import specializationModel.diagram.validator.ChocoValidator;
 import featureModel.FeatureModelPackage;
 import featureModel.Project;
 import featureModel.diagram.edit.parts.ProjectEditPart;
@@ -86,7 +86,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements IResourceCha
 	private String configFileName; 
 	private String constraintFileName;
 	
-	private HashMap<String, ChocoValidator> smValidators;
+//	private HashMap<String, ChocoValidator> smValidators;
 	
 	private boolean initial = true;
 	private MainStatus mainStatus;
@@ -98,7 +98,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements IResourceCha
 	public MultiPageEditor() {
 		super();
 		configurations = new ArrayList<SpecializationmodelDiagramEditor>();
-		smValidators = new HashMap<String, ChocoValidator>();
+//		smValidators = new HashMap<String, ChocoValidator>();
 		mainStatus = new MainStatus();
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(this);
 	}
@@ -128,7 +128,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements IResourceCha
 	}
 	
 	void createConstraintPage(){
-		tefEditor = new tef.project.TextEditor();
+//		tefEditor = new tef.project.TextEditor();
 		
 		IWorkspace workspace= ResourcesPlugin.getWorkspace();
 		String slash = System.getProperty("file.separator");
@@ -350,7 +350,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements IResourceCha
 			ValidateNames vn = new ValidateNames(this);
 			userConstraintsStatus = vn.validate();
 			mainStatus.setConstraintState(userConstraintsStatus);
-			smValidators.clear();
+//			smValidators.clear();
 			
 			featureModel.diagram.edit.parts.ProjectEditPart fpep = (featureModel.diagram.edit.parts.ProjectEditPart) model.getDiagramEditPart();
 			setValue(fpep.getEditingDomain(), ((View)fpep.getModel()).getElement(), FeatureModelPackage.eINSTANCE.getProject_ValidatedTEF(), userConstraintsStatus);
@@ -416,13 +416,15 @@ public class MultiPageEditor extends MultiPageEditorPart implements IResourceCha
 			specializationModel.Project project = (specializationModel.Project) ((View)pep.getModel()).getElement();
 			if (!project.isInfiniteDomain() && !pep.isValidated()){
 				if (pep.getMainStatus() == null) pep.setMainStatus(mainStatus);
-				
+
+				/**
 				ChocoValidator cv = pep.getMyChocoValidator((tef.project.expressions.Model)getUserConstraints());
 				if (cv.canValidate()){
 					cv.validate();
 					pep.executePunishment();
 					pep.setValidated(true);
 				}
+				**/
 			}
 		}
 	}

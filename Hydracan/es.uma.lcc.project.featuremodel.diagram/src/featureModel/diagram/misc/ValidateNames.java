@@ -1,12 +1,12 @@
 package featureModel.diagram.misc;
 
-import hub.sam.tef.Utilities;
-import hub.sam.tef.modelcreating.IModelCreatingContext;
-import hub.sam.tef.modelcreating.ModelCreating;
-import hub.sam.tef.modelcreating.ModelCreatingContext;
-import hub.sam.tef.semantics.DefaultIdentificationScheme;
-import hub.sam.tef.semantics.DefaultSemanticsProvider;
-import hub.sam.tef.tsl.Syntax;
+//import hub.sam.tef.Utilities;
+//import hub.sam.tef.modelcreating.IModelCreatingContext;
+//import hub.sam.tef.modelcreating.ModelCreating;
+//import hub.sam.tef.modelcreating.ModelCreatingContext;
+//import hub.sam.tef.semantics.DefaultIdentificationScheme;
+//import hub.sam.tef.semantics.DefaultSemanticsProvider;
+//import hub.sam.tef.tsl.Syntax;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,14 +29,14 @@ import org.eclipse.ui.editors.text.TextEditor;
 
 //import ca.ecliptical.emf.xpath.EMFXPath;
 
-import tef.project.ILangInstConstants;
-import tef.project.expressions.BinaryOperator;
-import tef.project.expressions.ComparisonOperator;
-import tef.project.expressions.Expression;
-import tef.project.expressions.Function;
-import tef.project.expressions.Model;
-import tef.project.expressions.QuantifyOperator;
-import tef.project.expressions.UnaryOperator;
+//import tef.project.ILangInstConstants;
+//import tef.project.expressions.BinaryOperator;
+//import tef.project.expressions.ComparisonOperator;
+//import tef.project.expressions.Expression;
+//import tef.project.expressions.Function;
+//import tef.project.expressions.Model;
+//import tef.project.expressions.QuantifyOperator;
+//import tef.project.expressions.UnaryOperator;
 
 public class ValidateNames{
 
@@ -61,6 +61,7 @@ public class ValidateNames{
 	}
 
 	public boolean validate() {
+		/**
 		int activePage = 1;
 
 		EditorPart myEditor = myMultiEditorPage.getEditor(activePage);
@@ -87,10 +88,11 @@ public class ValidateNames{
 			e.printStackTrace();
 		}
 
-		return validateNamesFunction((Model) eoLangInstModel, p);
-
+		return validateNamesFunction((Model) eoLangInstModel, p); **/
+		return true;
 	}
 
+	/**
 	private boolean validateNamesFunction(Model userConstraints,Project p){
 		boolean result = true;
 		String message = "";
@@ -124,9 +126,11 @@ public class ValidateNames{
 		}
 		
 		return result;
-	}
+	} **/
 
+	/**
 	private List<String> getNames(Expression e){
+
 		List<String> names = new ArrayList<String>();
 
 		if ( e instanceof BinaryOperator){
@@ -144,8 +148,9 @@ public class ValidateNames{
 		} else if (e instanceof Function){
 			names.add(((Function) e).getOp().getName());
 		}
-		return names;
-	}
+		return names; 
+		return null;
+	} **/
 
 	private boolean exists(Project project, String name){
 		boolean res = false;

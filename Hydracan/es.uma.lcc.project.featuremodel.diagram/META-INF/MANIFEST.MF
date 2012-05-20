@@ -134,10 +134,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui.render;bundle-version="1.1.0",
  es.uma.lcc.project.specializationmodel.diagram;bundle-version="1.0.0",
- es.uma.lcc.project.specializationmodel.editor;bundle-version="1.0.0",
- tef.project;bundle-version="1.0.0",
- hub.sam.tef;bundle-version="1.0.9",
- tef.project.model;bundle-version="1.0.0"
+ es.uma.lcc.project.specializationmodel.editor;bundle-version="1.0.0"
 Eclipse-LazyStart: true
 Import-Package: org.eclipse.gmf.runtime.draw2d.ui.render,
  org.eclipse.gmf.runtime.draw2d.ui.render.figures
