@@ -41,6 +41,7 @@ import gnu.trove.TIntArrayList;
 
 
 public class ChocoValidator implements ValidatorInterface {
+	
 	private Model myModel;
 	private Project myProject;
 	private String options = "";
@@ -685,25 +686,26 @@ public class ChocoValidator implements ValidatorInterface {
 	}
 
 	private PrettyIEV getIntValue(ComparisonOperand op, HashMap<String, List<Feature4Validator>> envolvedFeatures) {
-		// TODO Auto-generated method stub
-		IntegerExpressionVariable value = null;
-		String prettyPhrase = "";
-
-		if (op instanceof Quantity){
-			int intValue = ((Quantity)op).getValue();
-			value = constant(intValue);
-			prettyPhrase = new Integer(intValue).toString();
-		}else if (op instanceof Function){
-			String name = ((tef.project.expressions.Feature)((Function)op).getOp()).getName();
-			IntegerVariable[] sameNameVariable = getAllNamed(name, envolvedFeatures);
-
-			if (op instanceof Count){
-				value = sum(sameNameVariable);
-				prettyPhrase = " count " + name ;
-			}
-		}
-
-		return new PrettyIEV(value, prettyPhrase);
+//		// TODO Auto-generated method stub
+//		IntegerExpressionVariable value = null;
+//		String prettyPhrase = "";
+//
+//		if (op instanceof Quantity){
+//			int intValue = ((Quantity)op).getValue();
+//			value = constant(intValue);
+//			prettyPhrase = new Integer(intValue).toString();
+//		}else if (op instanceof Function){
+//			String name = ((tef.project.expressions.Feature)((Function)op).getOp()).getName();
+//			IntegerVariable[] sameNameVariable = getAllNamed(name, envolvedFeatures);
+//
+//			if (op instanceof Count){
+//				value = sum(sameNameVariable);
+//				prettyPhrase = " count " + name ;
+//			}
+//		}
+//
+//		return new PrettyIEV(value, prettyPhrase);
+		return null; 
 	}
 
 	public Feature4Validator getRootF4V() {

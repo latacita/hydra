@@ -44,8 +44,5 @@ Require-Bundle: org.eclipse.core.runtime,
  es.uma.lcc.project.specializationmodel.edit;visibility:=reexport,
  es.uma.lcc.project.featuremodel;visibility:=reexport,
  es.uma.lcc.project.featuremodel.edit;visibility:=reexport,
- org.eclipse.ui,
- hub.sam.tef;bundle-version="1.0.9",
- tef.project;bundle-version="1.0.0",
- tef.project.model;bundle-version="1.0.0"
+ org.eclipse.ui
 Eclipse-LazyStart: true
