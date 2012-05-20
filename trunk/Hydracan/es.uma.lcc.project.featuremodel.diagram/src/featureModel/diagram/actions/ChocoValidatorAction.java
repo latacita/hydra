@@ -55,10 +55,12 @@ public class ChocoValidatorAction extends Action {
 		
 		if (project != null){
 			if (project instanceof specializationModel.Project){	
+				/**
 				specializationModel.diagram.validator.ChocoValidator cv = ((specializationModel.diagram.edit.parts.ProjectEditPart)diagramEditPart).getMyChocoValidator();
 				if (cv.canValidate()){
 					cv.validate();
 				}
+				**/
 			}
 		}
 	}	

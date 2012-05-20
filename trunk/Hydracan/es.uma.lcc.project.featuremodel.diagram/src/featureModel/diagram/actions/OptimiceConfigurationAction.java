@@ -31,9 +31,9 @@ import featureModel.diagram.misc.XMLManagement;
 import featureModel.diagram.part.FeaturemodelDiagramEditor;
 import featureModel.diagram.part.MultiPageEditor;
 import featureModel.diagram.part.MultiPageEditorContributor;
-import featureModel.diagram.validator.ChocoValidator;
-import featureModel.diagram.validator.ChocoValidatorFM;
-import featureModel.diagram.validator.ValidatorInterface;
+// import featureModel.diagram.validator.ChocoValidator;
+// import featureModel.diagram.validator.ChocoValidatorFM;
+// import featureModel.diagram.validator.ValidatorInterface;
 
 public class OptimiceConfigurationAction extends Action {
 	IEditorPart myEditor;
@@ -67,6 +67,7 @@ public class OptimiceConfigurationAction extends Action {
 	}
 
 	public void run() {
+		/**
 		if (canContinue()){
 
 			String path = null;
@@ -121,8 +122,9 @@ public class OptimiceConfigurationAction extends Action {
 				}
 				validator.loadModel();
 				IEditorPart multipageEditor = myContributor.getPage().getActiveEditor();
+				
 				validator.loadUserConstraints((tef.project.expressions.Model) ((MultiPageEditor)multipageEditor).getUserConstraints());
-
+				
 				String fileDialogString = null;
 				if (withFile){
 					FileDialog fileDialog = new FileDialog(window.getShell(), SWT.OPEN);
@@ -185,7 +187,8 @@ public class OptimiceConfigurationAction extends Action {
 				}
 			}
 
-		}	
+		}
+		**/
 	}
 
 }
