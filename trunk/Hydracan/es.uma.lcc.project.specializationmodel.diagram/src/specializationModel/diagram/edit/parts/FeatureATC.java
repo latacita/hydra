@@ -51,7 +51,7 @@ import specializationModel.SpecializationModelPackage;
 import specializationModel.diagram.edit.statics.CommonCommands;
 import specializationModel.diagram.edit.statics.PunisherTools;
 import specializationModel.diagram.providers.SpecializationmodelElementTypes;
-import specializationModel.diagram.validator.ChocoValidator;
+// import specializationModel.diagram.validator.ChocoValidator;
 
 public class FeatureATC extends AbstractTransactionalCommand {
 
@@ -74,6 +74,7 @@ public class FeatureATC extends AbstractTransactionalCommand {
 		if (thisObject.getState().equals(ConfigState.UNDECIDED) && relation != null && !((relation instanceof RelationFeature) && ((RelationFeature)relation).getType().equals(FeatureType.MANDATORY))){
 
 			ProjectEditPart pep = (ProjectEditPart) editPart.getParent();
+			/**
 			if (!project.isInfiniteDomain()){
 				ChocoValidator cv = pep.getMyChocoValidator();
 
@@ -94,6 +95,8 @@ public class FeatureATC extends AbstractTransactionalCommand {
 					pep.executePunishment();
 				}
 			}
+			
+			**/
 
 		}
 		return CommandResult.newOKCommandResult();

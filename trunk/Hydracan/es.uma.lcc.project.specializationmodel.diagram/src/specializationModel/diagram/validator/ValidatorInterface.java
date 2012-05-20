@@ -6,8 +6,8 @@ public interface ValidatorInterface {
 
 	public Object getMinConfiguration();
 
-	public void loadUserConstraints(
-			tef.project.expressions.Model userConstraints);
+/*	public void loadUserConstraints(
+			tef.project.expressions.Model userConstraints); */
 	
 	
 	public void validate();

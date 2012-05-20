@@ -17,7 +17,7 @@ import specializationModel.RelationFeature;
 import specializationModel.diagram.edit.parts.ProjectEditPart;
 import specializationModel.diagram.edit.parts.RelationFeatureEditPart;
 import specializationModel.diagram.edit.statics.PunisherTools;
-import specializationModel.diagram.validator.ChocoValidator;
+// import specializationModel.diagram.validator.ChocoValidator;
 
 public class RelationFeatureATC extends AbstractTransactionalCommand  {
 
@@ -27,8 +27,8 @@ public class RelationFeatureATC extends AbstractTransactionalCommand  {
 	public RelationFeatureATC(TransactionalEditingDomain editingDomain, EditPart myEditPart) {
 		super(editingDomain, "a message", null);
 		otherEditingDomain = editingDomain;
-		this.myEditPart =  (RelationFeatureEditPart) myEditPart;
-	}
+		this.myEditPart =  (RelationFeatureEditPart) myEditPart; 
+	} // RelationFeatureATC
 	
 	
 	@Override
@@ -37,9 +37,10 @@ public class RelationFeatureATC extends AbstractTransactionalCommand  {
 		Project project = (Project) thisObject.eContainer();
 		if (!thisObject.getTarget().getState().equals(ConfigState.USER_SELECTED)){
 			ProjectEditPart pep = (ProjectEditPart) myEditPart.getSource().getParent();
-			if (!project.isInfiniteDomain()){
-				ChocoValidator cv = pep.getMyChocoValidator();
-
+			/**
+			if (!project.isInfiniteDomain()) {
+				// ChocoValidator cv = pep.getMyChocoValidator();
+				
 				if (cv.canValidate()){
 					IntegerVariable iv = (IntegerVariable) thisObject.getTarget().getIntegerVariable();
 					cv.selectFeatureConstraint(iv);
@@ -54,12 +55,12 @@ public class RelationFeatureATC extends AbstractTransactionalCommand  {
 					ChocoValidator cv = pep.reloadChocoValidator();
 					cv.validate();
 					pep.executePunishment();
-				}
-				
-			}
-		}
-		return CommandResult.newOKCommandResult();
-	}
-	
+				} // if
+			} // if
+			**/
+		} 
+		// return CommandResult.newOKCommandResult(); **/
+		return null;		
+	} // 
 	
 }

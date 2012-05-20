@@ -39,7 +39,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.ui.handlers.HandlerUtil; 
 
 import specializationModel.ConfigState;
 import specializationModel.Feature;
@@ -48,7 +48,7 @@ import specializationModel.Relation;
 import specializationModel.SpecializationModelPackage;
 import specializationModel.diagram.edit.parts.FeatureEditPart;
 import specializationModel.diagram.edit.parts.ProjectEditPart;
-import specializationModel.diagram.validator.ChocoValidator;
+// import specializationModel.diagram.validator.ChocoValidator;
 import specializationModel.provider.SpecializationmodelEditPlugin;
 
 public class MyRestoreHandler extends AbstractHandler { 
@@ -63,8 +63,9 @@ public class MyRestoreHandler extends AbstractHandler {
 		selectedElement = (FeatureEditPart) selection.getFirstElement();
 		ProjectEditPart projectEditPart = (ProjectEditPart)selectedElement.getParent();
 
-		ChocoValidator cv = projectEditPart.getMyChocoValidator();
+		// ChocoValidator cv = projectEditPart.getMyChocoValidator();
 
+		/**
 		if (cv.canValidate()){
 
 
@@ -82,6 +83,7 @@ public class MyRestoreHandler extends AbstractHandler {
 				if ( !((View)v).isVisible() && eObject instanceof Feature && ((Feature)eObject).getFather().equals(feature))
 					listA.add(eObject);
 			}
+			**/
 
 
 
@@ -89,6 +91,7 @@ public class MyRestoreHandler extends AbstractHandler {
 			//			View v = findView((View) pep.getModel(), (EObject)node);
 			//			if (!v.isVisible()) listA.add(node);
 			//		}
+			/**
 			List<?> listB = new ArrayList();
 			ResourceLocator resourceLocator = SpecializationmodelEditPlugin.INSTANCE;
 
@@ -129,6 +132,7 @@ public class MyRestoreHandler extends AbstractHandler {
 				projectEditPart.executePunishment();
 			}
 		}
+		**/
 		return null;
 	} 
 	

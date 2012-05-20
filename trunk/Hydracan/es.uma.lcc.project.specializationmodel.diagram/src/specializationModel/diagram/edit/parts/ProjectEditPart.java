@@ -1,12 +1,12 @@
 package specializationModel.diagram.edit.parts;
 
-import hub.sam.tef.Utilities;
-import hub.sam.tef.modelcreating.IModelCreatingContext;
-import hub.sam.tef.modelcreating.ModelCreating;
-import hub.sam.tef.modelcreating.ModelCreatingContext;
-import hub.sam.tef.semantics.DefaultIdentificationScheme;
-import hub.sam.tef.semantics.DefaultSemanticsProvider;
-import hub.sam.tef.tsl.Syntax;
+//import hub.sam.tef.Utilities;
+//import hub.sam.tef.modelcreating.IModelCreatingContext;
+//import hub.sam.tef.modelcreating.ModelCreating;
+//import hub.sam.tef.modelcreating.ModelCreatingContext;
+//import hub.sam.tef.semantics.DefaultIdentificationScheme;
+//import hub.sam.tef.semantics.DefaultSemanticsProvider;
+//import hub.sam.tef.tsl.Syntax;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,16 +30,16 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import specializationModel.Project;
 import specializationModel.diagram.part.MainStatus;
-import specializationModel.diagram.validator.ChocoValidator;
+// import specializationModel.diagram.validator.ChocoValidator;
 import specializationModel.diagram.validator.PunisherValidator;
-import tef.project.ILangInstConstants;
-import tef.project.expressions.Model;
+// import tef.project.ILangInstConstants;
+// import tef.project.expressions.Model;
 
 /**
  * @generated
  */
 public class ProjectEditPart extends DiagramEditPart {
-	private ChocoValidator myChocoValidator = null;
+//	private ChocoValidator myChocoValidator = null;
 	public String projectPath = "";
 	private boolean isValidated = false;
 	private MainStatus mainStatus;
@@ -62,23 +62,23 @@ public class ProjectEditPart extends DiagramEditPart {
 
 
 	public void executePunishment(){
-		PunisherValidator pv = new PunisherValidator(this, myChocoValidator.getConfigurationSet());
-		pv.vendetta();
+	//	PunisherValidator pv = new PunisherValidator(this, myChocoValidator.getConfigurationSet());
+	//	pv.vendetta();
 	}
 	
 	public void delCurrentValidator(){
-		myChocoValidator = null;
+	//	myChocoValidator = null;
 	}
 	
 	public void loadModel(){
-		loadModel(getUserConstraints());
+	//	loadModel(getUserConstraints());
 	}
 	
-	public void loadModel(Model userConstraints){
-		myChocoValidator = new ChocoValidator((Project) ((View)this.getModel()).getElement(), this.getEditingDomain(), getMainStatus(), false);
-		myChocoValidator.loadModel();
-		if (userConstraints != null) myChocoValidator.loadUserConstraints(userConstraints);
-	}
+	// public void loadModel(Model userConstraints){
+	//	myChocoValidator = new ChocoValidator((Project) ((View)this.getModel()).getElement(), this.getEditingDomain(), getMainStatus(), false);
+	//	myChocoValidator.loadModel();
+	//	if (userConstraints != null) myChocoValidator.loadUserConstraints(userConstraints);
+	// }
 	
 	public void setMainStatus(MainStatus mainStatus){
 		this.mainStatus = mainStatus;
@@ -88,6 +88,7 @@ public class ProjectEditPart extends DiagramEditPart {
 		return mainStatus;
 	}
 
+	/**
 	private Model getUserConstraints(){	
 		Project project = (Project) ((View)this.getModel()).getElement();
 		IWorkspace workspace= ResourcesPlugin.getWorkspace();
@@ -111,10 +112,7 @@ public class ProjectEditPart extends DiagramEditPart {
 				} 
 			} 
 		} 
-		
-		
-		
-		
+				
 		File myFile = new File(path + slash + ruta);
 		FileReader fr = null;
 		try {
@@ -160,10 +158,12 @@ public class ProjectEditPart extends DiagramEditPart {
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		
 
 
-		return (Model) eoLangInstModel;
-	}
+		// return (Model) eoLangInstModel;
+		return null;
+	} **/
 
 	/**
 	 * @generated NOT
@@ -195,6 +195,7 @@ public class ProjectEditPart extends DiagramEditPart {
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
+	/**
 	public ChocoValidator getMyChocoValidator() {
 		if (myChocoValidator == null) loadModel();
 		return myChocoValidator;
@@ -213,6 +214,7 @@ public class ProjectEditPart extends DiagramEditPart {
 		loadModel();
 		return myChocoValidator;
 	}
+	**/
 
 	public boolean isValidated() {
 		return isValidated;

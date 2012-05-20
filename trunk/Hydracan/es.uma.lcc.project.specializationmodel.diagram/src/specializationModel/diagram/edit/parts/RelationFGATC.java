@@ -14,9 +14,9 @@ import specializationModel.Feature;
 import specializationModel.FeatureGroup;
 import specializationModel.Project;
 import specializationModel.RelationFG;
-import specializationModel.diagram.edit.statics.PunisherTools;
-import specializationModel.diagram.validator.ChocoValidator;
-import choco.kernel.model.variables.integer.IntegerVariable;
+// import specializationModel.diagram.edit.statics.PunisherTools;
+// import specializationModel.diagram.validator.ChocoValidator;
+// import choco.kernel.model.variables.integer.IntegerVariable;
 
 public class RelationFGATC extends AbstractTransactionalCommand {
 
@@ -39,6 +39,7 @@ public class RelationFGATC extends AbstractTransactionalCommand {
 		if (thisObject.getSource() instanceof FeatureGroup && thisObject.getTarget() instanceof Feature){
 			Project project = (Project) thisObject.eContainer();
 			ProjectEditPart pep = (ProjectEditPart) myEditPart.getSource().getParent();
+			/**
 			if (!project.isInfiniteDomain()){
 			ChocoValidator cv = pep.getMyChocoValidator();
 
@@ -60,6 +61,7 @@ public class RelationFGATC extends AbstractTransactionalCommand {
 				}
 				
 			}
+			**/
 		}
 		return CommandResult.newOKCommandResult();
 	}
