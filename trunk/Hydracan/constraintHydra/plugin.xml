@@ -12,9 +12,9 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://constLang/syntax"
-            class="syntax.SyntaxPackage"
-            genModel="metamodelos/syntax.genmodel"/>
+            uri="http://www.unican.es/personales/sanchezbp/spl/hydra/constraints"
+            class="HydraConstraints.HydraConstraintsPackage"
+            genModel="metamodelos/hydraConstraints.genmodel"/>
    </extension>
 
 </plugin>
