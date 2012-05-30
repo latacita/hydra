@@ -1,7 +1,0 @@
-# Tracing options for the es.uma.lcc.project.featuremodel.diagram plug-in
-
-# Common issues
-es.uma.lcc.project.featuremodel.diagram/debug=false
-
-# Visual IDs
-es.uma.lcc.project.featuremodel.diagram/debug/visualID=false

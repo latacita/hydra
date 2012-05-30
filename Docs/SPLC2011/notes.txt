@@ -1,9 +1,0 @@
-%===============================================================================%
-% Author: Pablo Sánchez (pablo@lcc.uma.es; http://www.lcc.uma.es/~pablo)        %
-% Notes taken while elaborating the paper for Caise 2010 about validation of    %
-% features in the presence of clonable features                                 %
-%===============================================================================%
-
-(1) For the journal paper on Hydra, comment on the nice feature about references in
-    the configuration, the nice and convincing example is configuration of the bedrooms.
-(2)
