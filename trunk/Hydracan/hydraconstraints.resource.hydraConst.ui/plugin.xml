@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="hydraconstraints.resource.hydraConst.ui.HydraConstUIMetaInformation" id="hydraconstraints.resource.hydraConst.ui.HydraConstUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="hydraconstraints.resource.hydraConst.ui.HydraConstEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="hydraConst" icon="icons/editor_icon.gif" id="hydraconstraints.resource.hydraConst.ui.HydraConstEditor" name="EMFText hydraConst Editor">
+			<contentTypeBinding contentTypeId="hydraconstraints.resource.hydraConst">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="hydraconstraints.resource.hydraConst.ui.HydraConstPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="HydraConst Text Editor" id="hydraconstraints.resource.hydraConst.ui.HydraConstPreferencePage" class="hydraconstraints.resource.hydraConst.ui.HydraConstPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="hydraconstraints.resource.hydraConst.ui.HydraConstSyntaxColoringPreferencePage" class="hydraconstraints.resource.hydraConst.ui.HydraConstSyntaxColoringPreferencePage" category="hydraconstraints.resource.hydraConst.ui.HydraConstPreferencePage">
+		</page>
+		<page name="Brackets" id="hydraconstraints.resource.hydraConst.ui.HydraConstBracketPreferencePage" class="hydraconstraints.resource.hydraConst.ui.HydraConstBracketPreferencePage" category="hydraconstraints.resource.hydraConst.ui.HydraConstPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="hydraconstraints.resource.hydraConst.ui.HydraConstNewFileWizard" id="hydraconstraints.resource.hydraConst.ui.HydraConstNewFileWizard" name="EMFText .hydraConst file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="hydraconstraints.resource.hydraConst.ui.HydraConstNewProjectWizard" id="hydraconstraints.resource.hydraConst.ui.HydraConstNewProjectWizard" name="EMFText hydraConst project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="hydraconstraints.resource.hydraConst.ui.HydraConstMarkerResolutionGenerator" markerType="hydraconstraints.resource.hydraConst.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="hydraconstraints.resource.hydraConst.ui.HydraConstAnnotationModelFactory" extensions="hydraConst">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="hydraconstraints.resource.hydraConst" name=".hydraConst File" base-type="org.eclipse.core.runtime.text" file-extensions="hydraConst">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="hydraConst" id="hydraconstraints.resource.hydraConst.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="hydraconstraints.resource.hydraConst.ui.occurences">
+		</type>
+		<type name="hydraconstraints.resource.hydraConst.ui.occurences.declaration" super="hydraconstraints.resource.hydraConst.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="hydraconstraints.resource.hydraConst.ui.occurences" label="Occurrences (in .hydraConst files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="hydraConst.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="hydraConst.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="hydraConst.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="hydraConst.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="hydraConst.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="hydraConst.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="hydraConst.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="hydraConst.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="hydraConst.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="hydraconstraints.resource.hydraConst.ui.occurences.declaration" label="Declarations (in .hydraConst files)" textPreferenceKey="hydraConst.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="hydraConst.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="hydraConst.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="hydraConst.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="hydraConst.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="hydraConst.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="hydraconstraints.resource.hydraConst.ui.launchConfigurationType" id="hydraConst.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="hydraconstraints.resource.hydraConst.ui.launchConfigurationType" class="hydraconstraints.resource.hydraConst.ui.launch.HydraConstLaunchConfigurationTabGroup" id="hydraConst.launchConfigurationTabGroup" helpContextId="hydraConst.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug hydraConst model.">
+			</launchMode>
+			<launchMode mode="run" description="Run hydraConst model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="hydraConst Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="hydraConst.launch" modes="run,debug" class="hydraconstraints.resource.hydraConst.ui.launch.HydraConstLaunchShortcut" description="Launch a hydraConst model" id="hydraConst.launchShortcut">
+			<description description="Run hydraConst model" mode="run">
+			</description>
+			<description description="Debug hydraConst model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="hydraConst.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="hydraconstraints.resource.hydraConst.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="hydraConst.PropertyTester" type="java.lang.Object" namespace="hydraConst" properties="isLaunchable" class="hydraconstraints.resource.hydraConst.ui.HydraConstPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="hydraconstraints.resource.hydraConst.ui.debug.lineBreakpoint" markerType="hydraconstraints.resource.hydraConst.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="hydraconstraints.resource.hydraConst.ui.debug.lineBreakpoint" label="Breakpoints (in .hydraConst files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="hydraconstraints.resource.hydraConst.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="hydraconstraints.resource.hydraConst.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="hydraconstraints.resource.hydraConst.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="hydraconstraints.resource.hydraConst.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="hydraconstraints.resource.hydraConst.ui.HydraConstEditor" class="hydraconstraints.resource.hydraConst.ui.debug.HydraConstAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="hydraconstraints.resource.hydraConst.debug.HydraConstDebugVariable" class="hydraconstraints.resource.hydraConst.ui.debug.HydraConstAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="hydraconstraints.resource.hydraConst.debug.HydraConstDebugVariable" class="hydraconstraints.resource.hydraConst.ui.debug.HydraConstAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="hydraconstraints.resource.hydraConst.ui.RulerPopupActions" targetID="hydraconstraints.resource.hydraConst.EditorRuler">
+			<action id="hydraconstraints.resource.hydraConst.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="hydraconstraints.resource.hydraConst.ui.HydraConstEditor" id="hydraconstraints.resource.hydraConst.ui.BreakpointRulerActions">
+			<action id="hydraconstraints.resource.hydraConst.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="hydraconstraints.resource.hydraConst.debugModel" class="hydraconstraints.resource.hydraConst.ui.debug.HydraConstDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>
