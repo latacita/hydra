@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.unican.hydracan.constraintHydra/src"
+    modelPluginID="es.unican.hydracan.constraintHydra" modelName="HydraConstraints"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>hydraConstraints.ecore</foreignModel>
+  <genPackages prefix="Hydraconstraints" disposableProviderFactory="true" ecorePackage="hydraConstraints.ecore#/">
+    <genClasses ecoreClass="hydraConstraints.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//Model/featureList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Model/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Constraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Constraint/operators"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//Operand"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BoolOperand"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//BoolPriorityOperand1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//BoolPriorityOperand1/boolPriorityOp1"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//BoolPriorityOperand2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//BoolPriorityOperand2/boolPriorityOp2"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//LogicalOperator"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//UnaryOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//UnaryOp/unaryOp"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Neg"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BinaryOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//BinaryOp/binaryOp1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//BinaryOp/binaryOp2"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//And"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Or"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Implies"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Xor"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Comparison/compOp1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Comparison/compOp2"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//More"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//MoreOrEqual"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//NotEqual"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Less"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Equal"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//LessOrEqual"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperand"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//NumPriorityOperand2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//NumPriorityOperand2/numPriorityOp2"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//NumPriorityOperand1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//NumPriorityOperand1/numPriorityOp1"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//NumOperator/numOp1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//NumOperator/numOp2"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Plus"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Mul"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Minus"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Div"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperandChoices"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//MultipleFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//MultipleFeature/featureName"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BoolOperandChoices"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Context">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Context/contextOp2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Context/contextOp1"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//Selection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Selection/selectionOp"/>
+    </genClasses>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Any"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//All"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//Number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//Number/numValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
