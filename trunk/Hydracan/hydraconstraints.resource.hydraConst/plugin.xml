@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="hydraconstraints.resource.hydraConst.mopp.HydraConstMetaInformation" id="hydraconstraints.resource.hydraConst.mopp.HydraConstMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="hydraconstraints.resource.hydraConst.problem">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="hydraconstraints.resource.hydraConst.problem">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="hydraconstraints.resource.hydraConst.problem">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="hydraconstraints.resource.hydraConst.problem">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="hydraconstraints.resource.hydraConst.problem">
+		</super>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.nature" name="hydraConst nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="hydraconstraints.resource.hydraConst.mopp.HydraConstNature">
+			</run>
+		</runtime>
+		<builder id="hydraconstraints.resource.hydraConst.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="hydraconstraints.resource.hydraConst.builder" name="hydraConst Builder">
+		<builder hasNature="true">
+			<run class="hydraconstraints.resource.hydraConst.mopp.HydraConstBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="hydraconstraints.resource.hydraConst.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="hydraconstraints.resource.hydraConst.mopp.HydraConstResourceFactoryDelegator" type="hydraConst">
+		</parser>
+	</extension>
+	
+	<extension-point id="hydraconstraints.resource.hydraConst.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="hydraconstraints.resource.hydraConst.debug.HydraConstLineBreakpoint" id="hydraconstraints.resource.hydraConst.debug.breakpoint" markerType="hydraconstraints.resource.hydraConst.debug.lineBreakpoint.marker" name="hydraConst Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="hydraconstraints.resource.hydraConst.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="hydraconstraints.resource.hydraConst.ui.launchConfigurationType" delegate="hydraconstraints.resource.hydraConst.launch.HydraConstLaunchConfigurationDelegate" modes="run,debug" name="hydraConst Application" sourceLocatorId="hydraconstraints.resource.hydraConst.ui.sourceLocator" sourcePathComputerId="hydraconstraints.resource.hydraConst.ui.sourcePathComputer" delegateName="hydraConst Launch Tooling" delegateDescription="This will run or debug .hydraConst files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="hydraconstraints.resource.hydraConst.debug.HydraConstSourcePathComputerDelegate" id="hydraconstraints.resource.hydraConst.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="hydraconstraints.resource.hydraConst.ui.sourceLocator" class="hydraconstraints.resource.hydraConst.debug.HydraConstSourceLocator" name="hydraConst Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>
