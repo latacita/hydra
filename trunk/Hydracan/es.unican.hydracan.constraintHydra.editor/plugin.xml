@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hydraconstraints.presentation.HydraconstraintsModelWizardID"
+            name="%_UI_HydraconstraintsModelWizard_label"
+            class="hydraconstraints.presentation.HydraconstraintsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HydraconstraintsModelFile.gif">
+         <description>%_UI_HydraconstraintsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="hydraconstraints.presentation.HydraconstraintsEditorID"
+            name="%_UI_HydraconstraintsEditor_label"
+            icon="icons/full/obj16/HydraconstraintsModelFile.gif"
+            extensions="hydraconstraints"
+            class="hydraconstraints.presentation.HydraconstraintsEditor"
+            contributorClass="hydraconstraints.presentation.HydraconstraintsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
