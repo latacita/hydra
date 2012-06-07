@@ -246,6 +246,8 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		}
 		return true;
 		*/
+		
+		// PARTE GENERADA:
 		if (!validate_NoCircularContainment(model, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(model, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(model, diagnostics, context);
