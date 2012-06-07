@@ -6,6 +6,7 @@
  */
 package hydraconstraints.util;
 
+import java.util.*;
 import hydraconstraints.All;
 import hydraconstraints.And;
 import hydraconstraints.Any;
@@ -51,7 +52,9 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -137,7 +140,7 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case HydraconstraintsPackage.MODEL:
-				return validateModel((Model)value, diagnostics, context);
+				return validateModel((Model)value, diagnostics, context, (EObject) value);
 			case HydraconstraintsPackage.CONSTRAINT:
 				return validateConstraint((Constraint)value, diagnostics, context);
 			case HydraconstraintsPackage.OPERAND:
@@ -222,9 +225,38 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean validateModel(Model model, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		 Diagnostic diagnostic = Diagnostician.INSTANCE.validate(model);
-		 return diagnostic.getSeverity() == Diagnostic.OK;
+	public boolean validateModel(Model model, DiagnosticChain diagnostics, Map<Object, Object> context, EObject eObject) {
+		
+		EValidator validator = EValidator.Registry.INSTANCE.getEValidator(eObject.eClass().getEPackage());
+		/*
+		if (validator != null )
+		{
+			if (!validator.validate(eObject,null,null))
+			{
+				return false;
+			}
+			
+			for (Iterator i=eObject.eAllContents(); i.hasNext() ;)
+			{
+				if(!validator.validate((EObject)i.next(),null,null))
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+		*/
+		if (!validate_NoCircularContainment(model, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validateModel_nombreCorrecto(model, diagnostics, context);
+		return result;
 	}
 
 	/**
