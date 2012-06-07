@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_sLhacbCwEeGNTqXAlidnLw" type="EcoreTools" name="test" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_sl5pULCwEeGNTqXAlidnLw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_smDaULCwEeGNTqXAlidnLw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_smMkQLCwEeGNTqXAlidnLw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_uPs4sLCwEeGNTqXAlidnLw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="test.ecore#//Person/age"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uPs4sbCwEeGNTqXAlidnLw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_smMkQbCwEeGNTqXAlidnLw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_smMkQrCwEeGNTqXAlidnLw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_smMkQ7CwEeGNTqXAlidnLw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_smMkRLCwEeGNTqXAlidnLw" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_GANggLCxEeGNTqXAlidnLw" type="2002">
+        <element xmi:type="ecore:EOperation" href="test.ecore#//Person/isAgeValid"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GANggbCxEeGNTqXAlidnLw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_smMkRbCwEeGNTqXAlidnLw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_smMkRrCwEeGNTqXAlidnLw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_smMkR7CwEeGNTqXAlidnLw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_sl5pUbCwEeGNTqXAlidnLw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="test.ecore#//Person"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sl5pUrCwEeGNTqXAlidnLw" x="152" y="172"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_sLhacrCwEeGNTqXAlidnLw"/>
+  <element xmi:type="ecore:EPackage" href="test.ecore#/"/>
+</notation:Diagram>
