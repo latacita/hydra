@@ -9,6 +9,10 @@
     <genClasses ecoreClass="hydraConstraints.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//Model/featureList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Model/constraints"/>
+      <genOperations ecoreOperation="hydraConstraints.ecore#//Model/nombreCorrecto">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/nombreCorrecto/diagnostics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/nombreCorrecto/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="hydraConstraints.ecore#//Constraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Constraint/operators"/>

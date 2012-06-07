@@ -12,13 +12,17 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Kk6pE6nSEeGPhK-ob9vfgg"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_Kk7QIKnSEeGPhK-ob9vfgg" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_OCAroKs-EeGUHb3aO18-PA" type="2002">
+        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//Model/nombreCorrecto"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OCAroas-EeGUHb3aO18-PA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Kk7QIanSEeGPhK-ob9vfgg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Kk7QIqnSEeGPhK-ob9vfgg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Kk7QI6nSEeGPhK-ob9vfgg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Kk1wkKnSEeGPhK-ob9vfgg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="hydraConstraints.ecore#//Model"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kk1wkanSEeGPhK-ob9vfgg" x="100" y="64"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kk1wkanSEeGPhK-ob9vfgg" x="96" y="40" width="143" height="71"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_TOqtIKnSEeGPhK-ob9vfgg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_TOr7QKnSEeGPhK-ob9vfgg" type="4001"/>

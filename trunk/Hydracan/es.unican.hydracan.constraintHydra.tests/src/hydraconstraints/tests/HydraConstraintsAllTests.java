@@ -35,6 +35,7 @@ public class HydraConstraintsAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new HydraConstraintsAllTests("HydraConstraints Tests");
+		suite.addTest(HydraconstraintsTests.suite());
 		return suite;
 	}
 
