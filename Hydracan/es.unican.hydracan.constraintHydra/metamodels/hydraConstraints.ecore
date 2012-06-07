@@ -4,6 +4,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hydraconstraints"
     nsURI="http://www.unican.es/personales/sanchezbp/spl/hydra/constraints" nsPrefix="es.hydracan.constraintHydra">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eOperations name="nombreCorrecto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureList" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"

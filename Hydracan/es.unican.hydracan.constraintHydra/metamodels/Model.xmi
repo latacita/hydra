@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="ASCII"?>
+<es.hydracan.constraintHydra:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es.hydracan.constraintHydra="http://www.unican.es/personales/sanchezbp/spl/hydra/constraints" xsi:schemaLocation="http://www.unican.es/personales/sanchezbp/spl/hydra/constraints hydraConstraints.ecore" featureList="k"/>

@@ -6,6 +6,8 @@
  */
 package hydraconstraints;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -69,5 +71,13 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Constraint> getConstraints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean nombreCorrecto(DiagnosticChain diagnostics, Map context);
 
 } // Model
