@@ -6,7 +6,6 @@
  */
 package hydraconstraints.util;
 
-import java.util.*;
 import hydraconstraints.All;
 import hydraconstraints.And;
 import hydraconstraints.Any;
@@ -140,7 +139,7 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case HydraconstraintsPackage.MODEL:
-				return validateModel((Model)value, diagnostics, context, (EObject) value);
+				return validateModel((Model)value, diagnostics, context);
 			case HydraconstraintsPackage.CONSTRAINT:
 				return validateConstraint((Constraint)value, diagnostics, context);
 			case HydraconstraintsPackage.OPERAND:
@@ -223,31 +222,9 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public boolean validateModel(Model model, DiagnosticChain diagnostics, Map<Object, Object> context, EObject eObject) {
-		
-		EValidator validator = EValidator.Registry.INSTANCE.getEValidator(eObject.eClass().getEPackage());
-		/*
-		if (validator != null )
-		{
-			if (!validator.validate(eObject,null,null))
-			{
-				return false;
-			}
-			
-			for (Iterator i=eObject.eAllContents(); i.hasNext() ;)
-			{
-				if(!validator.validate((EObject)i.next(),null,null))
-				{
-					return false;
-				}
-			}
-		}
-		return true;
-		*/
-		
-		// PARTE GENERADA:
+	public boolean validateModel(Model model, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(model, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(model, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(model, diagnostics, context);
