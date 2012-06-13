@@ -11,9 +11,17 @@ import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Model;
 
 import hydraconstraints.util.HydraconstraintsValidator;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Collection;
 
 import java.util.Map;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -32,6 +40,8 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.osgi.framework.Bundle;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,22 +143,60 @@ public class ModelImpl extends EObjectImpl implements Model {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public boolean nombreCorrecto(DiagnosticChain diagnostics, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
-
-		if (true) {
-			System.out.println("Hola");
+		
+		String str="fallo";
+		Bundle bundle;
+		bundle = Platform.getBundle("es.unican.hydracan.constraintHydra");
+		Path path = new Path("carpeta/"+this.featureList+".xmi");
+		URL launcherURL = FileLocator.find(bundle, path, null);
+		URL launcherFileURL = null;
+		
+		try {
+			launcherFileURL = FileLocator.toFileURL(launcherURL);
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			System.out.println("hola1");
+		} 
+		
+		File buildFile = null;
+		try {
+			buildFile = new File(launcherFileURL.toURI());
+		} catch (Exception e1) {
+			System.out.println("hola2");
+		} 
+		
+		BufferedReader ent=null;
+		
+	    try {
+			ent = new BufferedReader(new FileReader(buildFile));
+			str="bien";
+		} catch (Exception e) {
+			str="FilenotFound";
+		} finally {
+			try {
+				ent.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println("Hola3");
+			}
+		}
+		
+		if (!str.equals("bien")) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
 						 HydraconstraintsValidator.MODEL__NOMBRE_CORRECTO,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "nombreCorrecto", EObjectValidator.getObjectLabel(this, context) }),
+						 //EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "nombreCorrecto", EObjectValidator.getObjectLabel(this, context) }),
+						 str,
 						 new Object [] { this }));
 			}
 			return false;
