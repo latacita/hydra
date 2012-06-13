@@ -107,7 +107,7 @@ public class PersonImpl extends EObjectImpl implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isAgeValid(DiagnosticChain diag, Map context) {
+	public boolean isAgeValid(DiagnosticChain diag, Map<Object,Object> context) {
 		// -> specify the condition that violates the invariant
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
