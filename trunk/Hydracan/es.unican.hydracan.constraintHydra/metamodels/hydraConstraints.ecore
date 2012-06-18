@@ -76,6 +76,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//NumOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumOperandChoices" abstract="true" eSuperTypes="#//NumOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultipleFeature" eSuperTypes="#//NumOperandChoices">
+    <eOperations name="existeFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostnics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

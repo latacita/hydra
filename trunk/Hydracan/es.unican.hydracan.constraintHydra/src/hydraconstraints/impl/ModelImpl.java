@@ -6,6 +6,8 @@
  */
 package hydraconstraints.impl;
 
+import featureModel.FeatureModelPackage;
+import featureModel.Project;
 import hydraconstraints.Constraint;
 import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Model;
@@ -16,12 +18,16 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Collection;
+import java.util.Collections;
 
 import java.util.Map;
 
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -29,17 +35,23 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import org.osgi.framework.Bundle;
 
@@ -143,7 +155,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean nombreCorrecto(DiagnosticChain diagnostics, Map context) {
 		// TODO: implement this method
@@ -151,44 +163,58 @@ public class ModelImpl extends EObjectImpl implements Model {
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
 		
-		String str="fallo";
-		Bundle bundle;
-		bundle = Platform.getBundle("es.unican.hydracan.constraintHydra");
-		Path path = new Path("carpeta/"+this.featureList+".xmi");
-		URL launcherURL = FileLocator.find(bundle, path, null);
-		URL launcherFileURL = null;
+		String resultado="Error sin determinar"; // String que se utilizara para controlar la validacion
 		
-		try {
-			launcherFileURL = FileLocator.toFileURL(launcherURL);
-		} catch (Exception e2) {
-			// TODO Auto-generated catch block
-			System.out.println("hola1");
-		} 
-		
-		File buildFile = null;
-		try {
-			buildFile = new File(launcherFileURL.toURI());
-		} catch (Exception e1) {
-			System.out.println("hola2");
-		} 
-		
+		// Cargamos el fichero que se pasa a traves del import
+		// y controlamos el valor de str en funcion de su existencia
+		File buildFile=new File(this.featureList); 
 		BufferedReader ent=null;
-		
 	    try {
 			ent = new BufferedReader(new FileReader(buildFile));
-			str="bien";
+			resultado="bien";
 		} catch (Exception e) {
-			str="FilenotFound";
+			resultado="Archivo de feature model no encontrado";
 		} finally {
 			try {
 				ent.close();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println("Hola3");
+				resultado="Error con el archivo de feature model";
 			}
 		}
+	    
+	    
 		
-		if (!str.equals("bien")) {
+	    // Registramos el fichero xmi en URI propia
+	    if (resultado.equals("bien")) { // Solo hacemos esto si el fichero existe
+	    	
+	    	String direccion=buildFile.toString();
+	    	
+	    	// Cargamos el fichero xmi en forma de URI 
+			ResourceSet resSet = new ResourceSetImpl();
+			Resource resource = resSet.getResource(URI
+					.createFileURI(direccion), true);
+			Project featureModel = (Project) resource.getContents().get(0);
+			
+			
+			// Como el proyecto esta en SVN necesitamos URIs absolutas
+			// Para ello necesito la direccion del workspace:
+			IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
+			File workspaceDirectory = workspace.getRoot().getLocation().toFile();
+			// Escribimos en una URI privada el modelo para que sea accesible por todos
+			URI uri = URI.createFileURI(workspaceDirectory.toString()+"/modelo.xmi");
+			resource = resSet.createResource(uri);
+			resource.getContents().add(featureModel);
+			try {
+				resource.save(Collections.EMPTY_MAP);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+	    }
+	    
+	    // Validacion
+		if (!resultado.equals("bien")) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
@@ -196,7 +222,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
 						 HydraconstraintsValidator.MODEL__NOMBRE_CORRECTO,
 						 //EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "nombreCorrecto", EObjectValidator.getObjectLabel(this, context) }),
-						 str,
+						 resultado,
 						 new Object [] { this }));
 			}
 			return false;

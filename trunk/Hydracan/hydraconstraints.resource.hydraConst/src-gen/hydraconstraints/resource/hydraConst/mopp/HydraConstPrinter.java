@@ -226,7 +226,7 @@ public class HydraConstPrinter implements hydraconstraints.resource.hydraConst.I
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hydraconstraints.HydraconstraintsPackage.MODEL__FEATURE_LIST));
 			if (o != null) {
-				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver resolver = tokenResolverFactory.createTokenResolver("TEXT");
+				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver resolver = tokenResolverFactory.createTokenResolver("DIRECCION");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hydraconstraints.HydraconstraintsPackage.MODEL__FEATURE_LIST), element));
 				out.print(" ");

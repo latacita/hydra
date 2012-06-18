@@ -500,13 +500,17 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_GnJkQ6nYEeGdIvcl_91uHg"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_GnJkRKnYEeGdIvcl_91uHg" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_nBwSAbgIEeGwQpeFZF5m1g" type="2002">
+        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//MultipleFeature/existeFeature"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nBw5ELgIEeGwQpeFZF5m1g"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_GnJkRanYEeGdIvcl_91uHg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_GnJkRqnYEeGdIvcl_91uHg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_GnJkR6nYEeGdIvcl_91uHg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_GnIWIanYEeGdIvcl_91uHg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="hydraConstraints.ecore#//MultipleFeature"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GnIWIqnYEeGdIvcl_91uHg" x="688" y="268"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GnIWIqnYEeGdIvcl_91uHg" x="688" y="268" width="155" height="63"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_OnQ1cKnYEeGdIvcl_91uHg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_OnRcgKnYEeGdIvcl_91uHg" type="4001"/>
@@ -1039,7 +1043,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_0UNi8anYEeGdIvcl_91uHg" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_0UNi8qnYEeGdIvcl_91uHg" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0UNi86nYEeGdIvcl_91uHg" points="[4, 0, -408, 26]$[198, 0, -214, 26]$[198, -16, -214, 10]$[392, -16, -20, 10]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0UNi86nYEeGdIvcl_91uHg" points="[4, 0, -408, 26]$[455, 0, 43, 26]$[455, -12, 43, 14]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0UP_MKnYEeGdIvcl_91uHg" id="(0.9607843137254902,0.8095238095238095)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0UP_ManYEeGdIvcl_91uHg" id="(0.16535433070866143,0.6666666666666666)"/>
   </edges>

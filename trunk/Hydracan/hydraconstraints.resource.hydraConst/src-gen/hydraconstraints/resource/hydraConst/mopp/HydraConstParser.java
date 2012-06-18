@@ -8,10 +8,9 @@ import java.util.HashMap;
 @SuppressWarnings("unused")
 public class HydraConstParser extends HydraConstANTLRParserBase {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "TEXT", "DIGIT", "WHITESPACE", "LINEBREAK", "'import'", "';'", "'('", "')'", "'and'", "'or'", "'xor'", "'implies'", "'!'", "'+'", "'-'", "'*'", "'/'", "'['", "']'", "'all'", "'any'", "'>'", "'>='", "'<'", "'<='", "'!='", "'=='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DIRECCION", "TEXT", "DIGIT", "WHITESPACE", "LINEBREAK", "'import'", "';'", "'('", "')'", "'and'", "'or'", "'xor'", "'implies'", "'!'", "'+'", "'-'", "'*'", "'/'", "'['", "']'", "'all'", "'any'", "'>'", "'>='", "'<'", "'<='", "'!='", "'=='"
     };
     public static final int EOF=-1;
-    public static final int T__8=8;
     public static final int T__9=9;
     public static final int T__10=10;
     public static final int T__11=11;
@@ -34,10 +33,12 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
     public static final int T__28=28;
     public static final int T__29=29;
     public static final int T__30=30;
-    public static final int TEXT=4;
-    public static final int DIGIT=5;
-    public static final int WHITESPACE=6;
-    public static final int LINEBREAK=7;
+    public static final int T__31=31;
+    public static final int DIRECCION=4;
+    public static final int TEXT=5;
+    public static final int DIGIT=6;
+    public static final int WHITESPACE=7;
+    public static final int LINEBREAK=8;
 
     // delegates
     // delegators
@@ -630,7 +631,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
 
 
     // $ANTLR start "parse_hydraconstraints_Model"
-    // HydraConst.g:557:1: parse_hydraconstraints_Model returns [hydraconstraints.Model element = null] : a0= 'import' (a1= TEXT ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )* ;
+    // HydraConst.g:557:1: parse_hydraconstraints_Model returns [hydraconstraints.Model element = null] : a0= 'import' (a1= DIRECCION ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )* ;
     public final hydraconstraints.Model parse_hydraconstraints_Model() throws RecognitionException {
         hydraconstraints.Model element =  null;
         int parse_hydraconstraints_Model_StartIndex = input.index();
@@ -645,10 +646,10 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return element; }
-            // HydraConst.g:560:1: (a0= 'import' (a1= TEXT ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )* )
-            // HydraConst.g:561:2: a0= 'import' (a1= TEXT ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )*
+            // HydraConst.g:560:1: (a0= 'import' (a1= DIRECCION ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )* )
+            // HydraConst.g:561:2: a0= 'import' (a1= DIRECCION ) a2= ';' ( ( (a3_0= parse_hydraconstraints_Constraint ) a4= ';' ) )*
             {
-            a0=(Token)match(input,8,FOLLOW_8_in_parse_hydraconstraints_Model115); if (state.failed) return element;
+            a0=(Token)match(input,9,FOLLOW_9_in_parse_hydraconstraints_Model115); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -666,10 +667,10 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_1, 1);
               	
             }
-            // HydraConst.g:575:2: (a1= TEXT )
-            // HydraConst.g:576:3: a1= TEXT
+            // HydraConst.g:575:2: (a1= DIRECCION )
+            // HydraConst.g:576:3: a1= DIRECCION
             {
-            a1=(Token)match(input,TEXT,FOLLOW_TEXT_in_parse_hydraconstraints_Model133); if (state.failed) return element;
+            a1=(Token)match(input,DIRECCION,FOLLOW_DIRECCION_in_parse_hydraconstraints_Model133); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               			if (terminateParsing) {
@@ -680,7 +681,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               				incompleteObjects.push(element);
               			}
               			if (a1 != null) {
-              				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
+              				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("DIRECCION");
               				tokenResolver.setOptions(getOptions());
               				hydraconstraints.resource.hydraConst.IHydraConstTokenResolveResult result = getFreshTokenResolveResult();
               				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hydraconstraints.HydraconstraintsPackage.MODEL__FEATURE_LIST), result);
@@ -709,7 +710,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_2, 2);
               	
             }
-            a2=(Token)match(input,9,FOLLOW_9_in_parse_hydraconstraints_Model154); if (state.failed) return element;
+            a2=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_Model154); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -742,7 +743,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=TEXT && LA1_0<=DIGIT)||LA1_0==10||LA1_0==16||(LA1_0>=23 && LA1_0<=24)) ) {
+                if ( ((LA1_0>=TEXT && LA1_0<=DIGIT)||LA1_0==11||LA1_0==17||(LA1_0>=24 && LA1_0<=25)) ) {
                     alt1=1;
                 }
 
@@ -792,7 +793,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             	      				addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_13, 4);
             	      			
             	    }
-            	    a4=(Token)match(input,9,FOLLOW_9_in_parse_hydraconstraints_Model211); if (state.failed) return element;
+            	    a4=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_Model211); if (state.failed) return element;
             	    if ( state.backtracking==0 ) {
 
             	      				if (element == null) {
@@ -882,7 +883,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==10) ) {
+            if ( (LA2_0==11) ) {
                 int LA2_1 = input.LA(2);
 
                 if ( (synpred2_HydraConst()) ) {
@@ -899,7 +900,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                     throw nvae;
                 }
             }
-            else if ( ((LA2_0>=TEXT && LA2_0<=DIGIT)||LA2_0==16||(LA2_0>=23 && LA2_0<=24)) ) {
+            else if ( ((LA2_0>=TEXT && LA2_0<=DIGIT)||LA2_0==17||(LA2_0>=24 && LA2_0<=25)) ) {
                 alt2=1;
             }
             else {
@@ -958,7 +959,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 case 2 :
                     // HydraConst.g:735:4: a1= '(' (a2_0= parse_hydraconstraints_Operand ) a3= ')'
                     {
-                    a1=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_Constraint285); if (state.failed) return element;
+                    a1=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_Constraint285); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1022,7 +1023,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                       		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_15, 9);
                       	
                     }
-                    a3=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_Constraint321); if (state.failed) return element;
+                    a3=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_Constraint321); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1079,10 +1080,10 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==10) ) {
+            if ( (LA3_0==11) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==TEXT||(LA3_0>=23 && LA3_0<=24)) ) {
+            else if ( (LA3_0==TEXT||(LA3_0>=24 && LA3_0<=25)) ) {
                 alt3=2;
             }
             else {
@@ -1096,7 +1097,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 case 1 :
                     // HydraConst.g:804:2: a0= '(' (a1_0= parse_hydraconstraints_BoolOperand ) a2= ')'
                     {
-                    a0=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_BoolPriorityOperand1350); if (state.failed) return element;
+                    a0=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand1350); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1160,7 +1161,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                       		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_16, 12);
                       	
                     }
-                    a2=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand1386); if (state.failed) return element;
+                    a2=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_BoolPriorityOperand1386); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1266,7 +1267,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==10) ) {
+            if ( (LA4_0==11) ) {
                 int LA4_1 = input.LA(2);
 
                 if ( (synpred4_HydraConst()) ) {
@@ -1283,7 +1284,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                     throw nvae;
                 }
             }
-            else if ( ((LA4_0>=TEXT && LA4_0<=DIGIT)||LA4_0==16||(LA4_0>=23 && LA4_0<=24)) ) {
+            else if ( ((LA4_0>=TEXT && LA4_0<=DIGIT)||LA4_0==17||(LA4_0>=24 && LA4_0<=25)) ) {
                 alt4=2;
             }
             else {
@@ -1297,7 +1298,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 case 1 :
                     // HydraConst.g:905:2: a0= '(' (a1_0= parse_hydraconstraints_BoolOperand ) a2= ')'
                     {
-                    a0=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_BoolPriorityOperand2441); if (state.failed) return element;
+                    a0=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand2441); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1361,7 +1362,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                       		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_22, 16);
                       	
                     }
-                    a2=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand2477); if (state.failed) return element;
+                    a2=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_BoolPriorityOperand2477); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1470,7 +1471,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             if ( ((LA5_0>=TEXT && LA5_0<=DIGIT)) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==10) ) {
+            else if ( (LA5_0==11) ) {
                 alt5=2;
             }
             else {
@@ -1531,7 +1532,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 case 2 :
                     // HydraConst.g:1036:4: a1= '(' (a2_0= parse_hydraconstraints_NumOperand ) a3= ')'
                     {
-                    a1=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_NumPriorityOperand1558); if (state.failed) return element;
+                    a1=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand1558); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1590,7 +1591,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                       		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_27, 21);
                       	
                     }
-                    a3=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand1594); if (state.failed) return element;
+                    a3=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_NumPriorityOperand1594); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1652,7 +1653,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             if ( ((LA6_0>=TEXT && LA6_0<=DIGIT)) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==10) ) {
+            else if ( (LA6_0==11) ) {
                 int LA6_3 = input.LA(2);
 
                 if ( (synpred6_HydraConst()) ) {
@@ -1732,7 +1733,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 case 2 :
                     // HydraConst.g:1137:4: a1= '(' (a2_0= parse_hydraconstraints_NumOperand ) a3= ')'
                     {
-                    a1=(Token)match(input,10,FOLLOW_10_in_parse_hydraconstraints_NumPriorityOperand2649); if (state.failed) return element;
+                    a1=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand2649); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1791,7 +1792,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                       		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_34, 25);
                       	
                     }
-                    a3=(Token)match(input,11,FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand2685); if (state.failed) return element;
+                    a3=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_NumPriorityOperand2685); if (state.failed) return element;
                     if ( state.backtracking==0 ) {
 
                       		if (element == null) {
@@ -1891,7 +1892,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_17, 27);
               	
             }
-            a1=(Token)match(input,12,FOLLOW_12_in_parse_hydraconstraints_And736); if (state.failed) return element;
+            a1=(Token)match(input,13,FOLLOW_13_in_parse_hydraconstraints_And736); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2031,7 +2032,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_18, 30);
               	
             }
-            a1=(Token)match(input,13,FOLLOW_13_in_parse_hydraconstraints_Or809); if (state.failed) return element;
+            a1=(Token)match(input,14,FOLLOW_14_in_parse_hydraconstraints_Or809); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2171,7 +2172,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_19, 33);
               	
             }
-            a1=(Token)match(input,14,FOLLOW_14_in_parse_hydraconstraints_Xor882); if (state.failed) return element;
+            a1=(Token)match(input,15,FOLLOW_15_in_parse_hydraconstraints_Xor882); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2311,7 +2312,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_20, 36);
               	
             }
-            a1=(Token)match(input,15,FOLLOW_15_in_parse_hydraconstraints_Implies955); if (state.failed) return element;
+            a1=(Token)match(input,16,FOLLOW_16_in_parse_hydraconstraints_Implies955); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2411,7 +2412,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             // HydraConst.g:1543:1: (a0= '!' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 ) )
             // HydraConst.g:1544:2: a0= '!' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 )
             {
-            a0=(Token)match(input,16,FOLLOW_16_in_parse_hydraconstraints_Neg1006); if (state.failed) return element;
+            a0=(Token)match(input,17,FOLLOW_17_in_parse_hydraconstraints_Neg1006); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2551,7 +2552,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_23, 41);
               	
             }
-            a1=(Token)match(input,17,FOLLOW_17_in_parse_hydraconstraints_Plus1079); if (state.failed) return element;
+            a1=(Token)match(input,18,FOLLOW_18_in_parse_hydraconstraints_Plus1079); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2691,7 +2692,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_24, 44);
               	
             }
-            a1=(Token)match(input,18,FOLLOW_18_in_parse_hydraconstraints_Minus1152); if (state.failed) return element;
+            a1=(Token)match(input,19,FOLLOW_19_in_parse_hydraconstraints_Minus1152); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2831,7 +2832,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_25, 47);
               	
             }
-            a1=(Token)match(input,19,FOLLOW_19_in_parse_hydraconstraints_Mul1225); if (state.failed) return element;
+            a1=(Token)match(input,20,FOLLOW_20_in_parse_hydraconstraints_Mul1225); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -2971,7 +2972,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_26, 50);
               	
             }
-            a1=(Token)match(input,20,FOLLOW_20_in_parse_hydraconstraints_Div1298); if (state.failed) return element;
+            a1=(Token)match(input,21,FOLLOW_21_in_parse_hydraconstraints_Div1298); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3112,7 +3113,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_35, 53);
               	
             }
-            a1=(Token)match(input,21,FOLLOW_21_in_parse_hydraconstraints_Context1371); if (state.failed) return element;
+            a1=(Token)match(input,22,FOLLOW_22_in_parse_hydraconstraints_Context1371); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3177,7 +3178,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_14, 55);
               	
             }
-            a3=(Token)match(input,22,FOLLOW_22_in_parse_hydraconstraints_Context1407); if (state.failed) return element;
+            a3=(Token)match(input,23,FOLLOW_23_in_parse_hydraconstraints_Context1407); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3240,7 +3241,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             // HydraConst.g:2045:1: (a0= 'all' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 ) )
             // HydraConst.g:2046:2: a0= 'all' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 )
             {
-            a0=(Token)match(input,23,FOLLOW_23_in_parse_hydraconstraints_All1436); if (state.failed) return element;
+            a0=(Token)match(input,24,FOLLOW_24_in_parse_hydraconstraints_All1436); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3340,7 +3341,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             // HydraConst.g:2103:1: (a0= 'any' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 ) )
             // HydraConst.g:2104:2: a0= 'any' (a1_0= parse_hydraconstraints_BoolPriorityOperand2 )
             {
-            a0=(Token)match(input,24,FOLLOW_24_in_parse_hydraconstraints_Any1487); if (state.failed) return element;
+            a0=(Token)match(input,25,FOLLOW_25_in_parse_hydraconstraints_Any1487); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3480,7 +3481,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_28, 61);
               	
             }
-            a1=(Token)match(input,25,FOLLOW_25_in_parse_hydraconstraints_More1560); if (state.failed) return element;
+            a1=(Token)match(input,26,FOLLOW_26_in_parse_hydraconstraints_More1560); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3615,7 +3616,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_29, 64);
               	
             }
-            a1=(Token)match(input,26,FOLLOW_26_in_parse_hydraconstraints_MoreOrEqual1633); if (state.failed) return element;
+            a1=(Token)match(input,27,FOLLOW_27_in_parse_hydraconstraints_MoreOrEqual1633); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3750,7 +3751,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_30, 67);
               	
             }
-            a1=(Token)match(input,27,FOLLOW_27_in_parse_hydraconstraints_Less1706); if (state.failed) return element;
+            a1=(Token)match(input,28,FOLLOW_28_in_parse_hydraconstraints_Less1706); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -3885,7 +3886,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_31, 70);
               	
             }
-            a1=(Token)match(input,28,FOLLOW_28_in_parse_hydraconstraints_LessOrEqual1779); if (state.failed) return element;
+            a1=(Token)match(input,29,FOLLOW_29_in_parse_hydraconstraints_LessOrEqual1779); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -4020,7 +4021,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_32, 73);
               	
             }
-            a1=(Token)match(input,29,FOLLOW_29_in_parse_hydraconstraints_NotEqual1852); if (state.failed) return element;
+            a1=(Token)match(input,30,FOLLOW_30_in_parse_hydraconstraints_NotEqual1852); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -4155,7 +4156,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
               		addExpectedElement(hydraconstraints.resource.hydraConst.grammar.HydraConstFollowSetProvider.TERMINAL_33, 76);
               	
             }
-            a1=(Token)match(input,30,FOLLOW_30_in_parse_hydraconstraints_Equal1925); if (state.failed) return element;
+            a1=(Token)match(input,31,FOLLOW_31_in_parse_hydraconstraints_Equal1925); if (state.failed) return element;
             if ( state.backtracking==0 ) {
 
               		if (element == null) {
@@ -5188,10 +5189,10 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1==21) ) {
+                if ( (LA10_1==22) ) {
                     alt10=1;
                 }
-                else if ( ((LA10_1>=12 && LA10_1<=15)) ) {
+                else if ( ((LA10_1>=13 && LA10_1<=16)) ) {
                     alt10=4;
                 }
                 else {
@@ -5203,12 +5204,12 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
                 }
                 }
                 break;
-            case 23:
+            case 24:
                 {
                 alt10=2;
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt10=3;
                 }
@@ -5316,7 +5317,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
             if ( (LA11_0==TEXT) ) {
                 int LA11_1 = input.LA(2);
 
-                if ( (LA11_1==21) ) {
+                if ( (LA11_1==22) ) {
                     alt11=1;
                 }
                 else if ( (synpred46_HydraConst()) ) {
@@ -5603,7 +5604,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
         // HydraConst.g:905:2: (a0= '(' (a1_0= parse_hydraconstraints_BoolOperand ) a2= ')' )
         // HydraConst.g:905:2: a0= '(' (a1_0= parse_hydraconstraints_BoolOperand ) a2= ')'
         {
-        a0=(Token)match(input,10,FOLLOW_10_in_synpred4_HydraConst441); if (state.failed) return ;
+        a0=(Token)match(input,11,FOLLOW_11_in_synpred4_HydraConst441); if (state.failed) return ;
         // HydraConst.g:927:2: (a1_0= parse_hydraconstraints_BoolOperand )
         // HydraConst.g:928:3: a1_0= parse_hydraconstraints_BoolOperand
         {
@@ -5615,7 +5616,7 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
 
         }
 
-        a2=(Token)match(input,11,FOLLOW_11_in_synpred4_HydraConst477); if (state.failed) return ;
+        a2=(Token)match(input,12,FOLLOW_12_in_synpred4_HydraConst477); if (state.failed) return ;
 
         }
     }
@@ -7044,9 +7045,9 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
     static final String DFA8_eofS =
         "\33\uffff";
     static final String DFA8_minS =
-        "\1\4\4\0\1\uffff\1\0\24\uffff";
+        "\1\5\4\0\1\uffff\1\0\24\uffff";
     static final String DFA8_maxS =
-        "\1\30\4\0\1\uffff\1\0\24\uffff";
+        "\1\31\4\0\1\uffff\1\0\24\uffff";
     static final String DFA8_acceptS =
         "\5\uffff\1\5\1\uffff\1\1\1\2\1\3\1\4\1\6\1\7\1\10\1\11\1\15\1\16"+
         "\1\17\1\20\1\21\1\22\1\12\1\23\1\24\1\13\1\14\1\25";
@@ -7290,9 +7291,9 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
     static final String DFA9_eofS =
         "\25\uffff";
     static final String DFA9_minS =
-        "\1\4\4\0\1\uffff\1\0\16\uffff";
+        "\1\5\4\0\1\uffff\1\0\16\uffff";
     static final String DFA9_maxS =
-        "\1\30\4\0\1\uffff\1\0\16\uffff";
+        "\1\31\4\0\1\uffff\1\0\16\uffff";
     static final String DFA9_acceptS =
         "\5\uffff\1\5\1\uffff\1\1\1\2\1\3\1\4\1\11\1\12\1\13\1\14\1\15\1"+
         "\16\1\6\1\17\1\7\1\10";
@@ -7502,9 +7503,9 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
     static final String DFA12_eofS =
         "\14\uffff";
     static final String DFA12_minS =
-        "\1\4\3\0\10\uffff";
+        "\1\5\3\0\10\uffff";
     static final String DFA12_maxS =
-        "\1\12\3\0\10\uffff";
+        "\1\13\3\0\10\uffff";
     static final String DFA12_acceptS =
         "\4\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10";
     static final String DFA12_specialS =
@@ -7637,82 +7638,82 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
 
     public static final BitSet FOLLOW_parse_hydraconstraints_Model_in_start82 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_start89 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_8_in_parse_hydraconstraints_Model115 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_TEXT_in_parse_hydraconstraints_Model133 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_9_in_parse_hydraconstraints_Model154 = new BitSet(new long[]{0x0000000001810432L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_Constraint_in_parse_hydraconstraints_Model183 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_9_in_parse_hydraconstraints_Model211 = new BitSet(new long[]{0x0000000001810432L});
+    public static final BitSet FOLLOW_9_in_parse_hydraconstraints_Model115 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_DIRECCION_in_parse_hydraconstraints_Model133 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_Model154 = new BitSet(new long[]{0x0000000003020862L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_Constraint_in_parse_hydraconstraints_Model183 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_Model211 = new BitSet(new long[]{0x0000000003020862L});
     public static final BitSet FOLLOW_parse_hydraconstraints_Operand_in_parse_hydraconstraints_Constraint263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_Constraint285 = new BitSet(new long[]{0x0000000001810430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_Operand_in_parse_hydraconstraints_Constraint303 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_Constraint321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_BoolPriorityOperand1350 = new BitSet(new long[]{0x0000000001810430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_parse_hydraconstraints_BoolPriorityOperand1368 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand1386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_Constraint285 = new BitSet(new long[]{0x0000000003020860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_Operand_in_parse_hydraconstraints_Constraint303 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_Constraint321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand1350 = new BitSet(new long[]{0x0000000003020860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_parse_hydraconstraints_BoolPriorityOperand1368 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_BoolPriorityOperand1386 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperandChoices_in_parse_hydraconstraints_BoolPriorityOperand1408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_BoolPriorityOperand2441 = new BitSet(new long[]{0x0000000001810430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_parse_hydraconstraints_BoolPriorityOperand2459 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand2477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_BoolPriorityOperand2441 = new BitSet(new long[]{0x0000000003020860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_parse_hydraconstraints_BoolPriorityOperand2459 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_BoolPriorityOperand2477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_parse_hydraconstraints_BoolPriorityOperand2499 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumOperandChoices_in_parse_hydraconstraints_NumPriorityOperand1536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_NumPriorityOperand1558 = new BitSet(new long[]{0x0000000000000430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_parse_hydraconstraints_NumPriorityOperand1576 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand1594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand1558 = new BitSet(new long[]{0x0000000000000860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_parse_hydraconstraints_NumPriorityOperand1576 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_NumPriorityOperand1594 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_parse_hydraconstraints_NumPriorityOperand2627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_parse_hydraconstraints_NumPriorityOperand2649 = new BitSet(new long[]{0x0000000000000430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_parse_hydraconstraints_NumPriorityOperand2667 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand2685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_And718 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_And736 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_11_in_parse_hydraconstraints_NumPriorityOperand2649 = new BitSet(new long[]{0x0000000000000860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_parse_hydraconstraints_NumPriorityOperand2667 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_parse_hydraconstraints_NumPriorityOperand2685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_And718 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_parse_hydraconstraints_And736 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_And754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Or791 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_parse_hydraconstraints_Or809 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Or791 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_parse_hydraconstraints_Or809 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_Or827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Xor864 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_parse_hydraconstraints_Xor882 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Xor864 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_parse_hydraconstraints_Xor882 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_Xor900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Implies937 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_parse_hydraconstraints_Implies955 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand1_in_parse_hydraconstraints_Implies937 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hydraconstraints_Implies955 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_Implies973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_parse_hydraconstraints_Neg1006 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_17_in_parse_hydraconstraints_Neg1006 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_Neg1024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Plus1061 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hydraconstraints_Plus1079 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Plus1061 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_parse_hydraconstraints_Plus1079 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Plus1097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Minus1134 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_parse_hydraconstraints_Minus1152 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Minus1134 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_parse_hydraconstraints_Minus1152 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Minus1170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Mul1207 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_parse_hydraconstraints_Mul1225 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Mul1207 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_parse_hydraconstraints_Mul1225 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Mul1243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Div1280 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_parse_hydraconstraints_Div1298 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand1_in_parse_hydraconstraints_Div1280 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_parse_hydraconstraints_Div1298 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Div1316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_MultipleFeature_in_parse_hydraconstraints_Context1353 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_parse_hydraconstraints_Context1371 = new BitSet(new long[]{0x0000000001810430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_Constraint_in_parse_hydraconstraints_Context1389 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_parse_hydraconstraints_Context1407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_parse_hydraconstraints_All1436 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_MultipleFeature_in_parse_hydraconstraints_Context1353 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_parse_hydraconstraints_Context1371 = new BitSet(new long[]{0x0000000003020860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_Constraint_in_parse_hydraconstraints_Context1389 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_parse_hydraconstraints_Context1407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_parse_hydraconstraints_All1436 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_All1454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_parse_hydraconstraints_Any1487 = new BitSet(new long[]{0x0000000001810430L});
+    public static final BitSet FOLLOW_25_in_parse_hydraconstraints_Any1487 = new BitSet(new long[]{0x0000000003020860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_BoolPriorityOperand2_in_parse_hydraconstraints_Any1505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_More1542 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_parse_hydraconstraints_More1560 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_More1542 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_parse_hydraconstraints_More1560 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_More1578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_MoreOrEqual1615 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_parse_hydraconstraints_MoreOrEqual1633 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_MoreOrEqual1615 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_parse_hydraconstraints_MoreOrEqual1633 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_MoreOrEqual1651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Less1688 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_parse_hydraconstraints_Less1706 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Less1688 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_parse_hydraconstraints_Less1706 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Less1724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_LessOrEqual1761 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_parse_hydraconstraints_LessOrEqual1779 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_LessOrEqual1761 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_parse_hydraconstraints_LessOrEqual1779 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_LessOrEqual1797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_NotEqual1834 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_parse_hydraconstraints_NotEqual1852 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_NotEqual1834 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_parse_hydraconstraints_NotEqual1852 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_NotEqual1870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Equal1907 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_parse_hydraconstraints_Equal1925 = new BitSet(new long[]{0x0000000000000430L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Equal1907 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_parse_hydraconstraints_Equal1925 = new BitSet(new long[]{0x0000000000000860L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumPriorityOperand2_in_parse_hydraconstraints_Equal1943 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TEXT_in_parse_hydraconstraints_SimpleFeature1980 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TEXT_in_parse_hydraconstraints_MultipleFeature2020 = new BitSet(new long[]{0x0000000000000002L});
@@ -7771,9 +7772,9 @@ public class HydraConstParser extends HydraConstANTLRParserBase {
     public static final BitSet FOLLOW_parse_hydraconstraints_MultipleFeature_in_parse_hydraconstraints_NumOperand2651 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_Number_in_parse_hydraconstraints_NumOperand2661 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_Operand_in_synpred2_HydraConst263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_synpred4_HydraConst441 = new BitSet(new long[]{0x0000000001810430L});
-    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_synpred4_HydraConst459 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_synpred4_HydraConst477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_synpred4_HydraConst441 = new BitSet(new long[]{0x0000000003020860L});
+    public static final BitSet FOLLOW_parse_hydraconstraints_BoolOperand_in_synpred4_HydraConst459 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_synpred4_HydraConst477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_NumOperand_in_synpred6_HydraConst627 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TEXT_in_synpred7_HydraConst2020 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parse_hydraconstraints_And_in_synpred8_HydraConst2107 = new BitSet(new long[]{0x0000000000000002L});

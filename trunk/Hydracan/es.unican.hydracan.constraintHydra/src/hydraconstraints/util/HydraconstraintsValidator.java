@@ -93,12 +93,20 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	public static final int MODEL__NOMBRE_CORRECTO = 1;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Existe Feature' of 'Multiple Feature'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MULTIPLE_FEATURE__EXISTE_FEATURE = 2;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -515,7 +523,27 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMultipleFeature(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(multipleFeature, diagnostics, context);
+		if (!validate_NoCircularContainment(multipleFeature, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_existeFeature(multipleFeature, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the existeFeature constraint of '<em>Multiple Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMultipleFeature_existeFeature(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return multipleFeature.existeFeature(diagnostics, context);
 	}
 
 	/**
@@ -524,7 +552,17 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSimpleFeature(SimpleFeature simpleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(simpleFeature, diagnostics, context);
+		if (!validate_NoCircularContainment(simpleFeature, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_existeFeature(simpleFeature, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -8,11 +8,12 @@ OPTIONS {
 
 TOKENS {
     DEFINE DIGIT $('0'..'9')+$;
+    DEFINE DIRECCION $('A'..'Z'|'a'..'z'|'0'..'9'|'_'|'-'|'/'|'.')+$;
 }
 
 RULES {
 
-Model::= "import" featureList[TEXT] ";" (constraints";")*;
+Model::= "import" featureList[DIRECCION] ";" (constraints";")*;
 Constraint::= operators | "(" operators ")";
 BoolPriorityOperand1::= "(" boolPriorityOp1 ")" | boolPriorityOp1:BoolOperandChoices;
 BoolPriorityOperand2::= "(" boolPriorityOp2 ")" | boolPriorityOp2;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureModel="http://featuremodel" xsi:schemaLocation="http://featuremodel featuremodel.ecore" nameConfigFile="configfile" nameConstraintsFile="constraintfile">
+  <features xsi:type="featureModel:Feature" name="beef"/>
+  <features xsi:type="featureModel:Feature" name="coche"/>
+  <features/>
+  <features xsi:type="featureModel:FeatureGroup"/>
+</featureModel:Project>

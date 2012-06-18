@@ -66,6 +66,10 @@
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperandChoices"/>
     <genClasses ecoreClass="hydraConstraints.ecore#//MultipleFeature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//MultipleFeature/featureName"/>
+      <genOperations ecoreOperation="hydraConstraints.ecore#//MultipleFeature/existeFeature">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/existeFeature/diagnostnics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/existeFeature/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature"/>
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BoolOperandChoices"/>
