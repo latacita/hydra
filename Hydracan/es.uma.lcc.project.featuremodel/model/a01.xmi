@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureModel="http://featuremodel" nameConfigFile="nameconfig" nameConstraintsFile="nameconstraint">
+  <features xsi:type="featureModel:Feature" name="coche"/>
+  <features xsi:type="featureModel:Feature" name="ruedas"/>
+</featureModel:Project>

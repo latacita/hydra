@@ -6,6 +6,9 @@
  */
 package hydraconstraints;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -49,5 +52,13 @@ public interface MultipleFeature extends NumOperandChoices {
 	 * @generated
 	 */
 	void setFeatureName(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean existeFeature(DiagnosticChain diagnostnics, Map context);
 
 } // MultipleFeature

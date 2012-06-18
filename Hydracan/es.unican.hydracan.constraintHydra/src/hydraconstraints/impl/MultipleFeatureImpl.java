@@ -6,14 +6,35 @@
  */
 package hydraconstraints.impl;
 
+import featureModel.Feature;
+import featureModel.Node;
+import featureModel.Project;
 import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.MultipleFeature;
 
+import hydraconstraints.util.HydraconstraintsValidator;
+
+import java.io.File;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +108,66 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 		featureName = newFeatureName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HydraconstraintsPackage.MULTIPLE_FEATURE__FEATURE_NAME, oldFeatureName, featureName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean existeFeature(DiagnosticChain diagnostnics, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		
+		// El primer paso es cargar el modelo de la URI determinada por el workspace
+		// Fue escrito ahi en la validacion de Model
+		
+		IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
+		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
+		// Escribimos en una URI privada el modelo para que sea accesible por todos
+		URI uri = URI.createFileURI(workspaceDirectory.toString()+"/modelo.xmi");
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(uri,true);
+		Project featureModel = (Project) resource.getContents().get(0);
+		
+		String resultado="El feature "+this.featureName+" no existe en el fichero proporcionado";
+		/*for (Iterator<Feature> iterator2=featureModel.getRoots().iterator();
+				iterator2.hasNext(); )
+		{
+			Feature feature=iterator2.next();
+			resultado+=feature.getName();	
+		}*/
+		
+		for (Iterator<Node> iterator=featureModel.getFeatures().iterator(); 
+				iterator.hasNext(); )
+		{
+			Node node=iterator.next();
+			if (node instanceof Feature) {
+				Feature feature = (Feature) node;
+				if (feature.getName().equals(this.featureName)) {
+					resultado="bien";
+				}
+			}
+		}
+
+		
+		
+		if (!resultado.equals("bien")) {
+			if (diagnostnics != null) {
+				diagnostnics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
+						 HydraconstraintsValidator.MULTIPLE_FEATURE__EXISTE_FEATURE,
+						 //EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "existeFeature", EObjectValidator.getObjectLabel(this, context) }),
+						 resultado,
+						 new Object [] { this }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

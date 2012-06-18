@@ -573,7 +573,7 @@ parse_hydraconstraints_Model returns [hydraconstraints.Model element = null]
 	}
 	
 	(
-		a1 = TEXT		
+		a1 = DIRECCION		
 		{
 			if (terminateParsing) {
 				throw new hydraconstraints.resource.hydraConst.mopp.HydraConstTerminateParsingException();
@@ -583,7 +583,7 @@ parse_hydraconstraints_Model returns [hydraconstraints.Model element = null]
 				incompleteObjects.push(element);
 			}
 			if (a1 != null) {
-				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
+				hydraconstraints.resource.hydraConst.IHydraConstTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("DIRECCION");
 				tokenResolver.setOptions(getOptions());
 				hydraconstraints.resource.hydraConst.IHydraConstTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hydraconstraints.HydraconstraintsPackage.MODEL__FEATURE_LIST), result);
@@ -2876,6 +2876,9 @@ DIGIT:
 ;
 TEXT:
 	(('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+)
+;
+DIRECCION:
+	(('A'..'Z'|'a'..'z'|'0'..'9'|'_'|'-'|'/'|'.')+)
 ;
 WHITESPACE:
 	((' ' | '\t' | '\f'))

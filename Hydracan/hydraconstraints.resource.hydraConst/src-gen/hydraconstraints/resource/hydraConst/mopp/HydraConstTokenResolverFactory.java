@@ -25,6 +25,7 @@ public class HydraConstTokenResolverFactory implements hydraconstraints.resource
 		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, hydraconstraints.resource.hydraConst.IHydraConstTokenResolver>();
 		registerTokenResolver("DIGIT", new hydraconstraints.resource.hydraConst.analysis.HydraConstDIGITTokenResolver());
 		registerTokenResolver("TEXT", new hydraconstraints.resource.hydraConst.analysis.HydraConstTEXTTokenResolver());
+		registerTokenResolver("DIRECCION", new hydraconstraints.resource.hydraConst.analysis.HydraConstDIRECCIONTokenResolver());
 	}
 	
 	public hydraconstraints.resource.hydraConst.IHydraConstTokenResolver createTokenResolver(String tokenName) {

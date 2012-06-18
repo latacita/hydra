@@ -7,7 +7,6 @@ import org.antlr.runtime3_3_0.*;
 
 public class HydraConstLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__8=8;
     public static final int T__9=9;
     public static final int T__10=10;
     public static final int T__11=11;
@@ -30,10 +29,12 @@ public class HydraConstLexer extends Lexer {
     public static final int T__28=28;
     public static final int T__29=29;
     public static final int T__30=30;
-    public static final int TEXT=4;
-    public static final int DIGIT=5;
-    public static final int WHITESPACE=6;
-    public static final int LINEBREAK=7;
+    public static final int T__31=31;
+    public static final int DIRECCION=4;
+    public static final int TEXT=5;
+    public static final int DIGIT=6;
+    public static final int WHITESPACE=7;
+    public static final int LINEBREAK=8;
 
     	public java.util.List<org.antlr.runtime3_3_0.RecognitionException> lexerExceptions  = new java.util.ArrayList<org.antlr.runtime3_3_0.RecognitionException>();
     	public java.util.List<Integer> lexerExceptionsPosition = new java.util.ArrayList<Integer>();
@@ -57,36 +58,16 @@ public class HydraConstLexer extends Lexer {
     }
     public String getGrammarFileName() { return "HydraConst.g"; }
 
-    // $ANTLR start "T__8"
-    public final void mT__8() throws RecognitionException {
+    // $ANTLR start "T__9"
+    public final void mT__9() throws RecognitionException {
         try {
-            int _type = T__8;
+            int _type = T__9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // HydraConst.g:16:6: ( 'import' )
             // HydraConst.g:16:8: 'import'
             {
             match("import"); 
 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__8"
-
-    // $ANTLR start "T__9"
-    public final void mT__9() throws RecognitionException {
-        try {
-            int _type = T__9;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:17:6: ( ';' )
-            // HydraConst.g:17:8: ';'
-            {
-            match(';'); 
 
             }
 
@@ -103,10 +84,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:18:7: ( '(' )
-            // HydraConst.g:18:9: '('
+            // HydraConst.g:17:7: ( ';' )
+            // HydraConst.g:17:9: ';'
             {
-            match('('); 
+            match(';'); 
 
             }
 
@@ -123,10 +104,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:19:7: ( ')' )
-            // HydraConst.g:19:9: ')'
+            // HydraConst.g:18:7: ( '(' )
+            // HydraConst.g:18:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -143,11 +124,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:20:7: ( 'and' )
-            // HydraConst.g:20:9: 'and'
+            // HydraConst.g:19:7: ( ')' )
+            // HydraConst.g:19:9: ')'
             {
-            match("and"); 
-
+            match(')'); 
 
             }
 
@@ -164,10 +144,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:21:7: ( 'or' )
-            // HydraConst.g:21:9: 'or'
+            // HydraConst.g:20:7: ( 'and' )
+            // HydraConst.g:20:9: 'and'
             {
-            match("or"); 
+            match("and"); 
 
 
             }
@@ -185,10 +165,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:22:7: ( 'xor' )
-            // HydraConst.g:22:9: 'xor'
+            // HydraConst.g:21:7: ( 'or' )
+            // HydraConst.g:21:9: 'or'
             {
-            match("xor"); 
+            match("or"); 
 
 
             }
@@ -206,10 +186,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:23:7: ( 'implies' )
-            // HydraConst.g:23:9: 'implies'
+            // HydraConst.g:22:7: ( 'xor' )
+            // HydraConst.g:22:9: 'xor'
             {
-            match("implies"); 
+            match("xor"); 
 
 
             }
@@ -227,10 +207,11 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:24:7: ( '!' )
-            // HydraConst.g:24:9: '!'
+            // HydraConst.g:23:7: ( 'implies' )
+            // HydraConst.g:23:9: 'implies'
             {
-            match('!'); 
+            match("implies"); 
+
 
             }
 
@@ -247,10 +228,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:25:7: ( '+' )
-            // HydraConst.g:25:9: '+'
+            // HydraConst.g:24:7: ( '!' )
+            // HydraConst.g:24:9: '!'
             {
-            match('+'); 
+            match('!'); 
 
             }
 
@@ -267,10 +248,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:26:7: ( '-' )
-            // HydraConst.g:26:9: '-'
+            // HydraConst.g:25:7: ( '+' )
+            // HydraConst.g:25:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -287,10 +268,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:27:7: ( '*' )
-            // HydraConst.g:27:9: '*'
+            // HydraConst.g:26:7: ( '-' )
+            // HydraConst.g:26:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -307,10 +288,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:28:7: ( '/' )
-            // HydraConst.g:28:9: '/'
+            // HydraConst.g:27:7: ( '*' )
+            // HydraConst.g:27:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -327,10 +308,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:29:7: ( '[' )
-            // HydraConst.g:29:9: '['
+            // HydraConst.g:28:7: ( '/' )
+            // HydraConst.g:28:9: '/'
             {
-            match('['); 
+            match('/'); 
 
             }
 
@@ -347,10 +328,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:30:7: ( ']' )
-            // HydraConst.g:30:9: ']'
+            // HydraConst.g:29:7: ( '[' )
+            // HydraConst.g:29:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -367,11 +348,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:31:7: ( 'all' )
-            // HydraConst.g:31:9: 'all'
+            // HydraConst.g:30:7: ( ']' )
+            // HydraConst.g:30:9: ']'
             {
-            match("all"); 
-
+            match(']'); 
 
             }
 
@@ -388,10 +368,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:32:7: ( 'any' )
-            // HydraConst.g:32:9: 'any'
+            // HydraConst.g:31:7: ( 'all' )
+            // HydraConst.g:31:9: 'all'
             {
-            match("any"); 
+            match("all"); 
 
 
             }
@@ -409,10 +389,11 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:33:7: ( '>' )
-            // HydraConst.g:33:9: '>'
+            // HydraConst.g:32:7: ( 'any' )
+            // HydraConst.g:32:9: 'any'
             {
-            match('>'); 
+            match("any"); 
+
 
             }
 
@@ -429,11 +410,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:34:7: ( '>=' )
-            // HydraConst.g:34:9: '>='
+            // HydraConst.g:33:7: ( '>' )
+            // HydraConst.g:33:9: '>'
             {
-            match(">="); 
-
+            match('>'); 
 
             }
 
@@ -450,10 +430,11 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:35:7: ( '<' )
-            // HydraConst.g:35:9: '<'
+            // HydraConst.g:34:7: ( '>=' )
+            // HydraConst.g:34:9: '>='
             {
-            match('<'); 
+            match(">="); 
+
 
             }
 
@@ -470,11 +451,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:36:7: ( '<=' )
-            // HydraConst.g:36:9: '<='
+            // HydraConst.g:35:7: ( '<' )
+            // HydraConst.g:35:9: '<'
             {
-            match("<="); 
-
+            match('<'); 
 
             }
 
@@ -491,10 +471,10 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:37:7: ( '!=' )
-            // HydraConst.g:37:9: '!='
+            // HydraConst.g:36:7: ( '<=' )
+            // HydraConst.g:36:9: '<='
             {
-            match("!="); 
+            match("<="); 
 
 
             }
@@ -512,6 +492,27 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // HydraConst.g:37:7: ( '!=' )
+            // HydraConst.g:37:9: '!='
+            {
+            match("!="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
+        try {
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // HydraConst.g:38:7: ( '==' )
             // HydraConst.g:38:9: '=='
             {
@@ -526,7 +527,7 @@ public class HydraConstLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__30"
+    // $ANTLR end "T__31"
 
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
@@ -646,16 +647,79 @@ public class HydraConstLexer extends Lexer {
     }
     // $ANTLR end "TEXT"
 
+    // $ANTLR start "DIRECCION"
+    public final void mDIRECCION() throws RecognitionException {
+        try {
+            int _type = DIRECCION;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // HydraConst.g:2880:10: ( ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ ) )
+            // HydraConst.g:2881:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
+            {
+            // HydraConst.g:2881:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
+            // HydraConst.g:2881:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
+            {
+            // HydraConst.g:2881:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
+            int cnt3=0;
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( ((LA3_0>='-' && LA3_0<='9')||(LA3_0>='A' && LA3_0<='Z')||LA3_0=='_'||(LA3_0>='a' && LA3_0<='z')) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // HydraConst.g:
+            	    {
+            	    if ( (input.LA(1)>='-' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt3 >= 1 ) break loop3;
+                        EarlyExitException eee =
+                            new EarlyExitException(3, input);
+                        throw eee;
+                }
+                cnt3++;
+            } while (true);
+
+
+            }
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DIRECCION"
+
     // $ANTLR start "WHITESPACE"
     public final void mWHITESPACE() throws RecognitionException {
         try {
             int _type = WHITESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2880:11: ( ( ( ' ' | '\\t' | '\\f' ) ) )
-            // HydraConst.g:2881:2: ( ( ' ' | '\\t' | '\\f' ) )
+            // HydraConst.g:2883:11: ( ( ( ' ' | '\\t' | '\\f' ) ) )
+            // HydraConst.g:2884:2: ( ( ' ' | '\\t' | '\\f' ) )
             {
-            // HydraConst.g:2881:2: ( ( ' ' | '\\t' | '\\f' ) )
-            // HydraConst.g:2881:3: ( ' ' | '\\t' | '\\f' )
+            // HydraConst.g:2884:2: ( ( ' ' | '\\t' | '\\f' ) )
+            // HydraConst.g:2884:3: ( ' ' | '\\t' | '\\f' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)=='\f'||input.LA(1)==' ' ) {
                 input.consume();
@@ -686,37 +750,37 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = LINEBREAK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2884:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
-            // HydraConst.g:2885:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // HydraConst.g:2887:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
+            // HydraConst.g:2888:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
             {
-            // HydraConst.g:2885:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
-            // HydraConst.g:2885:3: ( '\\r\\n' | '\\r' | '\\n' )
+            // HydraConst.g:2888:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // HydraConst.g:2888:3: ( '\\r\\n' | '\\r' | '\\n' )
             {
-            // HydraConst.g:2885:3: ( '\\r\\n' | '\\r' | '\\n' )
-            int alt3=3;
-            int LA3_0 = input.LA(1);
+            // HydraConst.g:2888:3: ( '\\r\\n' | '\\r' | '\\n' )
+            int alt4=3;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA3_0=='\r') ) {
-                int LA3_1 = input.LA(2);
+            if ( (LA4_0=='\r') ) {
+                int LA4_1 = input.LA(2);
 
-                if ( (LA3_1=='\n') ) {
-                    alt3=1;
+                if ( (LA4_1=='\n') ) {
+                    alt4=1;
                 }
                 else {
-                    alt3=2;}
+                    alt4=2;}
             }
-            else if ( (LA3_0=='\n') ) {
-                alt3=3;
+            else if ( (LA4_0=='\n') ) {
+                alt4=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
-                    // HydraConst.g:2885:4: '\\r\\n'
+                    // HydraConst.g:2888:4: '\\r\\n'
                     {
                     match("\r\n"); 
 
@@ -724,14 +788,14 @@ public class HydraConstLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // HydraConst.g:2885:13: '\\r'
+                    // HydraConst.g:2888:13: '\\r'
                     {
                     match('\r'); 
 
                     }
                     break;
                 case 3 :
-                    // HydraConst.g:2885:20: '\\n'
+                    // HydraConst.g:2888:20: '\\n'
                     {
                     match('\n'); 
 
@@ -756,194 +820,201 @@ public class HydraConstLexer extends Lexer {
     // $ANTLR end "LINEBREAK"
 
     public void mTokens() throws RecognitionException {
-        // HydraConst.g:1:8: ( T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | DIGIT | TEXT | WHITESPACE | LINEBREAK )
-        int alt4=27;
-        alt4 = dfa4.predict(input);
-        switch (alt4) {
+        // HydraConst.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | DIGIT | TEXT | DIRECCION | WHITESPACE | LINEBREAK )
+        int alt5=28;
+        alt5 = dfa5.predict(input);
+        switch (alt5) {
             case 1 :
-                // HydraConst.g:1:10: T__8
-                {
-                mT__8(); 
-
-                }
-                break;
-            case 2 :
-                // HydraConst.g:1:15: T__9
+                // HydraConst.g:1:10: T__9
                 {
                 mT__9(); 
 
                 }
                 break;
-            case 3 :
-                // HydraConst.g:1:20: T__10
+            case 2 :
+                // HydraConst.g:1:15: T__10
                 {
                 mT__10(); 
 
                 }
                 break;
-            case 4 :
-                // HydraConst.g:1:26: T__11
+            case 3 :
+                // HydraConst.g:1:21: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
-            case 5 :
-                // HydraConst.g:1:32: T__12
+            case 4 :
+                // HydraConst.g:1:27: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
-            case 6 :
-                // HydraConst.g:1:38: T__13
+            case 5 :
+                // HydraConst.g:1:33: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 7 :
-                // HydraConst.g:1:44: T__14
+            case 6 :
+                // HydraConst.g:1:39: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 8 :
-                // HydraConst.g:1:50: T__15
+            case 7 :
+                // HydraConst.g:1:45: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 9 :
-                // HydraConst.g:1:56: T__16
+            case 8 :
+                // HydraConst.g:1:51: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 10 :
-                // HydraConst.g:1:62: T__17
+            case 9 :
+                // HydraConst.g:1:57: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 11 :
-                // HydraConst.g:1:68: T__18
+            case 10 :
+                // HydraConst.g:1:63: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 12 :
-                // HydraConst.g:1:74: T__19
+            case 11 :
+                // HydraConst.g:1:69: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 13 :
-                // HydraConst.g:1:80: T__20
+            case 12 :
+                // HydraConst.g:1:75: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 14 :
-                // HydraConst.g:1:86: T__21
+            case 13 :
+                // HydraConst.g:1:81: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 15 :
-                // HydraConst.g:1:92: T__22
+            case 14 :
+                // HydraConst.g:1:87: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 16 :
-                // HydraConst.g:1:98: T__23
+            case 15 :
+                // HydraConst.g:1:93: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 17 :
-                // HydraConst.g:1:104: T__24
+            case 16 :
+                // HydraConst.g:1:99: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 18 :
-                // HydraConst.g:1:110: T__25
+            case 17 :
+                // HydraConst.g:1:105: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 19 :
-                // HydraConst.g:1:116: T__26
+            case 18 :
+                // HydraConst.g:1:111: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 20 :
-                // HydraConst.g:1:122: T__27
+            case 19 :
+                // HydraConst.g:1:117: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 21 :
-                // HydraConst.g:1:128: T__28
+            case 20 :
+                // HydraConst.g:1:123: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 22 :
-                // HydraConst.g:1:134: T__29
+            case 21 :
+                // HydraConst.g:1:129: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 23 :
-                // HydraConst.g:1:140: T__30
+            case 22 :
+                // HydraConst.g:1:135: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
+            case 23 :
+                // HydraConst.g:1:141: T__31
+                {
+                mT__31(); 
+
+                }
+                break;
             case 24 :
-                // HydraConst.g:1:146: DIGIT
+                // HydraConst.g:1:147: DIGIT
                 {
                 mDIGIT(); 
 
                 }
                 break;
             case 25 :
-                // HydraConst.g:1:152: TEXT
+                // HydraConst.g:1:153: TEXT
                 {
                 mTEXT(); 
 
                 }
                 break;
             case 26 :
-                // HydraConst.g:1:157: WHITESPACE
+                // HydraConst.g:1:158: DIRECCION
+                {
+                mDIRECCION(); 
+
+                }
+                break;
+            case 27 :
+                // HydraConst.g:1:168: WHITESPACE
                 {
                 mWHITESPACE(); 
 
                 }
                 break;
-            case 27 :
-                // HydraConst.g:1:168: LINEBREAK
+            case 28 :
+                // HydraConst.g:1:179: LINEBREAK
                 {
                 mLINEBREAK(); 
 
@@ -955,61 +1026,70 @@ public class HydraConstLexer extends Lexer {
     }
 
 
-    protected DFA4 dfa4 = new DFA4(this);
-    static final String DFA4_eotS =
-        "\1\uffff\1\23\3\uffff\3\23\1\34\1\uffff\1\35\4\uffff\1\37\1\41\1"+
-        "\uffff\1\42\3\uffff\3\23\1\47\1\23\10\uffff\1\23\1\53\1\54\1\55"+
-        "\1\uffff\1\56\2\23\4\uffff\2\23\1\63\1\23\1\uffff\1\65\1\uffff";
-    static final String DFA4_eofS =
-        "\66\uffff";
-    static final String DFA4_minS =
-        "\1\11\1\155\3\uffff\1\154\1\162\1\157\1\75\1\uffff\1\55\4\uffff"+
-        "\2\75\1\uffff\1\55\3\uffff\1\160\1\144\1\154\1\55\1\162\10\uffff"+
-        "\1\154\3\55\1\uffff\1\55\1\162\1\151\4\uffff\1\164\1\145\1\55\1"+
-        "\163\1\uffff\1\55\1\uffff";
-    static final String DFA4_maxS =
-        "\1\172\1\155\3\uffff\1\156\1\162\1\157\1\75\1\uffff\1\172\4\uffff"+
-        "\2\75\1\uffff\1\172\3\uffff\1\160\1\171\1\154\1\172\1\162\10\uffff"+
-        "\1\157\3\172\1\uffff\1\172\1\162\1\151\4\uffff\1\164\1\145\1\172"+
-        "\1\163\1\uffff\1\172\1\uffff";
-    static final String DFA4_acceptS =
-        "\2\uffff\1\2\1\3\1\4\4\uffff\1\12\1\uffff\1\14\1\15\1\16\1\17\2"+
-        "\uffff\1\27\1\uffff\1\31\1\32\1\33\5\uffff\1\26\1\11\1\13\1\23\1"+
-        "\22\1\25\1\24\1\30\4\uffff\1\6\3\uffff\1\5\1\21\1\20\1\7\4\uffff"+
-        "\1\1\1\uffff\1\10";
-    static final String DFA4_specialS =
-        "\66\uffff}>";
-    static final String[] DFA4_transitionS = {
-            "\1\24\1\25\1\uffff\1\24\1\25\22\uffff\1\24\1\10\6\uffff\1\3"+
-            "\1\4\1\13\1\11\1\uffff\1\12\1\uffff\1\14\12\22\1\uffff\1\2\1"+
-            "\20\1\21\1\17\2\uffff\32\23\1\15\1\uffff\1\16\1\uffff\1\23\1"+
-            "\uffff\1\5\7\23\1\1\5\23\1\6\10\23\1\7\2\23",
-            "\1\26",
+    protected DFA5 dfa5 = new DFA5(this);
+    static final String DFA5_eotS =
+        "\1\uffff\1\30\3\uffff\3\30\1\36\1\uffff\1\37\1\uffff\1\40\2\uffff"+
+        "\1\42\1\44\1\uffff\1\45\1\30\3\uffff\1\30\1\uffff\2\30\1\52\1\30"+
+        "\11\uffff\1\30\1\56\1\57\1\60\1\uffff\1\61\2\30\4\uffff\2\30\1\66"+
+        "\1\30\1\uffff\1\70\1\uffff";
+    static final String DFA5_eofS =
+        "\71\uffff";
+    static final String DFA5_minS =
+        "\1\11\1\55\3\uffff\3\55\1\75\1\uffff\1\55\1\uffff\1\55\2\uffff\2"+
+        "\75\1\uffff\2\55\3\uffff\1\55\1\uffff\4\55\11\uffff\4\55\1\uffff"+
+        "\3\55\4\uffff\4\55\1\uffff\1\55\1\uffff";
+    static final String DFA5_maxS =
+        "\2\172\3\uffff\3\172\1\75\1\uffff\1\172\1\uffff\1\172\2\uffff\2"+
+        "\75\1\uffff\2\172\3\uffff\1\172\1\uffff\4\172\11\uffff\4\172\1\uffff"+
+        "\3\172\4\uffff\4\172\1\uffff\1\172\1\uffff";
+    static final String DFA5_acceptS =
+        "\2\uffff\1\2\1\3\1\4\4\uffff\1\12\1\uffff\1\14\1\uffff\1\16\1\17"+
+        "\2\uffff\1\27\2\uffff\1\32\1\33\1\34\1\uffff\1\31\4\uffff\1\26\1"+
+        "\11\1\13\1\15\1\23\1\22\1\25\1\24\1\30\4\uffff\1\6\3\uffff\1\5\1"+
+        "\21\1\20\1\7\4\uffff\1\1\1\uffff\1\10";
+    static final String DFA5_specialS =
+        "\71\uffff}>";
+    static final String[] DFA5_transitionS = {
+            "\1\25\1\26\1\uffff\1\25\1\26\22\uffff\1\25\1\10\6\uffff\1\3"+
+            "\1\4\1\13\1\11\1\uffff\1\12\1\24\1\14\12\22\1\uffff\1\2\1\20"+
+            "\1\21\1\17\2\uffff\32\23\1\15\1\uffff\1\16\1\uffff\1\23\1\uffff"+
+            "\1\5\7\23\1\1\5\23\1\6\10\23\1\7\2\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\14\23\1"+
+            "\27\15\23",
             "",
             "",
             "",
-            "\1\30\1\uffff\1\27",
-            "\1\31",
-            "\1\32",
-            "\1\33",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\13\23\1"+
+            "\32\1\23\1\31\14\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\21\23\1"+
+            "\33\10\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\16\23\1"+
+            "\34\13\23",
+            "\1\35",
             "",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             "",
-            "",
-            "",
-            "",
-            "\1\36",
-            "\1\40",
-            "",
-            "\1\23\2\uffff\12\22\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\15\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
             "",
             "",
-            "",
+            "\1\41",
             "\1\43",
-            "\1\44\24\uffff\1\45",
-            "\1\46",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\50",
+            "",
+            "\1\23\2\24\12\22\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "",
+            "",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\17\23\1"+
+            "\46\12\23",
+            "",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\3\23\1"+
+            "\47\24\23\1\50\1\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\13\23\1"+
+            "\51\16\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\21\23\1"+
+            "\53\10\23",
             "",
             "",
             "",
@@ -1018,58 +1098,65 @@ public class HydraConstLexer extends Lexer {
             "",
             "",
             "",
-            "\1\52\2\uffff\1\51",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             "",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\57",
-            "\1\60",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\13\23\1"+
+            "\55\2\23\1\54\13\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\21\23\1"+
+            "\62\10\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\10\23\1"+
+            "\63\21\23",
             "",
             "",
             "",
             "",
-            "\1\61",
-            "\1\62",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\64",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\23\23\1"+
+            "\64\6\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\4\23\1"+
+            "\65\25\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\22\23\1"+
+            "\67\7\23",
             "",
-            "\1\23\2\uffff\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\23\2\24\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             ""
     };
 
-    static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
-    static final short[] DFA4_eof = DFA.unpackEncodedString(DFA4_eofS);
-    static final char[] DFA4_min = DFA.unpackEncodedStringToUnsignedChars(DFA4_minS);
-    static final char[] DFA4_max = DFA.unpackEncodedStringToUnsignedChars(DFA4_maxS);
-    static final short[] DFA4_accept = DFA.unpackEncodedString(DFA4_acceptS);
-    static final short[] DFA4_special = DFA.unpackEncodedString(DFA4_specialS);
-    static final short[][] DFA4_transition;
+    static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
+    static final short[] DFA5_eof = DFA.unpackEncodedString(DFA5_eofS);
+    static final char[] DFA5_min = DFA.unpackEncodedStringToUnsignedChars(DFA5_minS);
+    static final char[] DFA5_max = DFA.unpackEncodedStringToUnsignedChars(DFA5_maxS);
+    static final short[] DFA5_accept = DFA.unpackEncodedString(DFA5_acceptS);
+    static final short[] DFA5_special = DFA.unpackEncodedString(DFA5_specialS);
+    static final short[][] DFA5_transition;
 
     static {
-        int numStates = DFA4_transitionS.length;
-        DFA4_transition = new short[numStates][];
+        int numStates = DFA5_transitionS.length;
+        DFA5_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA4_transition[i] = DFA.unpackEncodedString(DFA4_transitionS[i]);
+            DFA5_transition[i] = DFA.unpackEncodedString(DFA5_transitionS[i]);
         }
     }
 
-    class DFA4 extends DFA {
+    class DFA5 extends DFA {
 
-        public DFA4(BaseRecognizer recognizer) {
+        public DFA5(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 4;
-            this.eot = DFA4_eot;
-            this.eof = DFA4_eof;
-            this.min = DFA4_min;
-            this.max = DFA4_max;
-            this.accept = DFA4_accept;
-            this.special = DFA4_special;
-            this.transition = DFA4_transition;
+            this.decisionNumber = 5;
+            this.eot = DFA5_eot;
+            this.eof = DFA5_eof;
+            this.min = DFA5_min;
+            this.max = DFA5_max;
+            this.accept = DFA5_accept;
+            this.special = DFA5_special;
+            this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | DIGIT | TEXT | WHITESPACE | LINEBREAK );";
+            return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | DIGIT | TEXT | DIRECCION | WHITESPACE | LINEBREAK );";
         }
     }
  
