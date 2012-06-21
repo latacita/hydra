@@ -1103,7 +1103,7 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		initEAttribute(getModel_FeatureList(), ecorePackage.getEString(), "featureList", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(modelEClass, ecorePackage.getEBoolean(), "nombreCorrecto", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(modelEClass, ecorePackage.getEBoolean(), "featureModelExists", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1180,7 +1180,7 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		initEClass(multipleFeatureEClass, MultipleFeature.class, "MultipleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMultipleFeature_FeatureName(), ecorePackage.getEString(), "featureName", null, 1, 1, MultipleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(multipleFeatureEClass, ecorePackage.getEBoolean(), "existeFeature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(multipleFeatureEClass, ecorePackage.getEBoolean(), "featureExists", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostnics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 

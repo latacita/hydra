@@ -155,15 +155,14 @@ public class ModelImpl extends EObjectImpl implements Model {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public boolean nombreCorrecto(DiagnosticChain diagnostics, Map context) {
+	public boolean featureModelExists(DiagnosticChain diagnostics, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		
-		String resultado="Error sin determinar"; // String que se utilizara para controlar la validacion
+String resultado="Error sin determinar"; // String que se utilizara para controlar la validacion
 		
 		// Cargamos el fichero que se pasa a traves del import
 		// y controlamos el valor de str en funcion de su existencia
@@ -220,7 +219,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
-						 HydraconstraintsValidator.MODEL__NOMBRE_CORRECTO,
+						 HydraconstraintsValidator.MODEL__FEATURE_MODEL_EXISTS,
 						 //EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "nombreCorrecto", EObjectValidator.getObjectLabel(this, context) }),
 						 resultado,
 						 new Object [] { this }));

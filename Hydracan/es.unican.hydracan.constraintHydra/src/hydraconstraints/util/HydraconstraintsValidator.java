@@ -85,20 +85,20 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "hydraconstraints";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Nombre Correcto' of 'Model'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Feature Model Exists' of 'Model'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MODEL__NOMBRE_CORRECTO = 1;
+	public static final int MODEL__FEATURE_MODEL_EXISTS = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Existe Feature' of 'Multiple Feature'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Feature Exists' of 'Multiple Feature'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MULTIPLE_FEATURE__EXISTE_FEATURE = 2;
+	public static final int MULTIPLE_FEATURE__FEATURE_EXISTS = 2;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -242,18 +242,18 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(model, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(model, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(model, diagnostics, context);
-		if (result || diagnostics != null) result &= validateModel_nombreCorrecto(model, diagnostics, context);
+		if (result || diagnostics != null) result &= validateModel_featureModelExists(model, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the nombreCorrecto constraint of '<em>Model</em>'.
+	 * Validates the featureModelExists constraint of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateModel_nombreCorrecto(Model model, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return model.nombreCorrecto(diagnostics, context);
+	public boolean validateModel_featureModelExists(Model model, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return model.featureModelExists(diagnostics, context);
 	}
 
 	/**
@@ -532,18 +532,18 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(multipleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multipleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multipleFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultipleFeature_existeFeature(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_featureExists(multipleFeature, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the existeFeature constraint of '<em>Multiple Feature</em>'.
+	 * Validates the featureExists constraint of '<em>Multiple Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMultipleFeature_existeFeature(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return multipleFeature.existeFeature(diagnostics, context);
+	public boolean validateMultipleFeature_featureExists(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return multipleFeature.featureExists(diagnostics, context);
 	}
 
 	/**
@@ -561,7 +561,7 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultipleFeature_existeFeature(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_featureExists(simpleFeature, diagnostics, context);
 		return result;
 	}
 

@@ -9,9 +9,9 @@
     <genClasses ecoreClass="hydraConstraints.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//Model/featureList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Model/constraints"/>
-      <genOperations ecoreOperation="hydraConstraints.ecore#//Model/nombreCorrecto">
-        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/nombreCorrecto/diagnostics"/>
-        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/nombreCorrecto/context"/>
+      <genOperations ecoreOperation="hydraConstraints.ecore#//Model/featureModelExists">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/featureModelExists/diagnostics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Model/featureModelExists/context"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="hydraConstraints.ecore#//Constraint">
@@ -66,9 +66,9 @@
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperandChoices"/>
     <genClasses ecoreClass="hydraConstraints.ecore#//MultipleFeature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//MultipleFeature/featureName"/>
-      <genOperations ecoreOperation="hydraConstraints.ecore#//MultipleFeature/existeFeature">
-        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/existeFeature/diagnostnics"/>
-        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/existeFeature/context"/>
+      <genOperations ecoreOperation="hydraConstraints.ecore#//MultipleFeature/featureExists">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/featureExists/diagnostnics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/featureExists/context"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature"/>

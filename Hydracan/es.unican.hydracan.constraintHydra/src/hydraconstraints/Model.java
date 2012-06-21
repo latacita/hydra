@@ -78,6 +78,6 @@ public interface Model extends EObject {
 	 * @model
 	 * @generated
 	 */
-	boolean nombreCorrecto(DiagnosticChain diagnostics, Map context);
+	boolean featureModelExists(DiagnosticChain diagnostics, Map context);
 
 } // Model
