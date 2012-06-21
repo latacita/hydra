@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hydraconstraints"
     nsURI="http://www.unican.es/personales/sanchezbp/spl/hydra/constraints" nsPrefix="es.hydracan.constraintHydra">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eOperations name="nombreCorrecto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="featureModelExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     </eOperations>
@@ -76,7 +76,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//NumOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumOperandChoices" abstract="true" eSuperTypes="#//NumOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultipleFeature" eSuperTypes="#//NumOperandChoices">
-    <eOperations name="existeFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="featureExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostnics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     </eOperations>

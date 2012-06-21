@@ -13,7 +13,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_Kk7QIKnSEeGPhK-ob9vfgg" type="5002">
       <children xmi:type="notation:Node" xmi:id="_OCAroKs-EeGUHb3aO18-PA" type="2002">
-        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//Model/nombreCorrecto"/>
+        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//Model/featureModelExists"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OCAroas-EeGUHb3aO18-PA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Kk7QIanSEeGPhK-ob9vfgg"/>
@@ -501,7 +501,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_GnJkRKnYEeGdIvcl_91uHg" type="5002">
       <children xmi:type="notation:Node" xmi:id="_nBwSAbgIEeGwQpeFZF5m1g" type="2002">
-        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//MultipleFeature/existeFeature"/>
+        <element xmi:type="ecore:EOperation" href="hydraConstraints.ecore#//MultipleFeature/featureExists"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_nBw5ELgIEeGwQpeFZF5m1g"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_GnJkRanYEeGdIvcl_91uHg"/>

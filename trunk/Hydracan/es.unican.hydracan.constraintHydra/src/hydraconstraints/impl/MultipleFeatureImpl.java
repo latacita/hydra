@@ -113,17 +113,13 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public boolean existeFeature(DiagnosticChain diagnostnics, Map context) {
+	public boolean featureExists(DiagnosticChain diagnostnics, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		
-		// El primer paso es cargar el modelo de la URI determinada por el workspace
-		// Fue escrito ahi en la validacion de Model
-		
 		IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
 		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
 		// Escribimos en una URI privada el modelo para que sea accesible por todos
@@ -132,7 +128,7 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 		Resource resource = resSet.getResource(uri,true);
 		Project featureModel = (Project) resource.getContents().get(0);
 		
-		String resultado="El feature "+this.featureName+" no existe en el fichero proporcionado";
+		String resultado="Feature "+this.featureName+" does not exist in the given model";
 		/*for (Iterator<Feature> iterator2=featureModel.getRoots().iterator();
 				iterator2.hasNext(); )
 		{
@@ -160,7 +156,7 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
-						 HydraconstraintsValidator.MULTIPLE_FEATURE__EXISTE_FEATURE,
+						 HydraconstraintsValidator.MULTIPLE_FEATURE__FEATURE_EXISTS,
 						 //EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "existeFeature", EObjectValidator.getObjectLabel(this, context) }),
 						 resultado,
 						 new Object [] { this }));

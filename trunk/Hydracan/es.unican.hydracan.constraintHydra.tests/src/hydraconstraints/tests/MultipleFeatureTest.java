@@ -18,7 +18,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link hydraconstraints.MultipleFeature#existeFeature(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Existe Feature</em>}</li>
+ *   <li>{@link hydraconstraints.MultipleFeature#featureExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Feature Exists</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -78,13 +78,13 @@ public class MultipleFeatureTest extends NumOperandChoicesTest {
 	}
 
 	/**
-	 * Tests the '{@link hydraconstraints.MultipleFeature#existeFeature(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Existe Feature</em>}' operation.
+	 * Tests the '{@link hydraconstraints.MultipleFeature#featureExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Feature Exists</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hydraconstraints.MultipleFeature#existeFeature(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see hydraconstraints.MultipleFeature#featureExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testExisteFeature__DiagnosticChain_Map() {
+	public void testFeatureExists__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

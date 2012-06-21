@@ -59,6 +59,6 @@ public interface MultipleFeature extends NumOperandChoices {
 	 * @model
 	 * @generated
 	 */
-	boolean existeFeature(DiagnosticChain diagnostnics, Map context);
+	boolean featureExists(DiagnosticChain diagnostnics, Map context);
 
 } // MultipleFeature

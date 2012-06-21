@@ -20,7 +20,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link hydraconstraints.Model#nombreCorrecto(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nombre Correcto</em>}</li>
+ *   <li>{@link hydraconstraints.Model#featureModelExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Feature Model Exists</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -97,13 +97,13 @@ public class ModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link hydraconstraints.Model#nombreCorrecto(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nombre Correcto</em>}' operation.
+	 * Tests the '{@link hydraconstraints.Model#featureModelExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Feature Model Exists</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hydraconstraints.Model#nombreCorrecto(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see hydraconstraints.Model#featureModelExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testNombreCorrecto__DiagnosticChain_Map() {
+	public void testFeatureModelExists__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
