@@ -76,14 +76,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//NumOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumOperandChoices" abstract="true" eSuperTypes="#//NumOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultipleFeature" eSuperTypes="#//NumOperandChoices">
-    <eOperations name="featureExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="diagnostnics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+    <eOperations name="isMultipleFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleFeature" eSuperTypes="#//MultipleFeature #//BoolOperandChoices"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleFeature" eSuperTypes="#//MultipleFeature #//BoolOperandChoices">
+    <eOperations name="isSimpleFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoolOperandChoices" abstract="true"
       eSuperTypes="#//BoolOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//BoolOperandChoices #//NumOperandChoices">

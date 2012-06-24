@@ -93,12 +93,20 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	public static final int MODEL__FEATURE_MODEL_EXISTS = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Feature Exists' of 'Multiple Feature'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Is Multiple Feature' of 'Multiple Feature'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MULTIPLE_FEATURE__FEATURE_EXISTS = 2;
+	public static final int MULTIPLE_FEATURE__IS_MULTIPLE_FEATURE = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Is Simple Feature' of 'Simple Feature'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SIMPLE_FEATURE__IS_SIMPLE_FEATURE = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -106,7 +114,7 @@ public class HydraconstraintsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -532,18 +540,18 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(multipleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multipleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multipleFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultipleFeature_featureExists(multipleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_isMultipleFeature(multipleFeature, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the featureExists constraint of '<em>Multiple Feature</em>'.
+	 * Validates the isMultipleFeature constraint of '<em>Multiple Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMultipleFeature_featureExists(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return multipleFeature.featureExists(diagnostics, context);
+	public boolean validateMultipleFeature_isMultipleFeature(MultipleFeature multipleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return multipleFeature.isMultipleFeature(diagnostics, context);
 	}
 
 	/**
@@ -561,8 +569,19 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultipleFeature_featureExists(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultipleFeature_isMultipleFeature(simpleFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleFeature_isSimpleFeature(simpleFeature, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the isSimpleFeature constraint of '<em>Simple Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleFeature_isSimpleFeature(SimpleFeature simpleFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleFeature.isSimpleFeature(diagnostics, context);
 	}
 
 	/**
