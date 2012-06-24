@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureModel="http://featuremodel" xsi:schemaLocation="http://featuremodel featuremodel.ecore" nameConfigFile="config" nameConstraintsFile="noname">
+  <features xsi:type="featureModel:Feature" name="f1"/>
+  <features xsi:type="featureModel:Feature" name="f2"/>
+  <features xsi:type="featureModel:Feature" father="//@features.1" name="f3"/>
+  <features xsi:type="featureModel:Feature" father="//@features.0" name="f4"/>
+  <features xsi:type="featureModel:Feature" father="//@features.1" name="f5"/>
+  <features xsi:type="featureModel:Feature" father="//@features.0" name="f6"/>
+  <relations xsi:type="featureModel:RelationFeature" source="//@features.0" target="//@features.1" lowerBound="2" upperBound="5"/>
+</featureModel:Project>

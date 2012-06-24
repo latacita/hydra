@@ -6,6 +6,9 @@
  */
 package hydraconstraints;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,4 +21,12 @@ package hydraconstraints;
  * @generated
  */
 public interface SimpleFeature extends MultipleFeature, BoolOperandChoices {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean isSimpleFeature(DiagnosticChain diagnostics, Map context);
 } // SimpleFeature

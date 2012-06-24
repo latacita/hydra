@@ -1180,11 +1180,15 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		initEClass(multipleFeatureEClass, MultipleFeature.class, "MultipleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMultipleFeature_FeatureName(), ecorePackage.getEString(), "featureName", null, 1, 1, MultipleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(multipleFeatureEClass, ecorePackage.getEBoolean(), "featureExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostnics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(multipleFeatureEClass, ecorePackage.getEBoolean(), "isMultipleFeature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(simpleFeatureEClass, SimpleFeature.class, "SimpleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(simpleFeatureEClass, ecorePackage.getEBoolean(), "isSimpleFeature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(boolOperandChoicesEClass, BoolOperandChoices.class, "BoolOperandChoices", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

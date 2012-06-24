@@ -66,12 +66,17 @@
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//NumOperandChoices"/>
     <genClasses ecoreClass="hydraConstraints.ecore#//MultipleFeature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//MultipleFeature/featureName"/>
-      <genOperations ecoreOperation="hydraConstraints.ecore#//MultipleFeature/featureExists">
-        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/featureExists/diagnostnics"/>
-        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/featureExists/context"/>
+      <genOperations ecoreOperation="hydraConstraints.ecore#//MultipleFeature/isMultipleFeature">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/isMultipleFeature/diagnostics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//MultipleFeature/isMultipleFeature/context"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature"/>
+    <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature">
+      <genOperations ecoreOperation="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature/diagnostics"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BoolOperandChoices"/>
     <genClasses ecoreClass="hydraConstraints.ecore#//Context">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Context/contextOp2"/>
