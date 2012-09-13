@@ -117,10 +117,14 @@ public class SimpleFeatureImpl extends MultipleFeatureImpl implements SimpleFeat
 					} else {
 						resultado="Feature "+this.featureName+" is a multiple feature";
 					}
-				} // if feature == this
+				//} else {
+					//resultado="existe";
+				}
 			} // if node is a feature
 		} // for each node
-		
+		if (resultado.equals("Feature "+this.featureName+" does not exist in the given model")) {
+			resultado="bien";
+		}
 		if (!resultado.equals("bien")) {
 			if (diagnostics != null) {
 				diagnostics.add
