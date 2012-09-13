@@ -132,7 +132,7 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 				Resource resource = resSet.getResource(uri,true);
 				Project featureModel = (Project) resource.getContents().get(0);
 				
-				String resultado="Multiple feature "+this.featureName+" does not exist in the given model";
+				String resultado="Feature "+this.featureName+" does not exist in the given model";
 				
 				// Recorremos todas las features del modelo hasta llegar al final o encontrar la correcta
 				for (Iterator<Node> iterator=featureModel.getFeatures().iterator(); 
@@ -145,6 +145,7 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 						if (feature.getName().equals(this.featureName)) { 
 							resultado="Feature "+this.featureName+" exists but it is not a multiple feature";
 							
+							/*
 							// Este bucle va mirando los padres del feature para ver si son multiple features
 							while (!resultado.equals("bien") && feature!=null)
 							{
@@ -163,6 +164,8 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 								} // for each relation
 								feature = (Feature) feature.getFather();
 							} // while father is not null
+							*/
+							resultado="bien";
 						} // if feature == this
 					} // if node is a feature
 				} // for each node
