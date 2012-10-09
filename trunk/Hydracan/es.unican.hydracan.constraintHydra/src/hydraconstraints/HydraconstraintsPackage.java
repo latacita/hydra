@@ -1055,24 +1055,6 @@ public interface HydraconstraintsPackage extends EPackage {
 	int SIMPLE_FEATURE = 31;
 
 	/**
-	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_FEATURE__FEATURE_NAME = MULTIPLE_FEATURE__FEATURE_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Simple Feature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_FEATURE_FEATURE_COUNT = MULTIPLE_FEATURE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link hydraconstraints.impl.BoolOperandChoicesImpl <em>Bool Operand Choices</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1090,6 +1072,24 @@ public interface HydraconstraintsPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOL_OPERAND_CHOICES_FEATURE_COUNT = BOOL_OPERAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FEATURE__FEATURE_NAME = BOOL_OPERAND_CHOICES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simple Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FEATURE_FEATURE_COUNT = BOOL_OPERAND_CHOICES_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hydraconstraints.impl.ContextImpl <em>Context</em>}' class.
@@ -1727,6 +1727,17 @@ public interface HydraconstraintsPackage extends EPackage {
 	EClass getSimpleFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hydraconstraints.SimpleFeature#getFeatureName <em>Feature Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Feature Name</em>'.
+	 * @see hydraconstraints.SimpleFeature#getFeatureName()
+	 * @see #getSimpleFeature()
+	 * @generated
+	 */
+	EAttribute getSimpleFeature_FeatureName();
+
+	/**
 	 * Returns the meta object for class '{@link hydraconstraints.BoolOperandChoices <em>Bool Operand Choices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2291,6 +2302,14 @@ public interface HydraconstraintsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SIMPLE_FEATURE = eINSTANCE.getSimpleFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE_FEATURE__FEATURE_NAME = eINSTANCE.getSimpleFeature_FeatureName();
 
 		/**
 		 * The meta object literal for the '{@link hydraconstraints.impl.BoolOperandChoicesImpl <em>Bool Operand Choices</em>}' class.

@@ -10,6 +10,7 @@ import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Xor;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,25 @@ public class XorImpl extends BinaryOpImpl implements Xor {
 	@Override
 	protected EClass eStaticClass() {
 		return HydraconstraintsPackage.Literals.XOR;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//throw new UnsupportedOperationException();
+		int op1=this.getBinaryOp1().getBoolPriorityOp1().evaluate(modelDirection, featureContext);
+		int op2=this.getBinaryOp2().getBoolPriorityOp2().evaluate(modelDirection, featureContext);
+		if (op1+op2==1) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 } //XorImpl

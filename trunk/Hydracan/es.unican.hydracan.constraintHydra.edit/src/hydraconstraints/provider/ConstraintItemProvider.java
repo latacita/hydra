@@ -209,31 +209,6 @@ public class ConstraintItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createPlus()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createMul()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createMinus()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createDiv()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createMultipleFeature()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
 				 HydraconstraintsFactory.eINSTANCE.createSimpleFeature()));
 
 		newChildDescriptors.add
@@ -250,11 +225,6 @@ public class ConstraintItemProvider
 			(createChildParameter
 				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
 				 HydraconstraintsFactory.eINSTANCE.createAll()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONSTRAINT__OPERATORS,
-				 HydraconstraintsFactory.eINSTANCE.createNumber()));
 	}
 
 	/**

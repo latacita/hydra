@@ -534,13 +534,13 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = DIGIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2874:6: ( ( ( '0' .. '9' )+ ) )
-            // HydraConst.g:2875:2: ( ( '0' .. '9' )+ )
+            // HydraConst.g:2787:6: ( ( ( '0' .. '9' )+ ) )
+            // HydraConst.g:2788:2: ( ( '0' .. '9' )+ )
             {
-            // HydraConst.g:2875:2: ( ( '0' .. '9' )+ )
-            // HydraConst.g:2875:3: ( '0' .. '9' )+
+            // HydraConst.g:2788:2: ( ( '0' .. '9' )+ )
+            // HydraConst.g:2788:3: ( '0' .. '9' )+
             {
-            // HydraConst.g:2875:3: ( '0' .. '9' )+
+            // HydraConst.g:2788:3: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -554,7 +554,7 @@ public class HydraConstLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // HydraConst.g:2875:4: '0' .. '9'
+            	    // HydraConst.g:2788:4: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -589,13 +589,13 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2877:5: ( ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ ) )
-            // HydraConst.g:2878:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ )
+            // HydraConst.g:2790:5: ( ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ ) )
+            // HydraConst.g:2791:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ )
             {
-            // HydraConst.g:2878:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ )
-            // HydraConst.g:2878:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+
+            // HydraConst.g:2791:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+ )
+            // HydraConst.g:2791:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+
             {
-            // HydraConst.g:2878:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+
+            // HydraConst.g:2791:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' )+
             int cnt2=0;
             loop2:
             do {
@@ -652,13 +652,13 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = DIRECCION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2880:10: ( ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ ) )
-            // HydraConst.g:2881:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
+            // HydraConst.g:2793:10: ( ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ ) )
+            // HydraConst.g:2794:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
             {
-            // HydraConst.g:2881:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
-            // HydraConst.g:2881:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
+            // HydraConst.g:2794:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+ )
+            // HydraConst.g:2794:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
             {
-            // HydraConst.g:2881:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
+            // HydraConst.g:2794:3: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' | '-' | '/' | '.' )+
             int cnt3=0;
             loop3:
             do {
@@ -715,11 +715,11 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = WHITESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2883:11: ( ( ( ' ' | '\\t' | '\\f' ) ) )
-            // HydraConst.g:2884:2: ( ( ' ' | '\\t' | '\\f' ) )
+            // HydraConst.g:2796:11: ( ( ( ' ' | '\\t' | '\\f' ) ) )
+            // HydraConst.g:2797:2: ( ( ' ' | '\\t' | '\\f' ) )
             {
-            // HydraConst.g:2884:2: ( ( ' ' | '\\t' | '\\f' ) )
-            // HydraConst.g:2884:3: ( ' ' | '\\t' | '\\f' )
+            // HydraConst.g:2797:2: ( ( ' ' | '\\t' | '\\f' ) )
+            // HydraConst.g:2797:3: ( ' ' | '\\t' | '\\f' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)=='\f'||input.LA(1)==' ' ) {
                 input.consume();
@@ -750,13 +750,13 @@ public class HydraConstLexer extends Lexer {
         try {
             int _type = LINEBREAK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // HydraConst.g:2887:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
-            // HydraConst.g:2888:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // HydraConst.g:2800:10: ( ( ( '\\r\\n' | '\\r' | '\\n' ) ) )
+            // HydraConst.g:2801:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
             {
-            // HydraConst.g:2888:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
-            // HydraConst.g:2888:3: ( '\\r\\n' | '\\r' | '\\n' )
+            // HydraConst.g:2801:2: ( ( '\\r\\n' | '\\r' | '\\n' ) )
+            // HydraConst.g:2801:3: ( '\\r\\n' | '\\r' | '\\n' )
             {
-            // HydraConst.g:2888:3: ( '\\r\\n' | '\\r' | '\\n' )
+            // HydraConst.g:2801:3: ( '\\r\\n' | '\\r' | '\\n' )
             int alt4=3;
             int LA4_0 = input.LA(1);
 
@@ -780,7 +780,7 @@ public class HydraConstLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // HydraConst.g:2888:4: '\\r\\n'
+                    // HydraConst.g:2801:4: '\\r\\n'
                     {
                     match("\r\n"); 
 
@@ -788,14 +788,14 @@ public class HydraConstLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // HydraConst.g:2888:13: '\\r'
+                    // HydraConst.g:2801:13: '\\r'
                     {
                     match('\r'); 
 
                     }
                     break;
                 case 3 :
-                    // HydraConst.g:2888:20: '\\n'
+                    // HydraConst.g:2801:20: '\\n'
                     {
                     match('\n'); 
 

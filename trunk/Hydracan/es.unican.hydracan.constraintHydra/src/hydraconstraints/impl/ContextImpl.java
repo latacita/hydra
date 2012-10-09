@@ -6,6 +6,8 @@
  */
 package hydraconstraints.impl;
 
+import java.util.Iterator;
+
 import hydraconstraints.Constraint;
 import hydraconstraints.Context;
 import hydraconstraints.HydraconstraintsPackage;
@@ -13,11 +15,21 @@ import hydraconstraints.MultipleFeature;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import specializationModel.ConfigState;
+import specializationModel.Feature;
+import specializationModel.Node;
+import specializationModel.Project;
 
 /**
  * <!-- begin-user-doc -->
@@ -241,6 +253,53 @@ public class ContextImpl extends BoolOperandChoicesImpl implements Context {
 				return contextOp1 != null;
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//throw new UnsupportedOperationException();
+		URI uri = URI.createFileURI(modelDirection);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(uri,true);
+		Project modelSpecialization = (Project) resource.getContents().get(0);
+		Feature f;
+		int aux=0;
+		
+		if (featureContext==null) {
+			for (Iterator<Node> iterator=modelSpecialization.getFeatures().iterator(); 
+					iterator.hasNext() && featureContext==null; )
+			{
+				Node node=iterator.next();
+				if (node instanceof Feature) {
+					f=(Feature) node;
+					if (f.getRealName().equals(this.getContextOp1().getFeatureName())) {
+						featureContext=f;
+					}
+				}
+			}
+		} else {
+			Feature context=(Feature) featureContext;
+			for (Iterator<Node> iterator=context.getChildren().iterator(); 
+					iterator.hasNext() && aux==0; ) {
+				specializationModel.Node node=iterator.next();
+				if (node instanceof Feature) {
+					f=(Feature) node;
+					if (f.getRealName().equals(this.getContextOp1().getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
+						featureContext=f;
+						aux=1;
+					}
+				}
+			}
+		}
+		Constraint op2=this.getContextOp2();
+		return op2.getOperators().evaluate(modelDirection, featureContext);	
 	}
 
 } //ContextImpl

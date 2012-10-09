@@ -23,7 +23,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class SimpleFeatureTest extends MultipleFeatureTest {
+public class SimpleFeatureTest extends BoolOperandChoicesTest {
 
 	/**
 	 * <!-- begin-user-doc -->

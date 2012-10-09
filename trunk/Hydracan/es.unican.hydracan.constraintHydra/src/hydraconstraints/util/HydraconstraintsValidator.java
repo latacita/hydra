@@ -569,7 +569,6 @@ public class HydraconstraintsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultipleFeature_isMultipleFeature(simpleFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSimpleFeature_isSimpleFeature(simpleFeature, diagnostics, context);
 		return result;
 	}

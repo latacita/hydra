@@ -10,6 +10,7 @@ import hydraconstraints.BoolOperandChoices;
 import hydraconstraints.HydraconstraintsPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,18 @@ public abstract class BoolOperandChoicesImpl extends BoolOperandImpl implements 
 	@Override
 	protected EClass eStaticClass() {
 		return HydraconstraintsPackage.Literals.BOOL_OPERAND_CHOICES;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //BoolOperandChoicesImpl

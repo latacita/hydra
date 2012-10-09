@@ -10,6 +10,7 @@ import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.NumOperand;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,18 @@ public abstract class NumOperandImpl extends OperandImpl implements NumOperand {
 	@Override
 	protected EClass eStaticClass() {
 		return HydraconstraintsPackage.Literals.NUM_OPERAND;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //NumOperandImpl

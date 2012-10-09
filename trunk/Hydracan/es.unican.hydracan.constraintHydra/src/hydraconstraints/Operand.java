@@ -19,4 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Operand extends EObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	int evaluate(String modelDirection, EObject featureContext);
 } // Operand

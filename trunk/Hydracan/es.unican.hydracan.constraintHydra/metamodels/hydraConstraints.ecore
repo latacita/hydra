@@ -15,9 +15,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operators" lowerBound="1"
-        eType="#//Operand" containment="true"/>
+        eType="#//BoolOperand" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operand" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operand" abstract="true">
+    <eOperations name="evaluate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="modelDirection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="featureContext" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoolOperand" abstract="true" eSuperTypes="#//Operand"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolPriorityOperand1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="boolPriorityOp1" lowerBound="1"
@@ -83,11 +88,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleFeature" eSuperTypes="#//MultipleFeature #//BoolOperandChoices">
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleFeature" eSuperTypes="#//BoolOperandChoices">
     <eOperations name="isSimpleFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoolOperandChoices" abstract="true"
       eSuperTypes="#//BoolOperand"/>
@@ -99,7 +106,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection" abstract="true" eSuperTypes="#//BoolOperandChoices">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionOp" lowerBound="1"
-        eType="#//BoolPriorityOperand2" containment="true"/>
+        eType="#//Context" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Any" eSuperTypes="#//Selection"/>
   <eClassifiers xsi:type="ecore:EClass" name="All" eSuperTypes="#//Selection"/>

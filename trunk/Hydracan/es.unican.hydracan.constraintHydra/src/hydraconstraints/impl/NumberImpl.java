@@ -11,6 +11,7 @@ import hydraconstraints.HydraconstraintsPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -160,6 +161,18 @@ public class NumberImpl extends NumOperandChoicesImpl implements hydraconstraint
 		result.append(numValue);
 		result.append(')');
 		return result.toString();
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		return numValue;
 	}
 
 } //NumberImpl
