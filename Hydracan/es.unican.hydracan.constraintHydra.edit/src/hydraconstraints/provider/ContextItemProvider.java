@@ -159,11 +159,6 @@ public class ContextItemProvider
 			(createChildParameter
 				(HydraconstraintsPackage.Literals.CONTEXT__CONTEXT_OP1,
 				 HydraconstraintsFactory.eINSTANCE.createMultipleFeature()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.CONTEXT__CONTEXT_OP1,
-				 HydraconstraintsFactory.eINSTANCE.createSimpleFeature()));
 	}
 
 }

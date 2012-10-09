@@ -372,11 +372,8 @@ public class HydraconstraintsSwitch<T> extends Switch<T> {
 			case HydraconstraintsPackage.SIMPLE_FEATURE: {
 				SimpleFeature simpleFeature = (SimpleFeature)theEObject;
 				T result = caseSimpleFeature(simpleFeature);
-				if (result == null) result = caseMultipleFeature(simpleFeature);
 				if (result == null) result = caseBoolOperandChoices(simpleFeature);
-				if (result == null) result = caseNumOperandChoices(simpleFeature);
 				if (result == null) result = caseBoolOperand(simpleFeature);
-				if (result == null) result = caseNumOperand(simpleFeature);
 				if (result == null) result = caseOperand(simpleFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

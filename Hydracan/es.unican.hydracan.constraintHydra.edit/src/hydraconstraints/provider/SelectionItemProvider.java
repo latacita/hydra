@@ -140,7 +140,7 @@ public class SelectionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HydraconstraintsPackage.Literals.SELECTION__SELECTION_OP,
-				 HydraconstraintsFactory.eINSTANCE.createBoolPriorityOperand2()));
+				 HydraconstraintsFactory.eINSTANCE.createContext()));
 	}
 
 }

@@ -179,11 +179,6 @@ public class NumPriorityOperand1ItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HydraconstraintsPackage.Literals.NUM_PRIORITY_OPERAND1__NUM_PRIORITY_OP1,
-				 HydraconstraintsFactory.eINSTANCE.createSimpleFeature()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HydraconstraintsPackage.Literals.NUM_PRIORITY_OPERAND1__NUM_PRIORITY_OP1,
 				 HydraconstraintsFactory.eINSTANCE.createContext()));
 
 		newChildDescriptors.add

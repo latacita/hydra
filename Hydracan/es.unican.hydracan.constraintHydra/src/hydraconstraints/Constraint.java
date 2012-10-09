@@ -34,12 +34,12 @@ public interface Constraint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operators</em>' containment reference.
-	 * @see #setOperators(Operand)
+	 * @see #setOperators(BoolOperand)
 	 * @see hydraconstraints.HydraconstraintsPackage#getConstraint_Operators()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Operand getOperators();
+	BoolOperand getOperators();
 
 	/**
 	 * Sets the value of the '{@link hydraconstraints.Constraint#getOperators <em>Operators</em>}' containment reference.
@@ -49,6 +49,6 @@ public interface Constraint extends EObject {
 	 * @see #getOperators()
 	 * @generated
 	 */
-	void setOperators(Operand value);
+	void setOperators(BoolOperand value);
 
 } // Constraint

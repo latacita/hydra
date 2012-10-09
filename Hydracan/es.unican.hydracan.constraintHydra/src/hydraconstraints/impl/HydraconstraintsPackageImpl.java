@@ -827,6 +827,15 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSimpleFeature_FeatureName() {
+		return (EAttribute)simpleFeatureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBoolOperandChoices() {
 		return boolOperandChoicesEClass;
 	}
@@ -1018,6 +1027,7 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		createEAttribute(multipleFeatureEClass, MULTIPLE_FEATURE__FEATURE_NAME);
 
 		simpleFeatureEClass = createEClass(SIMPLE_FEATURE);
+		createEAttribute(simpleFeatureEClass, SIMPLE_FEATURE__FEATURE_NAME);
 
 		boolOperandChoicesEClass = createEClass(BOOL_OPERAND_CHOICES);
 
@@ -1088,7 +1098,6 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		divEClass.getESuperTypes().add(this.getNumOperator());
 		numOperandChoicesEClass.getESuperTypes().add(this.getNumOperand());
 		multipleFeatureEClass.getESuperTypes().add(this.getNumOperandChoices());
-		simpleFeatureEClass.getESuperTypes().add(this.getMultipleFeature());
 		simpleFeatureEClass.getESuperTypes().add(this.getBoolOperandChoices());
 		boolOperandChoicesEClass.getESuperTypes().add(this.getBoolOperand());
 		contextEClass.getESuperTypes().add(this.getBoolOperandChoices());
@@ -1108,9 +1117,13 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstraint_Operators(), this.getOperand(), null, "operators", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_Operators(), this.getBoolOperand(), null, "operators", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operandEClass, Operand.class, "Operand", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(operandEClass, ecorePackage.getEInt(), "evaluate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "modelDirection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "featureContext", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(boolOperandEClass, BoolOperand.class, "BoolOperand", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1185,6 +1198,7 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(simpleFeatureEClass, SimpleFeature.class, "SimpleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSimpleFeature_FeatureName(), ecorePackage.getEString(), "featureName", null, 1, 1, SimpleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(simpleFeatureEClass, ecorePackage.getEBoolean(), "isSimpleFeature", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1197,7 +1211,7 @@ public class HydraconstraintsPackageImpl extends EPackageImpl implements Hydraco
 		initEReference(getContext_ContextOp1(), this.getMultipleFeature(), null, "contextOp1", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelection_SelectionOp(), this.getBoolPriorityOperand2(), null, "selectionOp", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelection_SelectionOp(), this.getContext(), null, "selectionOp", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(anyEClass, Any.class, "Any", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

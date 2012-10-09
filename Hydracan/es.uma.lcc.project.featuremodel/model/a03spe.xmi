@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<specializationModel:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:specializationModel="http://specializationmodel" xsi:schemaLocation="http://specializationmodel specializationmodel.ecore" nameConfigFile="">
+  <features xsi:type="specializationModel:Feature" name="f1_1" children="//@features.9 //@features.11" state="USER_SELECTED" realName="f1"/>
+  <features xsi:type="specializationModel:Feature" name="f2_1" children="//@features.6 //@features.7 //@features.10 //@features.8" state="USER_SELECTED" realName="f2"/>
+  <features xsi:type="specializationModel:Feature" name="f2_2" state="USER_SELECTED" realName="f2"/>
+  <features xsi:type="specializationModel:Feature" name="f2_3" state="USER_SELECTED" realName="f2"/>
+  <features xsi:type="specializationModel:Feature" name="f2_4" state="USER_SELECTED" realName="f2"/>
+  <features xsi:type="specializationModel:Feature" name="f2_5" state="USER_SELECTED" realName="f2"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.1" name="f3_1" state="USER_SELECTED" realName="f3"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.1" name="f3_2" state="USER_SELECTED" realName="f3"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="f3_3" state="USER_SELECTED" realName="f3"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="f4_1" state="USER_SELECTED" realName="f4"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.1" name="f5_1" state="USER_SELECTED" realName="f5"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="f6_1" state="USER_SELECTED" realName="f6"/>
+  <relations xsi:type="specializationModel:RelationFeature" lowerBound="2" upperBound="5"/>
+</specializationModel:Project>

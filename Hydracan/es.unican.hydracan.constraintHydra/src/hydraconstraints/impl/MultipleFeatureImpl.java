@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
@@ -37,6 +38,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import specializationModel.ConfigState;
 
 /**
  * <!-- begin-user-doc -->
@@ -257,6 +260,48 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 		result.append(featureName);
 		result.append(')');
 		return result.toString();
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//throw new UnsupportedOperationException();
+		int resultado=0;
+		URI uri = URI.createFileURI(modelDirection);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(uri,true);
+		specializationModel.Project modelSpecialization = (specializationModel.Project) resource.getContents().get(0);
+		if (featureContext==null) {
+			for (Iterator<specializationModel.Node> iterator=modelSpecialization.getFeatures().iterator(); 
+					iterator.hasNext(); ) {
+				specializationModel.Node node=iterator.next();
+				if (node instanceof specializationModel.Feature) {
+					specializationModel.Feature f=(specializationModel.Feature) node;
+					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
+						resultado++;
+					}
+				}
+			}
+		} else {
+			specializationModel.Feature context=(specializationModel.Feature) featureContext;
+			for (Iterator<specializationModel.Node> iterator=context.getChildren().iterator(); 
+					iterator.hasNext(); ) {
+				specializationModel.Node node=iterator.next();
+				if (node instanceof specializationModel.Feature) {
+					specializationModel.Feature f=(specializationModel.Feature) node;
+					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
+						resultado++;
+					}
+				}
+			}
+		}
+		return resultado;
 	}
 
 } //MultipleFeatureImpl

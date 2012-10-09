@@ -6,6 +6,7 @@
  */
 package hydraconstraints.impl;
 
+import hydraconstraints.BoolOperand;
 import hydraconstraints.Constraint;
 import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Operand;
@@ -41,7 +42,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 * @ordered
 	 */
-	protected Operand operators;
+	protected BoolOperand operators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,7 +68,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operand getOperators() {
+	public BoolOperand getOperators() {
 		return operators;
 	}
 
@@ -76,8 +77,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOperators(Operand newOperators, NotificationChain msgs) {
-		Operand oldOperators = operators;
+	public NotificationChain basicSetOperators(BoolOperand newOperators, NotificationChain msgs) {
+		BoolOperand oldOperators = operators;
 		operators = newOperators;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HydraconstraintsPackage.CONSTRAINT__OPERATORS, oldOperators, newOperators);
@@ -91,7 +92,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperators(Operand newOperators) {
+	public void setOperators(BoolOperand newOperators) {
 		if (newOperators != operators) {
 			NotificationChain msgs = null;
 			if (operators != null)
@@ -142,7 +143,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HydraconstraintsPackage.CONSTRAINT__OPERATORS:
-				setOperators((Operand)newValue);
+				setOperators((BoolOperand)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +158,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HydraconstraintsPackage.CONSTRAINT__OPERATORS:
-				setOperators((Operand)null);
+				setOperators((BoolOperand)null);
 				return;
 		}
 		super.eUnset(featureID);

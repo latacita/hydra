@@ -6,6 +6,7 @@
  */
 package hydraconstraints.impl;
 
+import hydraconstraints.Context;
 import hydraconstraints.BoolPriorityOperand2;
 import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Selection;
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -40,7 +42,7 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	 * @generated
 	 * @ordered
 	 */
-	protected BoolPriorityOperand2 selectionOp;
+	protected Context selectionOp;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +68,7 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BoolPriorityOperand2 getSelectionOp() {
+	public Context getSelectionOp() {
 		return selectionOp;
 	}
 
@@ -75,8 +77,8 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSelectionOp(BoolPriorityOperand2 newSelectionOp, NotificationChain msgs) {
-		BoolPriorityOperand2 oldSelectionOp = selectionOp;
+	public NotificationChain basicSetSelectionOp(Context newSelectionOp, NotificationChain msgs) {
+		Context oldSelectionOp = selectionOp;
 		selectionOp = newSelectionOp;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HydraconstraintsPackage.SELECTION__SELECTION_OP, oldSelectionOp, newSelectionOp);
@@ -90,7 +92,7 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelectionOp(BoolPriorityOperand2 newSelectionOp) {
+	public void setSelectionOp(Context newSelectionOp) {
 		if (newSelectionOp != selectionOp) {
 			NotificationChain msgs = null;
 			if (selectionOp != null)
@@ -141,7 +143,7 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HydraconstraintsPackage.SELECTION__SELECTION_OP:
-				setSelectionOp((BoolPriorityOperand2)newValue);
+				setSelectionOp((Context)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +158,7 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HydraconstraintsPackage.SELECTION__SELECTION_OP:
-				setSelectionOp((BoolPriorityOperand2)null);
+				setSelectionOp((Context)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -174,6 +176,18 @@ public abstract class SelectionImpl extends BoolOperandChoicesImpl implements Se
 				return selectionOp != null;
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //SelectionImpl

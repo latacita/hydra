@@ -17,7 +17,12 @@
     <genClasses ecoreClass="hydraConstraints.ecore#//Constraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//Constraint/operators"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//Operand"/>
+    <genClasses image="false" ecoreClass="hydraConstraints.ecore#//Operand">
+      <genOperations ecoreOperation="hydraConstraints.ecore#//Operand/evaluate">
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Operand/evaluate/modelDirection"/>
+        <genParameters ecoreParameter="hydraConstraints.ecore#//Operand/evaluate/featureContext"/>
+      </genOperations>
+    </genClasses>
     <genClasses image="false" ecoreClass="hydraConstraints.ecore#//BoolOperand"/>
     <genClasses ecoreClass="hydraConstraints.ecore#//BoolPriorityOperand1">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hydraConstraints.ecore#//BoolPriorityOperand1/boolPriorityOp1"/>
@@ -72,6 +77,7 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="hydraConstraints.ecore#//SimpleFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hydraConstraints.ecore#//SimpleFeature/featureName"/>
       <genOperations ecoreOperation="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature">
         <genParameters ecoreParameter="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature/diagnostics"/>
         <genParameters ecoreParameter="hydraConstraints.ecore#//SimpleFeature/isSimpleFeature/context"/>

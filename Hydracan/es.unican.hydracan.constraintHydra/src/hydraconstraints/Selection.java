@@ -33,12 +33,12 @@ public interface Selection extends BoolOperandChoices {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selection Op</em>' containment reference.
-	 * @see #setSelectionOp(BoolPriorityOperand2)
+	 * @see #setSelectionOp(Context)
 	 * @see hydraconstraints.HydraconstraintsPackage#getSelection_SelectionOp()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	BoolPriorityOperand2 getSelectionOp();
+	Context getSelectionOp();
 
 	/**
 	 * Sets the value of the '{@link hydraconstraints.Selection#getSelectionOp <em>Selection Op</em>}' containment reference.
@@ -48,6 +48,6 @@ public interface Selection extends BoolOperandChoices {
 	 * @see #getSelectionOp()
 	 * @generated
 	 */
-	void setSelectionOp(BoolPriorityOperand2 value);
+	void setSelectionOp(Context value);
 
 } // Selection

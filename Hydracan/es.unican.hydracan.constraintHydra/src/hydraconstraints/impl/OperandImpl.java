@@ -11,6 +11,7 @@ import hydraconstraints.Operand;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
@@ -40,6 +41,17 @@ public abstract class OperandImpl extends EObjectImpl implements Operand {
 	@Override
 	protected EClass eStaticClass() {
 		return HydraconstraintsPackage.Literals.OPERAND;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int evaluate(String modelDirection, EObject featureContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //OperandImpl

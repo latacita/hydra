@@ -10,6 +10,7 @@ import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.Neg;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,17 @@ public class NegImpl extends UnaryOpImpl implements Neg {
 	@Override
 	protected EClass eStaticClass() {
 		return HydraconstraintsPackage.Literals.NEG;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int evaluate(String modelDirection, EObject featureContext) {
+		int op=this.getUnaryOp().getBoolPriorityOp2().evaluate(modelDirection, featureContext);
+		return op*-1;
 	}
 
 } //NegImpl
