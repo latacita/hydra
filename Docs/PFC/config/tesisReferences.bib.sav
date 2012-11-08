@@ -1,0 +1,136 @@
+%=====================================================================================%
+% Author : Sánchez Barreiro, Pablo.                                                   %
+% Version: 1.0, 21/11/2008                                                            %
+% PhD dissertation: References                                                        %
+%=====================================================================================%
+
+%% AOSD General References
+@book{meyer:2001,
+    author    = {Bertrand Meyer},
+    title     = {{Object-Oriented Software Construction}},
+    edition   = {2},
+    publisher = {Prentice Hall},
+    year      = {2001},
+    month     = {May}
+}
+
+@BOOK{szyperski:2002,
+  title   = {{Component Software - Beyond Object-Oriented Programming}},
+  publisher = {Adisson-Wesley},
+  year    = {2002},
+  author  = {Clemens Szyperski},
+  month   = {November},
+  edition = {2}
+}
+
+@inproceedings{rashid:2003,
+    author  = {Awais Rashid and Ruzanna Chitchyan},
+    title   = {{Persistence as an Aspect}},
+    booktitle = {Proc. of the 2nd Int. Conference on Aspect-Oriented Software Development (AOSD)},
+    year    = {2003},
+    pages   = {120--129},
+    address = {Boston (Massachusetts, USA)},
+}
+
+@inproceedings{kourai:2007,
+    author  = {Kenichi Kourai and Hideaki Hibino and Shigeru Chiba},
+    title   = {{Aspect-Oriented Application-level Scheduling for J2EE servers}},
+    booktitle = {Proc. of the 6th Int. Conference on Aspect-Oriented Software Development (AOSD)},
+    month   = {March},
+    year    = {2007},
+    pages   = {1--13},
+    address = {Vancouver (British Columbia, Canada)}
+}
+
+@inproceedings{tanter:2006,
+  author    = {{\'E}ric Tanter and Kris Gybels and Marcus Denker and Alexandre Bergel},
+  title     = {{Context-Aware Aspects}},
+  year      = {2006},
+  pages     = {227--242},
+  editor    = {Welf L{\"o}we and Mario S{\"u}dholt},
+  booktitle = {5th International Symposium on Software Composition},
+  series    = {LNCS},
+  address   = {Vienna (Austria)},
+  month     = {March},
+  volume    = {4089},
+}
+
+@article{soares:2006,
+  author  = {S{\'e}rgio Soares and Paulo Borba and Eduardo Laureano},
+  title   = {{Distribution and Persistence as Aspects}},
+  journal = {Software Practice and Experience},
+  volume  = {36},
+  number  = {7},
+  year    = {2006},
+  pages   = {711-759},
+  month   = {June}
+}
+
+@INPROCEEDINGS{castor:2007,
+  AUTHOR    = {Fernando Castor Filho and Alessandro Garcia and Cec{\´i}lia Mary F. Rubira},
+  TITLE     = {{Extracting Error Handling to Aspects: A Cookbook}},
+  BOOKTITLE = {Proc. of the 23rd International Conference on Software Maintenance},
+  YEAR      = {2007},
+  pages     = {134-143},
+  address   = {Paris (France)},
+  month     = {October},
+}
+
+@article{fuentes:2007,
+  author  = {Lidia Fuentes and Pablo S{\'a}nchez},
+  title   = {{Aspect-Oriented Coordination}},
+  journal = {Electronic Notes on Theorical Computer Science},
+  volume  = {189},
+  year    = {2007},
+  pages   = {87--103},
+  month   = {July}
+}
+
+@article{cuesta:2006,
+  author    = {Carlos E. Cuesta and Mar\'{\i}a Pilar Romay Rodr\'{\i}guez and Pablo de la Fuente and
+               Manuel Barrio-Sol{\'o}rzano},
+  title     = {{Coordination as an Architectural Aspect}},
+  journal   = {Electronic Notes on Theorical Computer Science},
+  volume    = {154},
+  number    = {1},
+  year      = {2006},
+  pages     = {25--41},
+}
+
+@inproceedings{kiczales:1997,
+  author    = {Gregor Kiczales and John Lamping and Anurag Mendhekar and Chris Maeda and
+               Cristina Videira Lopes and Jean-Marc Loingtier and John Irwin},
+  title     = {Aspect-Oriented Programming},
+  booktitle = {Proc. of the 11th European Conference on Object-Oriented Programming (ECOOP)},
+  year      = {1997},
+  pages     = {220--242},
+  address   = {Jyv{\"a}skyl{\"a} (Finland)},
+  editor    = {Mehmet {Ak{\c s}it} and Satoshi Matsuoka},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {1241},
+  year      = {1997},
+  month     = {June}
+}
+
+@article{elrad:2001,
+  author  = {Tzilla Elrad and Robert E. Filman and Atef Bader},
+  title   = {Aspect-oriented programming: Introduction},
+  journal = {Communications of the ACM},
+  volume  = {44},
+  number  = {10},
+  year    = {2001},
+  pages   = {29--32},
+  month   = {October}
+}
+
+@article{clarke:2002,
+  author  = {Siobh{\'a}n Clarke},
+  title   = {Extending standard UML with model composition semantics},
+  journal = {Science of Computer Programming},
+  volume  = {44},
+  number  = {1},
+  year    = {2002},
+  pages   = {71--100},
+  month   = {July}
+}
+

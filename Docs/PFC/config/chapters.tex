@@ -1,0 +1,11 @@
+\setcounter{page}{1}   % start numbering pages from 1 on (again)
+\pagenumbering{arabic} % use arabic numbers, again
+
+% Use \tocchapter instead of \chapter, to make use of
+% nicely formatted chapter front pages:
+\newcommand{\tocchapter}[1]{\cleardoublepage\chapter{#1}\minitoc\newpage}
+
+% \newcommand{\chapterheader}[1]{\cleardoublepage\chapter{#1}}
+\newcommand{\chapterheader}[2]{\cleardoublepage\chapter[#2]{#1}} 
+
+\newcommand{\chaptertoc}{\minitoc}
