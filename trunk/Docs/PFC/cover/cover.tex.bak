@@ -1,0 +1,41 @@
+%
+% This file produces the first page of the PFC/Thesis, featuring
+% the title, your name, supervisor's name and so forth.
+%
+% Most, if not all, content in this page is included via commands
+% (e.g. \thesistitle) that have been defined in Config/pfc_options.tex
+%
+% Edit to your liking.
+%
+
+\thispagestyle{empty} % don't print neither page number nor headers nor footers.
+
+%
+% Use \tb to place the various items in the page. Usage:
+%
+% \tb{w}{h}{v}{t}
+%
+% where:
+%
+% w = paragraph width of text box (1.0 = page width)
+% h = horizontal position of the center of text box (0.0 = left, 1.0 = right)
+% v = vertical position of the center of text box (0.0 = top, 1.0 = bottom)
+% t = text to put inside text box
+%
+\tb{0.8}{0.50}{0.100}{\large FACULTAD DE CIENCIAS}
+\tb{0.8}{0.50}{0.130}{\Large UNIVESIDAD DE CANTABRIA}
+\tb{0.8}{0.50}{0.250}{
+	\includegraphics[width=0.30\columnwidth]{images/ingInformatica.eps} \ \ \ \ \
+}
+\tb{0.8}{0.50}{0.390}{\LARGE \worktype}    % whether this is a PFC or a Thesis
+\tb{0.8}{0.50}{0.500}{\Huge \thesistitle}  % title of the work
+\tb{0.8}{0.50}{0.600}{\LARGE (\englishtitle)}  % title of the work
+\tb{0.8}{0.50}{0.700}{\Large Para acceder al Título de \\
+					  INGENIERO EN INFORMÁTICA}   % the name of the supervisor
+\tb{0.2}{0.70}{0.850}{\begin{tabular}{r}
+\Large Autor: Alejandro Pérez Ruiz \\
+\Large Julio 2011 \\
+\end{tabular}}
+
+\ \clearpage                       % end page here
+\thispagestyle{empty} \ \clearpage % blank page

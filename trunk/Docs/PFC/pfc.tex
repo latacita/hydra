@@ -1,0 +1,113 @@
+%==================================================================%
+% Author : Doe Doe, John                                           %
+%          Sánchez Barreiro, Pablo                                 %
+% Version: 1.0, dd/mm/yyyy                                         %                   %                                                                  %
+% Memoria del Proyecto Fin de Carrera                              %
+% Archivo raíz                                                     %
+%==================================================================%
+
+\documentclass[a4paper,11pt]{itsas_pfc}
+
+%=====================================================================%
+%                       My imported packages                          %
+%=====================================================================%
+\usepackage[latin1]{inputenc}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage[spanish,activeacute]{babel}
+
+% Esto se añade porque a algún gracioso le apetecía que la fuente
+% de la portada fuese Arial
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{uarial}
+
+% File with main configuration
+\input{config/pfc_options.tex}
+
+% File with some names
+\input{config/rename.tex}
+
+%=====================================================================%
+%                           Authoring's details                          %
+%=====================================================================%
+\newcommand{\myname}{John Doe Doe}  % name of author
+\newcommand{\myboss}{Pablo Sánchez Barreiro} % name of supervisor
+\newcommand{\thesistitle}{Título del Proyecto Fin de Carrera}
+
+\newcommand{\englishtitle}{Master Thesis Title}
+												  % work title
+\newcommand{\worktype}{Proyecto Fin de Carrera}   % work type
+\newcommand{\logo}{images/uc.eps}            % logo file (e.g. for the cover)
+
+%=====================================================================%
+%                     Definition of my own commands                   %
+%=====================================================================%
+\newcommand{\nota}[1]{\color{red}$\ll$#1$\gg$\color{black}}
+\newcommand{\imp}[1]{{\small{\sf #1}}}
+\newcommand{\stereotype}[1]{$\ll${\small{\sf #1}}$\gg$}
+\newcommand{\todo}[1]{\color{red}$\ll$TODO: #1$\gg$\color{black}}
+
+\setcounter{minitocdepth}{1}
+
+\begin{document}
+
+% Cover page
+\input{cover/cover.tex}
+
+\input{cover/firstPage.tex}
+
+% reset page numbering
+\input{config/begin.tex}
+
+% acknowledgement
+\input{cover/acknowledgements.tex} % acknowledgements
+
+% Preface
+%\input{introduction/preface-lff.tex}   % preface
+
+% Toc
+\input{config/toc.tex}
+
+\input{Config/headers.tex}
+
+\input{config/chapters.tex}
+
+% Capítulo 1: Introducción
+\todo{Capítulo 1: Introducción al proyecto}
+\input{introduction/introduction.tex} % Chapter 1
+
+% Capítulo 2: Resumen del Estado del Arte
+\todo{Capítulo 2: Antecedentes o Estado del Arte}
+\input{background/background.tex}
+
+% Capítulo 3: Descripción General del Proceso
+\todo{Capítulo 3: Alcance y Planificación del Proyecto}
+
+% Capítulo 4: Ingeniería de Requisitos
+\todo{Capítulo 4: Ingeniería de Requisitos}
+
+% Capítulo 5: Definición Arquitectónica y Diseño Software
+\todo{Capítulo 5: Definición Arquitectónica y Diseño Software}
+
+% Capítulo 6: Construcción e Implementación
+\todo{Capítulo 6: Construcción e Implementación
+
+% Capítulo 7: Pruebas, Despliegue y Aceptación
+\todo{Capítulo 7: Pruebas, Despliegue y Aceptación}
+
+% Capítulo 8: Discusión, Conclusiones y Trabajos Futuros
+\todo{Capítulo 7: Discusión, Conclusiones y Trabajos Futuros}
+
+% CONTENT: Appendices, if desired
+\input{config/appendix.tex}
+
+% Appendix A:
+% \input{populo/populo.tex} % Appendix I
+
+% CONFIG: Bibliography style
+% \input{config/bibliography.tex}
+% \bibliography{references/references}
+
+\end{document}
