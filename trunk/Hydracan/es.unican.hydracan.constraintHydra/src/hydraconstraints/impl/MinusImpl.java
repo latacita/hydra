@@ -42,8 +42,7 @@ public class MinusImpl extends NumOperatorImpl implements Minus {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the arithmetic subtraction operation ( - )
 	 * @generated NOT
 	 */
 	@Override

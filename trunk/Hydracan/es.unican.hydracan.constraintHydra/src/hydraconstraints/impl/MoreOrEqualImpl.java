@@ -42,8 +42,7 @@ public class MoreOrEqualImpl extends ComparisonImpl implements MoreOrEqual {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluate the more or equal ( >= ) operation
 	 * @generated NOT
 	 */
 	@Override

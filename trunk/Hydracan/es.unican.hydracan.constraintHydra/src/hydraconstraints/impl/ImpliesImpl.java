@@ -42,8 +42,7 @@ public class ImpliesImpl extends BinaryOpImpl implements Implies {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the logical implies operation
 	 * @generated NOT
 	 */
 	@Override

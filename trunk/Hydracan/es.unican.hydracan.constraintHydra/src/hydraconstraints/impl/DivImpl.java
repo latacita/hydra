@@ -42,8 +42,7 @@ public class DivImpl extends NumOperatorImpl implements Div {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the arithmetic division ( / )
 	 * @generated NOT
 	 */
 	@Override

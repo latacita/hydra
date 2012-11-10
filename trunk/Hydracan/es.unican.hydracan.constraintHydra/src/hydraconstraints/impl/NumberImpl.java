@@ -164,8 +164,7 @@ public class NumberImpl extends NumOperandChoicesImpl implements hydraconstraint
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the value of the number (just return it)
 	 * @generated NOT
 	 */
 	@Override

@@ -24,55 +24,57 @@ import specializationModel.Feature;
 import specializationModel.Node;
 import specializationModel.Project;
 
+/**
+ * @author Daniel Tejedo Gonzalez
+ * This implements the event that takes place after pressing the "validate" button
+ */
+
 public class ValidateConstraintsHandler extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
-	//HandlerUtil.getActiveWorkbenchWindow(event).close();
-	    //HandlerUtil.getActiveWorkbenchWindow(event).getActivePage().closeAllEditors(true);
+	  
+	    // Invoke the window that will read the specialization file
 		Shell s= new Shell();
 		FileDialog dialog = new FileDialog(s); 
 		dialog.setText("Enter the specialization xmi file");
 		dialog.setFilterExtensions(new String[] { "*.xmi" });
-		String selected = dialog.open();
-		String printar="";
-		URI uri = URI.createFileURI(selected);
-		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.getResource(uri,true);
-		Project modelSpecialization = (Project) resource.getContents().get(0);
-		Feature f;
-		for (Iterator<Node> iterator=modelSpecialization.getFeatures().iterator(); 
-				iterator.hasNext(); )
-		{
-			Node node=iterator.next();
-			if (node instanceof Feature) {
-				f=(Feature) node;
-				printar+=" "+f.getName();
-			}
-		}
+		String selected = dialog.open(); // selected has the route of the file
 		
-		//MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "string", printar);
-		String fich="";
-		fich=HandlerUtil.getActiveEditor(event).getEditorInput().toString();
-		//MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "string", fich);
+		// Get the route of the constraint file from the name of the active window
+		String constraintRouteAux="";
+		constraintRouteAux=HandlerUtil.getActiveEditor(event).getEditorInput().toString();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
 		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
-		String ruta=fich.substring(fich.lastIndexOf("(")+1, fich.lastIndexOf(")"));
-		String direccionConstraints=workspaceDirectory.toString()+ruta;
-		//MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "string", direccionModelo);
-		URI uri2 = URI.createFileURI(direccionConstraints);
+		String constraintRouteAux2=constraintRouteAux.substring(constraintRouteAux.lastIndexOf("(")+1, constraintRouteAux.lastIndexOf(")"));
+		String constraintFileRoute=workspaceDirectory.toString()+constraintRouteAux2;
+		
+		// Open the constraint file
+		URI uri2 = URI.createFileURI(constraintFileRoute);
 		ResourceSet resSet2 = new ResourceSetImpl();
-		Resource resource2 = resSet.getResource(uri2,true);
+		Resource resource2 = resSet2.getResource(uri2,true);
 		Model modelConstraints = (Model) resource2.getContents().get(0);
-		printar="";
+
+		// Evaluate all the constraints
+		int counter=0;
+		String result="";
 		for (Iterator<Constraint> iterator=modelConstraints.getConstraints().iterator(); 
 				iterator.hasNext(); )
 		{
 			Constraint c=iterator.next();
-			int numero=c.getOperators().evaluate(selected,null);
-			printar+=" "+numero;
+			int constraintValue=c.getOperators().evaluate(selected,null);
+			counter++;
+			result+="Constraint number "+counter+": ";
+			if (constraintValue == 0) {
+				result+="false";
+			} else if (constraintValue==1) {
+				result+="true";
+			} else {
+				result+="error during the validation";
+			}
+			result+="\n";
 		}
-		MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "string", printar);
+		MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "Constraint Validation", result);
 		return null;
   }
 

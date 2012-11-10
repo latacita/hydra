@@ -42,8 +42,7 @@ public class EqualImpl extends ComparisonImpl implements Equal {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the equal ( == ) operation
 	 * @generated NOT
 	 */
 	@Override

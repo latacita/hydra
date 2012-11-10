@@ -42,8 +42,7 @@ public class OrImpl extends BinaryOpImpl implements Or {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the or logical operation
 	 * @generated NOT
 	 */
 	@Override

@@ -42,8 +42,7 @@ public class NotEqualImpl extends ComparisonImpl implements NotEqual {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the not equal ( != ) operation
 	 * @generated NOT
 	 */
 	@Override

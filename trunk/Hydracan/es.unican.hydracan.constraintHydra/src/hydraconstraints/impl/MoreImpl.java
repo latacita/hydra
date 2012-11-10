@@ -42,8 +42,7 @@ public class MoreImpl extends ComparisonImpl implements More {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluate the more ( > ) operation 
 	 * @generated NOT
 	 */
 	@Override
