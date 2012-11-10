@@ -9,8 +9,6 @@ package hydraconstraints.impl;
 import featureModel.Feature;
 import featureModel.Node;
 import featureModel.Project;
-import featureModel.Relation;
-import featureModel.RelationFeature;
 import hydraconstraints.HydraconstraintsPackage;
 import hydraconstraints.MultipleFeature;
 
@@ -33,11 +31,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import specializationModel.ConfigState;
 
@@ -116,8 +113,9 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This method is provided by EMF Validation Framework
+	 * This method is executed when the xmi constraint model is validated
+	 * It looks if the feature name exists in the feature model
 	 * @generated NOT
 	 */
 	public boolean isMultipleFeature(DiagnosticChain diagnostics, Map context) {
@@ -126,66 +124,44 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
 		
-		// Buscamos el fichero en el workspace
-				IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
-				File workspaceDirectory = workspace.getRoot().getLocation().toFile();
-				// Escribimos en una URI privada el modelo para que sea accesible por todos
-				URI uri = URI.createFileURI(workspaceDirectory.toString()+"/modelo.xmi");
-				ResourceSet resSet = new ResourceSetImpl();
-				Resource resource = resSet.getResource(uri,true);
-				Project featureModel = (Project) resource.getContents().get(0);
+		// Look for the file in the workspace		
+		IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
+		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
+		// We write the direction in a private uri, so we can use it later
+		URI uri = URI.createFileURI(workspaceDirectory.toString()+"/modelo.xmi");
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(uri,true);
+		Project featureModel = (Project) resource.getContents().get(0);
 				
-				String resultado="Feature "+this.featureName+" does not exist in the given model";
+		String result="Feature "+this.featureName+" does not exist in the given model";
 				
-				// Recorremos todas las features del modelo hasta llegar al final o encontrar la correcta
-				for (Iterator<Node> iterator=featureModel.getFeatures().iterator(); 
-						iterator.hasNext() && !resultado.equals("bien"); )
-				{
-					Node node=iterator.next();
-					if (node instanceof Feature) {
-						Feature feature = (Feature) node; // Si el nodo es un Feature, lo parseamos 
-						// Si el feature parseado se llama igual que esta multiple feature, trabajamos:
-						if (feature.getName().equals(this.featureName)) { 
-							resultado="Feature "+this.featureName+" exists but it is not a multiple feature";
-							
-							/*
-							// Este bucle va mirando los padres del feature para ver si son multiple features
-							while (!resultado.equals("bien") && feature!=null)
-							{
-								// Este bucle recorre todas las relaciones para cada padre
-								for (Iterator<Relation> iterator2=featureModel.getRelations().iterator();
-										iterator2.hasNext() && !resultado.equals("bien"); ) {
-									Relation relation = iterator2.next();
-									if (relation instanceof RelationFeature) {
-										RelationFeature relationF = (RelationFeature) relation;
-										Feature destino=(Feature) relationF.getTarget();
-										if (destino.equals(feature) && relationF.getUpperBound()>1) {
-											resultado="bien";
-										} // if
-									} // if
-									
-								} // for each relation
-								feature = (Feature) feature.getFather();
-							} // while father is not null
-							*/
-							resultado="bien";
-						} // if feature == this
-					} // if node is a feature
-				} // for each node
-				
-				if (!resultado.equals("bien")) {
-					if (diagnostics != null) {
-						diagnostics.add
-							(new BasicDiagnostic
-								(Diagnostic.ERROR,
-								 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
-								 HydraconstraintsValidator.MULTIPLE_FEATURE__IS_MULTIPLE_FEATURE,
-								 resultado,
-								 new Object [] { this }));
-					}
-					return false;
-				}
-				return true;
+		// This loop checks all the features until the correct one is found
+		for (Iterator<Node> iterator=featureModel.getFeatures().iterator(); 
+				iterator.hasNext() && !result.equals("good"); )
+		{
+			Node node=iterator.next();
+			if (node instanceof Feature) {
+				Feature feature = (Feature) node; // We only use the node if it is a feature
+				if (feature.getName().equals(this.featureName)) { 
+					result="good";
+				} // if feature == this
+			} // if node is a feature
+		} // for each node
+			
+		// Validation Framework
+		if (!result.equals("good")) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
+						 HydraconstraintsValidator.MULTIPLE_FEATURE__IS_MULTIPLE_FEATURE,
+						 result,
+						 new Object [] { this }));
+			}
+			return false;
+		}
+		return true;
 			}
 
 	/**
@@ -263,45 +239,49 @@ public class MultipleFeatureImpl extends NumOperandChoicesImpl implements Multip
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the multiple feature
+	 * It returns the total amount of instances of the feature with this name in the specialization model
 	 * @generated NOT
 	 */
 	@Override
 	public int evaluate(String modelDirection, EObject featureContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
-		int resultado=0;
+		
+		// Open the specialization model 
 		URI uri = URI.createFileURI(modelDirection);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(uri,true);
+		int result=0;
 		specializationModel.Project modelSpecialization = (specializationModel.Project) resource.getContents().get(0);
+		
+		// If there is no previous context, we have to count the number of instances of the feature
 		if (featureContext==null) {
 			for (Iterator<specializationModel.Node> iterator=modelSpecialization.getFeatures().iterator(); 
 					iterator.hasNext(); ) {
 				specializationModel.Node node=iterator.next();
 				if (node instanceof specializationModel.Feature) {
-					specializationModel.Feature f=(specializationModel.Feature) node;
-					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
-						resultado++;
+					specializationModel.Feature feature=(specializationModel.Feature) node;
+					if (feature.getRealName().equals(this.getFeatureName()) && feature.getState()==ConfigState.USER_SELECTED) {
+						result++;
 					}
 				}
 			}
+		// If there is  previous context, we have to count the number of instances on the appropiate context
 		} else {
 			specializationModel.Feature context=(specializationModel.Feature) featureContext;
 			for (Iterator<specializationModel.Node> iterator=context.getChildren().iterator(); 
 					iterator.hasNext(); ) {
 				specializationModel.Node node=iterator.next();
 				if (node instanceof specializationModel.Feature) {
-					specializationModel.Feature f=(specializationModel.Feature) node;
-					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
-						resultado++;
+					specializationModel.Feature feature=(specializationModel.Feature) node;
+					if (feature.getRealName().equals(this.getFeatureName()) && feature.getState()==ConfigState.USER_SELECTED) {
+						result++;
 					}
 				}
 			}
 		}
-		return resultado;
+		return result;
 	}
 
 } //MultipleFeatureImpl

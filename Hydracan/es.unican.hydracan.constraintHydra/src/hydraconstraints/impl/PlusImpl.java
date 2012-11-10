@@ -42,8 +42,7 @@ public class PlusImpl extends NumOperatorImpl implements Plus {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the arithmetic addition operation ( + )
 	 * @generated NOT
 	 */
 	@Override

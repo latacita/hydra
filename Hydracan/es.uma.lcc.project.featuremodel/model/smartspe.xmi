@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specializationModel:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:specializationModel="http://specializationmodel" xsi:schemaLocation="http://specializationmodel specializationmodel.ecore" nameConfigFile="">
+  <features xsi:type="specializationModel:Feature" name="SmartHome" children="//@features.18 //@features.24 //@features.43" state="USER_SELECTED" realName="SmartHome"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="Floor" references="//@features.43" state="USER_ELIMINATED" realName="Floor"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.43" name="Room" references="//@features.25" state="USER_ELIMINATED" realName="Room"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.25" name="Devices" children="//@features.62 //@features.63 //@features.64" state="USER_SELECTED" realName="Devices"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="Light" references="//@features.62" state="USER_ELIMINATED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="Window" references="//@features.63" state="USER_ELIMINATED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="Heater" state="USER_ELIMINATED" realName="Heater"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="LighDimmer" references="//@features.64" state="USER_ELIMINATED" realName="LighDimmer"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.25" name="RoomFacilities" children="//@features.9 //@features.10" state="USER_SELECTED" realName="RoomFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.8" name="LightMng" state="USER_SELECTED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.8" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.8" name="HeaterMng" state="USER_ELIMINATED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.8" name="SmartEnergyMng" state="USER_ELIMINATED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.43" name="FloorFacilities" children="//@features.15" state="USER_SELECTED" realName="FloorFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.13" name="LightMng" state="USER_ELIMINATED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.13" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.13" name="HeaterMng" state="USER_ELIMINATED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.13" name="SmartEnergyMng" state="USER_ELIMINATED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="GeneralFacilities" children="//@features.22" state="USER_SELECTED" realName="GeneralFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.18" name="LightMng" state="USER_ELIMINATED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.18" name="SmartEnergyMng" state="USER_ELIMINATED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.18" name="HeaterMng" state="USER_ELIMINATED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.18" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="PresenceSimulation" state="USER_ELIMINATED" realName="PresenceSimulation"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="Ground:Floor" children="//@features.37 //@features.42 //@features.44" state="USER_SELECTED" realName="Floor"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.43" name="Bed:Room" children="//@features.3 //@features.8" state="USER_SELECTED" realName="Room"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.24" name="Room" references="//@features.42" state="USER_ELIMINATED" realName="Room"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.42" name="Devices" children="//@features.55 //@features.56 //@features.57 //@features.58" state="USER_SELECTED" realName="Devices"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="Light" references="//@features.56" state="USER_ELIMINATED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="Window" references="//@features.55" state="USER_ELIMINATED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="Heater" state="USER_ELIMINATED" realName="Heater"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="LighDimmer" references="//@features.58" state="USER_ELIMINATED" realName="LighDimmer"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.42" name="RoomFacilities" children="//@features.33 //@features.34" state="USER_SELECTED" realName="RoomFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.32" name="LightMng" state="USER_SELECTED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.32" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.32" name="HeaterMng" state="USER_ELIMINATED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.32" name="SmartEnergyMng" state="USER_ELIMINATED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.24" name="FloorFacilities" children="//@features.39" state="USER_SELECTED" realName="FloorFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.37" name="LightMng" state="USER_ELIMINATED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.37" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.37" name="HeaterMng" state="USER_ELIMINATED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.37" name="SmartEnergyMng" state="USER_ELIMINATED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.24" name="Kitchen:Room" children="//@features.27 //@features.32" state="USER_SELECTED" realName="Room"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.0" name="First:Floor" children="//@features.13 //@features.25" state="USER_SELECTED" realName="Floor"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.24" name="Living:Room" children="//@features.45 //@features.50" state="USER_SELECTED" realName="Room"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.44" name="Devices" children="//@features.59 //@features.60 //@features.61" state="USER_SELECTED" realName="Devices"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="Light" state="USER_ELIMINATED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="Window" references="//@features.59" state="USER_ELIMINATED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="Heater" references="//@features.61" state="USER_ELIMINATED" realName="Heater"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="LighDimmer" state="USER_ELIMINATED" realName="LighDimmer"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.44" name="RoomFacilities" children="//@features.52 //@features.53 //@features.54" state="USER_SELECTED" realName="RoomFacilities"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.50" name="LightMng" state="USER_ELIMINATED" realName="LightMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.50" name="WindowMng" state="USER_SELECTED" realName="WindowMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.50" name="HeaterMng" state="USER_SELECTED" realName="HeaterMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.50" name="SmartEnergyMng" state="USER_SELECTED" realName="SmartEnergyMng"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="KW:Window" state="USER_SELECTED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="KL1:Light" state="USER_SELECTED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="KL0:Light" state="USER_SELECTED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.27" name="KLD:LightDimmer" state="USER_SELECTED" realName="LighDimmer"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="LRW:Window" state="USER_SELECTED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="LRW:Window" state="USER_SELECTED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.45" name="LRH:Heater" state="USER_SELECTED" realName="Heater"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="BRL:Light" state="USER_SELECTED" realName="Light"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="BRW:Window" state="USER_SELECTED" realName="Window"/>
+  <features xsi:type="specializationModel:Feature" father="//@features.3" name="BRLD:LightDimmer" state="USER_SELECTED" realName="LighDimmer"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.0" target="//@features.24" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.0" target="//@features.1" upperBound="-3" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.43" target="//@features.25" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.43" target="//@features.2" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.25" target="//@features.3" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.0" target="//@features.18" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.18" target="//@features.19" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.18" target="//@features.20" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.18" target="//@features.21" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.18" target="//@features.22" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.43" target="//@features.13" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.4" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.5" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.6" upperBound="-1" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.7" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.25" target="//@features.8" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.13" target="//@features.14" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.13" target="//@features.15" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.13" target="//@features.16" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.13" target="//@features.17" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.8" target="//@features.9" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.8" target="//@features.10" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.8" target="//@features.11" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.8" target="//@features.12" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.0" target="//@features.23" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.24" target="//@features.26" upperBound="-3" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.42" target="//@features.27" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.28" upperBound="-3" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.29" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.30" upperBound="-1" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.31" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.42" target="//@features.32" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.32" target="//@features.33" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.32" target="//@features.34" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.32" target="//@features.35" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.32" target="//@features.36" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.24" target="//@features.37" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.37" target="//@features.38" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.37" target="//@features.39" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.37" target="//@features.40" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.37" target="//@features.41" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.24" target="//@features.42" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.0" target="//@features.43" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.24" target="//@features.44" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.44" target="//@features.45" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.46" upperBound="-1" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.47" upperBound="-3" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.48" upperBound="-2" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.49" upperBound="-1" type="SIMPLE"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.44" target="//@features.50" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.50" target="//@features.51" upperBound="1"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.50" target="//@features.52" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.50" target="//@features.53" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.50" target="//@features.54" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.55" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.56" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.57" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.27" target="//@features.58" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.59" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.60" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.45" target="//@features.61" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.62" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.63" lowerBound="1" upperBound="1" type="MANDATORY"/>
+  <relations xsi:type="specializationModel:RelationFeature" source="//@features.3" target="//@features.64" lowerBound="1" upperBound="1" type="MANDATORY"/>
+</specializationModel:Project>

@@ -113,8 +113,9 @@ public class SimpleFeatureImpl extends BoolOperandChoicesImpl implements SimpleF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This method is provided by EMF Validation Framework
+	 * This method is executed when the xmi constraint model is validated
+	 * It returns true if the parsed feature is a simple feature indeed (false if if's multiple)
 	 * @generated NOT
 	 */
 	public boolean isSimpleFeature(DiagnosticChain diagnostics, Map context) {
@@ -122,67 +123,72 @@ public class SimpleFeatureImpl extends BoolOperandChoicesImpl implements SimpleF
 		// -> specify the condition that violates the invariant
 		// -> verify the details of the diagnostic, including severity and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		// Buscamos el fichero en el workspace
+		
+		// We look for the featureModel file in the workspace
 		IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
 		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
-		// Escribimos en una URI privada el modelo para que sea accesible por todos
+		// We write the direction in a private uri, so we can use it later
 		URI uri = URI.createFileURI(workspaceDirectory.toString()+"/modelo.xmi");
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(uri,true);
 		Project featureModel = (Project) resource.getContents().get(0);
 		
-		String resultado="Feature "+this.featureName+" does not exist in the given model";
+		String result="Feature "+this.featureName+" does not exist in the given model";
 		
-		// Recorremos todas las features del modelo hasta llegar al final o encontrar la correcta
+		// This loop checks all the features until the correct one is found
 		for (Iterator<Node> iterator=featureModel.getFeatures().iterator(); 
-				iterator.hasNext() && !resultado.equals("bien"); )
+				iterator.hasNext() && !result.equals("good"); )
 		{
 			Node node=iterator.next();
 			if (node instanceof Feature) {
-				Feature feature = (Feature) node; // Si el nodo es un Feature, lo parseamos 
-				// Si el feature parseado se llama igual que esta multiple feature, trabajamos:
+				Feature feature = (Feature) node;  
+				// // We only work if the feature has the same name as this feature
 				if (feature.getName().equals(this.featureName)) { 
-					resultado="Feature "+this.featureName+" exists but it is not a simple feature";
+					result="Feature "+this.featureName+" exists but it is not a simple feature";
 					
-					// Este bucle va mirando los padres del feature para ver si son multiple features
-					while (!resultado.equals("esMultiple") && feature!=null)
+					// This loop look if the feature fathers are multiple
+					while (!result.equals("itsMultiple") && feature!=null)
 					{
-						// Este bucle recorre todas las relaciones para cada padre
+						// This loops checks every relation for every father
 						for (Iterator<Relation> iterator2=featureModel.getRelations().iterator();
-								iterator2.hasNext() && !resultado.equals("esMultiple"); ) {
+								iterator2.hasNext() && !result.equals("itsMultiple"); ) {
 							Relation relation = iterator2.next();
 							if (relation instanceof RelationFeature) {
 								RelationFeature relationF = (RelationFeature) relation;
 								Feature destino=(Feature) relationF.getTarget();
-								if (destino.equals(feature) && relationF.getUpperBound()>1) {
-									resultado="esMultiple";
+								if (destino.equals(feature) && (relationF.getUpperBound()>1 || relationF.getUpperBound()==-1)) {
+									result="itsMultiple";
 								} // if
 							} // if
 							
 						} // for each relation
 						feature = (Feature) feature.getFather();
 					} // while father is not null
-					if (!resultado.equals("esMultiple")) {
-						resultado="bien";
+					if (!result.equals("itsMultiple")) {
+						result="good";
 					} else {
-						resultado="Feature "+this.featureName+" is a multiple feature";
+						result="Feature "+this.featureName+" is a multiple feature";
 					}
-				//} else {
-					//resultado="existe";
 				}
 			} // if node is a feature
 		} // for each node
-		if (resultado.equals("Feature "+this.featureName+" does not exist in the given model")) {
-			resultado="bien";
-		}
-		if (!resultado.equals("bien")) {
+		
+		/*
+		// We check if the feature is not found, and if so, the validation is correct
+		// We do that because the feature existence is already checked by the multipleFeature validation
+		if (result.equals("Feature "+this.featureName+" does not exist in the given model")) {
+			result="good";
+		}*/
+		
+		// Validation Framework
+		if (!result.equals("good")) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HydraconstraintsValidator.DIAGNOSTIC_SOURCE,
 						 HydraconstraintsValidator.MULTIPLE_FEATURE__IS_MULTIPLE_FEATURE,
-						 resultado,
+						 result,
 						 new Object [] { this }));
 			}
 			return false;
@@ -273,24 +279,28 @@ public class SimpleFeatureImpl extends BoolOperandChoicesImpl implements SimpleF
 	public int evaluate(String modelDirection, EObject featureContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
-		int resultado=0;
+		
+		// Open the specialization model
+		int result=0;
 		int aux=0;
 		URI uri = URI.createFileURI(modelDirection);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(uri,true);
 		specializationModel.Project modelSpecialization = (specializationModel.Project) resource.getContents().get(0);
+		
+		// If there is no previous context, we have to search the whole feature model
 		if (featureContext == null) {
 			for (Iterator<specializationModel.Node> iterator=modelSpecialization.getFeatures().iterator(); 
-					iterator.hasNext() && resultado==0; ) {
+					iterator.hasNext() && result==0; ) {
 				specializationModel.Node node=iterator.next();
 				if (node instanceof specializationModel.Feature) {
 					specializationModel.Feature f=(specializationModel.Feature) node;
 					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
-						resultado=1;
+						result=1;
 					}
 				}
 			}
+		// If there is previous context, we have to search only into the children of the featureContext
 		} else {
 			specializationModel.Feature context=(specializationModel.Feature) featureContext;
 			for (Iterator<specializationModel.Node> iterator=context.getChildren().iterator(); 
@@ -299,12 +309,12 @@ public class SimpleFeatureImpl extends BoolOperandChoicesImpl implements SimpleF
 				if (node instanceof specializationModel.Feature) {
 					specializationModel.Feature f=(specializationModel.Feature) node;
 					if (f.getRealName().equals(this.getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
-						resultado=1;
+						result=1;
 					}
 				}
 			}
 		}
-		return resultado;
+		return result;
 	}
 
 } //SimpleFeatureImpl

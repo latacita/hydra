@@ -42,8 +42,7 @@ public class LessImpl extends ComparisonImpl implements Less {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluate the less ( < ) comparison operation
 	 * @generated NOT
 	 */
 	@Override

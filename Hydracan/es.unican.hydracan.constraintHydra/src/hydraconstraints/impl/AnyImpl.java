@@ -54,50 +54,59 @@ public class AnyImpl extends SelectionImpl implements Any {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the any operation
+	 * The any operation is true if the constraints evaluates to true in at least one context
 	 * @generated NOT
 	 */
 	@Override
 	public int evaluate(String modelDirection, EObject featureContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
+		
+		// Open the specialization model in order to evaluate all the features in the context
 		URI uri = URI.createFileURI(modelDirection);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(uri,true);
 		Project modelSpecialization = (Project) resource.getContents().get(0);
-		Feature f;
-		int aux=0;
+		
+		Feature feature;
+		int result=0;
 		String featureName=this.getSelectionOp().getContextOp1().getFeatureName();
 		Constraint op2=this.getSelectionOp().getContextOp2();
+		
+		// If there was not a previous context, the new context must be created in a different way
 		if (featureContext==null) {
+			
+			// this loop evaluates the constraints with all the possible contexts
 			for (Iterator<Node> iterator=modelSpecialization.getFeatures().iterator(); 
-					iterator.hasNext() && aux==0; )
+					iterator.hasNext() && result==0; )
 			{
 				Node node=iterator.next();
 				if (node instanceof Feature) {
-					f=(Feature) node;
-					if (f.getRealName().equals(featureName) && f.getState()==ConfigState.USER_SELECTED) {
-						featureContext=f;
-						aux=op2.getOperators().evaluate(modelDirection, featureContext);
+					feature=(Feature) node;
+					if (feature.getRealName().equals(featureName) && feature.getState()==ConfigState.USER_SELECTED) {
+						featureContext=feature;
+						result=op2.getOperators().evaluate(modelDirection, featureContext);
 					}
 				}
 			}
 		} else {
 			specializationModel.Feature context=(specializationModel.Feature) featureContext;
+			
+			// this loop evaluates the constraints with all the possible contexts
 			for (Iterator<specializationModel.Node> iterator=context.getChildren().iterator(); 
-					iterator.hasNext() && aux==0; ) {
+					iterator.hasNext() && result==0; ) {
 				specializationModel.Node node=iterator.next();
 				if (node instanceof specializationModel.Feature) {
-					f=(specializationModel.Feature) node;
-					if (f.getRealName().equals(featureName) && f.getState()==ConfigState.USER_SELECTED) {
-						featureContext=f;
-						aux=op2.getOperators().evaluate(modelDirection, featureContext);
+					feature=(specializationModel.Feature) node;
+					if (feature.getRealName().equals(featureName) && feature.getState()==ConfigState.USER_SELECTED) {
+						featureContext=feature;
+						result=op2.getOperators().evaluate(modelDirection, featureContext);
 					}
 				}
 			}
 		}
-		return aux;
+		return result;
 	}
 
 } //AnyImpl

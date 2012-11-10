@@ -42,8 +42,7 @@ public class XorImpl extends BinaryOpImpl implements Xor {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Implements the logical exclusive or operation
 	 * @generated NOT
 	 */
 	@Override

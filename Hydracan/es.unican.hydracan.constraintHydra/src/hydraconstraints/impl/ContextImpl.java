@@ -256,48 +256,57 @@ public class ContextImpl extends BoolOperandChoicesImpl implements Context {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the context operation
+	 * This operation evaluates one constraint that only affect a certain number of features
+	 * This concrete number of features is determined by the featureContext
 	 * @generated NOT
 	 */
 	@Override
 	public int evaluate(String modelDirection, EObject featureContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
+		
+		// Open the specialization model in order to find the proper context
 		URI uri = URI.createFileURI(modelDirection);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(uri,true);
 		Project modelSpecialization = (Project) resource.getContents().get(0);
-		Feature f;
-		int aux=0;
+		Feature feature;
+		int result=0;
 		
+		// If there is a previous context 
 		if (featureContext==null) {
+			
+			// this loop search into the specialization model features for the proper context
 			for (Iterator<Node> iterator=modelSpecialization.getFeatures().iterator(); 
 					iterator.hasNext() && featureContext==null; )
 			{
 				Node node=iterator.next();
 				if (node instanceof Feature) {
-					f=(Feature) node;
-					if (f.getRealName().equals(this.getContextOp1().getFeatureName())) {
-						featureContext=f;
+					feature=(Feature) node;
+					if (feature.getRealName().equals(this.getContextOp1().getFeatureName())) {
+						featureContext=feature;
 					}
 				}
 			}
 		} else {
 			Feature context=(Feature) featureContext;
+			
+			// This loop looks into the children of the previous context to find the new context
 			for (Iterator<Node> iterator=context.getChildren().iterator(); 
-					iterator.hasNext() && aux==0; ) {
+					iterator.hasNext() && result==0; ) {
 				specializationModel.Node node=iterator.next();
 				if (node instanceof Feature) {
-					f=(Feature) node;
-					if (f.getRealName().equals(this.getContextOp1().getFeatureName()) && f.getState()==ConfigState.USER_SELECTED) {
-						featureContext=f;
-						aux=1;
+					feature=(Feature) node;
+					if (feature.getRealName().equals(this.getContextOp1().getFeatureName()) && feature.getState()==ConfigState.USER_SELECTED) {
+						featureContext=feature;
+						result=1;
 					}
 				}
 			}
 		}
+		
+		// Once we have a right context, the next step is evaluate the constraint
 		Constraint op2=this.getContextOp2();
 		return op2.getOperators().evaluate(modelDirection, featureContext);	
 	}

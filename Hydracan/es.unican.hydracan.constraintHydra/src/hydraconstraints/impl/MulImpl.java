@@ -42,8 +42,7 @@ public class MulImpl extends NumOperatorImpl implements Mul {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluate the arithmetic multiplication ( * ) operation
 	 * @generated NOT
 	 */
 	@Override

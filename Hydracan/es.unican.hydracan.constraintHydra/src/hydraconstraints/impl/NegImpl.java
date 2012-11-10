@@ -42,8 +42,7 @@ public class NegImpl extends UnaryOpImpl implements Neg {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluates the logical negation ( ! )
 	 * @generated NOT
 	 */
 	@Override

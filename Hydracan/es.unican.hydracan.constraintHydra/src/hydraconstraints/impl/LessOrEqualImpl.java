@@ -42,8 +42,7 @@ public class LessOrEqualImpl extends ComparisonImpl implements LessOrEqual {
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Evaluate the less or equal ( <= ) operation
 	 * @generated NOT
 	 */
 	@Override
