@@ -1,10 +1,10 @@
-%==================================================================%
-% Author : Doe Doe, John                                           %
-%          Sánchez Barreiro, Pablo                                 %
-% Version: 1.0, dd/mm/yyyy                                         %                   %                                                                  %
-% Memoria del Proyecto Fin de Carrera                              %
-% Archivo raíz                                                     %
-%==================================================================%
+%%==================================================================%
+%% Author : Tejedo, Daniel                                          %
+%%          Sánchez Barreiro, Pablo                                 %
+%% Version: 1.0, 08/10/2012                                         %                   %%                                                                  %
+%% Memoria del Proyecto Fin de Carrera                              %
+%% Archivo raíz                                                     %
+%%==================================================================%
 
 \documentclass[a4paper,11pt]{itsas_pfc}
 
@@ -32,11 +32,11 @@
 %=====================================================================%
 %                           Authoring's details                          %
 %=====================================================================%
-\newcommand{\myname}{John Doe Doe}  % name of author
+\newcommand{\myname}{Daniel Tejedo González}  % name of author
 \newcommand{\myboss}{Pablo Sánchez Barreiro} % name of supervisor
-\newcommand{\thesistitle}{Título del Proyecto Fin de Carrera}
+\newcommand{\thesistitle}{Desarrollo de un entorno para la especificación y validación de restricciones en árboles de características con cardinalidad}
 
-\newcommand{\englishtitle}{Master Thesis Title}
+\newcommand{\englishtitle}{Development of enviroment for the specification and validation of constraints for cardinality-based feature model}
 												  % work title
 \newcommand{\worktype}{Proyecto Fin de Carrera}   % work type
 \newcommand{\logo}{images/uc.eps}            % logo file (e.g. for the cover)
@@ -75,12 +75,11 @@
 \input{config/chapters.tex}
 
 % Capítulo 1: Introducción
-\todo{Capítulo 1: Introducción al proyecto}
 \input{introduction/introduction.tex} % Chapter 1
 
 % Capítulo 2: Resumen del Estado del Arte
 \todo{Capítulo 2: Antecedentes o Estado del Arte}
-\input{background/background.tex}
+% \input{background/background.tex}
 
 % Capítulo 3: Descripción General del Proceso
 \todo{Capítulo 3: Alcance y Planificación del Proyecto}
@@ -92,7 +91,7 @@
 \todo{Capítulo 5: Definición Arquitectónica y Diseño Software}
 
 % Capítulo 6: Construcción e Implementación
-\todo{Capítulo 6: Construcción e Implementación
+\todo{Capítulo 6: Construcción e Implementación}
 
 % Capítulo 7: Pruebas, Despliegue y Aceptación
 \todo{Capítulo 7: Pruebas, Despliegue y Aceptación}
@@ -101,7 +100,7 @@
 \todo{Capítulo 7: Discusión, Conclusiones y Trabajos Futuros}
 
 % CONTENT: Appendices, if desired
-\input{config/appendix.tex}
+% \input{config/appendix.tex}
 
 % Appendix A:
 % \input{populo/populo.tex} % Appendix I

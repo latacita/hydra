@@ -1,0 +1,28 @@
+%%==================================================================%%
+%% Author : Tejedo González, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 14/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Introducción/Introducción                                        %%
+%%==================================================================%%
+
+Como ya se ha comentado en la sección de introducción, no existe ninguna herramienta que posea de forma conjunta una serie de elementos de interés para el modelado de Líneas de Productos Software y Árboles de Características. Más concretamente, no existe ninguna herramienta que contemple el modelado, configuración y validación de características clonables. Estas características son imprescindibles para el modelado de la variabilidad estructural. Por lo tanto, el objetivo de Hydra siempre fue suplir esas carencias, en la medida de lo posible.
+
+Concretando más en concreto, los objetivos de Hydra se pueden clasificar en los 4 que se enumeran a continuación:
+
+1. Desarrollar un editor completamente gráfico y amigable al usuario para la construcción de modelos de características, incluyendo soporte para el modelado de características clonables.
+2. Desarrollar un editor textual y una sintaxis propia para la especificación de restricciones entre características, incluyendo restricciones que involucren características clonables.
+3. Desarrollar Un editor gráfico, asistido y amigable al usuario para la creación de configuraciones de modelos de características, incluyendo soporte para la configuración de características clonables.
+4. Crear un validador que compruebe que las configuraciones creadas satisfacen las restricciones definidas para el modelo de características, incluso cuando estas restricciones contengan características clonables.
+
+La labor a desarrollar dentro del marco concreto de este proyecto de fin carrera fue continuar el proyecto Hydra donde se había dejado anteriormente, es decir, una vez los objetivos 1 y 3 habían sido cumplimentados, pasar a implementar la funcionalidad correspondiente a los objetivos 2 y 4. Para satisfacer dichos objetivos, se realizaron las tareas que se describen a continuación:
+
+1. Estudio del estado del arte. El objetivo de esta fase es adquirir los conceptos necesarios para comprender el contexto del proyecto Hydra, así como los necesarios para continuar desarrollando la aplicación en el punto en que fue visitada por última vez. Más concretamente, ha sido fundamental familiarizarse con los conceptos de Línea de Producto Software, Árbol de Características (con y sin características clonables) y de Ingeniería Dirigida por Modelos en general, y de Ingeniería de Lenguajes Dirigida por Modelos en particular.
+
+2. Estudio de las herramientas utilizadas. El objetivo de esta fase comprende la familiarización con todas las herramientas y tecnologías necesarias para desarrollar la parte estipulada de la aplicación. En concreto, con EMF, Ecore, EMFText, Eclipse Validation Framework, Eclipse Plugin Development y Subversion.
+
+3. Desarrollo de un editor de restricciones externas entre características. El objetivo de este editor es soportar la especificación de restricciones externas ante un modelo de características proporcionado por el usuario. Tales restricciones son expresiones similares a fórmulas lógicas, salvo por alguna peculiaridad específica. Es por eso que se optó por el uso de un editor textual en lugar de uno gráfico, ya que es el método más habitual de representar este tipo de operaciones. Para crear el metamodelo del lenguaje se ha utilizado la herramienta Ecore, mientras que para definir la gramática se ha utilizado EMFText.
+
+4. Desarrollo de un validador de configuraciones. Una vez se finalizó de crear el editor para las restricciones, el siguiente paso lógico era aportarle una semántica que permitiera comprobar si las restricciones creadas satisfacen la configuración proporcionada por el usuario. Para implementar la semántica se utilizaron las herramientas EMF, Eclipse Validation Framework y Eclipse Plugin Development.
+
+5. Validación y pruebas. Con objeto de evaluar, probar y verificar el correcto funcionamiento de nuestra herramienta se han sometido algunas configuraciones del árbol de caracterísitcas Smarthome a una serie de pruebas de caja negra, tratando de probar todas las operaciones de restricciones posibles en todos los contextos problemáticos y habituales.
