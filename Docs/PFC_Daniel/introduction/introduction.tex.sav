@@ -9,7 +9,7 @@
 \chapterheader{Introducción}{Introducción}
 \label{chap:introduction}
 
-Esta memoria de Proyecto Fin de Carrera presenta la ampliación de la aplicación Hydra, una herramienta para el modelado de características, desarrollada dentro del contexto del proyecto AMPLE, para líneas de productos software. Este capítulo introduce la situación anterior del proyecto Hydra y los conceptos implicados en el mismo. Se describirán también los objetivos que este trabajo pretende alcanzar y la motivación que subyace tras ellos. Por último, se indicará la estructura que presentará este documento.
+% Introducción al capítulo
 
 \chaptertoc
 

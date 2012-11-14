@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2011.5.20)  8 NOV 2012 10:00
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2011.5.20)  13 NOV 2012 11:15
 entering extended mode
 **C:/Documents*and*Settings/Pablo/Mis*documentos/Alumnos/Daniel/PFC_Daniel/pfc.
 tex
@@ -331,8 +331,6 @@ r/acknowledgements.tex" [1
 ig/toc.tex"
 Package minitoc Info: I0024
 (minitoc)             PREPARING MINITOCS FROM pfc.toc on input line 2.
-Package minitoc Info: I0033
-(minitoc)             Writing pfc.mtc1.
  [3
 
 ] [4
@@ -361,31 +359,17 @@ ig/headers.tex")
 ("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
 ig/chapters.tex")
 ("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\intr
-oduction/introduction.tex" [1] [2
-
-]
+oduction/introduction.tex"
 Cap\'{\i }tulo 1.
 
 ("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-mtc1")) [3
+mtc1")
+("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\intr
+oduction/theIntroduction.tex"
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1 ...yecto Fin de Carrera presenta la ampliació
+                                                  n de la aplicación Hydra,...
 
-]
-Package minitoc Info: I0009
-(minitoc)             Listing minitoc auxiliary files. 
-(minitoc)             Creating the pfc.maf file.
-Package minitoc(hints) Info: I0019
-(minitoc(hints))             No hints have been written 
-(minitoc(hints))             in the pfc.log file..
- [4]
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-aux") ) 
-Here is how much of TeX's memory you used:
- 3915 strings out of 495306
- 52553 string characters out of 3182336
- 127814 words of memory out of 3000000
- 6820 multiletter control sequences out of 15000+200000
- 21690 words of font info for 55 fonts, out of 3000000 for 9000
- 15 hyphenation exceptions out of 8191
- 34i,11n,43p,389b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
-
-Output written on pfc.dvi (16 pages, 16736 bytes).
+? 
