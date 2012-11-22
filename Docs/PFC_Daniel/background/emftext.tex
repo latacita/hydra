@@ -1,0 +1,25 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 18/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Antecedentes, emftext                                      %%
+%%==================================================================%%
+
+
+EMFText es una herramienta específicamente diseñada para diseñar las gramáticas de los lenguajes que hayan sido diseñados previamente con un metamodelo de Ecore. Está especializado para la creación de Lenguajes Específicos de Dominio, aunque también se pueden crear lenguajes de propósito general. 
+
+Pero, como en casi todos los casos de este tipo de herramientas, su mayor virtud es la enorme cantidad de código autogenerado que produce, y que elimina al programador de tareas tediosas que además en muchos casos podrían resultar complicadas. Todo el código generado es completamente independiente de EMFText, es decir, podrá ser ejecutado en plataformas que no tengan la herramienta instalada. 
+
+Todo el código generado por EMFText está diseñado de tal modo que sea fácil de modificar en caso de que queramos poner en práctica algunas funcionalidades poco habituales. Se facilita mucho la labor a la hora de modificar estructuras como el postprocesador de nuestra gramática. Todas las gramáticas construidas tendrán que ser LL por defecto, a no ser que queramos modificar los parsers generados, posibilidad también disponible. 
+
+Otro tipo de funcionalidades implementadas, quizás no tan importantes pero también de gran utilidad, son el coloreado de código (por defecto o personalizable), función de completar código, generación del árbol parseado en el la vista de eclipse Outline o generación de código para crear un depurador para nuestro lenguaje.
+
+\begin{figure}[t]
+\includegraphics[scale=0.5]{background/gramatica.jpg}
+\caption{Trozo de la gramática de nuestro editor de especificación y validación de restricciones}
+\label{fig5}
+\end{figure}
+
+
+EMFText permite la definición de gramáticas utilizando un lenguaje estándar para la definición de expresiones regulares, además de incorporar algunas particularidades propias que facilitan ciertas tareas. En la figura \ref{fig5} se muestra una pequeña captura que contiene una porción de la gramática construida para nuestro editor de especificación y validación de restricciones. 

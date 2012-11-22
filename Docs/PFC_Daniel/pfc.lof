@@ -1,0 +1,13 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introducci\'on}{1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Antecedentes}{7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Metamodelo (sintaxis abstracta) de un creador de grafos}}{8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Instancia del metamodelo (sintaxis concreta) que representa un grafo espec\IeC {\'\i }fico}}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Sintaxis visual del grafo de la figura \ref {fig2}}}{10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Trozo de la gram\'atica de nuestro editor de especificaci\'on y validaci\'on de restricciones}}{12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Distintos tipos de relaciones en un modelo de caracter\IeC {\'\i }sticas }}{14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \'Arbol de caracter\IeC {\'\i }sticas para crear una SmartHome }}{14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Especializaci\'on del modelo de la figura \ref {fig7}, que representa una de las posibles casas que se pueden construir }}{15}
