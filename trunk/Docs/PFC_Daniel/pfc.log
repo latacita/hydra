@@ -1,18 +1,24 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2011.5.20)  13 NOV 2012 11:15
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  22 NOV 2012 21:47
 entering extended mode
-**C:/Documents*and*Settings/Pablo/Mis*documentos/Alumnos/Daniel/PFC_Daniel/pfc.
-tex
-
-("C:/Documents and Settings/Pablo/Mis documentos/Alumnos/Daniel/PFC_Daniel/pfc.
-tex"
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**pfc.tex
+(./pfc.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, sp
-anish, loaded.
-
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\itsa
-s_pfc.cls"
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(./itsas_pfc.cls
 Document Class: itsas_pfc 2007/03/06 Itsas document class
-(C:\Escritura\Miktex\tex\latex\base\bk11.clo
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/bk11.clo
 File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -28,15 +34,15 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\Escritura\Miktex\tex\latex\base\inputenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(C:\Escritura\Miktex\tex\latex\base\latin1.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-(C:\Escritura\Miktex\tex\latex\tools\longtable.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
 \LTright=\skip44
@@ -54,7 +60,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count92
 \LT@p@ftn=\toks16
 )
-(C:\Escritura\Miktex\tex\latex\tools\array.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen104
 \extrarowheight=\dimen105
@@ -62,11 +68,11 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip47
 \backup@length=\skip48
 )
-(C:\Escritura\Miktex\tex\latex\ltxmisc\url.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(C:\Escritura\Miktex\tex\latex\amsfonts\amsfonts.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup4
@@ -74,19 +80,13 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(C:\Escritura\Miktex\tex\generic\babel\babel.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2008/07/06 v3.8l The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Escritura\Miktex\tex\latex\00miktex\bblopts.cfg
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-(C:\Escritura\Miktex\tex\generic\babel\spanish.ldf
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/spanish.ldf
 Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
-(C:\Escritura\Miktex\tex\generic\babel\babel.def
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count93
 \U@D=\dimen106
@@ -100,22 +100,15 @@ Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 Package babel Info: Making ' an active character on input line 657.
 ))
-(C:\Escritura\Miktex\tex\latex\base\fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(C:\Escritura\Miktex\tex\latex\base\t1enc.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(C:\Escritura\Miktex\tex\latex\arial\uarial.sty
-Package: uarial 2006/03/21 1.0 (WaS)
-
-(C:\Escritura\Miktex\tex\latex\graphics\keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks20
-))
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
-ig/pfc_options.tex" (C:\Escritura\Miktex\tex\latex\fancyhdr\fancyhdr.sty
+(./config/pfc_options.tex
+(/usr/local/texlive/2011/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip49
 \f@ncyO@elh=\skip50
 \f@ncyO@erh=\skip51
@@ -126,53 +119,62 @@ ig/pfc_options.tex" (C:\Escritura\Miktex\tex\latex\fancyhdr\fancyhdr.sty
 \f@ncyO@olf=\skip56
 \f@ncyO@orf=\skip57
 )
-(C:\Escritura\Miktex\tex\latex\graphics\color.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\Escritura\Miktex\tex\latex\00miktex\color.cfg
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-(C:\Escritura\Miktex\tex\latex\graphics\dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(C:\Escritura\Miktex\tex\latex\graphics\dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count96
 ))
-(C:\Escritura\Miktex\tex\latex\rotating\rotating.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 
-(C:\Escritura\Miktex\tex\latex\graphics\graphicx.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Escritura\Miktex\tex\latex\graphics\graphics.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Escritura\Miktex\tex\latex\graphics\trig.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Escritura\Miktex\tex\latex\00miktex\graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen107
 \Gin@req@width=\dimen108
 )
-(C:\Escritura\Miktex\tex\latex\base\ifthen.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count96
+\c@r@tfl@t=\count97
 \rotFPtop=\skip58
 \rotFPbot=\skip59
 \rot@float@box=\box30
 \rot@mess@toks=\toks21
 )
-(C:\Escritura\Miktex\tex\latex\minitoc\minitoc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/minitoc/minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
-(C:\Escritura\Miktex\tex\latex\minitoc\mtcmess.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/minitoc/mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -191,30 +193,36 @@ Package minitoc Info: I0003
 \mtc@hstrutbox=\box32
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
+\openout3 = `pfc.mtc0'.
 
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-mtc0")
+\openout3 = `pfc.mtc'.
+
+ (./pfc.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\c@mtc=\count97
-\c@minitocdepth=\count98
-\c@ptc=\count99
-\c@parttocdepth=\count100
+\openout3 = `pfc.mtc'.
+
+\openout3 = `pfc.mtc0'.
+
+\c@mtc=\count98
+\c@minitocdepth=\count99
+\c@ptc=\count100
+\c@parttocdepth=\count101
 \ptcindent=\skip62
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
- (C:\Escritura\Miktex\tex\latex\minitoc\english.mld
+(/usr/local/texlive/2011/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 )
-(C:\Escritura\Miktex\tex\latex\minitoc\english.mld
+(/usr/local/texlive/2011/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 ))
-(C:\Escritura\Miktex\tex\latex\epsf\epsf.sty
-This is `epsf.tex' v2.7.3 <23 July 2005>
+(/usr/local/texlive/2011/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read1
 \epsfframemargin=\dimen109
 \epsfframethickness=\dimen110
@@ -224,11 +232,11 @@ This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsfxsize=\dimen114
 \epsfysize=\dimen115
 \pspoints=\dimen116
-) (C:\Escritura\Miktex\tex\latex\textpos\textpos.sty
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2010/09/30 v1.7g
 
 Package: `textpos' 1.7g <2010 September 30>
-(C:\Escritura\Miktex\tex\latex\ms\everyshi.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )
 \TP@textbox=\box33
@@ -245,11 +253,9 @@ Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TP@tbargs=\toks23
 \TP@prevdepth=\dimen124
 TextBlockOrigin set to 0pt x 0pt
-))
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
-ig/rename.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-aux")
+)) (./config/rename.tex) (./pfc.aux)
+\openout1 = `pfc.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
@@ -262,39 +268,130 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
+
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen125
+\scratchbox=\box35
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen126
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks25
+) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
- ABD: EveryShipout initializing macros
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\cove
-r/cover.tex"
-File: images/ingInformatica.eps Graphic file (type eps)
- <images/ingInformatica.eps>
+
+ABD: EveryShipout initializing macros (./cover/cover.tex
+Package epstopdf Info: Source file: <images/ingInformatica.eps>
+(epstopdf)                    date: 2012-11-14 12:29:42
+(epstopdf)                    size: 322535 bytes
+(epstopdf)             Output file: <images/ingInformatica-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2012-11-14 12:34:03
+(epstopdf)                    size: 106299 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/ingInformatica-eps-
+converted-to.pdf images/ingInformatica.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/ingInformatica-eps-converted-to.pdf, id=1, 420.57124pt x 459.7175pt>
+File: images/ingInformatica-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/ingInformatica-eps-converted-to.pdf>
+Package pdftex.def Info: images/ingInformatica-eps-converted-to.pdf used on inp
+ut line 29.
+(pdftex.def)             Requested size: 143.40388pt x 156.75081pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 
-(C:\Escritura\Miktex\tex\latex\amsfonts\umsa.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
-(C:\Escritura\Miktex\tex\latex\amsfonts\umsb.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 Overfull \hbox (77.81227pt too wide) in paragraph at lines 38--38
- [][] 
+ [] 
  []
 
-[1
+[1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2
+ <./images/ingInformatica-eps-converted-to.pdf>] [2
 
-])
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\cove
-r/firstPage.tex"
-File: images/uc.eps Graphic file (type eps)
- <images/uc.eps>
+]) (./cover/firstPage.tex
+Package epstopdf Info: Source file: <images/uc.eps>
+(epstopdf)                    date: 2012-11-14 12:29:42
+(epstopdf)                    size: 203600 bytes
+(epstopdf)             Output file: <images/uc-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-11-14 12:34:05
+(epstopdf)                    size: 5516 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/uc-eps-converted-to
+.pdf images/uc.eps>
+(epstopdf)             \includegraphics on input line 2.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/uc-eps-converted-to.pdf, id=17, 143.53625pt x 143.53625pt>
+File: images/uc-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/uc-eps-converted-to.pdf>
+Package pdftex.def Info: images/uc-eps-converted-to.pdf used on input line 2.
+(pdftex.def)             Requested size: 53.9978pt x 53.99678pt.
+
 Overfull \hbox (41.0pt too wide) in paragraph at lines 16--22
-[][][] 
+[][] 
  []
 
 
@@ -309,67 +406,240 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
 
 Overfull \hbox (10.32182pt too wide) in paragraph at lines 43--44
-[][]\T1/cmr/m/n/10.95 Este Tri-bu-nal ha re-suel-to otor-gar la ca-li-fi-ca-ció
-n de: ...................................... 
+[]\T1/cmr/m/n/10.95 Este Tri-bu-nal ha re-suel-to otor-gar la ca-li-fi-ca-ción 
+de: ...................................... 
  []
 
 
 Overfull \hbox (17.83658pt too wide) in paragraph at lines 46--65
- [][] 
+ [] 
  []
 
-)
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
-ig/begin.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\cove
-r/acknowledgements.tex" [1
+) (./config/begin.tex) (./cover/acknowledgements.tex [1
 
-] [2
+ <./images/uc-eps-converted-to.pdf>] [2
 
-])
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
-ig/toc.tex"
+]) (./config/toc.tex
 Package minitoc Info: I0024
 (minitoc)             PREPARING MINITOCS FROM pfc.toc on input line 2.
+Package minitoc Info: I0033
+(minitoc)             Writing pfc.mtc1.
+\openout3 = `pfc.mtc1'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing pfc.mtc2.
+\openout3 = `pfc.mtc2'.
+
  [3
 
 ] [4
 
-]
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-toc")
+] (./pfc.toc)
 \tf@toc=\write4
+\openout4 = `pfc.toc'.
+
  [5] [6
 
-]
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-lof")
+] (./pfc.lof)
 \tf@lof=\write5
- [7] [8
+\openout5 = `pfc.lof'.
 
-]
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-lot")
+
+[7] [8
+
+] (./pfc.lot)
 \tf@lot=\write6
+\openout6 = `pfc.lot'.
+
  [9] [10
 
-])
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\Conf
-ig/headers.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\conf
-ig/chapters.tex")
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\intr
-oduction/introduction.tex"
+]) (./Config/headers.tex) (./config/chapters.tex)
+(./introduction/introduction.tex
 Cap\'{\i }tulo 1.
+\openout3 = `pfc.mtc'.
 
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\pfc.
-mtc1")
-("C:\Documents and Settings\Pablo\Mis documentos\Alumnos\Daniel\PFC_Daniel\intr
-oduction/theIntroduction.tex"
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1 ...yecto Fin de Carrera presenta la ampliaciÃ³
-                                                  n de la aplicaciÃ³n Hydra,...
+\openout3 = `pfc.mtc'.
 
-? 
+(./pfc.mtc1) (./introduction/theIntroduction.tex [1
+
+
+]
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 29.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 29.
+
+[2]
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 31.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 31.
+
+[3]) [4] (./introduction/objetivos.tex [5])) (./background/background.tex
+[6]
+Cap\'{\i }tulo 2.
+\openout3 = `pfc.mtc'.
+
+\openout3 = `pfc.mtc'.
+
+(./pfc.mtc2) (./background/ildm.tex [7
+
+
+]
+<background/abstracta.jpg, id=85, 582.175pt x 400.49625pt>
+File: background/abstracta.jpg Graphic file (type jpg)
+
+<use background/abstracta.jpg>
+Package pdftex.def Info: background/abstracta.jpg used on input line 22.
+(pdftex.def)             Requested size: 291.08679pt x 200.24763pt.
+ [8 <./background/abstracta.jpg>]
+<background/concreta.jpg, id=90, 773.89125pt x 505.89pt>
+File: background/concreta.jpg Graphic file (type jpg)
+
+<use background/concreta.jpg>
+Package pdftex.def Info: background/concreta.jpg used on input line 34.
+(pdftex.def)             Requested size: 386.94467pt x 252.94437pt.
+
+Overfull \hbox (26.94467pt too wide) in paragraph at lines 34--35
+[][] 
+ []
+
+[9 <./background/concreta.jpg>]
+<background/grafo.jpg, id=94, 670.505pt x 193.72375pt>
+File: background/grafo.jpg Graphic file (type jpg)
+
+<use background/grafo.jpg>
+Package pdftex.def Info: background/grafo.jpg used on input line 44.
+(pdftex.def)             Requested size: 335.25168pt x 96.86163pt.
+
+<background/metamodelo.jpg, id=95, 1062.97125pt x 525.965pt>
+File: background/metamodelo.jpg Graphic file (type jpg)
+
+<use background/metamodelo.jpg>
+Package pdftex.def Info: background/metamodelo.jpg used on input line 54.
+(pdftex.def)             Requested size: 425.18097pt x 210.38226pt.
+
+Overfull \hbox (65.18097pt too wide) in paragraph at lines 54--55
+[][] 
+ []
+
+) (./background/ecore.tex [10 <./background/grafo.jpg>])
+(./background/emftext.tex [11 <./background/metamodelo.jpg>]
+<background/gramatica.jpg, id=102, 631.35875pt x 401.5pt>
+File: background/gramatica.jpg Graphic file (type jpg)
+
+<use background/gramatica.jpg>
+Package pdftex.def Info: background/gramatica.jpg used on input line 19.
+(pdftex.def)             Requested size: 315.6786pt x 200.7495pt.
+) (./background/features.tex
+
+LaTeX Warning: Reference `' on page 12 undefined on input line 9.
+
+
+LaTeX Warning: Reference `' on page 12 undefined on input line 9.
+
+
+LaTeX Warning: Reference `' on page 12 undefined on input line 9.
+
+
+LaTeX Warning: Reference `' on page 12 undefined on input line 9.
+
+[12 <./background/gramatica.jpg>]
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 19.
+
+[13] <background/relations.jpg, id=110, 1033.8625pt x 239.89626pt>
+File: background/relations.jpg Graphic file (type jpg)
+
+<use background/relations.jpg>
+Package pdftex.def Info: background/relations.jpg used on input line 28.
+(pdftex.def)             Requested size: 361.8573pt x 83.96494pt.
+
+Overfull \hbox (1.8573pt too wide) in paragraph at lines 28--29
+[][] 
+ []
+
+<background/featuremodel.jpg, id=111, 838.13126pt x 300.12125pt>
+File: background/featuremodel.jpg Graphic file (type jpg)
+
+<use background/featuremodel.jpg>
+Package pdftex.def Info: background/featuremodel.jpg used on input line 43.
+(pdftex.def)             Requested size: 419.0646pt x 150.06026pt.
+
+Overfull \hbox (59.0646pt too wide) in paragraph at lines 43--44
+[][] 
+ []
+
+[14 <./background/relations.jpg> <./background/featuremodel.jpg>]
+<background/configuration.jpg, id=115, 879.285pt x 307.1475pt>
+File: background/configuration.jpg Graphic file (type jpg)
+
+<use background/configuration.jpg>
+Package pdftex.def Info: background/configuration.jpg used on input line 53.
+(pdftex.def)             Requested size: 439.64143pt x 153.57336pt.
+
+Overfull \hbox (79.64143pt too wide) in paragraph at lines 53--54
+[][] 
+ []
+
+) (./background/eplugins.tex)) [15 <./background/configuration.jpg>]
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the pfc.maf file.
+\openout3 = `pfc.maf'.
+
+Package minitoc(hints) Info: I0019
+(minitoc(hints))             No hints have been written 
+(minitoc(hints))             in the pfc.log file..
+ [16]
+(./pfc.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4781 strings out of 493633
+ 64541 string characters out of 3143378
+ 143831 words of memory out of 3000000
+ 7706 multiletter control sequences out of 15000+200000
+ 22455 words of font info for 56 fonts, out of 3000000 for 9000
+ 832 hyphenation exceptions out of 8191
+ 38i,12n,43p,1409b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbl1095.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/loca
+l/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texliv
+e/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/
+2011/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf
+-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
+Output written on pfc.pdf (28 pages, 681686 bytes).
+PDF statistics:
+ 177 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+
