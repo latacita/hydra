@@ -9,5 +9,8 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{11}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Trozo de la gram\'atica de nuestro editor de especificaci\'on y validaci\'on de restricciones}}{12}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Distintos tipos de relaciones en un modelo de caracter\IeC {\'\i }sticas }}{14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \'Arbol de caracter\IeC {\'\i }sticas para crear una SmartHome }}{14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \'Arbol de caracter\IeC {\'\i }sticas para crear una SmartHome }}{15}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Especializaci\'on del modelo de la figura \ref {fig7}, que representa una de las posibles casas que se pueden construir }}{15}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Planificaci\'on}{17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tareas realizadas en este proyecto de fin de carrera}}{18}
