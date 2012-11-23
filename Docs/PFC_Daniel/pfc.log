@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  22 NOV 2012 21:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  23 NOV 2012 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,6 +430,10 @@ Package minitoc Info: I0033
 (minitoc)             Writing pfc.mtc2.
 \openout3 = `pfc.mtc2'.
 
+Package minitoc Info: I0033
+(minitoc)             Writing pfc.mtc3.
+\openout3 = `pfc.mtc3'.
+
  [3
 
 ] [4
@@ -584,8 +588,7 @@ Overfull \hbox (59.0646pt too wide) in paragraph at lines 43--44
 [][] 
  []
 
-[14 <./background/relations.jpg> <./background/featuremodel.jpg>]
-<background/configuration.jpg, id=115, 879.285pt x 307.1475pt>
+<background/configuration.jpg, id=112, 879.285pt x 307.1475pt>
 File: background/configuration.jpg Graphic file (type jpg)
 
 <use background/configuration.jpg>
@@ -596,7 +599,28 @@ Overfull \hbox (79.64143pt too wide) in paragraph at lines 53--54
 [][] 
  []
 
-) (./background/eplugins.tex)) [15 <./background/configuration.jpg>]
+[14 <./background/relations.jpg>]) (./background/eplugins.tex)) [15 <./backgrou
+nd/featuremodel.jpg> <./background/configuration.jpg>]
+(./planificacion/planificacion.tex [16]
+Cap\'{\i }tulo 3.
+\openout3 = `pfc.mtc'.
+
+\openout3 = `pfc.mtc'.
+
+(./pfc.mtc3) (./planificacion/theplanificacion.tex
+<planificacion/planning.jpg, id=122, 387.69844pt x 475.02469pt>
+File: planificacion/planning.jpg Graphic file (type jpg)
+
+<use planificacion/planning.jpg>
+Package pdftex.def Info: planificacion/planning.jpg used on input line 12.
+(pdftex.def)             Requested size: 286.89825pt x 351.52pt.
+ [17
+
+
+]))
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [18 <./planificacion/planning.jpg>]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the pfc.maf file.
@@ -605,17 +629,16 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the pfc.log file..
- [16]
-(./pfc.aux)
+ [19] (./pfc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4781 strings out of 493633
- 64541 string characters out of 3143378
- 143831 words of memory out of 3000000
- 7706 multiletter control sequences out of 15000+200000
+ 4802 strings out of 493633
+ 64948 string characters out of 3143378
+ 143862 words of memory out of 3000000
+ 7714 multiletter control sequences out of 15000+200000
  22455 words of font info for 56 fonts, out of 3000000 for 9000
  832 hyphenation exceptions out of 8191
  38i,12n,43p,1409b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -636,10 +659,10 @@ e/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/tex
 mf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf
 -dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on pfc.pdf (28 pages, 681686 bytes).
+Output written on pfc.pdf (31 pages, 736010 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 188 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
