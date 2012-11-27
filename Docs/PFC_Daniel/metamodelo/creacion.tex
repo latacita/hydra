@@ -1,0 +1,45 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 25/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Sintaxis abstracta, creacion metamodelo                                      %%
+%%==================================================================%%
+
+Una vez hemos definido cuales son los requisitos del lenguaje, tenemos que construir nuestro metamodelo de tal modo que se ajuste a ellos y sea capaz de cumplirlos. El requisito más complejo y que requerirá más desafíos de diseño es, evidentemente, el de implementar todas las operaciones. Así que empezaremos primero por las partes más fáciles.
+
+Todas las restricciones que sean definidas en cada sintaxis concreta han de ser aplicadas al mismo modelo de características (aunque a varias configuraciones si así lo desea el usuario). Por lo tanto, la información relativa al modelo de características sobre el que queremos aplicar esas restricciones es susceptible de ser almacenada en el metamodelo de nuestro lenguaje. Se entiende que el modelo de características que hay que guardar habrá sido previamente creado usando la herramienta Hydra, pues este editor es una extensión de la misma. Eso reduce mucho el número de factores de los que hay preocuparse, viéndose reducidos en este punto a tener que almacenar únicamente la localización del fichero dentro del sistema, para luego poder cargarlo en partes de validación posteriores.
+
+Así pues, nuestra clase inicial Model, que representa el modelo sobre el que aplicaremos las restricciones, tiene un atributo featureList en el que se guardará la dirección del fichero del modelo de características Hydra.
+
+Para permitir que sobre ese modelo que ya hemos representado se puedan definir un número indeterminado de restricciones, es necesario crear una clase Constraint, y relacionar la clase Model con ella. La relación resultante se podría expresar como "un modelo tiene de 0 a x restricciones", donde x es cualqueir número entero positivo. 
+
+El requisito correspondiente a la validación de las restricciones que hayamos definido no tiene modo de ser resuelto a estas alturas del desarrollo de nuestra aplicación, por lo que únicamente queda la implementación de las operaciones. Lógicamente, esta es la tarea de mayor complejidad de nuestro sistema. 
+
+El primer paso es definir toda la estructura necesaria para la implementación de las operaciones, haciendo que cada una de ellas esté representada en nuestro metamodelo mediante una clase, pero sin preocuparnos todavía por las relaciones entre ellas. La clase raíz de toda esta estructura es Operand. Es una clase abstracta, es decir, en los modelos que luego instanciemos de este metamodelo no podrá haber ninguna instancia de Operand, sólo de los hijos no abstractos que tenga. A medida que vayamos definiendo clases hijas  de Operand estaremos especificando cada vez con más exactitud a qué tipo de operación estamos haciendo referencia.
+
+En el segundo nivel de la estructura de implementación de las operaciones hacemos una ramificación según el tipo del valor de retorno o de evaluación de las posibilidades. Es decir, a la clase Operand le añadiremos dos hijos: BoolOperand para operaciones que se evalúan a booleano y NumOperand para operaciones que se evalúan a numérico. Estas clases también serán abstractas.
+
+\begin{figure}[t]
+\includegraphics[scale=0.4]{metamodelo/metamodelo.jpg}
+\caption{Metamodelo utilizado para la creación de nuestro lenguaje de especificación y validación de restricciones}
+\label{figmetameta}
+\end{figure}
+
+
+El proceso de división a partir de aquí es más o menos análogo para todas las operaciones, así que vamos a centrarnos únicamente en la rama que da lugar a las operaciones binarias lógicas, para comentar después los casos y situaciones especiales. Una vez tenemos la clase BoolOperand, podemos especializarla un poco más a LogicalOperator, que a su vez se dividirá en operaciones unarias, binarias, o de comparación. Todas ellas son clases abstractas. Por fin, la clase BinaryOp heredará las clases de las operaciones propiamente dichas, en este caso And, Or, Implies y Xor. Estas ya podrán ser instanciadas en las sintaxis concretas que creemos.
+
+Cabe hacer mención también a las clases SimpleFeature, MultipleFeature y Number, que representan a las características simples, múltiples y números respectivamente. En cualquier árbol resultante de parsear nuestro lenguaje, estas clases representarán las hojas. En última instancia todas las operaciones tendrán como operandos características o números. Podemos observar que SimpleFeature es un operando booleano (está en la parte estructural de las operaciones booleanas) ya que su evaluación será verdadero o falso, dependiendo si esa característica ha sido seleccionada en la configuración correspondiente o no. MultipleFeature sin embargo se evalúa a número entero. Su valor será el número de apariciones de esa característica dentro de la configuración correspondiente.
+
+Muchas de las clases que ahora se pueden contemplar en el metamodelo de la figura \ref{figmetameta} aún no estaban presentes en esta etapa temprana del diseño, y su inclusión fue necesaria a raíz de la creación de la gramática y los problemas que se observaron en ese punto. En particular, las terminadas en Choices y en PriorityOperand. Las operaciones All, Any y Context en este momento eran simples herencias de BoolOperand. El motivo de estas modificaciones será explicado en el capítulo siguiente. 
+
+Para terminar este apartado, vamos a hablar de las relaciones entre las diferentes clases de nuestro metamodelo. En este punto del diseño no eran las mismas que las de la figura \ref{figmetameta} por los motivos explicados anteriormente. Simplemente buscábamos una forma de relacionar cada operación con los tipos de sus operandos (que también pueden ser operaciones, como es lógico). Las operaciones lógicas binarias tendrán dos operandos que también serán binarios. En este momento del diseño binaryOp1 y binaryOp2 iban relacionados a BoolOperand. Del mismo modo que unaryOp. Del mismo modo, compOp1, compOp2, numOp1 y numOp2 (es decir, los operandos de operaciones de comparación y numéricas respectivamente) estaban relacionados con la clase NumOperand.
+
+La relación de toda estructura de operaciones con los dos elementos anteriores, Model y Constraint, se realiza entre Constraint y BoolOperand. Toda restricción en última ha de ser evaluada a verdadero o falso, es por eso que la relación no va con Operand, como podría pensarse en primera instancia. De este modo estamos forzando que la operación con menos profundidad del árbol parseado de nuestra restricción sea booleana, y que por lo tanto el resultado final de validar la restricción sea un dato booleano. 
+
+Quizás a alguien le pueda sorprender el hecho de que la relación "operators" entre Constrain y BoolOperand sea 1..1 y no 1..*. El motivo es que como los operadores de esa primera operación booleana que estamos forzando pueden ser a su vez operaciones, la complejidad en la restricción que podemos definir se propaga por ahí en lugar de por la relación creada.
+
+
+
+
+
