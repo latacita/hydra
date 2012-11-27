@@ -1,0 +1,33 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 25/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Sintaxis abstracta, requisitos                                      %%
+%%==================================================================%%
+
+El diseño de la sintaxis abstracta es el primer paso en cualquier creación de un lenguaje mediante la técnica de Ingeniería de Lenguajes Dirigida por Modelos. Y por lo tanto, la tarea de captura de requisitos en este punto pasa por comprender qué es lo que tiene que hacer exactamante el lenguaje que se pretende crear.
+
+Nuestro lenguaje tiene que permitir, (1), importar un modelo de características sobre el cual se aplicarán las consiguientes restricciones. (2),  tiene que permitir definir un numero indeterminado de restricciones sobre ese modelo, y aplicarlas a cualquier configuración del mismo que cargue el usuario. (3), tiene que permitir que una serie de operaciones sean definidas dentro de las restricciones. Y (4), como es lógico, tiene que valorar si las restricciones definidas se cumplen dentro del modelo.
+
+De entre todos esos requisitos básicos, es necesario entrar en detalle en el número 3 y enumerar la lista de operaciones que pueden ser definidas por nuestro lenguaje. Se pueden clasificar en los siguientes tipos:
+
+- Lógicas: Son operaciones cuyos operandos han de ser características sin cardinalidad (también llamadas características simples), y que se evaluan a verdadero o falso. Entre las operaciones lógicas encontramos las clásicas not, and, or, xor e implica. 
+
+- Numéricas: Sus operandos han de ser características con cardinalidad (también llamadas características múltiples) o simplemente números. Su resultado se evalua con un valor numérico. Las operaciones numéricas a implementar son la suma, resta, multiplicación y división.
+
+- Comparativas: Sus operandos han de ser características múltiples o simplemente números, pero su resultado se evalua con un valor booleano. Las operaciones de comparación a implementar son igual que, mayor que, menor que, distinto que, mayor o igual que y menor o igual que.
+
+\begin{figure}[t]
+\includegraphics[scale=0.5]{metamodelo/featuremodel.jpg}
+\caption{Modelo de características de una casa inteligente o SmartHome}
+\label{figsmarthome}
+\end{figure}
+
+- Operación de contexto: Operación que permite hacer referencia a una característica hija de otra característica. Esta operación tiene sentido para seleccionar características cuyo nombre pueda estar repetido pero que tengan contextos diferentes. Por ejemplo, en el modelo de características SmartHome de la figura \ref{figsmarthome} podemos observar que la característica HeaterMng está presente en muchos contextos diferentes. Esta operación es necesaria para poder saber con seguridad a cual de esos contextos estamos aplicando la restricción. 
+
+- Operación de selección: Operación que corresponde a los operadores lógicos clásicos "para todo" o "existe", y que tiene la misma funcionalidad. Evalua si una restricción se cumple para todos los casos en que puede existir  o si se cumple en alguno de los casos. Por ejemplo, en el modelo de la figura \ref{figsmarthome} se podría evaluar una restricción para cada una de las habitaciones que hayan sido definidas, y saber si se cumple en todas, en alguna o en ninguna.
+
+
+
+

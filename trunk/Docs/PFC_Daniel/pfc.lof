@@ -14,3 +14,8 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Planificaci\'on}{17}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Tareas realizadas en este proyecto de fin de carrera}}{18}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Creaci\'on de la sintaxis abstracta}{21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Modelo de caracter\IeC {\'\i }sticas de una casa inteligente o SmartHome}}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Conjunto de instrucciones que puso a prueba el funcionamiento}}{26}

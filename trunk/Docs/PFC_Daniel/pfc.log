@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  23 NOV 2012 23:26
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  27 NOV 2012 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,6 +434,10 @@ Package minitoc Info: I0033
 (minitoc)             Writing pfc.mtc3.
 \openout3 = `pfc.mtc3'.
 
+Package minitoc Info: I0033
+(minitoc)             Writing pfc.mtc4.
+\openout3 = `pfc.mtc4'.
+
  [3
 
 ] [4
@@ -620,7 +624,57 @@ Package pdftex.def Info: planificacion/planning.jpg used on input line 12.
 ]))
 Underfull \vbox (badness 1102) has occurred while \output is active []
 
- [18 <./planificacion/planning.jpg>]
+ [18 <./planificacion/planning.jpg>] (./metamodelo/metamodelo.tex [19] [20
+
+]
+Cap\'{\i }tulo 4.
+\openout3 = `pfc.mtc'.
+
+\openout3 = `pfc.mtc'.
+
+(./pfc.mtc4) (./metamodelo/requisitos.tex [21
+
+]
+<metamodelo/featuremodel.jpg, id=139, 838.13126pt x 300.12125pt>
+File: metamodelo/featuremodel.jpg Graphic file (type jpg)
+
+<use metamodelo/featuremodel.jpg>
+Package pdftex.def Info: metamodelo/featuremodel.jpg used on input line 22.
+(pdftex.def)             Requested size: 419.0646pt x 150.06026pt.
+
+Overfull \hbox (59.0646pt too wide) in paragraph at lines 22--23
+[][] 
+ []
+
+) (./metamodelo/creacion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./metamodelo/featuremodel.jpg>] [23]
+<metamodelo/metamodelo.jpg, id=147, 1062.97125pt x 525.965pt>
+File: metamodelo/metamodelo.jpg Graphic file (type jpg)
+
+<use metamodelo/metamodelo.jpg>
+Package pdftex.def Info: metamodelo/metamodelo.jpg used on input line 24.
+(pdftex.def)             Requested size: 425.18097pt x 210.38226pt.
+
+Overfull \hbox (65.18097pt too wide) in paragraph at lines 24--25
+[][] 
+ []
+
+[24 <./metamodelo/metamodelo.jpg>]
+Overfull \hbox (22.92644pt too wide) in paragraph at lines 40--41
+[]\T1/cmr/m/n/10.95 Quizás a al-guien le pue-da sor-pren-der el he-cho de que l
+a re-la-ción .[]perators.[]tre
+ []
+
+) (./metamodelo/pruebas.tex
+<metamodelo/instpruebas.jpg, id=151, 524.96124pt x 130.4875pt>
+File: metamodelo/instpruebas.jpg Graphic file (type jpg)
+
+<use metamodelo/instpruebas.jpg>
+Package pdftex.def Info: metamodelo/instpruebas.jpg used on input line 14.
+(pdftex.def)             Requested size: 314.97917pt x 78.29309pt.
+)) [25]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the pfc.maf file.
@@ -629,17 +683,18 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the pfc.log file..
- [19] (./pfc.aux)
+ [26 <./metamodelo/instpruebas.jpg>]
+(./pfc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4802 strings out of 493633
- 64948 string characters out of 3143378
- 143862 words of memory out of 3000000
- 7714 multiletter control sequences out of 15000+200000
- 22455 words of font info for 56 fonts, out of 3000000 for 9000
+ 4843 strings out of 493633
+ 65769 string characters out of 3143378
+ 143948 words of memory out of 3000000
+ 7736 multiletter control sequences out of 15000+200000
+ 23219 words of font info for 57 fonts, out of 3000000 for 9000
  832 hyphenation exceptions out of 8191
  38i,12n,43p,1409b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -652,17 +707,18 @@ l/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
 texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
 xlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texl
 ive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texliv
-e/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/
-2011/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/20
-11/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/tex
-mf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf
--dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on pfc.pdf (31 pages, 736010 bytes).
+e/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/
+2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/texmf
+-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf-d
+ist/fonts/type1/public/cm-super/sfsl1095.pfb>
+Output written on pfc.pdf (38 pages, 917381 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 219 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
