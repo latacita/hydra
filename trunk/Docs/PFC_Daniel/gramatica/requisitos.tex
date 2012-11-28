@@ -1,0 +1,53 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 27/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Gramática,  requisitos                                       %%
+%%==================================================================%%
+
+La captura de requisitos de la gramática pasa por informarse sobre qué tipo de sintaxis textual queremos que tengan nuestras operaciones, lo cual en este caso ya estaba especificado previamente por documentos creados en iteraciones previas del proyecto Hydra. Lo más lógico e inmediato era mantenerse fiel a esa sintaxis, según la cual las operaciones deberían ser expresadas textualmente tal como sigue: \\
+
+Suma: operando1 + operando2 
+
+Resta: operando1 - operando2 
+
+Multiplicación: operando1 * operando2 
+
+División: operando1 / operando2 
+
+And: operando1 and operando2 
+
+Or: operando1 or operando2 
+
+Xor: operando1 xor operando2 
+
+Implica: operando1 implies operando2 
+
+Mayor que: operando1 > operando2 
+
+Menor que: operando1 < operando2 
+
+Igual que: operando1 == operando2 
+
+Mayor o igual que: operando1 >= operando2 
+
+Menor o igual que: operando1 <= operando2 
+
+Distinto que: operando1 != operando2 
+
+Contexto: operando1 [ operando2 ] 
+
+Para todo: all operando1 [ operando2 ] 
+
+Existe: any operando1 [ operando2 ] \\
+
+Otros aspectos concernientes a la gramática que ha habido que tener en cuenta dentro de la fase de captura de requisitos son los siguientes:\\
+
+- Ha de permitirse la posibilidad de especificar prioridad en las operaciones, es decir, de poder delimitar las operaciones con paréntesis que denoten el orden de realización de las mismas.
+
+- Todas las representaciones textuales de nuestro lenguaje han de empezar con una línea de carga del modelo de características al que han de aplicarse las restricciones. La sintaxis de este aspecto será "import operando", donde operando es la dirección del fichero hydra del modelo dentro del disco duro del sistema.
+
+- Todas las restricciones definidas han de separarse entre ellas mediante el carácter '' ; ''.\\
+
+Por supuesto, además de los requisitos aquí expuestos también habrá que tener en cuenta todo lo comentado en el apartado de requisitos del capítulo anterior, ya que también influirán a la hora de tomar decisiones de diseño en la gramática.

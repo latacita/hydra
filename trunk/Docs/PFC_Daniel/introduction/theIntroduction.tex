@@ -28,19 +28,25 @@ Una configuración o selección de características debe de obedecer las reglas del
 
 Por último, cabe destacar que en los últimos años se ha añadido a los modelos de características un simple pero importante concepto, como son las características clonables ~\ref{}, que son características que pueden aparecer con un diferente número o cardinalidad dentro de un producto. Por ejemplo, el modelo de características de una casa puede tener como característica clonable planta, dado que una casa posee un número variable de plantas, es decir, usando nuestra terminología, diferentes clones de la característica planta. Esta ligera modificación hace que se pueda modelar variabilidad estructural, tal como que una casa tenga un número variable de plantas, en los modelos de características, acercando su potencia expresiva a la de los lenguajes de dominio específico para líneas de producto software ~\ref{}.
 
-En la actualidad existen diversas herramientas para crear modelos de configuraciones, en su mayoría académicas, tales como RequiLine ~\ref{} o fmp ~\ref{}, siendo ésta última posiblemente la más conocida. No obstante, no existe ninguna herramienta en este momento que posea las siguientes características de forma conjunta:
+En la actualidad existen diversas herramientas para crear modelos de configuraciones, en su mayoría académicas, tales como RequiLine ~\ref{} o fmp ~\ref{}, siendo ésta última posiblemente la más conocida. No obstante, no existe ninguna herramienta en este momento que posea las siguientes características de forma conjunta: \\
 
 1- Una interfaz gráfica, amigable y que, en la medida de lo posible, asista al usuario en la creación de configuraciones.
+
 2- Soporte el modelado y la configuración de características clonables.
+
 3- Permita la especificación de restricciones externas entre características, incluyendo características clonables.
-4- Sea capaz de determinar si una determinada configuración es válida, es decir, no sólo obedece las reglas sintácticas del modelo de características, sino que también se satisfacen las restricciones externas. Estas restricciones externas pueden estar definidas sobre características clonables.
 
-Para resolver tales limitaciones de las herramientas actuales para el modelado de características, hemos creado Hydra. Hydra es una herramienta para el modelado de características que pretende proporcionar las siguientes funcionas:
+4- Sea capaz de determinar si una determinada configuración es válida, es decir, no sólo obedece las reglas sintácticas del modelo de características, sino que también se satisfacen las restricciones externas. Estas restricciones externas pueden estar definidas sobre características clonables. \\
 
-1- Un editor completamente gráfico y amigable al usuario para la construcción de modelos de características;
-2- un editor textual y una sintaxis propia para la especificación de restricciones entre características;
-3- Un editor gráfico, asistido y amigable al usuario para la creación de configuraciones de modelos de características;
-4- Un validador que comprueba que las configuraciones creadas satisfacen las restricciones definidas para el modelo de características.
+Para resolver tales limitaciones de las herramientas actuales para el modelado de características, hemos creado Hydra. Hydra es una herramienta para el modelado de características que pretende proporcionar las siguientes funcionas: \\
+
+1- Un editor completamente gráfico y amigable al usuario para la construcción de modelos de características.
+
+2- un editor textual y una sintaxis propia para la especificación de restricciones entre características.
+
+3- Un editor gráfico, asistido y amigable al usuario para la creación de configuraciones de modelos de características.
+
+4- Un validador que comprueba que las configuraciones creadas satisfacen las restricciones definidas para el modelo de características. \\
 
 En el momento de empezar este proyecto de fin de carrera Hydra ya tenía implementadas las funciones 1 y 3, pero aún faltaban por implementar las funciones 2 y 4, labor de la que nos hemos hecho cargo en este proyecto.
 
@@ -52,9 +58,12 @@ A partir del metamodelo que representa la sintaxis abstracta podremos construir 
 
 Una vez hemos construido los medios necesarios para comprobar que las expresiones que fabriquemos son correctas, necesitamos idear el modo de que las órdenes que esas líneas producen sean ejecutadas. Para ello entra en juego la semántica del lenguaje, es decir, la encargada de aportar un significado real a todas las expresiones que hayamos construido. Dicho de otro modo, la semántica es la encargada de implementar las funciones derivadas de las órdenes descritas por cada una de las sintaxis concretas posibles. Poniendo un ejemplo, el metamodelo que represente la sintaxis abstracta de java puede generar una infinidad de sintaxis concretas, entre ellas System.out.println("Hola Mundo"). Y para que esa instrucción escriba el mensaje Hola Mundo por pantalla es necesaria una semántica que así lo indique. Para implementar la semántica del lenguaje no existe otro método que la programación directa en un lenguaje determinado, en nuestro caso Java.
 
-Por último y para terminar esta introducción, conviene contextualizar un poco el trabajo que hemos hecho mediante un ejemplo concreto de lo que se quiere implementar. Nuestro editor para la especificación y validación de restricciones en árboles de características con características clonables tiene que implementar la siguiente funcionalidad:
+Por último y para terminar esta introducción, conviene contextualizar un poco el trabajo que hemos hecho mediante un ejemplo concreto de lo que se quiere implementar. Nuestro editor para la especificación y validación de restricciones en árboles de características con características clonables tiene que implementar la siguiente funcionalidad: \\
 
 1 - Obligar a que todas los ficheros de restricciones empiecen con una línea de import que servirá para importar el modelo de características sobre el cual se analizarán las restricciones.
+
 2 - Escribir restricciones válidas para ese modelo (ejemplo: "(a or b) implies (c and d);", más adelante se hablará en detalle del lenguaje y de las operaciones que implementa).
-3 - Detectar que las características a las que estamos aplicando esas restricciones en efecto se hallan en el modelo que ha sido importado
+
+3 - Detectar que las características a las que estamos aplicando esas restricciones en efecto se hallan en el modelo que ha sido importado.
+
 4 - Cargar una instancia de ese modelo (lo que llamamos modelo de especialización) y mirar si para ella las restricciones que han sido especificadas se cumplen.

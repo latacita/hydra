@@ -10,13 +10,13 @@ El diseño de la sintaxis abstracta es el primer paso en cualquier creación de un
 
 Nuestro lenguaje tiene que permitir, (1), importar un modelo de características sobre el cual se aplicarán las consiguientes restricciones. (2),  tiene que permitir definir un numero indeterminado de restricciones sobre ese modelo, y aplicarlas a cualquier configuración del mismo que cargue el usuario. (3), tiene que permitir que una serie de operaciones sean definidas dentro de las restricciones. Y (4), como es lógico, tiene que valorar si las restricciones definidas se cumplen dentro del modelo.
 
-De entre todos esos requisitos básicos, es necesario entrar en detalle en el número 3 y enumerar la lista de operaciones que pueden ser definidas por nuestro lenguaje. Se pueden clasificar en los siguientes tipos:
+De entre todos esos requisitos básicos, es necesario entrar en detalle en el número 3 y enumerar la lista de operaciones que pueden ser definidas por nuestro lenguaje. Se pueden clasificar en los siguientes tipos: \\
 
 - Lógicas: Son operaciones cuyos operandos han de ser características sin cardinalidad (también llamadas características simples), y que se evaluan a verdadero o falso. Entre las operaciones lógicas encontramos las clásicas not, and, or, xor e implica. 
 
 - Numéricas: Sus operandos han de ser características con cardinalidad (también llamadas características múltiples) o simplemente números. Su resultado se evalua con un valor numérico. Las operaciones numéricas a implementar son la suma, resta, multiplicación y división.
 
-- Comparativas: Sus operandos han de ser características múltiples o simplemente números, pero su resultado se evalua con un valor booleano. Las operaciones de comparación a implementar son igual que, mayor que, menor que, distinto que, mayor o igual que y menor o igual que.
+- Comparativas: Sus operandos han de ser características múltiples o simplemente números, pero su resultado se evalua con un valor booleano. Las operaciones de comparación a implementar son igual que, mayor que, menor que, distinto que, mayor o igual que y menor o igual que. 
 
 \begin{figure}[t]
 \includegraphics[scale=0.5]{metamodelo/featuremodel.jpg}

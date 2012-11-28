@@ -22,7 +22,7 @@ Para poder capturar las divergencias y características comunes entre los distint
 
 Por otro lado, un modelo de características debe poder representar la cardinalidad de las características, por motivos tanto de comprensión (es mucho mejor contar con un árbol de 8 nodos que con uno de 100, teniendo ambos un significado equivalente), como de funcionalidad, ya que permite expresar ciertas restricciones que de no contar con la cardinalidad no podrían expresarse. 
 
-Las posibles relaciones que pueden darse en un árbol de características (mostradas gráficamente en la figura \ref{fig6}) son las siguientes:
+Las posibles relaciones que pueden darse en un árbol de características (mostradas gráficamente en la figura \ref{fig6}) son las siguientes: \\
 
 \begin{figure}[t]
 \includegraphics[scale=0.35]{background/relations.jpg}
@@ -31,11 +31,16 @@ Las posibles relaciones que pueden darse en un árbol de características (mostrad
 \end{figure}
 
 1 - Opcional: La característica hija puede estar o no estar seleccionada
+
 2 - Obligatoria: La característica es requerida.
+
 3 - Simple: La característica tendrá una cardinalidad <m,n>, siendo m y n números enteros que denotan el mínimo y el máximo respectivamente de características que podemos seleccionar.
+
 4 - Grupo-xor: Sólo una de las características pertenecientes al grupo será seleccionada.
+
 5 - Grupo-or: Podremos seleccionar como mínimo una de las subcaracterísticas, y como máximo todas.
-6 - Grupo simple: El número de características seleccionadas del grupo vendrá dado por su cardinalidad <m,n>.
+
+6 - Grupo simple: El número de características seleccionadas del grupo vendrá dado por su cardinalidad <m,n>. \\
 
 Además se podrán disponer de restricciones de usuario más complejas, que son las que se han implementado en el editor de especificación y validación de restricciones desarrollado en este proyecto.
 
