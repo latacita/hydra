@@ -1,0 +1,19 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 27/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Gramática, pruebas                                       %%
+%%==================================================================%%
+
+\begin{figure}[t]
+\includegraphics[scale=0.5]{gramatica/oppruebas.jpg}
+\caption{Batería de instrucciones para probar el funcionamiento de la gramática}
+\label{figgrampruebas}
+\end{figure}
+
+Para hacer las pruebas correspondientes a la gramática fue de mucha utilidad la vista Outline de Eclipse, que permite obsevar el árbol de parsing de todos los ficheros de código que creemos en nuestro lenguaje. 
+
+La batería de pruebas simplemente consistió en comprobar una serie de instrucciones y observar dentro de la vista Outline si se parseaban de modo correcto. En este caso se utilizaron unas restricciones definidas en un documento previo de Hydra que contenían todos los aspectos problemáticos de la gramática, es decir, operaciones largas con prioridad y multitud de contextos. Estas instrucciones son las que se muestran en la figura \ref{figgrampruebas}. 
+
+El resto de operaciones fueron puestas a prueba con restricciones más sencillitas y, como en el caso anterior, fueron exitosas. También se usaron las instrucciones de las pruebas del capítulo anterior, que se pueden observar en la figura \ref{figmetains} para comprobar que el árbol era el mismo que se creó en ese momento.

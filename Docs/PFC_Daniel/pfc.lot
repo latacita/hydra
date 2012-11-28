@@ -2,8 +2,12 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Introducci\'on}{1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Antecedentes}{7}
+\contentsline {xchapter}{Antecedentes}{9}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Planificaci\'on}{17}
+\contentsline {xchapter}{Planificaci\'on}{19}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Creaci\'on de la sintaxis abstracta}{21}
+\contentsline {xchapter}{Creaci\'on de la sintaxis abstracta}{23}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Creaci\'on de la gram\'atica}{29}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Validaci\'on de las sintaxis concretas}{35}

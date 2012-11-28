@@ -2,20 +2,27 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Introducci\'on}{1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Antecedentes}{7}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Metamodelo (sintaxis abstracta) de un creador de grafos}}{8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Instancia del metamodelo (sintaxis concreta) que representa un grafo espec\IeC {\'\i }fico}}{9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Sintaxis visual del grafo de la figura \ref {fig2}}}{10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Trozo de la gram\'atica de nuestro editor de especificaci\'on y validaci\'on de restricciones}}{12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Distintos tipos de relaciones en un modelo de caracter\IeC {\'\i }sticas }}{14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \'Arbol de caracter\IeC {\'\i }sticas para crear una SmartHome }}{15}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Especializaci\'on del modelo de la figura \ref {fig7}, que representa una de las posibles casas que se pueden construir }}{15}
+\contentsline {xchapter}{Antecedentes}{9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Metamodelo (sintaxis abstracta) de un creador de grafos}}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Instancia del metamodelo (sintaxis concreta) que representa un grafo espec\IeC {\'\i }fico}}{11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Sintaxis visual del grafo de la figura \ref {fig2}}}{12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Trozo de la gram\'atica de nuestro editor de especificaci\'on y validaci\'on de restricciones}}{14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Distintos tipos de relaciones en un modelo de caracter\IeC {\'\i }sticas }}{16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \'Arbol de caracter\IeC {\'\i }sticas para crear una SmartHome }}{17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Especializaci\'on del modelo de la figura \ref {fig7}, que representa una de las posibles casas que se pueden construir }}{17}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Planificaci\'on}{17}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tareas realizadas en este proyecto de fin de carrera}}{18}
+\contentsline {xchapter}{Planificaci\'on}{19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tareas realizadas en este proyecto de fin de carrera}}{20}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Creaci\'on de la sintaxis abstracta}{21}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Modelo de caracter\IeC {\'\i }sticas de una casa inteligente o SmartHome}}{22}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{24}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Conjunto de instrucciones que puso a prueba el funcionamiento}}{26}
+\contentsline {xchapter}{Creaci\'on de la sintaxis abstracta}{23}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Modelo de caracter\IeC {\'\i }sticas de una casa inteligente o SmartHome}}{24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Metamodelo utilizado para la creaci\'on de nuestro lenguaje de especificaci\'on y validaci\'on de restricciones}}{26}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Conjunto de instrucciones que puso a prueba el funcionamiento}}{28}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Creaci\'on de la gram\'atica}{29}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Implementaci\'on de las operaciones de nuestro editor com EMFText}}{31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Implementaci\'on del inicio de la gram\'atica con EMFText. Con la figura \ref {figopers} se completa la gram\'atica}}{32}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Bater\IeC {\'\i }a de instrucciones para probar el funcionamiento de la gram\'atica}}{33}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Validaci\'on de las sintaxis concretas}{35}
