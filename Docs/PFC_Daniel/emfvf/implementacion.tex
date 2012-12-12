@@ -1,0 +1,24 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 28/11/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Validation Framework, implementacion                                      %%
+%%==================================================================%%
+
+Para implementar todo lo relativo a la validación se ha utilizado una herramienta específica para esta funcionalidad que está englobada dentro de la instalación de EMF, cuyo nombre es EMF Validation Framework. Otra opción podría haber sido modificar el postprocesador de nuestro lenguaje ayudándonos de las opciones de modificación que nos proporciona EMFText, pero sería mucho más laborioso y a fin de cuentas el resultado final sería el mismo. Desde la propia documentación de EMFText se recomienda no modificar el postprocesador si la funcionalidad que se quiere añadir se puede implementar directamente desde Validation Framework.
+
+El primer paso para implementar la validación de las sintaxis concretas mediante Validation Framework nos obliga a crear un método en cada clase del metamodelo cuya validación sea necesaria. Ese método tiene que tener una definición concreta: ha recibir dos parámetros (uno llamado "diagnostics" del tipo EDiagnosticChain y otro llamado "context" que es un mapa ) y retornar un valor booleano.
+
+El parámetro "diagnostics" es el que usa Validation Framework para determinar el resultado de la validación. En este parámetro se puede guardar información tal como el tipo de error producido o el mensaje de error que queremos que se produzca cuando el error se produzca. En caso de que la validación haya sido satisfactoria no se ha de realizar ninguna tarea adicional con este parámetro. La labor de implementación por nuestra parte consistirá en resumidas cuentas en controlar qué información se mete en este parámetro y en qué casos hay que darle uso.
+
+Como se mencionó en el apartado anterior, había 3 aspectos a validar dentro del marco de Validation Framework:
+
+- Validar que la dirección indicada en el "import" sea válida y contenga un modelo de características. Esta validación se lleva a cabo en la clase Model. Para llevar a cabo esta validación simplemente se carga la dirección indicada y se manejan las posibles excepciones que una dirección errónea pueda generar. Además, se comprueba que el contenido de esa dirección sea un modelo de características mediante el uso de determinados métodos definidos para los modelos. Se aprovecha también para generar una variable global que contenga el modelo leido, para aprovechar así la lectura realizada y que no haya que buscar el modelo cada vez que se quiera hacer uso de él.
+
+- Validar que las características escritas en nuestro fichero de restricciones existan en el modelo de características proporcionado. Esta validación se realiza en la clase MultipleFeature y también en SimpleFeature. Simplemente consiste en buscar el nombre de la característica en concreto (haciendo uso del parámetro featureName) en el modelo cargado anteriormente. Si se encuentra una coincidencia es que la validación ha sido exitosa y por lo tanto no habrá que mostrar ningún mensaje de error.
+
+- Validar que las características parseadas como simples realmente sean simples. Esta validación se lleva a cabo en SimpleFeature, no teniendo sentido su implementación en el caso múltiple. Para llevarla a cabo tenemos que mirar que, una vez comprobada la existencia de la característica, esta no pueda ser instanciada en más de una ocasión. Para ello tenemos que mirar en el modelo importado las relaciones entre las características, y buscar si el límite de cardinalidad es mayor que uno para cualquier relación que implique a la característica que estamos intentando validar. Además, tendremos que comprobar que la característica no sea hija de una característica múltiple. Para ello miramos también las relaciones en que estén implicadas las características padre de la que tenemos intención de validar.
+
+Las pruebas de EMF Validation Framework se hicieron simultáneamente a las pruebas de la semántica, por motivos principalmente de comodidad, así que serán expuestas más adelante.
+

@@ -6,4 +6,12 @@
 %% Validation Framework, requisitos                                      %%
 %%==================================================================%%
 
-Prueba
+La captura de requisitos del proceso de validación pasa por detectar qué aspectos de las sintaxis concretas que construyamos son susceptibles de convertirla en errónea, y que además no pueden ser detectados por los mecanismos restrictivos proporcionados por la gramática y el metamodelo. Los requisitos encontrados han sido fundamentalmente los siguientes:
+
+- Comprobación de que la dirección introducida en el import para cargar el modelo de características al que se aplicarán las restricciones es correcta. Ser correcta no significa tanto que esté en un formato de dirección válido (esto se detecta por la gramática, salvo quizás alguna trampa específica puesta a propósito), sino que la dirección especificada contenga un fichero xmi con un modelo de características.
+
+- Comprobación de que las características escritas existan en el modelo importado. Lógicamente, no tendría sentido permitir escribir características que no estén presentes en ese modelo, pues luego a la hora de evaluar las restricciones en las que estuvieran presentes nunca iban a estar seleccionadas. 
+
+- Comprobación de que una característica parseada como simple realmente lo sea. Cuando en una restricción tiene una operación lógica, se fuerza a que sus operandos sean parseados como características simples, ya que son las únicas que pueden evaluarse a 1 ó 0. En caso de poner una característica que realmente es múltiple en una operación lógica provocaría un error en la ejecución, pues al evaluarse podría tener un valor mayor que 1. En las operaciones en que se fuerza que las características sean parseadas a múltiples (como las de comparación) esto no es un problema, ya que las simples se pueden ver como un caso concreto de las múltiples. Por eso, aunque sea parseada a múltiple y en realidad sea simple no tiene importancia y la operación seguirá teniendo sentido.
+
+ 

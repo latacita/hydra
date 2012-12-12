@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  28 NOV 2012 19:35
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  12 DEC 2012 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -253,7 +253,11 @@ Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TP@tbargs=\toks23
 \TP@prevdepth=\dimen124
 TextBlockOrigin set to 0pt x 0pt
-)) (./config/rename.tex) (./pfc.aux)
+)) (./config/rename.tex) (./pfc.aux
+
+LaTeX Warning: Label `sec:emfvf:req' multiply defined.
+
+)
 \openout1 = `pfc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -268,8 +272,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
-
-(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count102
 \scratchdimen=\dimen125
@@ -445,6 +448,10 @@ Package minitoc Info: I0033
 Package minitoc Info: I0033
 (minitoc)             Writing pfc.mtc6.
 \openout3 = `pfc.mtc6'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing pfc.mtc7.
+\openout3 = `pfc.mtc7'.
 
  [3
 
@@ -805,7 +812,43 @@ Cap\'{\i }tulo 6.
 
 \openout3 = `pfc.mtc'.
 
-(./pfc.mtc6) (./emfvf/requisitos.tex))
+(./pfc.mtc6) (./emfvf/requisitos.tex [35
+
+
+]) (./emfvf/implementacion.tex [36]))
+(./semantica/raiz.tex [37] [38
+
+]
+Cap\'{\i }tulo 7.
+\openout3 = `pfc.mtc'.
+
+\openout3 = `pfc.mtc'.
+
+(./pfc.mtc7) (./semantica/interfaz.tex
+<semantica/editor.jpg, id=201, 1282.7925pt x 684.5575pt>
+File: semantica/editor.jpg Graphic file (type jpg)
+
+<use semantica/editor.jpg>
+Package pdftex.def Info: semantica/editor.jpg used on input line 14.
+(pdftex.def)             Requested size: 436.14368pt x 232.74646pt.
+
+Overfull \hbox (76.14368pt too wide) in paragraph at lines 14--15
+[][] 
+ []
+
+[39
+
+] <semantica/boton.jpg, id=205, 454.69875pt x 164.615pt>
+File: semantica/boton.jpg Graphic file (type jpg)
+
+<use semantica/boton.jpg>
+Package pdftex.def Info: semantica/boton.jpg used on input line 24.
+(pdftex.def)             Requested size: 336.47874pt x 121.81569pt.
+)
+Underfull \vbox (badness 1226) has occurred while \output is active []
+
+ [40 <./semantica/editor.jpg> <./semantica/boton.jpg>] (./semantica/semantica.t
+ex [41]))
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the pfc.maf file.
@@ -814,22 +857,20 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the pfc.log file..
- [35
 
-
-] (./pfc.aux)
+[42] (./pfc.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4898 strings out of 493633
- 66701 string characters out of 3143378
- 144034 words of memory out of 3000000
- 7762 multiletter control sequences out of 15000+200000
+ 4933 strings out of 493633
+ 67278 string characters out of 3143378
+ 144115 words of memory out of 3000000
+ 7778 multiletter control sequences out of 15000+200000
  23219 words of font info for 57 fonts, out of 3000000 for 9000
  832 hyphenation exceptions out of 8191
  38i,12n,43p,1409b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -850,10 +891,10 @@ ve/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/te
 xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texm
 f-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on pfc.pdf (47 pages, 1043338 bytes).
+Output written on pfc.pdf (54 pages, 1170425 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 272 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
