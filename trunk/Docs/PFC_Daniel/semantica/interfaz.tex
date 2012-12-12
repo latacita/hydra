@@ -1,0 +1,29 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          SÁnchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 10/12/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% semantica, interfaz                                       %%
+%%==================================================================%%
+
+EMF y EMFText proporcionan una interfaz por defecto para la creación de editores y su posterior uso. Se incluyen algunos aspectos como coloreado de palabras clave y detección instantánea de errores de sintaxis. Es por eso que ya contábamos con gran parte del trabajo hecho, y esta ha sido una de las razones por las que EMFText pareció más conveniente en su momento.
+
+La interfaz del editor desarrollado es parte de la herramienta Eclipse y no puede ejecutarse fuera de su entorno. No tendría sentido hacerlo de otro modo, ya que no solo necesitamos las diversas funciones que EMF y EMFText nos proporcionan, sino que la propia herramienta Hydra es también un plug-in de Eclipse. La figura \ref{figeditor} muestra la interfaz del editor en funcionamiento.
+
+\begin{figure}[t]
+\includegraphics[scale=0.34]{semantica/editor.jpg}
+\caption{Captura de pantalla del editor en funcionamiento}
+\label{figeditor}
+\end{figure} 
+
+Las características del editor creado por defecto por EMF no son suficientes para satisfacer toda la funcionalidad que debe llevar a cabo, por lo que ha sido necesaria una ligera modificación para poder cumplir con los objetivos de nuestra aplicación. Para poder implementar la semántica es necesario que nuestro editor cargue previamente dos modelos: el modelo de características (lo cual ya ha sido implementado) y una configuración de ese modelo, que es sobre el que se validarán las restricciones que definamos.
+
+Para permitir que se pueda cargar esa configuración hemos añadido un botón llamado "Validate" que abre una ventana de carga en la que se pide al usuario escoger un fichero de extensión .xmi exclusivamente. Una vez cargado, el manejador del botón ejecutará la validación y mostrará el resultado de la misma en un cuadro de diálogo. Pero esto es tarea de la semántica y será explicado en el apartado siguiente. 
+
+\begin{figure}[t]
+\includegraphics[scale=0.74]{semantica/boton.jpg}
+\caption{Botón que ejecutará la validación de las restricciones}
+\label{figboton}
+\end{figure} 
+
+Dado que nuestra aplicación no es sino un plug-in de Eclipse, añadir el botón ha requerido informarse de la Arquitectura de Plug-ins de Eclipse. Sin entrar en demasiados detalles, el proceso consiste en añadir lo que se conoce como "punto de extensión" al plug-in previo. Un punto de extensión sirve para dotar a un plug-in de la funcionalidad de otros plug-ins e incorporarla a ellos. En este caso nuestro punto de extensión corresponde a uno proporcionado por la propia arquitectura, cuya utilidad es precisamente la de añadir botones al menú de herramientas de nuestra aplicación.

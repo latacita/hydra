@@ -21,3 +21,7 @@
 \contentsline {section}{\numberline {5.3}Pruebas}{33}
 \contentsline {chapter}{\numberline {6}Validaci\'on de las sintaxis concretas}{35}
 \contentsline {section}{\numberline {6.1}Captura de requisitos}{35}
+\contentsline {section}{\numberline {6.2}Implementaci\'on de la validaci\'on}{36}
+\contentsline {chapter}{\numberline {7}Sem\'antica del lenguaje}{39}
+\contentsline {section}{\numberline {7.1}Creaci\'on de la interfaz del programa}{39}
+\contentsline {section}{\numberline {7.2}Implementaci\'on de la sem\'antica del lenguaje}{41}

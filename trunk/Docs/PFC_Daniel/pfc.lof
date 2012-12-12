@@ -26,3 +26,7 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Bater\IeC {\'\i }a de instrucciones para probar el funcionamiento de la gram\'atica}}{33}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Validaci\'on de las sintaxis concretas}{35}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Sem\'antica del lenguaje}{39}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Captura de pantalla del editor en funcionamiento}}{40}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Bot\'on que ejecutar\'a la validaci\'on de las restricciones}}{40}
