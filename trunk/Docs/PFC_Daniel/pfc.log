@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  12 DEC 2012 23:28
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.7)  21 JAN 2013 22:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,50 +567,112 @@ Cap\'{\i }tulo 2.
 (./pfc.mtc2) (./background/ildm.tex [9
 
 ]
-<background/abstracta.jpg, id=91, 582.175pt x 400.49625pt>
-File: background/abstracta.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <background/abstracta.eps>
+(epstopdf)                    date: 2013-01-21 21:35:15
+(epstopdf)                    size: 1412107 bytes
+(epstopdf)             Output file: <background/abstracta-eps-converted-to.pdf>
 
-<use background/abstracta.jpg>
-Package pdftex.def Info: background/abstracta.jpg used on input line 22.
+(epstopdf)                    date: 2013-01-21 21:36:19
+(epstopdf)                    size: 28290 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/abstracta-eps-c
+onverted-to.pdf background/abstracta.eps>
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
+
+<background/abstracta-eps-converted-to.pdf, id=91, 582.175pt x 400.49625pt>
+File: background/abstracta-eps-converted-to.pdf Graphic file (type pdf)
+
+<use background/abstracta-eps-converted-to.pdf>
+Package pdftex.def Info: background/abstracta-eps-converted-to.pdf used on inpu
+t line 22.
 (pdftex.def)             Requested size: 291.08679pt x 200.24763pt.
- [10 <./background/abstracta.jpg>]
-<background/concreta.jpg, id=96, 773.89125pt x 505.89pt>
-File: background/concreta.jpg Graphic file (type jpg)
+ [10 <./background/abstracta-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <background/concreta.eps>
+(epstopdf)                    date: 2013-01-21 21:40:03
+(epstopdf)                    size: 2367181 bytes
+(epstopdf)             Output file: <background/concreta-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-01-21 21:54:28
+(epstopdf)                    size: 48281 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/concreta-eps-co
+nverted-to.pdf background/concreta.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
 
-<use background/concreta.jpg>
-Package pdftex.def Info: background/concreta.jpg used on input line 34.
+<background/concreta-eps-converted-to.pdf, id=99, 773.89125pt x 505.89pt>
+File: background/concreta-eps-converted-to.pdf Graphic file (type pdf)
+
+<use background/concreta-eps-converted-to.pdf>
+Package pdftex.def Info: background/concreta-eps-converted-to.pdf used on input
+ line 34.
 (pdftex.def)             Requested size: 386.94467pt x 252.94437pt.
 
 Overfull \hbox (26.94467pt too wide) in paragraph at lines 34--35
 [][] 
  []
 
-[11 <./background/concreta.jpg>]
-<background/grafo.jpg, id=100, 670.505pt x 193.72375pt>
-File: background/grafo.jpg Graphic file (type jpg)
+[11 <./background/concreta-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <background/grafo.eps>
+(epstopdf)                    date: 2013-01-21 21:42:19
+(epstopdf)                    size: 267215 bytes
+(epstopdf)             Output file: <background/grafo-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-01-21 21:54:29
+(epstopdf)                    size: 7171 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/grafo-eps-conve
+rted-to.pdf background/grafo.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
 
-<use background/grafo.jpg>
-Package pdftex.def Info: background/grafo.jpg used on input line 44.
+<background/grafo-eps-converted-to.pdf, id=106, 670.505pt x 193.72375pt>
+File: background/grafo-eps-converted-to.pdf Graphic file (type pdf)
+
+<use background/grafo-eps-converted-to.pdf>
+Package pdftex.def Info: background/grafo-eps-converted-to.pdf used on input li
+ne 44.
 (pdftex.def)             Requested size: 335.25168pt x 96.86163pt.
+Package epstopdf Info: Source file: <background/metamodelo.eps>
+(epstopdf)                    date: 2013-01-21 21:44:11
+(epstopdf)                    size: 3377972 bytes
+(epstopdf)             Output file: <background/metamodelo-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2013-01-21 21:54:30
+(epstopdf)                    size: 128844 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/metamodelo-eps-
+converted-to.pdf background/metamodelo.eps>
+(epstopdf)             \includegraphics on input line 54.
+Package epstopdf Info: Output file is already uptodate.
 
-<background/metamodelo.jpg, id=101, 1062.97125pt x 525.965pt>
-File: background/metamodelo.jpg Graphic file (type jpg)
+<background/metamodelo-eps-converted-to.pdf, id=107, 1062.97125pt x 525.965pt>
+File: background/metamodelo-eps-converted-to.pdf Graphic file (type pdf)
 
-<use background/metamodelo.jpg>
-Package pdftex.def Info: background/metamodelo.jpg used on input line 54.
+<use background/metamodelo-eps-converted-to.pdf>
+Package pdftex.def Info: background/metamodelo-eps-converted-to.pdf used on inp
+ut line 54.
 (pdftex.def)             Requested size: 425.18097pt x 210.38226pt.
 
 Overfull \hbox (65.18097pt too wide) in paragraph at lines 54--55
 [][] 
  []
 
-) (./background/ecore.tex [12 <./background/grafo.jpg>])
-(./background/emftext.tex [13 <./background/metamodelo.jpg>]
-<background/gramatica.jpg, id=109, 631.35875pt x 401.5pt>
-File: background/gramatica.jpg Graphic file (type jpg)
+) (./background/ecore.tex [12 <./background/grafo-eps-converted-to.pdf>])
+(./background/emftext.tex [13 <./background/metamodelo-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <background/gramatica.eps>
+(epstopdf)                    date: 2013-01-21 21:47:01
+(epstopdf)                    size: 1534739 bytes
+(epstopdf)             Output file: <background/gramatica-eps-converted-to.pdf>
 
-<use background/gramatica.jpg>
-Package pdftex.def Info: background/gramatica.jpg used on input line 19.
+(epstopdf)                    date: 2013-01-21 21:54:31
+(epstopdf)                    size: 121210 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/gramatica-eps-c
+onverted-to.pdf background/gramatica.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+
+<background/gramatica-eps-converted-to.pdf, id=121, 631.35875pt x 401.5pt>
+File: background/gramatica-eps-converted-to.pdf Graphic file (type pdf)
+
+<use background/gramatica-eps-converted-to.pdf>
+Package pdftex.def Info: background/gramatica-eps-converted-to.pdf used on inpu
+t line 19.
 (pdftex.def)             Requested size: 315.6786pt x 200.7495pt.
 ) (./background/features.tex
 
@@ -625,7 +687,7 @@ LaTeX Warning: Reference `' on page 14 undefined on input line 9.
 
 LaTeX Warning: Reference `' on page 14 undefined on input line 9.
 
-[14 <./background/gramatica.jpg>]
+[14 <./background/gramatica-eps-converted-to.pdf>]
 
 LaTeX Warning: Reference `' on page 15 undefined on input line 19.
 
@@ -634,11 +696,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<background/relations.jpg, id=116, 1033.8625pt x 239.89626pt>
-File: background/relations.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <background/relations.eps>
+(epstopdf)                    date: 2013-01-21 21:50:12
+(epstopdf)                    size: 504970 bytes
+(epstopdf)             Output file: <background/relations-eps-converted-to.pdf>
 
-<use background/relations.jpg>
-Package pdftex.def Info: background/relations.jpg used on input line 28.
+(epstopdf)                    date: 2013-01-21 21:54:32
+(epstopdf)                    size: 21569 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/relations-eps-c
+onverted-to.pdf background/relations.eps>
+(epstopdf)             \includegraphics on input line 28.
+Package epstopdf Info: Output file is already uptodate.
+
+<background/relations-eps-converted-to.pdf, id=131, 1033.8625pt x 239.89626pt>
+File: background/relations-eps-converted-to.pdf Graphic file (type pdf)
+
+<use background/relations-eps-converted-to.pdf>
+Package pdftex.def Info: background/relations-eps-converted-to.pdf used on inpu
+t line 28.
 (pdftex.def)             Requested size: 361.8573pt x 83.96494pt.
 
 Overfull \hbox (1.8573pt too wide) in paragraph at lines 28--29
@@ -650,50 +725,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-<background/featuremodel.jpg, id=117, 838.13126pt x 300.12125pt>
-File: background/featuremodel.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <background/featuremodel.eps>
+(epstopdf)                    date: 2013-01-21 21:52:13
+(epstopdf)                    size: 1522984 bytes
+(epstopdf)             Output file: <background/featuremodel-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-01-21 21:54:33
+(epstopdf)                    size: 59670 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/featuremodel-ep
+s-converted-to.pdf background/featuremodel.eps>
+(epstopdf)             \includegraphics on input line 48.
+Package epstopdf Info: Output file is already uptodate.
 
-<use background/featuremodel.jpg>
-Package pdftex.def Info: background/featuremodel.jpg used on input line 48.
+<background/featuremodel-eps-converted-to.pdf, id=132, 838.13126pt x 300.12125p
+t>
+File: background/featuremodel-eps-converted-to.pdf Graphic file (type pdf)
+ <use background/featuremodel-eps-converted-to.pdf>
+Package pdftex.def Info: background/featuremodel-eps-converted-to.pdf used on i
+nput line 48.
 (pdftex.def)             Requested size: 419.0646pt x 150.06026pt.
 
 Overfull \hbox (59.0646pt too wide) in paragraph at lines 48--49
 [][] 
  []
 
-[16 <./background/relations.jpg>]
-<background/configuration.jpg, id=121, 879.285pt x 307.1475pt>
-File: background/configuration.jpg Graphic file (type jpg)
+[16 <./background/relations-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <background/configuration.eps>
+(epstopdf)                    date: 2013-01-21 21:53:22
+(epstopdf)                    size: 1634746 bytes
+(epstopdf)             Output file: <background/configuration-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2013-01-21 21:54:34
+(epstopdf)                    size: 68162 bytes
+(epstopdf)             Command: <repstopdf --outfile=background/configuration-e
+ps-converted-to.pdf background/configuration.eps>
+(epstopdf)             \includegraphics on input line 58.
+Package epstopdf Info: Output file is already uptodate.
 
-<use background/configuration.jpg>
-Package pdftex.def Info: background/configuration.jpg used on input line 58.
+<background/configuration-eps-converted-to.pdf, id=139, 879.285pt x 307.1475pt>
+File: background/configuration-eps-converted-to.pdf Graphic file (type pdf)
+<use background/configuration-eps-converted-to.pdf>
+Package pdftex.def Info: background/configuration-eps-converted-to.pdf used on 
+input line 58.
 (pdftex.def)             Requested size: 439.64143pt x 153.57336pt.
 
 Overfull \hbox (79.64143pt too wide) in paragraph at lines 58--59
 [][] 
  []
 
-) (./background/eplugins.tex [17 <./background/featuremodel.jpg> <./background/
-configuration.jpg>])) (./planificacion/planificacion.tex [18]
+) (./background/eplugins.tex [17 <./background/featuremodel-eps-converted-to.pd
+f> <./background/configuration-eps-converted-to.pdf>]))
+(./planificacion/planificacion.tex [18]
 Cap\'{\i }tulo 3.
 \openout3 = `pfc.mtc'.
 
 \openout3 = `pfc.mtc'.
 
 (./pfc.mtc3) (./planificacion/theplanificacion.tex
-<planificacion/planning.jpg, id=128, 387.69844pt x 475.02469pt>
-File: planificacion/planning.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <planificacion/planning.eps>
+(epstopdf)                    date: 2013-01-21 21:59:09
+(epstopdf)                    size: 664742 bytes
+(epstopdf)             Output file: <planificacion/planning-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2013-01-21 21:59:27
+(epstopdf)                    size: 69142 bytes
+(epstopdf)             Command: <repstopdf --outfile=planificacion/planning-eps
+-converted-to.pdf planificacion/planning.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
 
-<use planificacion/planning.jpg>
-Package pdftex.def Info: planificacion/planning.jpg used on input line 12.
-(pdftex.def)             Requested size: 286.89825pt x 351.52pt.
+<planificacion/planning-eps-converted-to.pdf, id=152, 387.4475pt x 474.77374pt>
+File: planificacion/planning-eps-converted-to.pdf Graphic file (type pdf)
+<use planificacion/planning-eps-converted-to.pdf>
+Package pdftex.def Info: planificacion/planning-eps-converted-to.pdf used on in
+put line 12.
+(pdftex.def)             Requested size: 286.71257pt x 351.3343pt.
  [19
 
 
 ]))
-Underfull \vbox (badness 1102) has occurred while \output is active []
+Underfull \vbox (badness 1158) has occurred while \output is active []
 
- [20 <./planificacion/planning.jpg>] (./metamodelo/metamodelo.tex [21] [22
+ [20 <./planificacion/planning-eps-converted-to.pdf>] (./metamodelo/metamodelo.
+tex [21]
+[22
 
 ]
 Cap\'{\i }tulo 4.
@@ -708,11 +823,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
 [23
 
-] <metamodelo/featuremodel.jpg, id=145, 838.13126pt x 300.12125pt>
-File: metamodelo/featuremodel.jpg Graphic file (type jpg)
+]
+Package epstopdf Info: Source file: <metamodelo/featuremodel.eps>
+(epstopdf)                    date: 2013-01-21 22:01:41
+(epstopdf)                    size: 1522984 bytes
+(epstopdf)             Output file: <metamodelo/featuremodel-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-01-21 22:05:43
+(epstopdf)                    size: 59670 bytes
+(epstopdf)             Command: <repstopdf --outfile=metamodelo/featuremodel-ep
+s-converted-to.pdf metamodelo/featuremodel.eps>
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
 
-<use metamodelo/featuremodel.jpg>
-Package pdftex.def Info: metamodelo/featuremodel.jpg used on input line 22.
+<metamodelo/featuremodel-eps-converted-to.pdf, id=172, 838.13126pt x 300.12125p
+t>
+File: metamodelo/featuremodel-eps-converted-to.pdf Graphic file (type pdf)
+ <use metamodelo/featuremodel-eps-converted-to.pdf>
+Package pdftex.def Info: metamodelo/featuremodel-eps-converted-to.pdf used on i
+nput line 22.
 (pdftex.def)             Requested size: 419.0646pt x 150.06026pt.
 
 Overfull \hbox (59.0646pt too wide) in paragraph at lines 22--23
@@ -722,26 +851,52 @@ Overfull \hbox (59.0646pt too wide) in paragraph at lines 22--23
 ) (./metamodelo/creacion.tex
 Underfull \vbox (badness 3179) has occurred while \output is active []
 
- [24 <./metamodelo/featuremodel.jpg>] [25]
-<metamodelo/metamodelo.jpg, id=154, 1062.97125pt x 525.965pt>
-File: metamodelo/metamodelo.jpg Graphic file (type jpg)
+ [24 <./metamodelo/featuremodel-eps-converted-to.pdf>] [25]
+Package epstopdf Info: Source file: <metamodelo/metamodelo.eps>
+(epstopdf)                    date: 2013-01-21 22:03:36
+(epstopdf)                    size: 3377972 bytes
+(epstopdf)             Output file: <metamodelo/metamodelo-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2013-01-21 22:05:45
+(epstopdf)                    size: 128844 bytes
+(epstopdf)             Command: <repstopdf --outfile=metamodelo/metamodelo-eps-
+converted-to.pdf metamodelo/metamodelo.eps>
+(epstopdf)             \includegraphics on input line 24.
+Package epstopdf Info: Output file is already uptodate.
 
-<use metamodelo/metamodelo.jpg>
-Package pdftex.def Info: metamodelo/metamodelo.jpg used on input line 24.
+<metamodelo/metamodelo-eps-converted-to.pdf, id=184, 1062.97125pt x 525.965pt>
+File: metamodelo/metamodelo-eps-converted-to.pdf Graphic file (type pdf)
+
+<use metamodelo/metamodelo-eps-converted-to.pdf>
+Package pdftex.def Info: metamodelo/metamodelo-eps-converted-to.pdf used on inp
+ut line 24.
 (pdftex.def)             Requested size: 425.18097pt x 210.38226pt.
 
 Overfull \hbox (65.18097pt too wide) in paragraph at lines 24--25
 [][] 
  []
 
-[26 <./metamodelo/metamodelo.jpg>]) (./metamodelo/pruebas.tex
-<metamodelo/instpruebas.jpg, id=158, 524.96124pt x 130.4875pt>
-File: metamodelo/instpruebas.jpg Graphic file (type jpg)
+[26 <./metamodelo/metamodelo-eps-converted-to.pdf>]) (./metamodelo/pruebas.tex
+Package epstopdf Info: Source file: <metamodelo/instpruebas.eps>
+(epstopdf)                    date: 2013-01-21 22:05:12
+(epstopdf)                    size: 418958 bytes
+(epstopdf)             Output file: <metamodelo/instpruebas-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2013-01-21 22:05:46
+(epstopdf)                    size: 19742 bytes
+(epstopdf)             Command: <repstopdf --outfile=metamodelo/instpruebas-eps
+-converted-to.pdf metamodelo/instpruebas.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
 
-<use metamodelo/instpruebas.jpg>
-Package pdftex.def Info: metamodelo/instpruebas.jpg used on input line 14.
+<metamodelo/instpruebas-eps-converted-to.pdf, id=192, 524.96124pt x 130.4875pt>
+File: metamodelo/instpruebas-eps-converted-to.pdf Graphic file (type pdf)
+<use metamodelo/instpruebas-eps-converted-to.pdf>
+Package pdftex.def Info: metamodelo/instpruebas-eps-converted-to.pdf used on in
+put line 14.
 (pdftex.def)             Requested size: 314.97917pt x 78.29309pt.
-)) [27] (./gramatica/raiz.tex [28 <./metamodelo/instpruebas.jpg>]
+)) [27] (./gramatica/raiz.tex
+[28 <./metamodelo/instpruebas-eps-converted-to.pdf>]
 Cap\'{\i }tulo 5.
 \openout3 = `pfc.mtc'.
 
@@ -771,42 +926,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
  []
 
 ) (./gramatica/design.tex
-<gramatica/operaciones.jpg, id=168, 312.16624pt x 489.83pt>
-File: gramatica/operaciones.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <gramatica/operaciones.eps>
+(epstopdf)                    date: 2013-01-21 22:21:44
+(epstopdf)                    size: 928071 bytes
+(epstopdf)             Output file: <gramatica/operaciones-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2013-01-21 22:28:34
+(epstopdf)                    size: 35792 bytes
+(epstopdf)             Command: <repstopdf --outfile=gramatica/operaciones-eps-
+converted-to.pdf gramatica/operaciones.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
 
-<use gramatica/operaciones.jpg>
-Package pdftex.def Info: gramatica/operaciones.jpg used on input line 14.
+<gramatica/operaciones-eps-converted-to.pdf, id=205, 312.16624pt x 489.83pt>
+File: gramatica/operaciones-eps-converted-to.pdf Graphic file (type pdf)
+
+<use gramatica/operaciones-eps-converted-to.pdf>
+Package pdftex.def Info: gramatica/operaciones-eps-converted-to.pdf used on inp
+ut line 14.
 (pdftex.def)             Requested size: 218.51488pt x 342.87866pt.
- [30] [31 <./gramatica/operaciones.jpg>]
+ [30] [31 <./gramatica/operaciones-eps-converted-to.pdf>]
 Overfull \hbox (2.1688pt too wide) in paragraph at lines 25--26
 \T1/cmr/m/n/10.95 Bool-Prio-rit-yO-pe-rand1, Bool-Prio-rit-yO-pe-rand2, Num-Pri
 o-rit-yO-pe-rand1, Num-
  []
 
-<gramatica/iniciogram.jpg, id=176, 621.32124pt x 347.2975pt>
-File: gramatica/iniciogram.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <gramatica/iniciogram.eps>
+(epstopdf)                    date: 2013-01-21 22:23:04
+(epstopdf)                    size: 1307306 bytes
+(epstopdf)             Output file: <gramatica/iniciogram-eps-converted-to.pdf>
 
-<use gramatica/iniciogram.jpg>
-Package pdftex.def Info: gramatica/iniciogram.jpg used on input line 30.
+(epstopdf)                    date: 2013-01-21 22:28:35
+(epstopdf)                    size: 34054 bytes
+(epstopdf)             Command: <repstopdf --outfile=gramatica/iniciogram-eps-c
+onverted-to.pdf gramatica/iniciogram.eps>
+(epstopdf)             \includegraphics on input line 30.
+Package epstopdf Info: Output file is already uptodate.
+<gramatica/iniciogram-eps-converted-to.pdf, id=216, 621.32124pt x 347.2975pt>
+File: gramatica/iniciogram-eps-converted-to.pdf Graphic file (type pdf)
+
+<use gramatica/iniciogram-eps-converted-to.pdf>
+Package pdftex.def Info: gramatica/iniciogram-eps-converted-to.pdf used on inpu
+t line 30.
 (pdftex.def)             Requested size: 434.9219pt x 243.10658pt.
 
 Overfull \hbox (74.9219pt too wide) in paragraph at lines 30--31
 [][] 
  []
 
-[32 <./gramatica/iniciogram.jpg>]) (./gramatica/pruebas.tex
-<gramatica/oppruebas.jpg, id=180, 902.37125pt x 311.1625pt>
-File: gramatica/oppruebas.jpg Graphic file (type jpg)
+[32 <./gramatica/iniciogram-eps-converted-to.pdf>]) (./gramatica/pruebas.tex
+Package epstopdf Info: Source file: <gramatica/oppruebas.eps>
+(epstopdf)                    date: 2013-01-21 22:28:04
+(epstopdf)                    size: 1699364 bytes
+(epstopdf)             Output file: <gramatica/oppruebas-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-01-21 22:28:37
+(epstopdf)                    size: 112540 bytes
+(epstopdf)             Command: <repstopdf --outfile=gramatica/oppruebas-eps-co
+nverted-to.pdf gramatica/oppruebas.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
 
-<use gramatica/oppruebas.jpg>
-Package pdftex.def Info: gramatica/oppruebas.jpg used on input line 10.
+<gramatica/oppruebas-eps-converted-to.pdf, id=223, 902.37125pt x 311.1625pt>
+File: gramatica/oppruebas-eps-converted-to.pdf Graphic file (type pdf)
+
+<use gramatica/oppruebas-eps-converted-to.pdf>
+Package pdftex.def Info: gramatica/oppruebas-eps-converted-to.pdf used on input
+ line 10.
 (pdftex.def)             Requested size: 451.18452pt x 155.58087pt.
 
 Overfull \hbox (91.18452pt too wide) in paragraph at lines 10--11
 [][] 
  []
 
-[33 <./gramatica/oppruebas.jpg>])) (./emfvf/raiz.tex [34]
+[33 <./gramatica/oppruebas-eps-converted-to.pdf>])) (./emfvf/raiz.tex [34]
 Cap\'{\i }tulo 6.
 \openout3 = `pfc.mtc'.
 
@@ -825,11 +1017,23 @@ Cap\'{\i }tulo 7.
 \openout3 = `pfc.mtc'.
 
 (./pfc.mtc7) (./semantica/interfaz.tex
-<semantica/editor.jpg, id=201, 1282.7925pt x 684.5575pt>
-File: semantica/editor.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <semantica/editor.eps>
+(epstopdf)                    date: 2013-01-21 22:31:56
+(epstopdf)                    size: 5302408 bytes
+(epstopdf)             Output file: <semantica/editor-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-01-21 22:32:45
+(epstopdf)                    size: 216144 bytes
+(epstopdf)             Command: <repstopdf --outfile=semantica/editor-eps-conve
+rted-to.pdf semantica/editor.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
 
-<use semantica/editor.jpg>
-Package pdftex.def Info: semantica/editor.jpg used on input line 14.
+<semantica/editor-eps-converted-to.pdf, id=246, 1282.7925pt x 684.5575pt>
+File: semantica/editor-eps-converted-to.pdf Graphic file (type pdf)
+
+<use semantica/editor-eps-converted-to.pdf>
+Package pdftex.def Info: semantica/editor-eps-converted-to.pdf used on input li
+ne 14.
 (pdftex.def)             Requested size: 436.14368pt x 232.74646pt.
 
 Overfull \hbox (76.14368pt too wide) in paragraph at lines 14--15
@@ -838,17 +1042,30 @@ Overfull \hbox (76.14368pt too wide) in paragraph at lines 14--15
 
 [39
 
-] <semantica/boton.jpg, id=205, 454.69875pt x 164.615pt>
-File: semantica/boton.jpg Graphic file (type jpg)
+]
+Package epstopdf Info: Source file: <semantica/boton.eps>
+(epstopdf)                    date: 2013-01-21 22:32:23
+(epstopdf)                    size: 457237 bytes
+(epstopdf)             Output file: <semantica/boton-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-01-21 22:32:46
+(epstopdf)                    size: 27787 bytes
+(epstopdf)             Command: <repstopdf --outfile=semantica/boton-eps-conver
+ted-to.pdf semantica/boton.eps>
+(epstopdf)             \includegraphics on input line 24.
+Package epstopdf Info: Output file is already uptodate.
+ <semantica/boton-eps-converted-to.pdf, id=250, 454.69875pt x 164.615pt>
+File: semantica/boton-eps-converted-to.pdf Graphic file (type pdf)
 
-<use semantica/boton.jpg>
-Package pdftex.def Info: semantica/boton.jpg used on input line 24.
+<use semantica/boton-eps-converted-to.pdf>
+Package pdftex.def Info: semantica/boton-eps-converted-to.pdf used on input lin
+e 24.
 (pdftex.def)             Requested size: 336.47874pt x 121.81569pt.
 )
 Underfull \vbox (badness 1226) has occurred while \output is active []
 
- [40 <./semantica/editor.jpg> <./semantica/boton.jpg>] (./semantica/semantica.t
-ex [41]))
+ [40 <./semantica/editor-eps-converted-to.pdf> <./semantica/boton-eps-converted
+-to.pdf>]
+(./semantica/semantica.tex [41]))
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the pfc.maf file.
@@ -857,8 +1074,7 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the pfc.log file..
-
-[42] (./pfc.aux)
+ [42] (./pfc.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -867,9 +1083,9 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4933 strings out of 493633
- 67278 string characters out of 3143378
- 144115 words of memory out of 3000000
+ 4932 strings out of 493633
+ 68430 string characters out of 3143378
+ 145126 words of memory out of 3000000
  7778 multiletter control sequences out of 15000+200000
  23219 words of font info for 57 fonts, out of 3000000 for 9000
  832 hyphenation exceptions out of 8191
@@ -891,10 +1107,10 @@ ve/2011/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/te
 xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texm
 f-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on pfc.pdf (54 pages, 1170425 bytes).
+Output written on pfc.pdf (54 pages, 1602632 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 322 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
