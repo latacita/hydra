@@ -11,7 +11,7 @@ Una vez han sido definidas las características que queremos que nuestra sintaxis
 La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones. 
 
 \begin{figure}[t]
-\includegraphics[scale=0.7]{gramatica/operaciones.jpg}
+\includegraphics[scale=0.7]{gramatica/operaciones.eps}
 \caption{Implementación de las operaciones de nuestro editor com EMFText}
 \label{figopers}
 \end{figure}
@@ -27,7 +27,7 @@ Las clases añadidas para solventar esta situación fueron las siguientes: BoolPri
 Una situación similar fue la que propició que las operaciones Context, All y Any hayan sido diseñadas tal y como presenta el metamodelo, ya que que la particular sintaxis de estas (diferente a las demás que siguen el mismo esquema de op + char + op) también mostraba ciertos problemas de parsing. En este caso no fue necesario añadir elementos auxiliares, sino simplemente recolocarlos para evitar estos problemas. Con esto ya se han hecho todos los cambios en el metamodelo, que alcanza en este punto su versión final tal como muestra la figura \ref{figmetameta}. Con respecto al metamodelo solamente quedan por comentar los métodos que muestran algunas clases, que serán explicados en los próximos capítulos ya que se usan en el proceso de validación y semántica.
 
 \begin{figure}[t]
-\includegraphics[scale=0.7]{gramatica/iniciogram.jpg}
+\includegraphics[scale=0.7]{gramatica/iniciogram.eps}
 \caption{Implementación del inicio de la gramática con EMFText. Con la figura \ref{figopers} se completa la gramática}
 \label{figinitgram}
 \end{figure}
