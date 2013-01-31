@@ -1,10 +1,10 @@
-%%==================================================================%
-%% Author : Tejedo, Daniel                                          %
-%%          Sánchez Barreiro, Pablo                                 %
-%% Version: 1.0, 08/10/2012                                         %                   %%                                                                  %
-%% Memoria del Proyecto Fin de Carrera                              %
-%% Archivo raíz                                                     %
-%%==================================================================%
+%%==================================================================%%
+%% Author : Tejedo, Daniel                                          %%
+%%          Sï¿½nchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 08/10/2012                                         %%                   %%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Archivo raï¿½z                                                     %%
+%%==================================================================%%
 
 \documentclass[a4paper,11pt]{itsas_pfc}
 
@@ -18,10 +18,8 @@
 \usepackage{amsfonts}
 \usepackage[spanish,activeacute]{babel}
 
-% Esto se añade porque a algún gracioso le apetecía que la fuente
-% de la portada fuese Arial
 \usepackage[T1]{fontenc}
-\usepackage[scaled]{uarial}
+%\usepackage[scaled]{uarial}
 
 % File with main configuration
 \input{config/pfc_options.tex}
@@ -54,15 +52,15 @@
 \begin{document}
 
 % Cover page
-\input{cover/cover.tex}
+% \input{cover/cover.tex}
 
-\input{cover/firstPage.tex}
+% \input{cover/firstPage.tex}
 
 % reset page numbering
 \input{config/begin.tex}
 
 % acknowledgement
-\input{cover/acknowledgements.tex} % acknowledgements
+% \input{cover/acknowledgements.tex} % acknowledgements
 
 % Preface
 %\input{introduction/preface-lff.tex}   % preface
@@ -78,23 +76,22 @@
 \input{introduction/introduction.tex} % Chapter 1
 
 % Capítulo 2: Resumen del Estado del Arte
-\todo{Capítulo 2: Antecedentes o Estado del Arte}
 % \input{background/background.tex}
 
-% Capítulo 3: Descripción General del Proceso
-\todo{Capítulo 3: Alcance y Planificación del Proyecto}
+% Capítulo 3: Planificación del proyecto
+% \input{planificacion/planificacion.tex}
 
-% Capítulo 4: Ingeniería de Requisitos
-\todo{Capítulo 4: Ingeniería de Requisitos}
+% Capítulo 4: Creación de la sintaxis abstracta
+% \input{metamodelo/metamodelo.tex}
 
-% Capítulo 5: Definición Arquitectónica y Diseño Software
-\todo{Capítulo 5: Definición Arquitectónica y Diseño Software}
+% Capítulo 5: Creacion de la gramatica
+\input{gramatica/raiz.tex}
 
-% Capítulo 6: Construcción e Implementación
-\todo{Capítulo 6: Construcción e Implementación}
+% Capítulo 6: Validacion de las sintaxis concretas
+\input{emfvf/raiz.tex}
 
-% Capítulo 7: Pruebas, Despliegue y Aceptación
-\todo{Capítulo 7: Pruebas, Despliegue y Aceptación}
+% Capítulo 7: Creacion de la semantica
+\input{semantica/raiz.tex}
 
 % Capítulo 8: Discusión, Conclusiones y Trabajos Futuros
 \todo{Capítulo 7: Discusión, Conclusiones y Trabajos Futuros}

@@ -1,27 +1,36 @@
 %%==================================================================%%
-%% Author : Tejedo Gonzï¿½lez, Daniel                                 %%
-%%          Sï¿½nchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 14/11/2012                                         %%                   %%                                                                  %%
+%% Author : Tejedo González, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 14/11/2012                                         %%
+%% Version: 2.0, 21/01/2013                                         %%
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Introducciï¿½n, archivo raï¿½z                                       %%
+%% Introducción, archivo raíz                                       %%
 %%==================================================================%%
 
 \chapterheader{Introducción}{Introducción}
 \label{chap:introduction}
 
-%%==================================================================%%
-%% NOTA(Pablo): Ponle nombre a tu proyecto, com mï¿½dulo dentro de    %%
-%%              de Hydra                                            %%
-%%              Comienza nombrando a tu proyecto, no a Hydra. Tu    %%
-%%              proyecto es el producto principal, Hydra es el      %%
-%%              producto marginal                                   %%
-%%              Tampoco menciones el AMPLE, porque en este caso     %%
-%%              no es necesario, ya que no has estado trabajando    %%
-%%              para dicho proyecto                                 %%
-%%                                                                  %%     %%==================================================================%%
+Este capítulo sirve de introducción a la presente Memoria de Proyecto Fin de Carrera. En él se describen los objetivos generales del proyecto, así como el contexto donde se enmarca.  Por último, se describe como se estructura el presente documento.
 
-Esta memoria de Proyecto Fin de Carrera presenta un entorno para la especificación y validación de restricciones en árboles de características con cardinalidad. El entorno ha sido desarrollado dentro del contexto de la aplicación Hydra, una herramienta para el modelado de características. Este capítulo introduce la situación anterior del proyecto Hydra y los conceptos implicados en el mismo, así como los nuevos conceptos que esta ampliación incorpora. Se describirán también los objetivos que este trabajo pretende alcanzar y la motivación que subyace tras ellos. Por último, se indicará la estructura que presentará este documento.
-
+%%=================================================================%%
+%% NOTA(Pablo) : Demasiado largo para ser el mini resumen del      %%
+%%               capítulo                                          %%
+%%=================================================================%%
+%%
+%% Esta memoria de Proyecto Fin de Carrera presenta un entorno
+%% para la especificación y validación de restricciones en árboles
+%% de características con cardinalidad. El entorno ha sido
+%% desarrollado dentro del contexto de la aplicación Hydra, una
+%% herramienta para el modelado de características. Este capítulo
+%% introduce la situación anterior del proyecto Hydra y los
+%% conceptos implicados en el mismo, así como los nuevos conceptos
+%% que esta ampliación incorpora. Se describirán también los
+%% objetivos que este trabajo pretende alcanzar y la motivación que
+%% subyace tras ellos. Por último, se indicará la estructura que
+% presentará este documento.
+%%
+%%=================================================================%%
 
 \chaptertoc
 
@@ -30,15 +39,36 @@ Esta memoria de Proyecto Fin de Carrera presenta un entorno para la especificaci
 
 \input{introduction/theIntroduction.tex}
 
-\section{Objetivos}
-\label{sec:intr:motivation}
+%%===========================================================================================
+%% NOTA(Pablo): La Sección 2 es altamente redundante con la introducción, por lo que lo
+%%              mejor es suprimirla
+%%===========================================================================================
 
-\input{introduction/objetivos.tex}
+%% \section{Objetivos}
+%% \label{sec:intr:motivation}
+
+%% \input{introduction/objetivos.tex}
+
+%%===========================================================================================
+%% NOTA(Pablo): Añadimos esta sección aquí para que la introducción no se quede muy corta
+%%              y para poder explicar luego la planificación del proyecto
+%%===========================================================================================
+
+\section{Antecedentes: Ingeniería de Lenguajes Dirigida por Modelos}
+\label{sec:intr:sle}
+
+\input{introduction/sle.tex}
+
+\section{Planificación del proyecto}
+\label{sec:intr:planning}
+\input{planificacion/theplanificacion.tex}
 
 \section{Estructura del Documento}
-\label{sec:intr:organization}
+\label{sec:intr:estructura}
 
-Tras este capítulo de introducción, la memoria se estructura tal y como se describe a continuación: El capítulo 2 introduce un poco más en profundidad los conceptos implicados en la herramienta Hydra, así como las herramientas más determinantes a la hora de llevar a cabo su implementación. El capítulo 3 describe la planificación del proyecto desde el punto de vista de las tareas involucradas. El capítulo 4 describe en profundidad la parte correspondiente a la creación de las sintaxis concreta y abstracta. El capítulo 5 describe el resto de tareas que se han llevado a cabo en el proyecto, y el capítulo 6 describe mis conclusiones personales y la situación de la herramienta de cara al futuro.
+\todo{Arreglar esto cuando el proyecto esté terminado}
+
+Tras este capítulo de introducción, la presente memoria de Proyecto Fin de Carrera se estructura tal y como se describe a continuación: El Capítulo~\ref{chap:background} describe en términos generales todos los conceptos y tecnologías que son necesarios para comprender el contenido de este documento. El Capítulo~\ref{chap:metamodelo} explica la planificación del proyecto desde el punto de vista de las tareas involucradas. El capítulo 4 describe en profundidad la parte correspondiente a la creación de las sintaxis concreta y abstracta. El capítulo 5 describe el resto de tareas que se han llevado a cabo en el proyecto, y el capítulo 6 describe mis conclusiones personales y la situación de la herramienta de cara al futuro.
 
 
 

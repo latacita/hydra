@@ -13,6 +13,10 @@ Este capítulo trata de describir a grandes rasgos las técnicas, tecnologías y he
 
 \chaptertoc
 
+\section{Ingeniería de Lenguajes Dirigida por Modelos}
+\label{sec:back:ildm}
+\input{background/ildm.tex}
+
 \section{EMF, Ecore y EMF Validation Framework}
 \label{sec:back:ecore}
 \input{background/ecore.tex}

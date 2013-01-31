@@ -1,0 +1,40 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2011.5.20)  17 JAN 2013 11:22
+entering extended mode
+**C:/Documents*and*Settings/Pablo/Mis*documentos/Alumnos/Daniel/PFC_Daniel/intr
+oduction/theIntroduction.tex
+
+("C:/Documents and Settings/Pablo/Mis documentos/Alumnos/Daniel/PFC_Daniel/intr
+oduction/theIntroduction.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, sp
+anish, loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 E
+      l principal objetivo de este Proyecto de Fin de Carrera es continuar e...
+
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.22 E
+      l principal objetivo de este Proyecto de Fin de Carrera es continuar e...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 8 strings out of 495306
+ 518 string characters out of 3182336
+ 44920 words of memory out of 3000000
+ 3314 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 6i,0n,4p,945b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.

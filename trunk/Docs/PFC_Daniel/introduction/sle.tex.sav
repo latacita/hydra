@@ -1,0 +1,129 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 18/11/2012                                         %%
+%% Version: 1.0, 30/01/2013                                         %%
+%%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Introduction/Ingeniería de lenguajes dirigidos por modelos       %%
+%%==================================================================%%
+
+Este proyecto ha sido desarrollado siguiendo un enfoque de \emph{Ingeniería de Lenguajes Dirigida por Modelos}, la cual establece unas etapas claras para el proceso de desarrollo de un nuevo lenguaje software. Por tanto, antes de proceder a explicar la planificación del presente proyecto se hace necesario adquirir unas nociones básicas sobre la Ingeniería de Lenguajes Dirigida por Modelos, de forma que se pueda entender por qué el presente proyecto se organiza tal como se organiza. 
+
+La \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{} no es más que un caso concreto de la más genérica \emph{Ingeniería Software Dirigida por Modelos}~\cite{} aplicado desde el punto de vista de la \emph{Teoría de Lenguajes Formales}. 
+
+%%===========================================================================================%%
+%% NOTA(Pablo): No metas paja por meter, vamos a explicar directamente qué es la Inegniería  %%
+%%              de lenguajes dirigida por modelos                                            %%
+%%===========================================================================================%%
+%% 
+%% Por tanto, con lo cual es conveniente explicar en qué consiste MDA y comentar los         %%
+%% añadidos que introduce el enfoque gramático.                                              %%  %%
+%% La Ingeniería Dirigida por Modelos intenta definir la funcionalidad de el sistema que 
+%% pretendemos crear a través de la creación de uno o varios metamodelos que representen 
+%% todas las características de nuestro sistema y todas las operaciones que puede llevar 
+%% a cabo. El principal objetivo de la Ingeniería Dirigida por Modelos es elevar el nivel 
+%% de abstracción aún más, situándolo por encima del límite establecido por los 
+%% Lenguajes de Alto Nivel.
+%%
+%%
+%% El nivel de abstracción y complejidad de nuestros metamodelos variará dependiendo de 
+%% la cantidad de ellos que incorporemos al sistema. De este modo, un metamodelo que 
+%% represente todo el sistema directamente será más difícil de entender a primera vista 
+%% que varios metamodelos que implementen cada uno un tipo de operación o funcionalidad 
+%% del sistema.
+%%
+%% La transformación de esos modelos a código permite la automatización de tareas que 
+%% pueden resultar triviales y/o repetitivas al programador, en las cuales de otro modo 
+%% se invierte mucho tiempo de programación y de detección y depuración de errores.
+%% 
+%%
+%% Una vez que tengamos los metamodelos necesarios para definir el comportamiento de 
+%% nuestro sistema, podremos instanciarlos para crear modelos que representen sistemas
+%% concretos. Una instancia de un metamodelo es un modelo que cumple todos los 
+%% requisitos marcados por su metamodelo, y que da valor a los parámetros del mismo 
+%%  (por ejemplo a sus atributos).
+%% 
+%%===========================================================================================%%
+
+%%===========================================================================================%%
+%% NOTA(Pablo): Copia aquí la Sección 2.2 que aparece en la memoria de Hydra, disponible 
+%%              aquí: http://caosd.lcc.uma.es/spl/hydra/documents/PFC_JRSalazar.pdf
+%%              Rehaz la Figura 2.9 en Visio o similar, y quitale la línea rizada.
+%%===========================================================================================%%
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.5]{background/abstracta.eps}
+    \caption{Metamodelo (sintaxis abstracta) de un lenguaje para modelar grafos pesados dirigidos}
+    \label{fig:sle:metamodeloGrafo}
+\end{figure}
+
+Ilustramos los conceptos anteriormente expuestos mediante la creación de un lenguaje simple para el modelado de grafos dirigidos y pesados. La Figura~\ref{fig:sle:metamodeloGrafo} muestra el metamodelo o sintaxis abstracta para dicho lenguaje.
+
+\todo{Describir un poco, con dos tres frases el metamodelo}
+
+%%===========================================================================================%%
+%% NOTA(Pablo): Esto es redundate, es decir, básicamente paja para rellenar                  %%
+%%===========================================================================================%%
+%%
+%% En el ejemplo presentado, el metamodelo presenta la sintaxis abstracta de nuestro 
+%% sistema porque cualquier instanciación válida del mismo constituye un grafo completo. 
+%% Dentro del contexto particular de la Ingeniería de Lenguajes Dirigida por Modelos, la 
+%% sintaxis abstracta representa cualquier conjunto de líneas de código válidas que pueden
+%% construirse a partir de ella, y posteriormente ser ejecutadas.
+%%
+%%===========================================================================================%%
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.5]{background/concreta.eps}
+    \caption{Modelo abstacto de un grafo pesado dirigido concreto.}
+    \label{fig:sle:modeloAbstractoGrafo}
+\end{figure}
+
+Utilizando dicho metamodelo, que no es más que un diagrama de clases, podemos crear instancias del mismo. Una instancia de un metamodelo es un modelo. En nuestro caso, cada instancia concreta del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} representaría un determinado grafo pesado dirigido, con un número determinado de nodos, pesos y arcos. Por ejemplo, la Figura~\ref{fig:sle:modeloAbstractoGrafo} muestra una instancia del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} que representa un grafo dirigido y pesado que modela las distancias entre las ciudades de 
+
+%%===========================================================================================%%
+%% NOTA(Pablo): Para ilustrar el concepto de modelo basado en sintaxis abstracta, 
+%%              haz un diagrama de objetos en MagicDraw para el metamodelo anterior y lo 
+%%              lo pones aquí y lo explicas un poco. Haz el modelo abstracto para el mismo 
+%%              ejemplo que usas en el capítulo. 
+%%===========================================================================================%%
+
+
+
+Explicando el metamodelo de nuestro ejemplo un poco más en detalle, podemos decir que la clase Grafo representa el conjunto final de un grafo construido, y puede tener varios Nodos. Esos nodos, a su vez, pueden estar conectados por Arcos. Cada arco tiene un origen, un destino y un peso. Cualquier instanciación de este metamodelo representa un grafo completo.
+
+La figura \ref{fig2} muestra un ejemplo de instanciación del metamodelo anterior. Esta instancia representa un grafo sencillo que muestra las distancias entre algunas ciudades. O dicho de otro modo, es una de las múltiples sintaxis concretas que podemos construir a partir de nuestra sintaxis abstracta.
+
+
+Dentro del marco de la Ingeniería de Lenguajes Dirigida por Modelos, una sintaxis concreta es cualquier conjunto de expresiones válidas que hayan sido generadas con nuestra sintaxis abstracta. Pero no sólo eso, el hecho de que estemos trabajando con lenguajes conlleva irrevocablemente el tener que desarrollar una gramática de producciones para poder construir nuestras líneas de código en el orden apropiado y con los símbolos apropiados. Eso sí, la gramática será más sencilla y comprensible que la que habría que construir de no estar usando este tipo de metodología. Esta tarea también queda englobada en la sintaxis concreta. De este modo, la sintaxis concreta se suele clasificar en sintaxis concreta visual (el modelo, expresado mediante líneas de código en el caso de lenguajes, o un grafo pintado en el caso del ejemplo mostrado) y sintaxis concreta textual (la gramática del lenguaje).
+
+La figura \ref{fig3} muestra una sintaxis concreta visual del grafo de la figura \ref{fig2}.
+
+\begin{figure}[t]
+\includegraphics[scale=0.5]{background/grafo.eps}
+\caption{Sintaxis visual del grafo de la figura \ref{fig2}}
+\label{fig3}
+\end{figure}
+
+Una vez que hemos completado estos pasos, sólamente queda dotar al sistema de una semántica, es decir, de un comportamiento en ejecución. En el ejemplo de nuestro generador de grafos podríamos crear una semántica para calcular distancias mínimas entre caminos. En el caso concreto de la Ingeniería de Lenguajes Dirigida por Modelos esta semántica representa el comportamiento de las líneas de código cuando son ejecutadas. Por poner un ejemplo sencillo, es la encargada de que la instrucción "4 < 5" compruebe si efectivamente el 4 es menor que el 5.
+
+Una vez se han explicado las bases de la Ingeniería de Lenguajes Dirigida por Modelos vamos a proceder a mostrar y explicar muy brevemente el metamodelo usado para generar las estructuras válidas de código para el lenguaje de especificación y validación de restricciones que hemos creado en este PFC. Ese metamodelo corresponde a la figura \ref{fig4}
+
+\begin{figure}[t]
+\includegraphics[scale=0.4]{background/metamodelo.eps}
+\caption{Metamodelo utilizado para la creación de nuestro lenguaje de especificación y validación de restricciones}
+\label{fig4}
+\end{figure}
+
+La clase que engloba todo el conjunto resultante es Model. Un modelo puede tener varias restricciones, y estas a su vez pueden tener varias operaciones booleanas (ya que una restricción siempre tiene que evaluarse a true o false). Esas operaciones booleanas se dividen en varios tipos: unarias (negación) , binarias (and, or, etc.), de comparación ( mayor que, menor que, etc.). o de selección (all, any)  Los operandos pueden ser otras operaciones o características (en inglés Features). Más adelante se explicará en detalle la sintaxis del lenguaje creado.
+
+
+
+
+
+
+
+
+
+
