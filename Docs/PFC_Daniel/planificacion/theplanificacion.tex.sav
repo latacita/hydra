@@ -1,0 +1,34 @@
+%%==================================================================%%
+%% Author : Tejedo GonzÁlez, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 22/11/2012                                         %%                   
+%% Version: 2.0, 31/01/2013                                         %%                   
+%%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Planificacion, planificacion                                     %%
+%%==================================================================%%
+
+Como se ha comentado con anterioridad, el objetivo de este Proyecto Fin de Carrera es el desarrollo de un editor para un novedoso lenguaje de especificación y validación de restricciones para árboles de características donde dichas restricciones puedan incluir características clonables. Dicho editor se desarrollará utilizando un moderno enfoque de \emph{Ingeniería de Lenguajes Dirigido por Modelos}. Por tanto, el proceso de desarrollo del presente proyecto queda prácticamente determinado por dicho enfoque, el cual posee un proceso de desarrollo bien definido, el cual se describió en la sección anterior. La Figura~\ref{fig:planning} muestra como dicho proceso de desarrollo se ha instanciado para nuestro caso particular. 
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.74]{planificacion/planning.eps}
+    \caption{Proceso de desarrollo del Proyecto Fin de Carrera}
+    \label{fig:planning}
+\end{figure}
+
+Obviamente, la primera tarea en este proceso de desarrollo fue la de adquirir los conocimientos necesarios para la realización de todas las posteriores tareas. 
+en todo proyecto de este tipo, existe un primer paso de documentación y aprendizaje de los diversos conceptos implicados en el mismo. En mi caso, esta tarea conllevó la familiarización con las Líneas de Producto Software, los Árboles de Características, la Ingeniería de Lenguajes Dirigida por Modelos y la situación en que se hallaba en ese momento la herramienta Hydra. Una vez culminado este proceso de adquisición de información, que duró aproximadamente 3 meses, pudimos iniciar la planificación de las tareas a realizar en el proyecto, tal y como se detalla en la figura \ref{figplan}.
+
+La tarea 2, definición de la sintaxis abstracta, comprende la captura de requisitos del lenguaje que hemos de desarrollar (para así poder crear el metamodelo de la manera adecuada), diseño del metamodelo y pruebas de que funciona correctamente. El desarrollo de esta tarea se prolongó durante aproximadamente 3 meses.
+
+La tarea 3, definición de la sintaxis concreta, comprende un nuevo aprendizaje, en este caso el de la herramienta para creación de gramáticas para metamodelos llamada EMFText. Después hubo que hacer una nueva captura de requisitos, menos profunda que la anterior, para poder construir adecuadamente la gramática. La construcción de la misma tuvo como consecuencia sucesivas pruebas y cambios en el metamodelo hasta dejarlo terminado. Esta tarea tuvo una duración aproximada de 5 meses.
+
+La tarea 4, validación de sintaxis abstracta, comienza con el aprendizaje de una nueva herramienta, el EMF Validation Framework. Tras ello, se construyen los mecanismos necesarios para poder validar que las características a las que queremos aplicar las restricciones existen en el modelo importado, y también validar que una característica parseada como múltiple (con cardinalidad mayor que 1) sea en efecto múltiple en el modelo importado. Esta tarea tuvo una duración aproximada de 2 meses.
+
+La tarea 5, creación de la semántica del lenguaje, comprende la creación de los mecanismos para que las restricciones puedan ser validadas. Es decir, implementar el código que evalua si son ciertas o no, e implementar la interfaz que permite cargar una configuración del modelo. Esta tarea tuvo una duración aproximada de 2 meses.
+
+Todas estas tareas serán explicadas más en detalle en capítulos sucesivos.
+
+La metodología de desarrollo de este proyecto vino impuesta por la técnica de Ingeniería de Lenguajes Dirigida por Modelos. Es decir, no se pudo aplicar ninguna de las técnicas clásicas como "metodología incremental", pues las peculiares características de la ingeniería de modelos impiden que eso sea viable.
+
+
