@@ -10,7 +10,13 @@
 
 Este proyecto ha sido desarrollado siguiendo un enfoque de \emph{Ingeniería de Lenguajes Dirigida por Modelos}, la cual establece unas etapas claras para el proceso de desarrollo de un nuevo lenguaje software. Por tanto, antes de proceder a explicar la planificación del presente proyecto se hace necesario adquirir unas nociones básicas sobre la Ingeniería de Lenguajes Dirigida por Modelos, de forma que se pueda entender por qué el presente proyecto se organiza tal como se organiza.
 
-La \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{} no es más que un caso concreto de la más genérica \emph{Ingeniería Software Dirigida por Modelos}~\cite{} aplicado desde el punto de vista de la \emph{Teoría de Lenguajes Formales}.
+La \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{} no es más que un caso concreto de la más genérica \emph{Ingeniería Software Dirigida por Modelos}~\cite{} aplicado desde el punto de vista de la \emph{Teoría de Lenguajes Formales}. El proceso de de ingeniería de un nuevo lenguaje de modelado está compuesto de diversas fases, las cuales se explican con ayuda de la figura \ref{fig:sle:diagramaSLE}.
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.5]{introduction/slefig.eps}
+    \caption{Componentes de la ingeniería de lenguajes dirigida por modelos}
+    \label{fig:sle:diagramaSLE}
+\end{figure}
 
 %%===========================================================================================%%
 %% NOTA(Pablo): No metas paja por meter, vamos a explicar directamente qué es la Inegniería  %%
@@ -46,6 +52,11 @@ La \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{} no es más que un 
 %%
 %%===========================================================================================%%
 
+\begin{enumerate}
+	\item El primer paso es crear las reglas de construcción o sintaxis de nuestro lenguaje de modelado. Esto se realiza mediante la creación de un metamodelo, o modelo de nuestro lenguaje que describe usando conceptos parecidos a los de los diagramas de clases, la \emph{sintaxis abstracta} o reglas para la construcción de modelos de nuestro lenguaje. Dicho metamodelo se construye usando un lenguaje de metamodelado. Existen diversos lenguajes de metamodelado, tales como KM3 ~\cite{} o MOF ~\cite{}, aunque Ecore ~\cite{} está considerado como el estándar \emph{de facto} dentro de la comunidad de modelado. Normalmente no es posible especificar cualquier tipo de restricción entre los elementos de un lenguaje de modelado usando exclusivamente los elementos del lenguaje de metamodelado. Por ello, tales lenguajes de metamodelado se acompañan con un lenguaje de especificación de restricciones. OCL ~\cite{} es el lenguaje de restricciones más usado para desarrollar esta tarea.
+	\item Como se ha comentado en el punto anterior, un metamodelo establece la sintaxis abstracta de nuestro lenguaje de modelado, pero no especifica la \emph{sintaxis concreta} o notación de nuestro lenguaje de modelado. Por tanto el siguiente paso en la ingeniería de un nuevo lenguaje de modelado, es la definición de una notación o sintaxis concreta para nuestro lenguaje. Esta notación puede ser tanto textual como gráfica. Para la definición de notaciones gráficas, GMF es la herramienta más popular cuando se trabaja con Ecore. Para notaciones textuales, TCS ~\cite{}, xText, TEF o EMFText pueden ser usadas, no existiendo aún un estándar \emph{de facto} para la definición de notaciones textuales. 
+	\item Por último, nos quedaría definir la semántica del lenguaje de modelado. Existen un amplio rango de técnicas para desarrollar esta tarea, tales como: (1) definir la semántica de cada elemento de manera informal; (2) especificar la semántica de cada elemento usando un lenguaje formal, tales como máquinas de estado abstractas, o (3) crear generadores que transformen los elementos de modelado en elementos de otro lenguaje distinto bien definido. 
+\end{enumerate}
 %%===========================================================================================%%
 %% NOTA(Pablo): Copia aquí la Sección 2.2 que aparece en la memoria de Hydra, disponible
 %%              aquí: http://caosd.lcc.uma.es/spl/hydra/documents/PFC_JRSalazar.pdf
@@ -77,12 +88,13 @@ Ilustramos los conceptos anteriormente expuestos mediante la creación de un leng
 %%              los extremos de las asociaciones                                             %% %%===========================================================================================%%
 
 \begin{figure}[!tb]
-    \includegraphics[scale=0.5]{background/concreta.eps}
+    \includegraphics[scale=0.4
+]{background/concretaHabilidad.eps}
     \caption{Modelo abstracto de un grafo pesado dirigido concreto}
     \label{fig:sle:modeloAbstractoGrafo}
 \end{figure}
 
-Utilizando dicho metamodelo, que no es más que un diagrama de clases, podemos crear instancias del mismo. Una instancia de un metamodelo es un modelo. En nuestro caso, cada instancia concreta del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} representaría un determinado grafo pesado dirigido, con un número determinado de nodos, pesos y arcos. Por ejemplo, la Figura~\ref{fig:sle:modeloAbstractoGrafo} muestra una instancia del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} que representa un grafo dirigido y pesado que modela las distancias \todo{Cambiar Ejemplo} entre las ciudades de Santander, Barcelona y La Coruña. Cada ciudad se representa como un nodo, y
+Utilizando dicho metamodelo, que no es más que un diagrama de clases, podemos crear instancias del mismo. Una instancia de un metamodelo es un modelo. En nuestro caso, cada instancia concreta del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} representaría un determinado grafo pesado dirigido, con un número determinado de nodos, pesos y arcos. Por ejemplo, la Figura~\ref{fig:sle:modeloAbstractoGrafo} muestra una instancia del metamodelo de la Figura~\ref{fig:sle:metamodeloGrafo} que representa un grafo dirigido y pesado cuyos nodos representan las habilidades de una determinada disciplina, mientras que el peso de los arcos representa el tiempo necesario para adquirir esa habilidad. La habilidad 1 es el nodo inicial, es decir, aquella que todos poseen. A partir de ahí y siguiendo los arcos se pueden desarrollar unas habilidades u otras.
 
 %%===========================================================================================%%
 %% NOTA(Pablo): Este ejemplo no es el mejor ejemplo de nodo dirigido, porque las distancias  %%
@@ -107,7 +119,7 @@ Utilizando dicho metamodelo, que no es más que un diagrama de clases, podemos cr
 Como se ha ilustrado con los ejemplos anteriores, un metamodelo define un conjunto de reglas que debe obedecer todo modelo que pertenezca al lenguaje definido por dicho metamodelo. Por tanto, usando términos más técnicos, un metamodelo define la sintaxis abstracta de un lenguaje. Dicha sintaxis abstracta será similar a los árboles sintacticos de los lenguajes de programación tradicionales. No obstante, para que el lenguaje definido por un metamodelo sea fácilmente utilizable, debemos definir una sintaxis concreta, ya sea textual o gráfica, para dicho lenguaje. Dicha sintaxis concreta indicaría como podemos construir modelos que sean conformes al metamodelo, pero usando una notación que le sea familiar al usuario, en lugar de la notación genérica y abstracta mostrada en la Figura~\ref{fig:sle:modeloAbstractoGrafo}.
 
 \begin{figure}[!tb]
-    \includegraphics[scale=0.5]{background/grafo.eps}
+    \includegraphics[scale=0.5]{background/grafoHabilidad.eps}
     \caption{Modelo concreto de un grafo pesado dirigido concreto}
     \label{fig:sle:sintaxisVisual}
 \end{figure}
@@ -116,7 +128,13 @@ Por ejemplo, para nuestro ejemplo anterior, el del lenguaje para la especificaci
 
 Los modernos entornos para el desarrollo de lenguajes dirigido por modelos proporcionan facilidades para, una vez definido un metamodelo, asociar a cada clase perteneciente a dicho metamodelo, un símbolo gráfico. Utilizando las facilidades proporcionadas por dichos entornos es posible generar, de manera automática, un editor visual que permita la creación de modelos conformes al metamodelo origen, utilizando para ello la sintaxis visual definida. Ejemplos de tales entornos son MetaEdit+~\cite{}, Microsoft DSL tools~\cite{} o la conocida combinación de herramientas Eclipse+Ecore+GMF (\emph{Graphical Modelling Tools})~\cite{}.
 
-De igual forma que hemos definido una sintaxis visual concreta hubiésemos podido definir una sintaxis textual concreta, donde los modelos conformes al metamodelo en cuestión pudiesen especificarse usando texto, en lugar símbolos gráficos. La Figura~\ref{fig:sle:sintaxisTextual} muestra el ejemplo de la Figura~\ref{fig:sle:modeloAbstractoGrafo} pero utilizando una sintaxis textual para nuestro lenguaje de grafos. En este caso, \todo{Describir}
+De igual forma que hemos definido una sintaxis visual concreta hubiésemos podido definir una sintaxis textual concreta, donde los modelos conformes al metamodelo en cuestión pudiesen especificarse usando texto, en lugar símbolos gráficos. La Figura~\ref{fig:sle:sintaxisTextual} muestra el ejemplo de la Figura~\ref{fig:sle:modeloAbstractoGrafo} pero utilizando una sintaxis textual para nuestro lenguaje de grafos. En este caso, primero hay que definir un nombre para el grafo que estamos creando, y a continuación definir nodos y después arcos. De los nodos indicaremos su nombre, y de los arcos su peso y sus nodos de origen y destino, usando para ello las palabras reservadas pertinentes. De este modo podemos observar una de las claras ventajas de usar metamodelos para especificar lenguajes específicos de modelo, y es que permiten de forma relativamente sencilla poder expresar las sintaxis concretas de más de un modo, escogiendo para cada caso el que sea más conveniente.  %\todo{Describir}
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.3]{background/grafoTextual.eps}
+    \caption{Sintaxis concreta textual de un grafo dirigido pesado}
+    \label{fig:sle:sintaxisTextua}
+\end{figure}
 
 %%===========================================================================================%%
 %% NOTA(Pablo): Crea un ejemplo para el caso de anterior y lo describes como el caso de la   %%
