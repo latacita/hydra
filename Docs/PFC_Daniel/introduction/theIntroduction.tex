@@ -43,90 +43,90 @@ Para obtener un producto específico dentro de una línea de productos software, e
 
 La mayoría de estas restricciones se pueden especificar usando la sintaxis propia de los árboles de características. No obstante, existen una serie de restricciones que no se pueden modelar con la sintaxis propia de los árboles de características. Un ejemplo de tal tipo de restricción son las relaciones de dependencias entre características. Por ejemplo, la selección de una característica de cálculo de rutas óptimas podría necesitar para funcionar que  estuviesen instalados los servicios de mapas y geolocalización. Dichas tres características podrían no aparecer relacionadas en el árbol de características, por lo que tendríamos que definir dicha restricción como una restricción externa.
 
-Estas restricciones externas se suelen especificar utilizando fórmulas de lógica proposicional~\cite{}. Los átomos de dichas fórmulas son las características del sistema. Dichos átomos se evalúan a verdadero si las características correspondientes están seleccionadas, y a falso en caso contrario. Por ejemplo, la restricción anteriormente expuesta podría especificarse como $CalculoRutasÓptimas \Rightarrow (Mapas \wedge Geolocalización)$.
+Estas restricciones externas se suelen especificar utilizando fórmulas de lógica proposicional~\cite{}. Los átomos de dichas fórmulas son las características del sistema. Dichos átomos se evalúan a verdadero si las características correspondientes están seleccionadas, y a falso en caso contrario. Por ejemplo, la restricción anteriormente expuesta podría especificarse como $CalculoRutasOptimas \Rightarrow (Mapas \wedge Geolocalizacion)$.
 
 Para que estas restricciones sean utilidad, además de especificarlas, debemos comprobar que satisfacen para las diferentes configuraciones creadas. En los últimos años se han ido creando diversas técnicas y herramientas para el análisis y validación de dichas restricciones~\cite{}.
 
 Paralelamente al problema de la especificación y validación de las restricciones externas, se han ido incorporando diversas modificaciones y novedades a los modelos de árboles de características en los últimos años. Por ejemplo, se han introducido conceptos como las \emph{referencias entre características}~\cite{} y \emph{atributos}~\cite{} para las características. Uno de estos conceptos, simple pero importante, ha sido el de  característica clonable~\cite{}. Una característica clonable es una características que pueden aparecer un número variable de veces dentro de un producto.
 
-Por ejemplo, supongamos que tenemos una red de sensores para la monitorización y regulación del nivel de humedad de un determinado recinto, por ejemplo, de un invernadero. Dependiendo de donde fuésemos a instalar dicha red, podríamos necesitar un número diferente de sensores. Además, dependiendo de donde instalásemos cada sensor, podríamos configurar cada sensor de forma diferente. Por ejemplo, ciertos sensores podrían necesitar tener capacidades de enrutamiento, se tolerantes a fallo o poseer modos de hibernación para disminuir el consumo de energía. Por tanto, en dicho sistema sería interesante modelar \emph{Sensor} como una característica que se puede clonar, es decir, crear un número variable de instancias de la misma, y donde cada clon fuese a su vez configurable con ciertas características. 
+Por ejemplo, supongamos que tenemos una red de sensores para la monitorización y regulación del nivel de humedad de un determinado recinto, por ejemplo, de un invernadero. Dependiendo de donde fuésemos a instalar dicha red, podríamos necesitar un número diferente de sensores. Además, dependiendo de donde instalásemos cada sensor, podríamos configurar cada sensor de forma diferente. Por ejemplo, ciertos sensores podrían necesitar tener capacidades de enrutamiento, se tolerantes a fallo o poseer modos de hibernación para disminuir el consumo de energía. Por tanto, en dicho sistema sería interesante modelar \emph{Sensor} como una característica que se puede clonar, es decir, crear un número variable de instancias de la misma, y donde cada clon fuese a su vez configurable con ciertas características.
 
-La incorporación de las características clonables a los árboles de características hace que los mecanismos utilizados hasta ahora para especificar y evaluar restricciones externas hayan quedado obsoletos. Dado que las características clonables no se seleccionan sino que se clonan, ya no podemos evaluar una característica clonable a verdadero o falso dependiendo de si está o no seleccionada. El concepto de \emph{estar seleccionada} desaparece en el caso de las características clonables. 
+La incorporación de las características clonables a los árboles de características hace que los mecanismos utilizados hasta ahora para especificar y evaluar restricciones externas hayan quedado obsoletos. Dado que las características clonables no se seleccionan sino que se clonan, ya no podemos evaluar una característica clonable a verdadero o falso dependiendo de si está o no seleccionada. El concepto de \emph{estar seleccionada} desaparece en el caso de las características clonables.
 
 Para solventar dicho problema, el profesor Pablo Sánchez, dentro del Departamento de Matemáticas, Estadística y Computación, ha desarrollado un nuevo lenguaje para la especificación y validación de restricciones externas a los árboles de características donde dichas restricciones pueden contener \emph{características clonables}. Dicho lenguaje se denomina \emph{HCL (Hydra Constraint Language}).
 
-El objetivo de este Proyecto Fin de Carrera es implementar un editor que permita especificar y validar restricciones especificadas en HCL, es decir restricciones sobre árboles de características que puedan incluir características clonables. Dicho editor se debe integrar en una herramienta para el modelado y configuración de árboles de características denominada \emph{Hydra}, desarrollada también por el profesor Pablo Sánchez, en colaboración con un antiguo alumno suyo de la Universidad de Málaga, José Ramón Salazar. Con esto esperamos haber aclarado el primer párrafo de esta sección al lector no familiarizado con las líneas de productos software y/o los árboles de características. 
+El objetivo de este Proyecto Fin de Carrera es implementar un editor que permita especificar y validar restricciones especificadas en HCL, es decir restricciones sobre árboles de características que puedan incluir características clonables. Dicho editor se debe integrar en una herramienta para el modelado y configuración de árboles de características denominada \emph{Hydra}, desarrollada también por el profesor Pablo Sánchez, en colaboración con un antiguo alumno suyo de la Universidad de Málaga, José Ramón Salazar. Con esto esperamos haber aclarado el primer párrafo de esta sección al lector no familiarizado con las líneas de productos software y/o los árboles de características.
 
 Hydra se distribuye actualmente como un plugin para Eclipse, y ha sido desarrollada utilizando modernas técnicas de \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{}. Dichas técnicas permiten una rápida y cómoda creación de entornos de edición y evaluación de lenguajes tanto visuales como textuales mediante la especificación de una serie de elementos básicos a partir de los cuales se genera una gran cantidad de artefactos, reduciendo los tiempos de desarrollo y costo asociado al desarrollo de dichos entornos. El editor desarrollado en este Proyecto Fin de Carrera deberá distribuirse también como un plugin para Eclipse, instalable sobre \emph{Hydra}. Para su desarrollo se usará también un enfoque de \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{}.
 
-Tras esta introducción, el resto del presente capítulo se estructura como sigue: La Sección~\ref{sec:intr:sle} proporciona unas nociones básicas sobre la \emph{Ingeniería de Lenguajes Dirigida por Modelos}, nociones que son necesarias para poder entender la planificación del presente proyecto, la cual se describe en la Sección~\ref{sec:intr:planning}. Por último, la Sección~\ref{sec:intr:estructura} describe la estructura general del presente documento. 
+Tras esta introducción, el resto del presente capítulo se estructura como sigue: La Sección~\ref{sec:intr:sle} proporciona unas nociones básicas sobre la \emph{Ingeniería de Lenguajes Dirigida por Modelos}, nociones que son necesarias para poder entender la planificación del presente proyecto, la cual se describe en la Sección~\ref{sec:intr:planning}. Por último, la Sección~\ref{sec:intr:estructura} describe la estructura general del presente documento.
 
 %%===========================================================================================
-%% NOTA(Pablo): Esto es demasiado detalle para una introducción. Aparte no se entiende nada 
+%% NOTA(Pablo): Esto es demasiado detalle para una introducción. Aparte no se entiende nada
 %%===========================================================================================
-%%  Para crear el lenguaje de dominio específico que permita la especificación de 
-%%  restricciones externas entre características se ha utilizado la técnica de 
-%%  Ingeniería de Lenguajes Dirigido Por Modelos. Esta técnica esa una aproximación de 
+%%  Para crear el lenguaje de dominio específico que permita la especificación de
+%%  restricciones externas entre características se ha utilizado la técnica de
+%%  Ingeniería de Lenguajes Dirigido Por Modelos. Esta técnica esa una aproximación de
 %%  la Ingeniería Dirigida Por Modelos desde el punto de vista de la Teoría de Lenguajes
-%%  Formales. La Ingeniería Dirigida Por Modelos es una metodología de desarrollo de 
-%%  software que se basa en la construcción de la aplicación final a partir de uno o más 
-%%  modelos abstractos que representen el comportamiento y la funcionalidad de la misma. 
-%%  Mediante la modificación de los distintos parámetros configurables dentro de los 
-%%  modelos será posible la construcción de herramientas diversas para un problema 
-%%  específico de manera relativamente sencilla, bastando simplemente con crear una 
+%%  Formales. La Ingeniería Dirigida Por Modelos es una metodología de desarrollo de
+%%  software que se basa en la construcción de la aplicación final a partir de uno o más
+%%  modelos abstractos que representen el comportamiento y la funcionalidad de la misma.
+%%  Mediante la modificación de los distintos parámetros configurables dentro de los
+%%  modelos será posible la construcción de herramientas diversas para un problema
+%%  específico de manera relativamente sencilla, bastando simplemente con crear una
 %%  serie de instancias válidas de los modelos representativos de nuestra aplicación.
-%% 
-%%  La Ingeniería Dirigida Por Modelos se puede usar para crear nuevos lenguajes de 
-%%  programación, especialmente DSLs o Lenguajes Específicos de Dominio. Basta con 
-%%  imaginar uno o varios metamodelos cuyas instancias válidas representen una línea 
-%%  o estructura correcta de código. Estos metamodelos forman la llamada sintaxis 
-%%  abstracta de nuestro lenguaje, pues representan de manera abstracta todas las 
-%%  posibles representaciones gráficas o textuales que podemos hacer dentro de ese 
-%%  lenguaje. 
-%% 
-%% A partir del metamodelo que representa la sintaxis abstracta podremos construir 
-%% una serie de modelos que sean instancias del mismo. Esto se denomina la sintaxis 
-%% concreta, es decir, la representación concreta de una de las múltiples posibilidades 
-%% de instanciación del modelo abstracto. De todos modos, si queremos que las palabras 
-%% admitidas por nuestro lenguaje sean expresadas de otro modo aparte de mediante modelos, 
+%%
+%%  La Ingeniería Dirigida Por Modelos se puede usar para crear nuevos lenguajes de
+%%  programación, especialmente DSLs o Lenguajes Específicos de Dominio. Basta con
+%%  imaginar uno o varios metamodelos cuyas instancias válidas representen una línea
+%%  o estructura correcta de código. Estos metamodelos forman la llamada sintaxis
+%%  abstracta de nuestro lenguaje, pues representan de manera abstracta todas las
+%%  posibles representaciones gráficas o textuales que podemos hacer dentro de ese
+%%  lenguaje.
+%%
+%% A partir del metamodelo que representa la sintaxis abstracta podremos construir
+%% una serie de modelos que sean instancias del mismo. Esto se denomina la sintaxis
+%% concreta, es decir, la representación concreta de una de las múltiples posibilidades
+%% de instanciación del modelo abstracto. De todos modos, si queremos que las palabras
+%% admitidas por nuestro lenguaje sean expresadas de otro modo aparte de mediante modelos,
 %% no nos veremos liberados de la tarea de tener que expresar una gramática formal con
-%% producciones, pero hace que la construcción de la misma esté acotada dentro de unos 
-%% términos delimitados por el modelo construído, lo cual favorece la sencillez de la 
+%% producciones, pero hace que la construcción de la misma esté acotada dentro de unos
+%% términos delimitados por el modelo construído, lo cual favorece la sencillez de la
 %% gramática y su comprensión. Esta gramática servirá para identificar si la creación de
-%% expresión concreta a la que puede ser transformada es viable mediante el metamodelo 
+%% expresión concreta a la que puede ser transformada es viable mediante el metamodelo
 %% abstracto.
 %%
-%% Una vez hemos construido los medios necesarios para comprobar que las expresiones que 
-%% fabriquemos son correctas, necesitamos idear el modo de que las órdenes que esas líneas 
-%% producen sean ejecutadas. Para ello entra en juego la semántica del lenguaje, es decir, 
-%% la encargada de aportar un significado real a todas las expresiones que hayamos 
-%% construido. Dicho de otro modo, la semántica es la encargada de implementar las 
-%% funciones derivadas de las órdenes descritas por cada una de las sintaxis concretas 
-%% posibles. Poniendo un ejemplo, el metamodelo que represente la sintaxis abstracta de 
-%% java puede generar una infinidad de sintaxis concretas, entre ellas 
-%% System.out.println("Hola Mundo"). Y para que esa instrucción escriba el mensaje 
-%% Hola Mundo por pantalla es necesaria una semántica que así lo indique. Para 
-%% implementar la semántica del lenguaje no existe otro método que la programación 
+%% Una vez hemos construido los medios necesarios para comprobar que las expresiones que
+%% fabriquemos son correctas, necesitamos idear el modo de que las órdenes que esas líneas
+%% producen sean ejecutadas. Para ello entra en juego la semántica del lenguaje, es decir,
+%% la encargada de aportar un significado real a todas las expresiones que hayamos
+%% construido. Dicho de otro modo, la semántica es la encargada de implementar las
+%% funciones derivadas de las órdenes descritas por cada una de las sintaxis concretas
+%% posibles. Poniendo un ejemplo, el metamodelo que represente la sintaxis abstracta de
+%% java puede generar una infinidad de sintaxis concretas, entre ellas
+%% System.out.println("Hola Mundo"). Y para que esa instrucción escriba el mensaje
+%% Hola Mundo por pantalla es necesaria una semántica que así lo indique. Para
+%% implementar la semántica del lenguaje no existe otro método que la programación
 %% directa en un lenguaje determinado, en nuestro caso Java.
 
 %%===========================================================================================
-%% NOTA(Pablo): Esto es a estas alturas no se entiende. Es más propio de un sumario para el 
-%%              final  
+%% NOTA(Pablo): Esto es a estas alturas no se entiende. Es más propio de un sumario para el
+%%              final
 %%===========================================================================================
 %%
-%% Por último y para terminar esta introducción, conviene contextualizar un poco el 
-%% trabajo que hemos hecho mediante un ejemplo concreto de lo que se quiere implementar. 
-%% Nuestro editor para la especificación y validación de restricciones en árboles de 
-%% características con características clonables tiene que implementar la siguiente 
+%% Por último y para terminar esta introducción, conviene contextualizar un poco el
+%% trabajo que hemos hecho mediante un ejemplo concreto de lo que se quiere implementar.
+%% Nuestro editor para la especificación y validación de restricciones en árboles de
+%% características con características clonables tiene que implementar la siguiente
 %% funcionalidad: \\
 %%
-%% 1 - Obligar a que todas los ficheros de restricciones empiecen con una línea de import 
+%% 1 - Obligar a que todas los ficheros de restricciones empiecen con una línea de import
 %%     que servirá para importar el modelo de características sobre el cual se analizarán
 %%     las restricciones.
 %% 2 - Escribir restricciones válidas para ese modelo (ejemplo: "(a or b) implies (c and d);", %%     más adelante se hablará en detalle del lenguaje y de las operaciones que implementa).
-%% 3 - Detectar que las características a las que estamos aplicando esas restricciones en 
+%% 3 - Detectar que las características a las que estamos aplicando esas restricciones en
 %%     efecto se hallan en el modelo que ha sido importado.
-%% 4 - Cargar una instancia de ese modelo (lo que llamamos modelo de especialización) y mirar 
+%% 4 - Cargar una instancia de ese modelo (lo que llamamos modelo de especialización) y mirar
 %%     si para ella las restricciones que han sido especificadas se cumplen.
 %%
 %%===========================================================================================

@@ -9,21 +9,25 @@
 \chapterheader{Antecedentes}{Antecedentes}
 \label{chap:background}
 
-Este capítulo trata de describir a grandes rasgos las técnicas, tecnologías y herramientas utilizadas para la creación de nuestro entorno de especificación y validación de restricciones. El capítulo comienza describiendo más en detalle lo que es la Ingeniería de Lenguajes Dirigida Por Modelos, para a continuación presentar las dos principales herramientas de modelación que han sido utilizadas: Ecore y EMFText. Más adelante se hablará también en detalle de los árboles de características, y por último se describirá brevemente el entorno de desarrollos de plugins de Eclipse que se utilizó para implementar diversas funciones de nuestro editor.
+Este capítulo trata de describir a grandes rasgos las técnicas, tecnologías y herramientas utilizadas para el desarrollo del presente Proyecto Fin de Carrera. Para ello se describen en primer lugar diversos conceptos relacionados el dominio del proyecto, como son las líneas de productos software y los árboles de características. A continuación, se describen dos principales herramientas de Ingeniería de Lenguajes Dirigida por Modelos utilizadas: \emph{Ecore} y \emph{EMFText}. Por último, se describe brevemente la arquitectura de plugins de Eclipse, dado que nuestro proyecto debía integrarse en dicho entorno.
 
 \chaptertoc
 
-\section{EMF, Ecore y EMF Validation Framework}
+\section{Líneas de producto software
+\label{sec:back:spl}
+\input{background/spl.tex}
+
+\section{Árboles de características}
+\label{sec:back:fmodels}
+\input{background/features.tex}
+
+\section{\emph{Eclipse Modelling Framework}}
 \label{sec:back:ecore}
 \input{background/ecore.tex}
 
 \section{EMFText}
 \label{sec:back:emftext}
 \input{background/emftext.tex}
-
-\section{Líneas de producto software y Árboles de características}
-\label{sec:back:fmodels}
-\input{background/features.tex}
 
 \section{Arquitectura de plugins de Eclipse}
 \label{sec:back:eplugins}
