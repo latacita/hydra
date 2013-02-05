@@ -1,0 +1,54 @@
+%%==================================================================%%
+%% Author : Perez Ruiz, Alejandro                                   %%
+%% Author : Pablo Sánchez                                           %%
+%% Version: 1.1, 13/06/2011                                         %%
+%%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% Planificacion/CasoEstudio                                        %%
+%%==================================================================%%
+
+El objetivo último del presente proyecto es la construcción de una línea de productos software sobre la plataforma .NET para hogares automatizados y/o inteligentes.
+
+%%===========================================================================%%
+%% NOTA(Pablo): Dado el contexto del proyecto, este párrafo no interesa      %%
+%%===========================================================================%%
+%%
+%% Se ha elegido este dominio de aplicación por ser un dominio donde el uso
+%% de un enfoque basado en Líneas de Productos Software se hace casi
+%% imperativo, debido a la gran variabilidad existente en estos productos.
+%% Esta  variabilidad se debe tanto a motivos de hardware, dado que los
+%% dispositivos a ser controlados e interconectados pueden variar enormemente,
+%% como funcionales, dado que existen multitud de funcionalidades que se pueden
+%% ofrecer de manera opcional o alternativa al usuario, no siendo necesario que
+%% un determinado hogar las posea todas ellas.
+%%
+%%===========================================================================%%
+
+El objetivo de estos hogares es aumentar la comodidad y seguridad de sus habitantes, así como hacer un uso más eficiente de la energía consumida. Los ejemplos más comunes de tareas automatizadas dentro de un hogar inteligente son el control de las luces, ventanas, puertas, persianas, aparatos de frío/calor, así como otros dispositivos, que forman parte de un hogar. Un hogar inteligente también busca incrementar la seguridad de sus habitantes mediante sistemas automatizados de vigilancia y alerta de potenciales situaciones de riesgo. Por ejemplo, el sistema debería encargarse de detección de humos o de la existencia de ventanas abiertas cuando se abandona el hogar.
+
+El funcionamiento de un hogar inteligente se basa en el siguiente esquema: (1) el sistema lee datos o recibe datos de una serie de sensores; (2) se procesan dichos datos; y (3) se activan los actuadores para realizar las  acciones que correspondan en función de los datos recibidos de los sensores.
+
+Todos los sensores y actuadores se comunican a través de un dispositivo especial denominado puerta de enlace (\emph{Gateway}, en inglés). Dicho dispositivo se encarga de coordinar de forma adecuada los diferentes dispositivos existentes en el hogar, de acuerdo a los parámetros y preferencias especificados por los habitantes del mismo. Los habitantes del hogar se comunicarán con la puerta de enlace a través de una interfaz gráfica.
+Este proyecto tiene como objetivo el desarrollo de un hogar inteligente como una línea de productos software, con un número variable de plantas y habitaciones. El número de habitaciones por planta es también variable. La línea de productos deberá ofrecer varios servicios, que podrán ser opcionalmente incluidos en la instalación del software para un un hogar determinado. Dichos servicios se clasifican en funciones básicas y complejas, las cuales describimos a continuación.
+
+\paragraph{Funciones básicas} \ \\
+
+\begin{enumerate}
+\item \emph{Control automático de luces:} Los habitantes del hogar deben ser capaces de encender, apagar y ajustar la intensidad de las diferentes luces de la casa. El número de luces por habitación es variable. El ajuste debe realizarse especificando un valor de intensidad.
+\item \emph{Control automático de ventanas:} Los residentes tienen que ser capaces de controlar las ventanas automáticamente. De tal modo que puedan indicar la apertura de una ventana desde las interfaces de usuario disponibles.
+\item \emph{Control automático de persianas:} Los habitantes podrán subir y bajar las persianas de las ventanas de manera automática.
+\item \emph{Control automático de temperatura:} El usuario será capaz de ajustar la temperatura de la casa. La temperatura se medirá siempre en grados celsius.
+\end{enumerate}
+
+\paragraph{Funciones complejas} \ \\
+
+\begin{enumerate}
+\item \emph{Control inteligente de energía:} Esta funcionalidad trata de coordinar el uso de ventanas y aparatos de frío/calor para regular la temperatura interna de la casa de manera que se haga un uso más eficiente de la energía. Por ejemplo, si se recibe la orden de calentar la casa, a la vez que se activan los radiadores se cerrarán las ventanas para evitar las pérdidas de calor.
+\item \emph{Presencia simulada:} Para evitar posibles robos, cuando los habitantes abandonen la casa por un periodo largo de tiempo, se deberá poder simular la presencia de personas en las casas. Hay dos opciones de simulación (no exclusivas):
+	\begin{enumerate}
+	\item \emph{Simulación de las luces:} Las luces se deberán apagar y encender para simular la presencia de habitantes en la casa.
+	\item \emph{Simulación de persianas:} Las persianas se deberán subir y bajar automática para simular la presencia de individuos dentro de la casa.
+	\end{enumerate}
+\end{enumerate}
+
+Todas estas funciones son opcionales. Las personas interesadas en adquirir el sistema podrán incluir en una instalación concreta de este software el número de funciones que ellos deseen. La siguiente sección describe la planificación general realizada para desarrollar este caso de estudio.

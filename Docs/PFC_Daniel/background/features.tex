@@ -1,68 +1,120 @@
 %%==================================================================%%
 %% Author : Tejedo GonzÁlez, Daniel                                 %%
-%%          SÁnchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 18/11/2012                                         %%                   %%                                                                  %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 18/11/2012                                         %%                   
+%% Version: 2.0, 05/02/2013                                         %%                   
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Antecedentes, Árboles de características                                    %%
+%% Antecedentes, Árboles de características                         %%
 %%==================================================================%%
 
-El objetivo de las líneas de productos software es crear la infraestructura para la rápida  producción de sistemas software para un segmento de mercado específico, donde estos sistemas software son similares, y aunque comparten un subconjunto de características comunes, también presentan variaciones entre ellos ~\ref{} ~\ref{} ~\ref{} ~\ref{}.
+Como se ha comentado en la sección anterior, una de las tarea claves para el éxito de una línea de productos software consiste en analizar la variabilidad existente en la familia de productos software que dicha línea de productos software pretende cubrir. Aquí es donde entran en juego los \emph{Árboles de características}~\cite{}. Una \emph{característica} se define como ``\emph{un incremento en la funcionalidad del producto}'', o más formalmente, ''\emph{una característica es una propiedad de un sistema que es relevante a algunos \emph{stakeholders} y que es utilizada para capturar propiedades comunes o diferenciar entre sistemas de una misma familia}"~\cite{}. De este modo un producto queda representado por las características que posee.
 
-El principal logro en las líneas de productos software es, construir productos específicos lo más automáticamente posible a partir de un conjunto de elecciones y decisiones adoptadas sobre un modelo común, conocido como modelo de referencia, que representa la familia completa de productos que la línea de productos software cubre.
+Para poder capturar las divergencias y aspectos comunes entre los distintos productos de una misma familia, los árboles de características organizan de forma jerárquica el conjunto de características que posee una familia de productos. Cada característica se representa como un nodo ene la árbol de características. La raíz de dicho árbol es siempre el sistema o producto software cuya variabilidad estamos analizando. Cada característica se puede descomponer en varias subcaracterísticas, siendo estás últimas nodos \emph{hijos} de la primera características, que actuaría como \emph{padre}. Dependiendo de sis dichas subcaracterísticas son obligatorias, alternativas u opcionales, existen diversos tipos de relaciones padre-hijo. 
 
-El desarrollo de líneas de producto software se compone de dos procesos de desarrollo software diferentes pero íntimamente relacionados, conocidos como ingeniería del dominio e ingeniería de la aplicación.
-
-En el nivel de ingeniería del dominio, comenzamos por los documentos de requisitos que describen una familia de productos similares para un segmento de mercado específico. Entonces, diseñamos una arquitectura e implementación de referencia para esta familia de productos. Esta arquitectura de referencia contiene los elementos que son comunes para todos los productos de la familia.
-
-En el nivel de ingeniería de la aplicación, comenzamos un documento de requisitos de un producto específico. Este documento estable las variaciones específicas que deben ser incluidas en este producto concreto. Con esta información, introducimos los cambios en la arquitectura y en la implementación de referencia, y se debería obtener como resultado un producto software único.
-
-Para ser capaces de completar con éxito la tarea correspondiente a ingeniería del dominio, una de las cuestiones clave es establecer una forma de especificar los productos software que una línea de productos es capaz de productor, y aquí es donde entran en juego los Árboles de características o Modelos de Características. Los productos de una línea de productos software se diferencian por sus características, siendo una característica un incremento en la funcionalidad del producto, o más formalmente, "una característica es una propiedad de un sistema que es relevante a algunos stakeholders y es usada para capturar propiedades comunes o diferenciar entre sistemas de una misma familia" ~\ref{}. De este modo un producto queda representado por las características que posee. 
-
-Para poder capturar las divergencias y características comunes entre los distintos productos, los modelos de características organizan el conjunto de características jerárquicamente mediante las siguientes relaciones entre ellos: (1) relación entre una o varias características padre y un conjunto de características hijas o subcaracterísticas y (2) relaciones no jerárquicas del tipo "si la característica A aparece, entonces la B se debe excluir".
-
-Por otro lado, un modelo de características debe poder representar la cardinalidad de las características, por motivos tanto de comprensión (es mucho mejor contar con un árbol de 8 nodos que con uno de 100, teniendo ambos un significado equivalente), como de funcionalidad, ya que permite expresar ciertas restricciones que de no contar con la cardinalidad no podrían expresarse. 
-
-Las posibles relaciones que pueden darse en un árbol de características (mostradas gráficamente en la figura \ref{fig6}) son las siguientes: \\
-
-\begin{figure}[t]
-\includegraphics[scale=0.35]{background/relations.eps}
-\caption{Distintos tipos de relaciones en un modelo de características }
-\label{fig6}
+%%=========================================================================================%%
+%% NOTA(Pablo): Para esta figura, hazte un modelo para la Smart Home sin habitaciones ni   %%
+%%              plantas. Lo puedes encontrar en un artículo que te mando luego             %% %%=========================================================================================%%
+\begin{figure}[!tb]
+    % \includegraphics[scale=0.5]{background/featuremodel.eps}
+    \caption{Árbol de características simple para nuestro caso de estudio}
+    \label{fig:smartHomeFMsimple}
 \end{figure}
 
-1 - Opcional: La característica hija puede estar o no estar seleccionada
+La Figura~\ref{fig:smartHomeFMsimple} muestra com ejemplo un árbol de características que especifica la variabilidad inherente a nuestro caso de estudio, sin considerar que las plantas y habitaciones puedan configurarse de manera individual.
 
-2 - Obligatoria: La característica es requerida.
+%%=========================================================================================%%
+%% NOTA(Pablo): Explicar el modelo creado, indicando las cosas que son variables, las que  %%
+%%              son alternativas, etc.                                                     %%
+%%              Explicar el problema de las restricciones externas                         %%
+%%=========================================================================================%%
 
-3 - Simple: La característica tendrá una cardinalidad <m,n>, siendo m y n números enteros que denotan el mínimo y el máximo respectivamente de características que podemos seleccionar.
+Una vez creado un árbol de características para una línea de productos software, podemos indicar las características que podemos incluir en un producto software concreto mediante la creación de configuraciones. Una \emph{configuración} no es más que una selección válida de características. La Figura~\ref{} muestra en un ejemplo de configuración para el modelo de la Figura~\ref{fig:smartHomeFMsimple} donde se indica que el producto que deseamos construir debe incluir \todo{COMPLETAR}. Obviamente, dicho modelo debe satisfacer las restricciones externas declaradas. 
 
-4 - Grupo-xor: Sólo una de las características pertenecientes al grupo será seleccionada.
+Los árboles de características como los anteriormente expuestos no permiten modelar que pueda existir un número variable de ciertas características, como, en nuestro caso, de plantas y habitaciones, y que, además, cada instancia particular de una características pueda  configurarse de forma distinta. Por ejemplo, podríamos decidir que el salón de la casa tenga control inteligente de temperatura, mientras que la cocina, que está sometida a mayores variaciones de temperatura, no contenga dicha características. Para solventar esta carencia, se introdujeron en los árboles de características el concepto de característica clonable. 
 
-5 - Grupo-or: Podremos seleccionar como mínimo una de las subcaracterísticas, y como máximo todas.
-
-6 - Grupo simple: El número de características seleccionadas del grupo vendrá dado por su cardinalidad <m,n>. \\
-
-Además se podrán disponer de restricciones de usuario más complejas, que son las que se han implementado en el editor de especificación y validación de restricciones desarrollado en este proyecto.
-
-\begin{figure}[t]
-\includegraphics[scale=0.5]{background/featuremodel.eps}
-\caption{Árbol de características para crear una SmartHome }
-\label{fig7}
+\begin{figure}[!tb]
+    % \includegraphics[scale=0.5]{background/featuremodel.eps}
+    \caption{Árbol de características completo para nuestro caso de estudio}
+    \label{fig:smarHomeFeatureModel}
 \end{figure}
 
-La figura \ref{fig7} muestra un ejemplo de modelo de características. En este caso se trata de un modelo de una casa inteligente o SmartHome, a través del cual, seleccionando ciertas características u otras podremos construir qué tipo de casa queremos. Cada una de las múltiples casas diferentes que podamos construir es lo que se denonima una especialización o configuración de nuestro modelo de características.
+La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características para nuestro caso de estudio incluyendo \emph{características clonables}. \todo{Explicarla}
 
-El proceso de crear una configuración a partir de un modelo de características se conoce como proceso de configuración o proceso de especialización. Consiste en transformar un modelo de características de tal forma que el modelo resultante sea un subconjunto de las posibles configuraciones denotadas por el primer modelo. La figura \ref{fig8} muestra una posible configuración para el modelo de características de la figura \ref{fig7}.
+%%=========================================================================================%%
+%% NOTA(Pablo): Añadir la figura, si no te entrase bien a lo ancho, mira como meterla 
+%%              apaisada en Latex.
+%%=========================================================================================%%
 
-\begin{figure}[t]
-\includegraphics[scale=0.5]{background/configuration.eps}
-\caption{Especialización del modelo de la figura \ref{fig7}, que representa una de las posibles casas que se pueden construir }
-\label{fig8}
+%%=========================================================================================%%
+%% NOTA(Pablo): Explicar como se configuran las características clonables usando un 
+%%              ejemplo
+%%=========================================================================================%%
+
+%%=========================================================================================%%
+%% NOTA(Pablo): Explicar el problema de las restricciones cuando incluyen características
+%%              clonables y decir que implementar un lenguaje para resolver ese problema 
+%%              es el objetivo de este proyecto
+%%=========================================================================================%%
+
+%%=========================================================================================%%
+%% NOTA(Pablo): Esto no se entiende de forma clara, por lo que se suprime                                         %%
+%%=========================================================================================%%
+%%
+%% Por otro lado, un modelo de características debe poder representar la cardinalidad de 
+%% las características, por motivos tanto de comprensión (es mucho mejor contar con un 
+%% árbol de 8 nodos que con uno de 100, teniendo ambos un significado equivalente), como 
+%% de funcionalidad, ya que permite expresar ciertas restricciones que de no contar con 
+%% la cardinalidad no podrían expresarse.
+%% 
+%% Además se podrán disponer de restricciones de usuario más complejas, que son las que
+%% se han implementado en el editor de especificación y validación de restricciones 
+%% desarrollado en este proyecto.
+%%
+%%=========================================================================================%%
+
+%%=========================================================================================%%
+%% NOTA(Pablo): Esto queda obsoleto en el nuevo esquema, por lo cual se suprime            %%
+%%=========================================================================================%%
+%%
+%% La figura \ref{fig7} muestra un ejemplo de modelo de características. En este caso se 
+%% trata de un modelo de una casa inteligente o SmartHome, a través del cual, 
+%% seleccionando ciertas características u otras podremos construir qué tipo de casa 
+%% queremos. Cada una de las múltiples casas diferentes que podamos construir es lo que 
+%% se denonima una especialización o configuración de nuestro modelo de características.
+%% 
+%%  El proceso de crear una configuración a partir de un modelo de características se 
+%% conoce como proceso de configuración o proceso de especialización. Consiste en 
+%% transformar un modelo de características de tal forma que el modelo resultante sea un
+%%  subconjunto de las posibles configuraciones denotadas por el primer modelo. La figura 
+%% \ref{fig8} muestra una posible configuración para el modelo de características de la figura %% \ref{fig7}.
+%%
+%% La relación entre un diagrama de características y una configuración es análoga a la
+%% existenteentre una clase y una de sus instancias en programación orientada a objetos.
+%%
+%%=========================================================================================%%
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.5]{background/configuration.eps}
+    \caption{Posible modelo de configuración de una casa inteligente concreta}
+    \label{fig8}
 \end{figure}
 
-La relación entre un diagrama de características y una configuración es análoga a la existente entre una clase y una de sus instancias en programación orientada a objetos.
+\begin{figure}[!tb]
+    \includegraphics[scale=0.35]{background/relations.eps}
+    \caption{Tipos de relaciones entre características }
+    \label{fig:relacionesFeatures}
+\end{figure}
 
+A modo de resumen, la Figura~\ref{fig:relacionesFeatures} muestra las posibles relaciones que pueden entre características, así como su representación gráfica. Dichas relaciones se describen a continuación:
 
+\begin{description}
+    \item[Opcional] La característica hija puede estar o no estar seleccionada
+    \item[Obligatoria] La característica siempre debe estar seleccionada.
+    \item[Clonable] La característica tendrá una cardinalidad $<m,n>$, siendo m y n números enteros que denotan el mínimo y el máximo respectivamente de características que podemos seleccionar.
+    \item[Grupo-xor] Sólo una de las características pertenecientes al grupo puede ser seleccionada.
+    \item[Grupo-or] Debemos seleccionar como mínimo una de las subcaracterísticas, pudiendo seleccionar más si lo deseamos.
+    \item[Grupo con cardinalidad] El número mínimo y máximo de características a seleccionar dentro del grupo vendrá determinado por su cardinalidad $<m,n>$.
+\end{description}
 
-
-
+Tras esta sección se han proporcionado al lector lo necesario para comprender el contexto del problema que este Proyecto Fin de Carrera pretende resolver. Las siguientes secciones están destinadas a explicar las tecnologías concretas que se han utilizado para implementar el lenguaje que da solución a los problemas planteados. 
