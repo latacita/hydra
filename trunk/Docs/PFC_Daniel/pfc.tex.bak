@@ -66,35 +66,32 @@
 %\input{introduction/preface-lff.tex}   % preface
 
 % Toc
-\input{config/toc.tex}
+% \input{config/toc.tex}
 
 \input{Config/headers.tex}
 
 \input{config/chapters.tex}
 
 % Capítulo 1: Introducción
-\input{introduction/introduction.tex} % Chapter 1
+% \input{introduction/introduction.tex} % Chapter 1
 
 % Capítulo 2: Resumen del Estado del Arte
-% \input{background/background.tex}
+\input{background/background.tex}
 
-% Capítulo 3: Planificación del proyecto
-% \input{planificacion/planificacion.tex}
-
-% Capítulo 4: Creación de la sintaxis abstracta
+% Capítulo 3: Creación de la sintaxis abstracta
 % \input{metamodelo/metamodelo.tex}
 
 % Capítulo 5: Creacion de la gramatica
-\input{gramatica/raiz.tex}
+% \input{gramatica/raiz.tex}
 
 % Capítulo 6: Validacion de las sintaxis concretas
-\input{emfvf/raiz.tex}
+% \input{emfvf/raiz.tex}
 
 % Capítulo 7: Creacion de la semantica
-\input{semantica/raiz.tex}
+% \input{semantica/raiz.tex}
 
 % Capítulo 8: Discusión, Conclusiones y Trabajos Futuros
-\todo{Capítulo 7: Discusión, Conclusiones y Trabajos Futuros}
+% \todo{Capítulo 7: Discusión, Conclusiones y Trabajos Futuros}
 
 % CONTENT: Appendices, if desired
 % \input{config/appendix.tex}
@@ -104,6 +101,6 @@
 
 % CONFIG: Bibliography style
 % \input{config/bibliography.tex}
-% \bibliography{references/references}
+\bibliography{references/references}
 
 \end{document}
