@@ -2,16 +2,16 @@
 % Potentially useful packages (rec = recommended, opt = optional)
 %
 \usepackage{fancyhdr}          % (rec)  allows for the customization of various header/footer parameters
-% \usepackage{courier}           % (opt)  uses that font by default
-% \usepackage{setspace}          % (opt)  allows for inter-line space changing
+% \usepackage{courier}         % (opt)  uses that font by default
+% \usepackage{setspace}        % (opt)  allows for inter-line space changing
 \usepackage{longtable}         % (opt)  allows for multi-page tables
-% \usepackage{lscape}            % (opt)  allows for the use of \landscape
+% \usepackage{lscape}          % (opt)  allows for the use of \landscape
 \usepackage{color}             % (opt)  various color-related commands (like \color)
 \usepackage{rotating}          % (opt)  allows for PS and EPS rotation
-% \usepackage{textcomp}          % (opt)  allows for euro sign, with \texteuro
+% \usepackage{textcomp}        % (opt)  allows for euro sign, with \texteuro
 \usepackage{minitoc}           % (opt)  allows for per-chapter tables of contents
 \usepackage{epsf}              % (opt)  allow for certain EPS manipulations
-%\usepackage[utf8x]{inputenc}   % (opt)  allows for some text editors to show \'{a} as á, and so on.
+%\usepackage[utf8x]{inputenc}  % (opt)  allows for some text editors to show \'{a} as á, and so on.
 \usepackage[absolute]{textpos} % (rec)  allows for arbitrary positioning of text (required for default cover page)
 % \usepackage{srcltx}            % (opt)  allows to pass from .dvi back to the .tex
 %
