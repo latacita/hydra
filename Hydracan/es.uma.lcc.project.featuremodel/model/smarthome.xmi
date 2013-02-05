@@ -3,26 +3,26 @@
   <features xsi:type="featureModel:Feature" name="SmartHome" children="//@features.1 //@features.10 //@features.23"/>
   <features xsi:type="featureModel:Feature" father="//@features.0" name="Floor" children="//@features.2 //@features.14"/>
   <features xsi:type="featureModel:Feature" father="//@features.1" name="Room" children="//@features.4 //@features.15"/>
-  <features xsi:type="featureModel:Feature" father="//@features.15" name="RFLightMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.15" name="LightMng"/>
   <features xsi:type="featureModel:Feature" father="//@features.2" name="Devices" children="//@features.5 //@features.6 //@features.7 //@features.8"/>
   <features xsi:type="featureModel:Feature" father="//@features.4" name="Light"/>
   <features xsi:type="featureModel:Feature" father="//@features.4" name="Window"/>
   <features xsi:type="featureModel:Feature" father="//@features.4" name="Heater"/>
   <features xsi:type="featureModel:Feature" father="//@features.4" name="LighDimmer"/>
-  <features xsi:type="featureModel:Feature" father="//@features.10" name="GFLightMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.10" name="LightMng"/>
   <features xsi:type="featureModel:Feature" father="//@features.0" name="GeneralFacilities" children="//@features.9 //@features.13 //@features.12 //@features.11"/>
-  <features xsi:type="featureModel:Feature" father="//@features.10" name="GFWindowMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.10" name="GFHeaterMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.10" name="GFSmartEnergyMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.10" name="WindowMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.10" name="HeaterMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.10" name="SmartEnergyMng"/>
   <features xsi:type="featureModel:Feature" father="//@features.1" name="FloorFacilities" children="//@features.16 //@features.17 //@features.18 //@features.19"/>
   <features xsi:type="featureModel:Feature" father="//@features.2" name="RoomFacilities" children="//@features.3 //@features.20 //@features.21 //@features.22"/>
-  <features xsi:type="featureModel:Feature" father="//@features.14" name="FFLightMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.14" name="FFWindowMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.14" name="FFHeaterMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.14" name="FFSmartEnergyMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.15" name="RFWindowMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.15" name="RFHeaterMng"/>
-  <features xsi:type="featureModel:Feature" father="//@features.15" name="RFSmartEnergyMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.14" name="LightMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.14" name="WindowMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.14" name="HeaterMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.14" name="SmartEnergyMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.15" name="WindowMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.15" name="HeaterMng"/>
+  <features xsi:type="featureModel:Feature" father="//@features.15" name="SmartEnergyMng"/>
   <features xsi:type="featureModel:Feature" father="//@features.0" name="PresenceSimulation"/>
   <relations xsi:type="featureModel:RelationFeature" source="//@features.0" target="//@features.1" lowerBound="1" upperBound="-1" type="SIMPLE"/>
   <relations xsi:type="featureModel:RelationFeature" source="//@features.1" target="//@features.2" lowerBound="1" upperBound="-1" type="SIMPLE"/>
