@@ -1,13 +1,15 @@
 %%==================================================================%%
 %% Author : Tejedo GonzÁlez, Daniel                                 %%
-%%          SÁnchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 18/11/2012                                         %%                   %%                                                                  %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 18/11/2012                                         %%                  
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Antecedentes, ecore                                       %%
+%% Antecedentes, ecore                                              %%
 %%==================================================================%%
 
-EMF o Eclipse Modeling Framework es un plug-in para eclipse que permite trabajar con la metodolía de Ingeniería Dirigida por Modelos. Tiene incorporado varios generadores de código que permiten, entre otra multitud de funciones, crear automáticamente la implementación de los modelos que creemos, así como su integración inmediata como plug-in con el entorno eclipse. Además, es capaz de integrarse con multitud de herramientas orientadas a tareas mucho más específicas dentro de la Ingeniería Dirigida por Modelos, de las cuales cabe destacar Ecore.
+EMF \emph{Eclipse Modeling Framework}~\cite{} es un \emph{plug-in} para Eclipse~\cite{} que permite elaborar metamodelos. Pera ello proporciona un lenguaje de metamodelo denominado Ecore, el cual se ha convertido en el estándar de factor para la realización de metamodelos. Utilizando Ecore se pueden crear metamodelos de forma gráfica usando una notación muy similar a la los diagramas de clases de UML. La Figura~\ref{fig:sle:metamodeloGrafo} muestra un sencillo ejemplo de metamodelo en Ecore (ver Sección~\ref{sec:intr:sle} para más detalles). EMF también incorpora una herramienta para la validación reglas adicionales que no puedan ser especificadas a nivel de del metamodelo. 
+ 
+EMF permite que, a partir de un metamodelo especificado en Ecore, podamos, utilizando diversos generadores de código, crear automáticamente un conjunto de clases que nos permiten manipular dichos modelos a nivel de código. Dichas clases se pueden además distribuir como \emph{plug-in} para el entorno Eclipse.
 
-Ecore es la herramienta que permite la creación y edición de metamodelos, gracias a un entorno visual bastante atractivo que facilita enormemente el proceso. El fichero resultante de nuestra creación presentará automáticamente un formato estándar XMI, que es el utilizado para todo tipo de modelos y sus instancias. Ecore posee otro tipo de funcionalidades menos utilizadas que se engloban dentro del paquete Ecore Tools, enfocadas todas ellas al uso de los metamodelos y su validación.
+Además, al haberse convertido en estándar \emph{de facto} para el desarrollo de metamodelos, Ecore es compatible con multitud de herramientas para Ingeniería de Lenguajes Dirigida por Modelos, como EMFText, la cual se describe en la siguiente sección, o diversos generadores de código o herramientas de transformación de modelos. 
 
-Por último, EMF también incorpora una herramienta integrada con Ecore para la validación de las múltiples sintaxis concretas que podamos construir. EMF Validation Framework sirve, en otras palabras, como soporte en caso de que nuestro lenguaje pueda contener reglas adicionales que no puedan ser satisfechas únicamente con la descripción del metamodelo y la gramática. En el caso particular de nuestro editor para escificación y validación de restricciones hemos utilizado EMF Validation Framework para comprobar si las características escritas por el usuario existen en el modelo importado, y también para determinar si tienen cardinalidad o no.

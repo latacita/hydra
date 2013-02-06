@@ -1,11 +1,33 @@
 %%==================================================================%%
-%% Author : Tejedo GonzÁlez, Daniel                                 %%
-%%          SÁnchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 18/11/2012                                         %%                   %%                                                                  %%
+%% Author : Tejedo González, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 18/11/2012                                         %%                   
+%% Version: 1.0, 06/02/2013                                         %%                   
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Antecedentes, arquitectura de plugins de eclipse                                      %%
+%% Antecedentes, arquitectura de plugins de eclipse                 %%
 %%==================================================================%%
 
-Un plug-in en Eclipse es un componente que provee un cierto tipo de servicio dentro del contexto del espacio de trabajo de eclipse, es decir, una herramienta que se puede integrar en el entorno Eclipse junto con sus otras funcionalidades. Dado que la herramienta Hydra fue diseñada como un plug-in para Eclipse, y nuestro editor es una parte de la misma, ha sido necesario aprender el manejo de algunas de las funcionalidades de la arquitectura de plug-ins de Eclipse.
+En entorno de desarrollo Eclipse es un ejemplo de arquitectura modular fácilmente extensible mediante una compleja, pero sencilla al programador, arquitectura de \emph{plug-ins}. Un \emph{plug-in} en Eclipse es un componente que provee un cierto tipo de servicio dentro del contexto del espacio de trabajo de Eclipse. Es decir, una herramienta que se puede integrar en el entorno Eclipse junto con sus otras funcionalidades. Dado que la herramienta \emph{Hydra} fue diseñada como un \emph{plug-in} para Eclipse, y nuestro editor pretende integrarse tanto en \emph{Hydra} como en \emph{Eclipse}, es necesario conocer y manejar el funcionamiento de la arquitectura de plug-ins de Eclipse.
 
-En particular, se han utilizado mucho los puntos de extensión. Un punto de extensión en un plug-in indica la posibilidad de que ese plug-in sea a su vez parte de otro, o que haya otros plug-ins que sean parte de él. Esta particularidad permite no sólo la integración de nuestro editor con Hydra, sino también la personalización de menús y botones para él gracias a la creación de puntos de extensión con plug-ins de creación de menús y barras de herramientas.
+%%==============================================================================================%%
+%% NOTA(Pablo): Esto no se entiende nada
+%%==============================================================================================%%
+%%
+%% En particular, se han utilizado mucho los puntos de extensión. Un punto de extensión en un
+%% plug-in indica la posibilidad de que ese plug-in sea a su vez parte de otro, o que haya 
+%% otros plug-ins que sean parte de él. Esta particularidad permite no sólo la integración de 
+%% nuestro editor con Hydra, sino también la personalización de menús y botones para él 
+%% gracias a la creación de puntos de extensión con plug-ins de creación de menús y barras de
+%% herramientas.
+%%
+%%==============================================================================================%%
+
+%%==============================================================================================%%
+%% NOTA(Pablo): Para solucionar
+%% - Describir en uno o dos párrafos cómo funciona la arquietctura de plug-ins para Eclipse
+%% - Poner un ejemplo de punto de extensión, sencillo y concreto, y explicar como funciona 
+%%   el punto de extensión utilizando algo de código.
+%% Si no sabes como escribir esta sección, la eliminas directamente, y actualizas la intro 
+%% al Capítulo de forma conveniente.
+%%==============================================================================================%%

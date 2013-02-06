@@ -54,8 +54,8 @@ La \emph{Ingeniería de Lenguajes Dirigida por Modelos}~\cite{} no es más que un 
 
 \begin{enumerate}
 	\item El primer paso es crear las reglas de construcción o sintaxis de nuestro lenguaje de modelado. Esto se realiza mediante la creación de un metamodelo, o modelo de nuestro lenguaje que describe usando conceptos parecidos a los de los diagramas de clases, la \emph{sintaxis abstracta} o reglas para la construcción de modelos de nuestro lenguaje. Dicho metamodelo se construye usando un lenguaje de metamodelado. Existen diversos lenguajes de metamodelado, tales como KM3 ~\cite{} o MOF ~\cite{}, aunque Ecore ~\cite{} está considerado como el estándar \emph{de facto} dentro de la comunidad de modelado. Normalmente no es posible especificar cualquier tipo de restricción entre los elementos de un lenguaje de modelado usando exclusivamente los elementos del lenguaje de metamodelado. Por ello, tales lenguajes de metamodelado se acompañan con un lenguaje de especificación de restricciones. OCL ~\cite{} es el lenguaje de restricciones más usado para desarrollar esta tarea.
-	\item Como se ha comentado en el punto anterior, un metamodelo establece la sintaxis abstracta de nuestro lenguaje de modelado, pero no especifica la \emph{sintaxis concreta} o notación de nuestro lenguaje de modelado. Por tanto el siguiente paso en la ingeniería de un nuevo lenguaje de modelado, es la definición de una notación o sintaxis concreta para nuestro lenguaje. Esta notación puede ser tanto textual como gráfica. Para la definición de notaciones gráficas, GMF es la herramienta más popular cuando se trabaja con Ecore. Para notaciones textuales, TCS ~\cite{}, xText, TEF o EMFText pueden ser usadas, no existiendo aún un estándar \emph{de facto} para la definición de notaciones textuales. 
-	\item Por último, nos quedaría definir la semántica del lenguaje de modelado. Existen un amplio rango de técnicas para desarrollar esta tarea, tales como: (1) definir la semántica de cada elemento de manera informal; (2) especificar la semántica de cada elemento usando un lenguaje formal, tales como máquinas de estado abstractas, o (3) crear generadores que transformen los elementos de modelado en elementos de otro lenguaje distinto bien definido. 
+	\item Como se ha comentado en el punto anterior, un metamodelo establece la sintaxis abstracta de nuestro lenguaje de modelado, pero no especifica la \emph{sintaxis concreta} o notación de nuestro lenguaje de modelado. Por tanto el siguiente paso en la ingeniería de un nuevo lenguaje de modelado, es la definición de una notación o sintaxis concreta para nuestro lenguaje. Esta notación puede ser tanto textual como gráfica. Para la definición de notaciones gráficas, GMF es la herramienta más popular cuando se trabaja con Ecore. Para notaciones textuales, TCS ~\cite{}, xText, TEF o EMFText pueden ser usadas, no existiendo aún un estándar \emph{de facto} para la definición de notaciones textuales.
+	\item Por último, nos quedaría definir la semántica del lenguaje de modelado. Existen un amplio rango de técnicas para desarrollar esta tarea, tales como: (1) definir la semántica de cada elemento de manera informal; (2) especificar la semántica de cada elemento usando un lenguaje formal, tales como máquinas de estado abstractas, o (3) crear generadores que transformen los elementos de modelado en elementos de otro lenguaje distinto bien definido.
 \end{enumerate}
 %%===========================================================================================%%
 %% NOTA(Pablo): Copia aquí la Sección 2.2 que aparece en la memoria de Hydra, disponible
@@ -104,14 +104,14 @@ Utilizando dicho metamodelo, que no es más que un diagrama de clases, podemos cr
 %%===========================================================================================%%
 %% NOTA(Pablo): Demasiado especializado                                                      %%     %%===========================================================================================%%
 %%
-%% Pero no sólo eso, el hecho de que estemos trabajando con lenguajes conlleva 
-%% irrevocablemente el tener que desarrollar una gramática de producciones para poder 
-%% construir nuestras líneas de código en el orden apropiado y con los símbolos apropiados. 
-%% Eso sí, la gramática será más sencilla y comprensible que la que habría que construir 
+%% Pero no sólo eso, el hecho de que estemos trabajando con lenguajes conlleva
+%% irrevocablemente el tener que desarrollar una gramática de producciones para poder
+%% construir nuestras líneas de código en el orden apropiado y con los símbolos apropiados.
+%% Eso sí, la gramática será más sencilla y comprensible que la que habría que construir
 %% de no estar usando este tipo de metodología. Esta tarea también queda englobada en la
-%% sintaxis concreta. De este modo, la sintaxis concreta se suele clasificar en sintaxis 
-%% concreta visual (el modelo, expresado mediante líneas de código en el caso de lenguajes, 
-%% o un grafo pintado en el caso del ejemplo mostrado) y sintaxis concreta textual (la 
+%% sintaxis concreta. De este modo, la sintaxis concreta se suele clasificar en sintaxis
+%% concreta visual (el modelo, expresado mediante líneas de código en el caso de lenguajes,
+%% o un grafo pintado en el caso del ejemplo mostrado) y sintaxis concreta textual (la
 %% gramática del lenguaje).
 %%
 %%===========================================================================================%%
@@ -124,9 +124,9 @@ Como se ha ilustrado con los ejemplos anteriores, un metamodelo define un conjun
     \label{fig:sle:sintaxisVisual}
 \end{figure}
 
-Por ejemplo, para nuestro ejemplo anterior, el del lenguaje para la especificación de grafos dirigidos pesados, podríamos elaborar una sintaxis visual donde los grafos se representasen utilizando la notación visual por todos conocida, tal como se ilustra en la Figura~\ref{fig:sle:sintaxisVisual}. Dicha figura muestra el mismo modelo que la Figura~\ref{fig:sle:modeloAbstractoGrafo}, pero utilizando una sintaxis visual concreta. En este caso, las instancias de la clase \emph{Nodo} se representan como elipses. El nombre de cada nodo se muestra dentro de cada elipse. Las instancias de la clase \emph{Arco} se dibujan como flechas. La punta de la flecha indica cuál es el nodo destino, mientras que la cola especifica cuál es el nodo origen. El peso de cada arco se muestra como texto de forma adjunta a cada flecha. 
+Por ejemplo, para nuestro ejemplo anterior, el del lenguaje para la especificación de grafos dirigidos pesados, podríamos elaborar una sintaxis visual donde los grafos se representasen utilizando la notación visual por todos conocida, tal como se ilustra en la Figura~\ref{fig:sle:sintaxisVisual}. Dicha figura muestra el mismo modelo que la Figura~\ref{fig:sle:modeloAbstractoGrafo}, pero utilizando una sintaxis visual concreta. En este caso, las instancias de la clase \emph{Nodo} se representan como elipses. El nombre de cada nodo se muestra dentro de cada elipse. Las instancias de la clase \emph{Arco} se dibujan como flechas. La punta de la flecha indica cuál es el nodo destino, mientras que la cola especifica cuál es el nodo origen. El peso de cada arco se muestra como texto de forma adjunta a cada flecha.
 
-Los modernos entornos para el desarrollo de lenguajes dirigido por modelos proporcionan facilidades para, una vez definido un metamodelo, asociar a cada clase perteneciente a dicho metamodelo, un símbolo gráfico. Utilizando las facilidades proporcionadas por dichos entornos es posible generar, de manera automática, un editor visual que permita la creación de modelos conformes al metamodelo origen, utilizando para ello la sintaxis visual definida. Ejemplos de tales entornos son MetaEdit+~\cite{}, Microsoft DSL tools~\cite{} o la conocida combinación de herramientas Eclipse+Ecore+GMF (\emph{Graphical Modelling Tools})~\cite{}.
+Los modernos entornos para el desarrollo de lenguajes dirigido por modelos proporcionan facilidades para, una vez definido un metamodelo, asociar a cada clase perteneciente a dicho metamodelo, un símbolo gráfico. Utilizando las facilidades proporcionadas por dichos entornos es posible generar, de manera automática, un editor visual que permita la creación de modelos conformes al metamodelo origen, utilizando para ello la sintaxis visual definida. Ejemplos de tales entornos son MetaEdit+~\cite{}, Microsoft DSL tools~\cite{} o la conocida combinación de herramientas Eclipse+Ecore+GMF (\emph{Graphical Modelling Framework})~\cite{}.
 
 De igual forma que hemos definido una sintaxis visual concreta hubiésemos podido definir una sintaxis textual concreta, donde los modelos conformes al metamodelo en cuestión pudiesen especificarse usando texto, en lugar símbolos gráficos. La Figura~\ref{fig:sle:sintaxisTextual} muestra el ejemplo de la Figura~\ref{fig:sle:modeloAbstractoGrafo} pero utilizando una sintaxis textual para nuestro lenguaje de grafos. En este caso, primero hay que definir un nombre para el grafo que estamos creando, y a continuación definir nodos y después arcos. De los nodos indicaremos su nombre, y de los arcos su peso y sus nodos de origen y destino, usando para ello las palabras reservadas pertinentes. De este modo podemos observar una de las claras ventajas de usar metamodelos para especificar lenguajes específicos de modelo, y es que permiten de forma relativamente sencilla poder expresar las sintaxis concretas de más de un modo, escogiendo para cada caso el que sea más conveniente.  %\todo{Describir}
 
@@ -150,7 +150,7 @@ En otros casos, la semántica podría definirse de forma \emph{translacional}, med
 Por tanto, a modo de resumen, un proceso de desarrollo de un lenguaje software utilizando un enfoque dirigido por modelos está formado por los siguientes pasos:
 
 \begin{enumerate}
-    \item Definición del metamodelo que especifica la sintaxis abstracta de nuestro lenguaje de modelado. 
+    \item Definición del metamodelo que especifica la sintaxis abstracta de nuestro lenguaje de modelado.
     \item Definición de las restricciones adicionales que no pueden ser recogidas mediante la sintaxis propia del lenguaje de metamodelado utilizado.
     \item Definición de una sintaxis concreta, visual o textual, para el metamodelo definido.
     \item Generación (automática) del correspondiente editor, textual o gráfico.
@@ -164,26 +164,26 @@ Una vez explicado cómo funciona la Ingeniería de Lenguajes Dirigida por Modelos 
 %% NOTA(Pablo): Esto no debe aparecer aún, es demasiado pronto                               %%
 %%===========================================================================================%%
 %%
-%% Una vez se han explicado las bases de la Ingeniería de Lenguajes Dirigida por Modelos 
-%% vamos a proceder a mostrar y explicar muy brevemente el metamodelo usado para generar 
+%% Una vez se han explicado las bases de la Ingeniería de Lenguajes Dirigida por Modelos
+%% vamos a proceder a mostrar y explicar muy brevemente el metamodelo usado para generar
 %% las estructuras válidas de código para el lenguaje de especificación y validación de
 %% restricciones que hemos creado en este PFC. Ese metamodelo corresponde a la figura
 %% \ref{fig4}
 %%  \begin{figure}[t]
 %%  \includegraphics[scale=0.4]{background/metamodelo.eps}
-%%  \caption{Metamodelo utilizado para la creación de nuestro lenguaje de 
+%%  \caption{Metamodelo utilizado para la creación de nuestro lenguaje de
 %%           especificación y validación de restricciones}
 %%  \label{fig4}
 %% \end{figure}
-%% 
-%% La clase que engloba todo el conjunto resultante es Model. Un modelo puede tener 
-%% varias restricciones, y estas a su vez pueden tener varias operaciones booleanas 
-%% (ya que una restricción siempre tiene que evaluarse a true o false). Esas operaciones 
-%% booleanas se dividen en varios tipos: unarias (negación) , binarias (and, or, etc.), 
-%% de comparación ( mayor que, menor que, etc.). o de selección (all, any)  
-%% Los operandos pueden ser otras operaciones o características (en inglés Features). 
+%%
+%% La clase que engloba todo el conjunto resultante es Model. Un modelo puede tener
+%% varias restricciones, y estas a su vez pueden tener varias operaciones booleanas
+%% (ya que una restricción siempre tiene que evaluarse a true o false). Esas operaciones
+%% booleanas se dividen en varios tipos: unarias (negación) , binarias (and, or, etc.),
+%% de comparación ( mayor que, menor que, etc.). o de selección (all, any)
+%% Los operandos pueden ser otras operaciones o características (en inglés Features).
 %% Más adelante se explicará en detalle la sintaxis del lenguaje creado.
-%% 
+%%
 %%===========================================================================================%%
 
 

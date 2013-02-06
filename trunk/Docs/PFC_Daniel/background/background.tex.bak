@@ -13,7 +13,11 @@ Este capítulo trata de describir a grandes rasgos las técnicas, tecnologías y he
 
 \chaptertoc
 
-\section{Líneas de producto software
+\section{Caso de Estudio: Software para Hogares Inteligentes}
+\label{sec:back:spl}
+\input{background/casoEstudio.tex}
+
+\section{Líneas de producto software}
 \label{sec:back:spl}
 \input{background/spl.tex}
 
@@ -32,3 +36,5 @@ Este capítulo trata de describir a grandes rasgos las técnicas, tecnologías y he
 \section{Arquitectura de plugins de Eclipse}
 \label{sec:back:eplugins}
 \input{background/eplugins.tex}
+
+\section{}

@@ -18,7 +18,7 @@
 \usepackage{amsfonts}
 \usepackage[spanish,activeacute]{babel}
 
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 %\usepackage[scaled]{uarial}
 
 % File with main configuration
@@ -73,7 +73,7 @@
 \input{config/chapters.tex}
 
 % Capítulo 1: Introducción
-% \input{introduction/introduction.tex} % Chapter 1
+%\input{introduction/introduction.tex} % Chapter 1
 
 % Capítulo 2: Resumen del Estado del Arte
 \input{background/background.tex}
