@@ -1,27 +1,31 @@
 %%==================================================================%%
 %% Author : Tejedo GonzÁlez, Daniel                                 %%
 %%          Sánchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 18/11/2012                                         %%
-%% Version: 2.0, 05/02/2013                                         %%
+%% Version: 1.0, 18/11/2012                                         %%                   
+%% Version: 2.0, 05/02/2013                                         %%                   
 %%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
 %% Antecedentes, Árboles de características                         %%
 %%==================================================================%%
 
-Como se ha comentado en la sección anterior, una de las tarea claves para el éxito de una línea de productos software consiste en analizar la variabilidad existente en la familia de productos software que dicha línea de productos software pretende cubrir. Aquí es donde entran en juego los \emph{Árboles de características}~\cite{}. Una \emph{característica} se define como ``\emph{un incremento en la funcionalidad del producto}'', o más formalmente, ''\emph{una característica es una propiedad de un sistema que es relevante a algunos \emph{stakeholders} y que es utilizada para capturar propiedades comunes o diferenciar entre sistemas de una misma familia}"~\cite{}. De este modo un producto queda representado por las características que posee.
+Como se ha comentado en la sección anterior, una de las tareas clave para el éxito de una línea de productos software consiste en analizar la variabilidad existente en la familia de productos software que dicha línea de productos software pretende cubrir. Aquí es donde entran en juego los \emph{Árboles de características}~\cite{}. Una \emph{característica} se define como ''\emph{un incremento en la funcionalidad del producto}'', o más formalmente, ''\emph{una característica es una propiedad de un sistema que es relevante a algunos \emph{stakeholders} y que es utilizada para capturar propiedades comunes o diferenciar entre sistemas de una misma familia}"~\cite{}. De este modo un producto queda representado por las características que posee.
 
-Para poder capturar las divergencias y aspectos comunes entre los distintos productos de una misma familia, los árboles de características organizan de forma jerárquica el conjunto de características que posee una familia de productos. Cada característica se representa como un nodo ene la árbol de características. La raíz de dicho árbol es siempre el sistema o producto software cuya variabilidad estamos analizando. Cada característica se puede descomponer en varias subcaracterísticas, siendo estás últimas nodos \emph{hijos} de la primera características, que actuaría como \emph{padre}. Dependiendo de sis dichas subcaracterísticas son obligatorias, alternativas u opcionales, existen diversos tipos de relaciones padre-hijo.
+Para poder capturar las divergencias y aspectos comunes entre los distintos productos de una misma familia, los árboles de características organizan de forma jerárquica el conjunto de características que posee una familia de productos. Cada característica se representa como un nodo ene la árbol de características. La raíz de dicho árbol es siempre el sistema o producto software cuya variabilidad estamos analizando. Cada característica se puede descomponer en varias subcaracterísticas, siendo estás últimas nodos \emph{hijos} de la primera características, que actuaría como \emph{padre}. Dependiendo de sis dichas subcaracterísticas son obligatorias, alternativas u opcionales, existen diversos tipos de relaciones padre-hijo. 
 
 %%=========================================================================================%%
 %% NOTA(Pablo): Para esta figura, hazte un modelo para la Smart Home sin habitaciones ni   %%
 %%              plantas. Lo puedes encontrar en un artículo que te mando luego             %% %%=========================================================================================%%
 \begin{figure}[!tb]
-    % \includegraphics[scale=0.5]{background/featuremodel.eps}
+    \includegraphics[scale=0.3]{background/simpleSmarthome.eps}
     \caption{Árbol de características simple para nuestro caso de estudio}
     \label{fig:smartHomeFMsimple}
 \end{figure}
 
-La Figura~\ref{fig:smartHomeFMsimple} muestra com ejemplo un árbol de características que especifica la variabilidad inherente a nuestro caso de estudio, sin considerar que las plantas y habitaciones puedan configurarse de manera individual.
+La Figura~\ref{fig:smartHomeFMsimple} muestra como ejemplo un árbol de características que especifica la variabilidad inherente a nuestro caso de estudio, sin considerar que las plantas y habitaciones puedan configurarse de manera individual. El árbol representa un hogar inteligente definido por las siguientes características: controlador de luz, controlador de temperatura, controlador de ventanas y controlador de la energía. Tal como se puede ver en la leyenda de la figura, todas estas características son opcionales, es decir, podemos decidir si queremos que estén o no presentes en el hogar inteligente que generemos. Además, para la característica ''controlador de temperatura" se ha de especificar una de las dos opciones alternativas que se plantean: grados celsius o grados fahrenheit.
+
+El modo de representación de los árboles de características permite especificar cierto tipo de restricciones que pueden resultar necesarias para representar con exactitud el comportamiento del producto que queramos construir. En el caso de la Figura~\ref{fig:smartHomeFMsimple} se puede observar que mediante las relaciones ya se está modelando la restricción que especifica que el controlador de temperatura ha de ser necesariamente de uno de los tipos que se indican en el modelo. Otros tipos de relaciones que pueden incluirse sirven para especificar otras restricciones, por ejemplo la obligatoriedad de seleccionar una característica o un grupo de ellas.
+
+Sin embargo, si quisiéramos incluir algunas restricciones más complejas, la representación gráfica de los árboles de características se queda corta. Por ejemplo, en la Figura~\ref{fig:smartHomeFMsimple} podríamos querer especificar la restricción de que si nuestro hogar inteligente tiene un controlador de energía, ha de tener también un controlador de calefacción en grados celsius. Es imposible modelar esta restricción con las herramientas de las que los árboles de características disponen. Es por ese motivo que debe permitirse la posibilidad de especificar restricciones externas al árbol mediante algún tipo de lenguaje textual o gráfico.
 
 %%=========================================================================================%%
 %% NOTA(Pablo): Explicar el modelo creado, indicando las cosas que son variables, las que  %%
@@ -29,37 +33,47 @@ La Figura~\ref{fig:smartHomeFMsimple} muestra com ejemplo un árbol de caracterís
 %%              Explicar el problema de las restricciones externas                         %%
 %%=========================================================================================%%
 
-Una vez creado un árbol de características para una línea de productos software, podemos indicar las características que podemos incluir en un producto software concreto mediante la creación de configuraciones. Una \emph{configuración} no es más que una selección válida de características. La Figura~\ref{} muestra en un ejemplo de configuración para el modelo de la Figura~\ref{fig:smartHomeFMsimple} donde se indica que el producto que deseamos construir debe incluir \todo{COMPLETAR}. Obviamente, dicho modelo debe satisfacer las restricciones externas declaradas.
+\begin{figure}[!tb]
+    \centerline{\includegraphics[scale=0.3]{background/simpleSmarthomeConf.eps}}
+    \caption{Configuración para la versión sencilla del caso de estudio}
+    \label{fig:smartHomeConfSimple}
+\end{figure}
 
-Los árboles de características como los anteriormente expuestos no permiten modelar que pueda existir un número variable de ciertas características, como, en nuestro caso, de plantas y habitaciones, y que, además, cada instancia particular de una características pueda  configurarse de forma distinta. Por ejemplo, podríamos decidir que el salón de la casa tenga control inteligente de temperatura, mientras que la cocina, que está sometida a mayores variaciones de temperatura, no contenga dicha características. Para solventar esta carencia, se introdujeron en los árboles de características el concepto de característica clonable.
+Una vez creado un árbol de características para una línea de productos software, podemos indicar las características que podemos incluir en un producto software concreto mediante la creación de configuraciones. Una \emph{configuración} no es más que una selección válida de características. La Figura~\ref{fig:smartHomeConfSimple} muestra en un ejemplo de configuración para el modelo de la Figura~\ref{fig:smartHomeFMsimple} donde se indica que el producto que deseamos construir debe incluir única y obligatoriamente un dispositivo de control de luz y un dispositivo de control de ventanas. Obviamente, dicho modelo debe satisfacer las restricciones externas declaradas. 
+
+Los árboles de características como los anteriormente expuestos no permiten modelar que pueda existir un número variable de ciertas características, como, en nuestro caso, de plantas y habitaciones, y que, además, cada instancia particular de una características pueda  configurarse de forma distinta. Por ejemplo, podríamos decidir que el salón de la casa tenga control inteligente de temperatura, mientras que la cocina, que está sometida a mayores variaciones de temperatura, no contenga dicha características. Para solventar esta carencia, se introdujeron en los árboles de características el concepto de característica clonable. 
 
 \begin{figure}[!tb]
-    % \includegraphics[scale=0.5]{background/featuremodel.eps}
+    \includegraphics[scale=0.4]{background/featuremodel.eps}
     \caption{Árbol de características completo para nuestro caso de estudio}
     \label{fig:smarHomeFeatureModel}
 \end{figure}
 
-La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características para nuestro caso de estudio incluyendo \emph{características clonables}. \todo{Explicarla}
+La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características para nuestro caso de estudio incluyendo \emph{características clonables}. Las características Floor (Piso) y Room (Habitación) son clonables porque pueden aparecer más de una vez en las configuraciones creadas. La cardinalidad de ambas características es 1..*, lo que significa que pueden ser seleccionadas de una a infinitas veces. Así mismo, cualquier característica que sea hija de ellas directa o indirectamente es considerada inmediatamente como característica. Este es el caso, por ejemplo, de Devices y de sus características hijas (Heater, Window, etc.), que son consideradas clonables tanto por su cardinalidad como por ser hijas de una característica clonable. 
 
-\begin{figure}[!tb]
-    \includegraphics[scale=0.5]{metamodelo/featuremodel.eps}
-    \caption{Árbol de características `para el caso de estudio \emph{SmartHome}}
-    \label{figsmarthome}
-\end{figure}
-
+La repetición de las características correspondientes a los diversos controladores (es decir, WindowMng, HeaterMng, etc.) se debe a que gracias a las características clonables ahora podemos diferenciar los controladores según su colocación y alcance. Es decir, el controlador de temperatura hijo de RoomFacilities afectará sólo a la habitación a la que pertenezca, el hijo de FloorFacilities afectará al piso al que pertenezca, y el hijo de GeneralFacilities afectará a todo el hogar creado. 
 %%=========================================================================================%%
-%% NOTA(Pablo): Añadir la figura, si no te entrase bien a lo ancho, mira como meterla
+%% NOTA(Pablo): Añadir la figura, si no te entrase bien a lo ancho, mira como meterla 
 %%              apaisada en Latex.
 %%=========================================================================================%%
 
+A la hora de crear configuraciones para este nuevo árbol hay que tener en cuenta que podemos seleccionar en más de una ocasión ciertas características, por lo que necesitamos valernos de algún mecanismo que nos permita diferenciarlas entre ellas. El modo de lograrno es poniendo un nombre a las diferentes selecciones que hagamos de una misma característica. 
+
+La Figura~\ref{fig:smarthomeCompleteConf} muestra un ejemplo de configuración para el árbol de características con características clonables de la Figura~\ref{fig:smarHomeFeatureModel}. En ella se puede apreciar que se diferencia entre las diferentes selecciones de la característica Floor poniéndoles un nombre, en este caso Ground (Planta Baja) y First (Primer Piso). Del mismo modo con las habitaciones Kitchen (Cocina) y Living (Salón), pertenecientes a la planta baja, y Bed (Dormitorio), perteneciente al primer piso. Observando el árbol de la figura es sencillo comprender qué elementos y/o controladores tiene instalados cada estancia. Por ejemplo, la cocina está dotada de dos luces, un regulador de luz, una ventana, un controlador de luz y un controlador de ventanas.
+
 %%=========================================================================================%%
-%% NOTA(Pablo): Explicar como se configuran las características clonables usando un
+%% NOTA(Pablo): Explicar como se configuran las características clonables usando un 
 %%              ejemplo
 %%=========================================================================================%%
 
+Como en el caso anterior, las diversas configuraciones no sólo han de cumplir las restricciones impuestas por el propio árbol de características, sino también las restricciones externas. Pero debido a la presencia de características clonables ahora existe una posibilidad mucho mayor de restricciones posibles que definir. Del mismo modo que antes se podían definir diversas restricciones lógicas (a implies b), la presencia de características clonables hace que también sean necesarias las restricciones numéricas (a >= b), lo que también añade la dificultad de diferenciar cuales características pueden realizar operaciones lógicas y cuales no . 
+
+También es necesaria una operación de contexto que permita aplicar estas restricciones sólamente a subárboles de la configuración. Esto es imprescindible para definir una restricción que, por ejemplo, valide que si una habitación tiene un controlador de ventanas forzosamente ha de tener instalada al menos una ventana. Sin la operación de contexto sería imposible saber a qué característica WindowMng en concreto está haciendo referencia la restricción definida.
+
+El objetivo de este proyecto es implementar un lenguaje textual que haga posible la definición de restricciones externas para árboles de características con características clonables con todas las peculiaridades definidas anteriormente, así como una herramienta que permita validar si las configuraciones creadas satisfacen o no esas restricciones. 
 %%=========================================================================================%%
 %% NOTA(Pablo): Explicar el problema de las restricciones cuando incluyen características
-%%              clonables y decir que implementar un lenguaje para resolver ese problema
+%%              clonables y decir que implementar un lenguaje para resolver ese problema 
 %%              es el objetivo de este proyecto
 %%=========================================================================================%%
 
@@ -67,14 +81,14 @@ La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características par
 %% NOTA(Pablo): Esto no se entiende de forma clara, por lo que se suprime                                         %%
 %%=========================================================================================%%
 %%
-%% Por otro lado, un modelo de características debe poder representar la cardinalidad de
-%% las características, por motivos tanto de comprensión (es mucho mejor contar con un
-%% árbol de 8 nodos que con uno de 100, teniendo ambos un significado equivalente), como
-%% de funcionalidad, ya que permite expresar ciertas restricciones que de no contar con
+%% Por otro lado, un modelo de características debe poder representar la cardinalidad de 
+%% las características, por motivos tanto de comprensión (es mucho mejor contar con un 
+%% árbol de 8 nodos que con uno de 100, teniendo ambos un significado equivalente), como 
+%% de funcionalidad, ya que permite expresar ciertas restricciones que de no contar con 
 %% la cardinalidad no podrían expresarse.
-%%
+%% 
 %% Además se podrán disponer de restricciones de usuario más complejas, que son las que
-%% se han implementado en el editor de especificación y validación de restricciones
+%% se han implementado en el editor de especificación y validación de restricciones 
 %% desarrollado en este proyecto.
 %%
 %%=========================================================================================%%
@@ -83,16 +97,16 @@ La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características par
 %% NOTA(Pablo): Esto queda obsoleto en el nuevo esquema, por lo cual se suprime            %%
 %%=========================================================================================%%
 %%
-%% La figura \ref{fig7} muestra un ejemplo de modelo de características. En este caso se
-%% trata de un modelo de una casa inteligente o SmartHome, a través del cual,
-%% seleccionando ciertas características u otras podremos construir qué tipo de casa
-%% queremos. Cada una de las múltiples casas diferentes que podamos construir es lo que
+%% La figura \ref{fig7} muestra un ejemplo de modelo de características. En este caso se 
+%% trata de un modelo de una casa inteligente o SmartHome, a través del cual, 
+%% seleccionando ciertas características u otras podremos construir qué tipo de casa 
+%% queremos. Cada una de las múltiples casas diferentes que podamos construir es lo que 
 %% se denonima una especialización o configuración de nuestro modelo de características.
-%%
-%%  El proceso de crear una configuración a partir de un modelo de características se
-%% conoce como proceso de configuración o proceso de especialización. Consiste en
+%% 
+%%  El proceso de crear una configuración a partir de un modelo de características se 
+%% conoce como proceso de configuración o proceso de especialización. Consiste en 
 %% transformar un modelo de características de tal forma que el modelo resultante sea un
-%%  subconjunto de las posibles configuraciones denotadas por el primer modelo. La figura
+%%  subconjunto de las posibles configuraciones denotadas por el primer modelo. La figura 
 %% \ref{fig8} muestra una posible configuración para el modelo de características de la figura %% \ref{fig7}.
 %%
 %% La relación entre un diagrama de características y una configuración es análoga a la
@@ -101,9 +115,9 @@ La Figura~\ref{fig:smarHomeFeatureModel} muestra el árbol de características par
 %%=========================================================================================%%
 
 \begin{figure}[!tb]
-    \includegraphics[scale=0.5]{background/configuration.eps}
+    \includegraphics[scale=0.4]{background/configuration.eps}
     \caption{Posible modelo de configuración de una casa inteligente concreta}
-    \label{fig8}
+    \label{fig:smarthomeCompleteConf}
 \end{figure}
 
 \begin{figure}[!tb]
@@ -123,5 +137,4 @@ A modo de resumen, la Figura~\ref{fig:relacionesFeatures} muestra las posibles r
     \item[Grupo con cardinalidad] El número mínimo y máximo de características a seleccionar dentro del grupo vendrá determinado por su cardinalidad $<m,n>$.
 \end{description}
 
-Tras esta sección se han proporcionado al lector lo necesario para comprender el contexto del problema que este Proyecto Fin de Carrera pretende resolver. Las siguientes secciones están destinadas a explicar las tecnologías concretas que se han utilizado para implementar el lenguaje que da solución a los problemas planteados.
-
+Tras esta sección se han proporcionado al lector lo necesario para comprender el contexto del problema que este Proyecto Fin de Carrera pretende resolver. Las siguientes secciones están destinadas a explicar las tecnologías concretas que se han utilizado para implementar el lenguaje que da solución a los problemas planteados. 

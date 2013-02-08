@@ -8,7 +8,15 @@
 %% Antecedentes, arquitectura de plugins de eclipse                 %%
 %%==================================================================%%
 
-En entorno de desarrollo Eclipse es un ejemplo de arquitectura modular fácilmente extensible mediante una compleja, pero sencilla al programador, arquitectura de \emph{plug-ins}. Un \emph{plug-in} en Eclipse es un componente que provee un cierto tipo de servicio dentro del contexto del espacio de trabajo de Eclipse. Es decir, una herramienta que se puede integrar en el entorno Eclipse junto con sus otras funcionalidades. Dado que la herramienta \emph{Hydra} fue diseñada como un \emph{plug-in} para Eclipse, y nuestro editor pretende integrarse tanto en \emph{Hydra} como en \emph{Eclipse}, es necesario conocer y manejar el funcionamiento de la arquitectura de plug-ins de Eclipse.
+El entorno de desarrollo Eclipse es un ejemplo de arquitectura modular fácilmente extensible mediante una compleja, pero sencilla al programador, arquitectura de \emph{plug-ins}. Un \emph{plug-in} en Eclipse es un componente que provee un cierto tipo de servicio dentro del contexto del espacio de trabajo de Eclipse. Es decir, una herramienta que se puede integrar en el entorno Eclipse junto con sus otras funcionalidades. Dado que la herramienta \emph{Hydra} fue diseñada como un \emph{plug-in} para Eclipse, y nuestro editor pretende integrarse tanto en \emph{Hydra} como en \emph{Eclipse}, es necesario conocer y manejar el funcionamiento de la arquitectura de plug-ins de Eclipse.
+
+Aunque la arquitectura de plug-ins de Eclipse tiene mucha profundidad y ofrece muchas posibilidades, es imprescindible el dominio de dos de sus conceptos clave para poder trabajar con ella: las dependencias y los puntos de extensión.  Mediante las dependencias podemos indicar que el plug-in a desarrollar tiene que incorporar toda la funcionalidad y estructura de otro plug-in (en este caso nuestro editor tiene, entre otras, una dependencia con el plug-in de la herramienta Hydra original). Un punto de extensión permite añadir cierta funcionalidad al plug-in desarrollado mediante la inclusión automática de ciertos segmentos de código. Un ejemplo clásico de punto de extensión, y que además ha sido utilizado en el transcurso de este proyecto, es el que permite añadir un botón a la barra de tareas de Eclipse de manera automática, teniendo que implementar únicamente el código del manejador de ese botón.
+
+ \begin{figure}[!tb]
+    \includegraphics[scale=0.4]{background/codigoManejador.eps}
+    \caption{Trozo de código del manejador de un botón introducido mediante un punto de extensión}
+    \label{fig:codigoManejador}
+\end{figure}
 
 %%==============================================================================================%%
 %% NOTA(Pablo): Esto no se entiende nada
