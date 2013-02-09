@@ -9,18 +9,46 @@
 \chapterheader{Creación de la gramática}{Creación de la gramática}
 \label{chap:gramatica}
 
-Una vez ha sido definido el metamodelo, el siguiente paso es definir la sintaxis concreta textual de nuestro lenguaje, es decir, los medios que permitan expresarnos en él de modo escrito. De no hacerlo, solo podríamos usar este lenguaje creando instancias del metamodelo, lo cual lógicamente no es ni cómodo ni conveniente. Este capítulo versa sobre la creación de la gramática que permite definir esa sintaxis textual, así como de las repercusiones que su diseño tuvo en la sintaxis abstracta.
+Una vez definida la sintaxis abstracta de nuestro lenguaje, el siguiente paso era definir la sintaxis concreta de nuestro lenguaje, que en nuestro caso sería una sintaxis textual. Pera ello hicimos uso de la herramienta EMFText. Este capítulo describe el proceso de desarrollo de dicha sintaxis textual concreta de acuerdo al proceso impuesto por EMFText.
 
 \chaptertoc
 
-\section{Captura de requisitos}
-\label{sec:gram:requisitos}
-\input{gramatica/requisitos.tex}
+%%=================================================================%%
+%% NOTA(Pablo) : Lo mismo que con el capítulo 3, escribe una       %% 
+%%               pequeña introducción al capítulo                  %%
+%%=================================================================%%
 
-\section{Diseño de la gramatica}
+\section{Introducción}
+\label{sec:gram:requisitos}
+\input{gramatica/introduccion.tex}
+
+%%=================================================================%%
+%% NOTA(Pablo): Los requisitos de la gramática quedan 
+%%              prácticamente definidos en el artículo que te 
+%%              mandé, y que está descrita en el capítulo 
+%%              anterior, por tanto no hace falta enrrollarse. 
+%%              Se puede fusionar con la sección de introducción
+%%=================================================================%%
+%%
+%% \section{Captura de requisitos}
+%% \label{sec:gram:requisitos}
+%% \input{gramatica/requisitos.tex}
+%%
+%%=================================================================%%
+
+\section{Implementación de la Gramática}
 \label{sec:gram:design}
 \input{gramatica/design.tex}
 
 \section{Pruebas}
 \label{sec:gram:pruebas}
 \input{gramatica/pruebas.tex}
+
+%%=================================================================%%
+%% NOTA(Pablo): Añade una sección de sumario
+%%=================================================================%%
+
+
+\section{Sumario}
+\label{sec:gram:sumario}
+% \input{gramatica/sumario.tex}
