@@ -10,7 +10,25 @@
 
 El primer paso para desarrollar nuestro lenguaje era conocer qué aspecto debía tener nuestro lenguaje y qué restricciones debía satisfacer. Es decir, en primer lugar debemos realizar un proceso que podemos denominar de captura de requisitos para poder comprender qué es lo que tiene que hacer exactamente el lenguaje que se pretende crear.
 
-Concretamente nuestro lenguaje había sido prácticamente definido por el profesor Pablo Sánchez, del Departamento de Matemáticas, Estadística y Computación de la Universidad de Cantabria, mediante notación BNF. Las ideas subyacentes a dicho lenguaje son las que se describen a continuación.
+Concretamente nuestro lenguaje había sido prácticamente definido por el profesor Pablo Sánchez, del Departamento de Matemáticas, Estadística y Computación de la Universidad de Cantabria, mediante notación BNF. Las ideas subyacentes a dicho lenguaje son las que se describen a continuación. Como apoyo a la descripción, la Figura~\ref{fig:constraintBNF} muestra la sintaxis del lenguaje en notación EBNF.
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.3]{metamodelo/constraintBNF.eps}
+    \caption{Lenguaje de restricciones en notación EBNF}
+    \label{fig:constraintBNF}
+\end{figure}
+
+Una \emph{restricción} es una expresión lógica que se puede evaluar a verdadero o falso. Una restricción puede ser simplemente un literal, es decir, $true$ o $false$, que se evaluará a verdadero y falso respectivamente. Una restricción también puede ser una característica simple, es decir, una característica que puede aparecer en las configuraciones como máximo una vez. Una característica simple se evalúa a verdadero si ha sido seleccionado, y a falso en caso contrario.
+
+Las características clonables son aquellas que pueden ser seleccionadas más de una vez en las configuraciones que construyamos sobre nuestro árbol de características. Una característica clonable se evalúan como un número entero positivo, incluido el cero. Ese número representa el número de clones que la característica posee dentro de una configuración, o dicho de otro modo, el número de veces que ha sido seleccionada. El hecho de que se evalúen como si fueran números permite la inclusión de operaciones de comparación que permitan definir restricciones comparativas entre distintas características clonables. Las operaciones de comparación que se han de implementar son las siguientes: $<$,$<$=,$>$,$>$=,=,!= . Además, también se puede utilizar el valor de las características clonables para implementar operaciones aritméticas básicas, tales como la suma, la resta, la multiplicación y la división. Estas expresiones a su vez se pueden utilizar como subexpresiones, u operandos, dentro de las operaciones de comparación. Las expresiones de comparación se evalúan a verdadero o falso, y también pueden ser usadas como subexpresiones para crear expresión lógica más compleja. 
+
+Tal y como muestra la Figura~\ref{fig:constraintBNF}, una restricción también puede especificar un contexto concreto en el que poder evaluarla. Esto puede hacerse de varias maneras. Se puede especificar un contexto para una restricción poniéndola entre corchetes y especificando el nombre de una característica al principio de la expresión. La característica usada como contexto puede ser tanto simple como múltiple. En el primer caso, la restricción sólo será evaluada en el subárbol de la configuración cuya raíz sea la característica especificada.
+
+En el segundo caso entran en juego los operadores $all$ (para todo) y $any$ (existe). La operación $all$ solo se evaluará a verdadero si la restricción entre corchetes se cumple para todas las selecciones de la característica clonable. En caso contrario, la operación se evaluará a falso. La operación $any$ se evaluará a verdadero si la restricción entre corchetes se cumple al menos una vez para todas las selecciones de la característica. Si la restricción no se cumple para ninguna de las selecciones, la operación $any$ se evaluará a falso. 
+
+Merece la pena señalar que una característica puede ser considera simple en un contexto determinado y clonable o múltiple en otro. Por ejemplo, la característica $LightMng$ es clonable en el contexto de $RoomFacilities$, pero simple en el contexto de $GeneralFacilities$. Debido a eso la característica $LightMng$ no puede ser utilizada a la ligera sin especificar el contexto en el que está ubicada, pues podría provocar un resultado no esperado o erróneo.
+
+En la restricción $any Room[RoomFacilities[LightMng]]$ se pueden apreciar los dos diferentes usos para la operación de contexto. Los corchetes externos indican a la operación any que hay que aplicar la restricción a todas las habitaciones. Los corchetes internos indican que la característica $LightMng$ a la que se está haciendo referencia es la hija de $RoomFacilities$ y no cualquier otra.
 
 %%==================================================================%%
 %% NOTA(Pablo): Aquí traduce la sección III del artículo que te
@@ -26,7 +44,7 @@ Concretamente nuestro lenguaje había sido prácticamente definido por el profesor
 
 %%==================================================================%%
 
-Además nuestro lenguaje debía permitir vincular un un modelo de características sobre el cual se definirán un conjunto de restricciones externas. Este modelo se utilizará, por ejemplo, para comprobar que los símbolos que aparecen como nombres de características en las restricciones se refieren a características que realmente existen en el árbol de características. Por ejemplo, una restricción del tipo $AdvancedHeating => Heating$ carecería de sentido si algunas de las características $AdvancedHeating$ o $Heating$ no apareciesen en el árbol de características sobre el cual estamos definiendo restricciones.
+Además nuestro lenguaje debía permitir vincular un modelo de características sobre el cual se definirán un conjunto de restricciones externas. Este modelo se utilizará, por ejemplo, para comprobar que los símbolos que aparecen como nombres de características en las restricciones se refieren a características que realmente existen en el árbol de características. Por ejemplo, una restricción del tipo $AdvancedHeating => Heating$ carecería de sentido si algunas de las características $AdvancedHeating$ o $Heating$ no apareciesen en el árbol de características sobre el cual estamos definiendo restricciones.
 
 %%======================================================================================%%
 %% NOTA(Pablo): Esto posiblemente sobre al introducir la traducción de la Sección III.
