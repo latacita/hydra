@@ -25,18 +25,22 @@ Las características clonables son aquellas que pueden ser seleccionadas más de u
 %%============================================================================%%
 %% NOTA(Pablo) : Poner un ejemplo de este tipo de restricciones y explicarlas %%
 %%============================================================================%%
+Un ejemplo de restricción que incluya subexpresiones aritméticas y comparativas podría ser la siguiente: $PresenceSimulation implies (Room > Floor*2)$. Mediante esta restricción estamos forzando que las configuraciones que tengan instalando un simulador de presencia han de tener más del doble de habitaciones que pisos. Esta restricción podría ser útil si no queremos instalar simuladores de presencia en casas con pocas habitaciones, por ejemplo por motivos económicos o de funcionamiento. Si evaluamos esta restricción en la configuración de la Figura~\ref{fig:smarthomeCompleteConf} el resultado será verdadero, pues no hay instalado ningún simulador de presencia.
 
 Tal y como muestra la Figura~\ref{fig:constraintBNF}, una restricción también puede especificar un contexto concreto en el que poder evaluarla. Esto puede hacerse de varias maneras. Se puede especificar un contexto para una restricción poniéndola entre corchetes y especificando el nombre de una característica al principio de la expresión. La característica usada como contexto puede ser tanto simple como múltiple. En el primer caso, la restricción sólo será evaluada en el subárbol de la configuración cuya raíz sea la característica especificada.
 
 %%============================================================================%%
 %% NOTA(Pablo) : Poner un ejemplo y explicarlo                                %%
 %%============================================================================%%
+La restricción $GeneralFacilities[WindowMng and HeaterMng]$ sólo se evaluaría en el subárbol cuya raíz es $GeneralFacilities$. Al incluir la operación de contexto estamos evitando posibles confusiones con las características hijas de $RoomFacilities$ o $FloorFacilities$. Con esta restricción estamos forzando que los hogares inteligentes que construyamos tengan un controlador de ventanas de ámbito general y un controlador de temperatura de ámbito general. Si evaluamos esta restricción en la configuración de la Figura~\ref{fig:smarthomeCompleteConf} el resultado será falso, pues tiene controlador de ventanas pero no de temperatura.
 
 En el segundo caso entran en juego los operadores $all$ (para todo) y $any$ (existe). La operación $all$ solo se evaluará a verdadero si la restricción entre corchetes se cumple para todas las instancias de la característica clonable que actúa como contexto. En caso contrario, la operación se evaluará a falso. La operación $any$ se evaluará a verdadero si la restricción entre corchetes se cumple al menos una vez para todas las instancia de la característica clonable que actúa como contexto. Si la restricción no se cumple para ninguna de las selecciones, la operación $any$ se evaluará a falso.
 
 %%============================================================================%%
 %% NOTA(Pablo) : Poner un ejemplo y explicarlo                                %%
 %%============================================================================%%
+
+La restricción $all Floor [Room >= 2]$ se ejecutará para todas las instancias de la característica $Floor$, y comprobará para cada una de ellas el número de habitaciones. Si todos los pisos tienen al menos 2 habitaciones, su resultado será verdadero. Al ejecutarla en la configuración de la Figura~\ref{fig:smarthomeCompleteConf} esta restricción se evaluará a falso, pues el primer piso solo tiene una habitación. Sin embargo, si ejecutamos la restricción $any Floor [Room >= 2]$ se evaluará a verdadero, pues en este caso sólo es necesario que uno de los pisos tenga al menos dos habitaciones, y la planta baja las tiene.
 
 Merece la pena señalar que una característica puede ser considera simple en un contexto determinado y clonable o múltiple en otro. Por ejemplo, la característica $LightMng$ es clonable en el contexto de $RoomFacilities$, pero simple en el contexto de $GeneralFacilities$. Debido a eso la característica $LightMng$ no puede ser utilizada sin especificar el contexto en el que está ubicada, pues podría provocar un resultado no esperado o erróneo.
 
