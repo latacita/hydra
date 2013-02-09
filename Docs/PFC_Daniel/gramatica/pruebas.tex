@@ -1,19 +1,25 @@
 %%==================================================================%%
 %% Author : Tejedo GonzÁlez, Daniel                                 %%
 %%          SÁnchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 27/11/2012                                         %%                   %%                                                                  %%
+%% Version: 1.0, 27/11/2012                                         %%                   
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Gramática, pruebas                                       %%
+%% Gramática, Pruebas                                               %%
 %%==================================================================%%
 
+Una vez generados, gracias al uso de EMFText, el editor y el analizador para nuestra gramática, procedimos a realizar su correspondiente proceso de pruebas. Para ello escribimos diferentes ficheros de restricciones, probando tanto restricciones correctas como erróneas. Por ejemplo, para el caso de la vinculación de un fichero de restricciones con un árbol de características, se probó tanto como rutas correctas como erróneas, absolutas y relativas. 
+
+%%=================================================================%%
+%% NOTA(Pablo): Estas figuras se ven fatal, no las metas como      %%
+%%              capturas de pantalla o pásalas a EPS mejor         %%
+%%=================================================================%%
+
 \begin{figure}[t]
-\includegraphics[scale=0.5]{gramatica/oppruebas.eps}
-\caption{Batería de instrucciones para probar el funcionamiento de la gramática}
-\label{figgrampruebas}
+    \includegraphics[scale=0.5]{gramatica/oppruebas.eps}
+    \caption{Batería de instrucciones para probar el funcionamiento de la gramática}
+    \label{figgrampruebas}
 \end{figure}
 
-Para hacer las pruebas correspondientes a la gramática fue de mucha utilidad la vista Outline de Eclipse, que permite obsevar el árbol de parsing de todos los ficheros de código que creemos en nuestro lenguaje. 
+La Figura~\ref{figgrampruebas} muestra la batería de pruebas utilizadas para comprobar el funcionamiento de la gramática. Al igual que en los casos anteriores, se trata de un conjunto de pruebas exhaustivas, diseñadas para abarcar todo el conjunto de sentencias que es posible construir con el lenguaje. También se analizaron las situaciones excepcionales de sentencias sintáticamente incorrectas. Para comprobar su correcto funcionamiento, se verificó tanto que el analizador del lenguaje no daba errores al procesarlo, y que el modelo generado como salida del analizador era correcto.
 
-La batería de pruebas simplemente consistió en comprobar una serie de instrucciones y observar dentro de la vista Outline si se parseaban de modo correcto. En este caso se utilizaron unas restricciones definidas en un documento previo de Hydra que contenían todos los aspectos problemáticos de la gramática, es decir, operaciones largas con prioridad y multitud de contextos. Estas instrucciones son las que se muestran en la figura \ref{figgrampruebas}. 
-
-El resto de operaciones fueron puestas a prueba con restricciones más sencillitas y, como en el caso anterior, fueron exitosas. También se usaron las instrucciones de las pruebas del capítulo anterior, que se pueden observar en la figura \ref{figmetains} para comprobar que el árbol era el mismo que se creó en ese momento.
+También se usaron las instrucciones de las pruebas del capítulo anterior, que se pueden observar en la figura \ref{figmetains} para comprobar que el modelo generado era el mismo que el creado manualmente en el capítulo anterior.

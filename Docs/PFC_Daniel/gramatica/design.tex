@@ -1,19 +1,49 @@
 %%==================================================================%%
-%% Author : Tejedo GonzÁlez, Daniel                                 %%
-%%          SÁnchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 27/11/2012                                         %%                   %%                                                                  %%
+%% Author : Tejedo González, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 27/11/2012                                         %%                   
+%% Version: 2.0, 09/02/2013                                         %%                   
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Gramática,  diseño                                       %%
+%% Gramática, Diseño                                                %%
 %%==================================================================%%
 
-Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso es diseñar una gramática que se ajuste a ellas. 
+Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso era diseñar una gramática que se ajuste a ellas.
 
-La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones. 
+%%=================================================================%%
+%% NOTA(Pablo): Refresca aquí un poco el proceso de desarrollo de  %%
+%%              gramáticas con EMFText, en uno o dos parráfos a    %%
+%%              muy alto nivel                                     %%   
+%%=================================================================%%
+
+La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones.
+
+%%=================================================================%%
+%% NOTA(Pablo): Tal como está escrito, es difícil seguir el hilo   %%
+%%              argumental, vuelvo a escribirlo de forma top-down, %%
+%%              describiendo, sin enrollarte mucho, lo que aparece %%
+%%              en las figuras. Empieza por la segunda, por la     %%
+%%              línea 1, y sigue para abajo                        %%
+%%              Piensa en añadirle números de líneas a las figuras %%
+%%              para hacer más fácil su descripción.               %%
+%%              Haz especial hincapié en como se relacionan la     %% 
+%%              gramática con el metamodelo. 
+%%              Evista el término producción, que es muy 
+%%              específico de procesdores de lenguajes, y no todos
+%%              los miembros del tribunal lo van a entender
+%%              Planteate usar el entorno listing para mostrar 
+%%              código
+%%=================================================================%%
+
+%%=================================================================%%
+%% NOTA(Pablo): Estas figuras se ven fatal, no las metas como      %%
+%%              capturas de pantalla o pásalas a EPS mejor         %%
+%%=================================================================%%
 
 \begin{figure}[t]
-\includegraphics[scale=0.7]{gramatica/operaciones.eps}
-\caption{Implementación de las operaciones de nuestro editor com EMFText}
-\label{figopers}
+    \includegraphics[scale=0.7]{gramatica/operaciones.eps}
+    \caption{Implementación de las operaciones de nuestro editor com EMFText}
+    \label{figopers}
 \end{figure}
 
 Sí que cabe comentar con respecto a las operaciones las últimas líneas, que muestran la asignación de valor a las hojas de nuestros árboles parseados. En esas líneas estamos indicando que los atributos de las instancias de clase Number van a ser números, y que los atributos de las instancias de las clases SimpleFeature y MultipleFeature van a ser palabras.
@@ -32,7 +62,7 @@ Una situación similar fue la que propició que las operaciones Context, All y Any
 \label{figinitgram}
 \end{figure}
 
-Una vez comentados estos detalles es momento de explicar el inicio de la gramática, que se muestra en la figura \ref{figinitgram}. 
+Una vez comentados estos detalles es momento de explicar el inicio de la gramática, que se muestra en la figura \ref{figinitgram}.
 
 En la primera línea y mediante la claúsula SYNTAXDEF indicamos la extensión que queremos que tengan los ficheros escritos en nuestro lenguaje. En nuestro caso nos hemos decantado por la terminación .hydraConst. En la segunda línea y mediante la claúsula FOR se indica la URI del metamodelo. Una URI es un formato de dirección interno de Eclipse, que se usa para localizar otros ficheros en el workspace. En la tercera línea, delimitada por la claúsula START, indicamos a la gramática que la clase inicial de nuestro metamodelo (y la que será la raiz en todos los árboles parseados) es Model.
 
