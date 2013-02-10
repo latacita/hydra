@@ -8,15 +8,16 @@
 %% Gramática, Diseño                                                %%
 %%==================================================================%%
 
-Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso era diseñar una gramática que se ajuste a ellas.
+Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso es diseñar una gramática que se ajuste a ellas. EMFText es la herramienta que utilizaremos para implementar esta gramática. 
 
+El diseño de la gramática pasa por asignar una serie de reglas a las metaclases, de modo que EMFText sea capaz de reconocer esas reglas en las expresiones de nuestro lenguaje y asociarlas a la metaclase correspondiente. En cuanto la reconozca, añadirá una instancia de la misma, con los atributos correspondientes debidamente inicializados, a la instancia global del metamodelo.
+
+Además de las reglas, en EMFText hay que definir otra serie de claúsulas que permiten configurar ciertos aspectos de la gramática. Para explicar tanto estas directrices como las reglas de las metaclases nos apoyaremos en la gramática diseñada, y explicaremos línea a línea el significado de las instrucciones que la componen. La Figura~\ref{fig:initGram} muestra las primeras 23 líneas de la gramática para nuestro lenguaje. 
 %%=================================================================%%
 %% NOTA(Pablo): Refresca aquí un poco el proceso de desarrollo de  %%
 %%              gramáticas con EMFText, en uno o dos parráfos a    %%
 %%              muy alto nivel                                     %%   
 %%=================================================================%%
-
-La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones.
 
 %%=================================================================%%
 %% NOTA(Pablo): Tal como está escrito, es difícil seguir el hilo   %%
@@ -41,36 +42,89 @@ La parte más trivial e inmediata del diseño de la gramática es la concerniente a
 %%=================================================================%%
 
 \begin{figure}[t]
-    \includegraphics[scale=0.7]{gramatica/operaciones.eps}
-    \caption{Implementación de las operaciones de nuestro editor com EMFText}
-    \label{figopers}
+\includegraphics[scale=0.35]{gramatica/iniciogram.eps}
+\caption{Implementación del inicio de la gramática con EMFText. Con las figuras \ref{fig:opersUno} y \ref{fig:opersDos} se completa la gramática}
+\label{fig:initGram}
 \end{figure}
 
-Sí que cabe comentar con respecto a las operaciones las últimas líneas, que muestran la asignación de valor a las hojas de nuestros árboles parseados. En esas líneas estamos indicando que los atributos de las instancias de clase Number van a ser números, y que los atributos de las instancias de las clases SimpleFeature y MultipleFeature van a ser palabras.
+La primera línea muestra la claúsula SYNTAXDEF, que sirve para indicar la extensión que queramos que tengan los ficheros correspondientes a nuestro lenguaje. En nuestro caso, hemos elegido la extensión \emph{hydraconst}. A continuación, la directriz FOR sirve para vincular la gramática con el metamodelo mediante una dirección de Eclipse llamada \emph{URI}. La siguiente línea contiene la cláusula START, que indica cuál es la metaclase inicial del metamodelo, es decir, la primera a la que se le aplica una regla. Cualqueir gramática que se quiera construir en EMFText ha de empezar por estas tres directrices.
 
-La parte más complicada corresponde a la implementación del inicio de la gramática y de las producciones que conducen a la misma. Pero antes de mostrar la figura con esta parte de la gramática conviene explicar el problema que llevó a realizar los cambios en el metamodelo mencionados en el capítulo anterior. Este problema surgió a la hora de implementar las operaciones con prioridad, es decir, la inclusión de los paréntesis.
+Las líneas de [05-07] corresponden al bloque OPTIONS. Dentro de este bloque EMFText permite especificar diversas opciones para configurar nuestra gramática de diversos modos, que en su mayoría afectan a la posterior generación del código que implementará  el lenguaje. En nuestro caso solo hemos activado una opción, que permite usar los Tokens definidos por defecto en EMFText.
 
-El inconveniente es que el tipo de gramática LL que implementa EMFText hacía imposible tomar una decisión sobre hacia qué elemento seguir parseando en caso de encontrarnos con un paréntesis. La mejor solución que se nos ocurrió para evitar este problema fue la adición de diversas clases y relaciones auxiliares en el metamodelo, cuya única función es estructural y de apoyo a la gramática. Gracias a ellas y a una mejor definición de las producciones conseguimos evitar esos problemas de parsing y podemos llevar a cabo las operaciones de prioridad con paréntesis.
+Entre las líneas [09-12] se encuentra el bloque TOKENS. Este bloque sirve para definir los Tokens que usaremos en nuestra gramática. Un Token es un elemento terminal, es decir, uno cuyo derivación no supone ninguna regla adicional para la gramática. En nuestro caso usaremos los Tokens para inicializar diversos atributos del metamodelo. El Token DIGIT será el que dé valor al atributo \emph{numValue} de la metaclase \emph{Number}, y el token DIRECCION será el utilizado para inicializar el atributo \emph{featureList} de la metaclase Model. Además, usaremos el token TEXT para inicializar el atributo \emph{featureName} de las metaclases \emph{SimpleFeature} y \emph{MultipleFeature}. Este Token no hay que definirlo, ya que está disponible por defecto al habilitar la opción previa \emph{usePredefinedTokens}.
 
-Las clases añadidas para solventar esta situación fueron las siguientes: BoolPriorityOperand1, BoolPriorityOperand2, NumPriorityOperand1, NumPriorityOperand2, BoolOperandChoices y NumOperandChoices. Las relaciones añadidas fueron boolPriorityOp1, boolPriorityOp2, numPriorityOp1 y numPriorityOp2.
+Desde la línea 14 y hasta el final de la gramática estará contenido el bloque RULES, que es en el que se definen las reglas de las que hablábamos. La línea 16 contiene la regla de la metaclase inicial, Model. Esto significa que los textos que escribamos en nuestros lenguajes han de empezar siguiendo esta regla. En ella se define que la primera línea de cualquier código escrito en nuestro lenguaje ha de empezar por la palabra reservada \emph{import}, y a continuación se introduce la dirección que contiene el modelo de características sobre el que queremos aplicar las restricciones. Esta dirección se define por el Token DIRECCION y se guarda en el atributo \emph{featureList}. A partir de ahí, se indica que se han de escribir las restricciones.
 
-Una situación similar fue la que propició que las operaciones Context, All y Any hayan sido diseñadas tal y como presenta el metamodelo, ya que que la particular sintaxis de estas (diferente a las demás que siguen el mismo esquema de op + char + op) también mostraba ciertos problemas de parsing. En este caso no fue necesario añadir elementos auxiliares, sino simplemente recolocarlos para evitar estos problemas. Con esto ya se han hecho todos los cambios en el metamodelo, que alcanza en este punto su versión final tal como muestra la figura \ref{figmetameta}. Con respecto al metamodelo solamente quedan por comentar los métodos que muestran algunas clases, que serán explicados en los próximos capítulos ya que se usan en el proceso de validación y semántica.
+La línea 17 contiene la regla correspondiente a la metaclase \emph{Constraint}. En ella simplemente se indica que a continuación hay que escribir los diversos operadores, y se actualizan en el metamodelo las relación llamada \emph{operators}. Las líneas [18-21] sirven para implementar la prioridad en las operaciones, es decir, permitir la inclusión de paréntesis en las operaciones.
 
 \begin{figure}[t]
-\includegraphics[scale=0.7]{gramatica/iniciogram.eps}
-\caption{Implementación del inicio de la gramática con EMFText. Con la figura \ref{figopers} se completa la gramática}
-\label{figinitgram}
+    \includegraphics[scale=0.3]{gramatica/operaciones1.eps}
+    \caption{Primera parte de la implementación de las operaciones de nuestro editor com EMFText}
+    \label{fig:opersUno}
 \end{figure}
 
-Una vez comentados estos detalles es momento de explicar el inicio de la gramática, que se muestra en la figura \ref{figinitgram}.
+La Figura~\ref{fig:opersUno} continúa directamente el trozo de gramática de la Figura~\ref{fig:initGram} y muestra las reglas correspondientes a una parte de las operaciones. 
 
-En la primera línea y mediante la claúsula SYNTAXDEF indicamos la extensión que queremos que tengan los ficheros escritos en nuestro lenguaje. En nuestro caso nos hemos decantado por la terminación .hydraConst. En la segunda línea y mediante la claúsula FOR se indica la URI del metamodelo. Una URI es un formato de dirección interno de Eclipse, que se usa para localizar otros ficheros en el workspace. En la tercera línea, delimitada por la claúsula START, indicamos a la gramática que la clase inicial de nuestro metamodelo (y la que será la raiz en todos los árboles parseados) es Model.
+Las líneas [23-28] muestran las reglas para las operaciones lógicas. Indican que la palabra reservada para la operación de la metaclase \emph{And} es \emph{and}, y del mismo modo con las metaclases \emph{Or}, \emph{Xor} e \emph{Implies}. La palabra reservada para la operación de la metaclase \emph{Not} es !. En estas reglas también se inicializan las relaciones \emph{binaryOp1}, \emph{binaryOp2} y \emph{unaryOp} al valor correspondiente. 
 
-El bloque OPTIONS permite activar algunas opciones de configuración que incluye EMFText. En nuestro caso la única que tiene utilidad es usePredifinedTokens, que permite ahorrarnos la definición del token text. El bloque TOKENS sirve para definir los tokens de nuestra gramática. En nuestro caso usaremos 3: DIGIT para asignar al valor numérico, TEXT para asignar a las características y DIRECCION para asignar la dirección física del modelo de características.
+Las líneas [30-34] muestran las reglas para las operaciones aritméticas. Indican que la palabra reservada para la operación de la metaclase \emph{Plus} es $+$, para \emph{Minus} es $-$, para \emph{Mul} es $*$ y para \emph{Div} es $/$. En estas reglas también se inicializan las relaciones \emph{numOp1} y \emph{numOp2} al valor correspondiente. 
 
-Por último, el bloque RULES permite crear las producciones. Como inicial, tal y como se especificó en los requisitos, exigimos un import y una dirección, que será almacenada en el atributo featureList de la clase Model. En la línea inicial también se indica, mediante una expresión regular, que el número de restricciones a definir puede ser tan grande como se desee y que estas deben acabar con el carácter '';'' .
+La línea 37 implementa la regla para la operación correspondiente a la metaclase \emph{Context}. En ella se indica que un contexto se compone del operador \emph{contextOp2} rodeado entre corchetes precedido del operador \emph{contextOp1}. Ambos operadores son instanciados en sus debidas relaciones en el metamodelo.
 
-La línea de producción de Constraint diferencia entre operaciones con prioridad y sin ella. Sin el problema comentado de EMFText la gramática podría quedar así, pero para solucionarlo nos vemos obligado a incluir las cuatro líneas siguientes, cuya única función es solventar esa situación. El resto de la gramática continuaría en la figura \ref{figopers} mostrada anteriormente, y ahí terminaría.
+\begin{figure}[t]
+    \includegraphics[scale=0.3]{gramatica/operaciones2.eps}
+    \caption{Segunda parte de la implementación de las operaciones de nuestro editor com EMFText}
+    \label{fig:opersDos}
+\end{figure}
+
+La Figura~\ref{fig:opersDos} continúa directamente el trozo de gramática de la Figura~\ref{fig:opersUno} y muestra la siguiente parte de la implementación de las reglas de las operaciones.
+
+Las líneas [39-40] muestran las reglas para las operaciones correspondientes a las metaclases \emph{All} y \emph{Any}. En ambas se indica que la palabra reservada que las identifica es \emph{all} y \emph{any} respectivamente, y que a continuación se ha de indicar el operador \emph{selectionOp}. Si miramos el metamodelo, veremos que este operador corresponde a una relación con una operación de contexto, con lo cual en este momento habría que introducir una restricción entre corchetes precedida de una característica que marque el contexto en que se evalúa. 
+
+Las líneas [43-49] muestran las reglas para las operaciones de comparación. Indican que la palabra reservada para la operación de la metaclase \emph{More} es $>$, para \emph{MoreOrEqual} es $>=$, para \emph{Less} es $<$, para \emph{LessOrEqual} es $<=$, para \emph{NotEqual} es $!=$ y para \emph{Equal} es $==$. En estas reglas también se inicializan las relaciones \emph{compOp1} y \emph{compOp2} al valor correspondiente. 
+
+Para finalizar, las líneas [51-54] muestran las operaciones primitivas. En el lenguaje, estas reglas corresponden a inicializar el atributo \emph{featureName} con el nombre de la característica que hayamos introducido, y del mismo modo, el atributo \emph{numValue} con el del número que hayamos escrito.
+%La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones.
+%
+%\begin{figure}[t]
+%\includegraphics[scale=0.35]{gramatica/iniciogram.eps}
+%\caption{Implementación del inicio de la gramática con EMFText. Con la figura \ref{figopers} se completa la gramática}
+%\label{figinitgram}
+%\end{figure}
+%
+%\begin{figure}[t]
+%    \includegraphics[scale=0.3]{gramatica/operaciones1.eps}
+%    \caption{Implementación de las operaciones de nuestro editor com EMFText}
+%    \label{figopers}
+%\end{figure}
+%
+%Sí que cabe comentar con respecto a las operaciones las últimas líneas, que muestran la asignación de valor a las hojas de nuestros árboles parseados. En esas líneas estamos indicando que los atributos de las instancias de clase Number van a ser números, y que los atributos de las instancias de las clases SimpleFeature y MultipleFeature van a ser palabras.
+%
+%La parte más complicada corresponde a la implementación del inicio de la gramática y de las producciones que conducen a la misma. Pero antes de mostrar la figura con esta parte de la gramática conviene explicar el problema que llevó a realizar los cambios en el metamodelo mencionados en el capítulo anterior. Este problema surgió a la hora de implementar las operaciones con prioridad, es decir, la inclusión de los paréntesis.
+%
+%El inconveniente es que el tipo de gramática LL que implementa EMFText hacía imposible tomar una decisión sobre hacia qué elemento seguir parseando en caso de encontrarnos con un paréntesis. La mejor solución que se nos ocurrió para evitar este problema fue la adición de diversas clases y relaciones auxiliares en el metamodelo, cuya única función es estructural y de apoyo a la gramática. Gracias a ellas y a una mejor definición de las producciones conseguimos evitar esos problemas de parsing y podemos llevar a cabo las operaciones de prioridad con paréntesis.
+%
+%Las clases añadidas para solventar esta situación fueron las siguientes: BoolPriorityOperand1, BoolPriorityOperand2, NumPriorityOperand1, NumPriorityOperand2, BoolOperandChoices y NumOperandChoices. Las relaciones añadidas fueron boolPriorityOp1, boolPriorityOp2, numPriorityOp1 y numPriorityOp2.
+%
+%Una situación similar fue la que propició que las operaciones Context, All y Any hayan sido diseñadas tal y como presenta el metamodelo, ya que que la particular sintaxis de estas (diferente a las demás que siguen el mismo esquema de op + char + op) también mostraba ciertos problemas de parsing. En este caso no fue necesario añadir elementos auxiliares, sino simplemente recolocarlos para evitar estos problemas. Con esto ya se han hecho todos los cambios en el metamodelo, que alcanza en este punto su versión final tal como muestra la figura \ref{figmetameta}. Con respecto al metamodelo solamente quedan por comentar los métodos que muestran algunas clases, que serán explicados en los próximos capítulos ya que se usan en el proceso de validación y semántica.
+%
+%
+%
+%Una vez comentados estos detalles es momento de explicar el inicio de la gramática, que se muestra en la figura \ref{figinitgram}.
+%
+%En la primera línea y mediante la claúsula SYNTAXDEF indicamos la extensión que queremos que tengan los ficheros escritos en nuestro lenguaje. En nuestro caso nos hemos decantado por la terminación .hydraConst. En la segunda línea y mediante la claúsula FOR se indica la URI del metamodelo. Una URI es un formato de dirección interno de Eclipse, que se usa para localizar otros ficheros en el workspace. En la tercera línea, delimitada por la claúsula START, indicamos a la gramática que la clase inicial de nuestro metamodelo (y la que será la raiz en todos los árboles parseados) es Model.
+%
+%El bloque OPTIONS permite activar algunas opciones de configuración que incluye EMFText. En nuestro caso la única que tiene utilidad es usePredifinedTokens, que permite ahorrarnos la definición del token text. El bloque TOKENS sirve para definir los tokens de nuestra gramática. En nuestro caso usaremos 3: DIGIT para asignar al valor numérico, TEXT para asignar a las características y DIRECCION para asignar la dirección física del modelo de características.
+%
+%Por último, el bloque RULES permite crear las producciones. Como inicial, tal y como se especificó en los requisitos, exigimos un import y una dirección, que será almacenada en el atributo featureList de la clase Model. En la línea inicial también se indica, mediante una expresión regular, que el número de restricciones a definir puede ser tan grande como se desee y que estas deben acabar con el carácter '';'' .
+%
+%\begin{figure}[t]
+%    \includegraphics[scale=0.3]{gramatica/operaciones2.eps}
+%    \caption{Implementación de las operaciones de nuestro editor com EMFText}
+%    \label{figopers}
+%\end{figure}
+%
+%La línea de producción de Constraint diferencia entre operaciones con prioridad y sin ella. Sin el problema comentado de EMFText la gramática podría quedar así, pero para solucionarlo nos vemos obligado a incluir las cuatro líneas siguientes, cuya única función es solventar esa situación. El resto de la gramática continuaría en la figura \ref{figopers} mostrada anteriormente, y ahí terminaría.
 
 
 
