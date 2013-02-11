@@ -1,89 +1,54 @@
 %%==================================================================%%
 %% Author : Tejedo González, Daniel                                 %%
 %%          Sánchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 27/11/2012                                         %%                   
-%% Version: 2.0, 09/02/2013                                         %%                   
+%% Version: 1.0, 27/11/2012                                         %%
+%% Version: 2.0, 09/02/2013                                         %%
 %%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
 %% Gramática, Diseño                                                %%
 %%==================================================================%%
 
-Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso es diseñar una gramática que se ajuste a ellas. EMFText es la herramienta que utilizaremos para implementar esta gramática. 
+Una vez han sido definidas las características que queremos que nuestra sintaxis textual posea, el siguiente paso es diseñar una gramática que se ajuste a ellas. EMFText es la herramienta que utilizaremos para implementar esta gramática.
 
-El diseño de la gramática pasa por asignar una serie de reglas a las metaclases, de modo que EMFText sea capaz de reconocer esas reglas en las expresiones de nuestro lenguaje y asociarlas a la metaclase correspondiente. En cuanto la reconozca, añadirá una instancia de la misma, con los atributos correspondientes debidamente inicializados, a la instancia global del metamodelo.
+El diseño de la gramática pasa por asignar una serie de reglas a las metaclases, de modo que EMFText sea capaz de reconocer esas reglas en las expresiones de nuestro lenguaje y asociarlas a la metaclase correspondiente. Cuando el el proceso de análisis de un texto EMFText detecta una regla, crea una instancia de la metaclase asociada, con los atributos correspondientes debidamente inicializados.
 
-Además de las reglas, en EMFText hay que definir otra serie de claúsulas que permiten configurar ciertos aspectos de la gramática. Para explicar tanto estas directrices como las reglas de las metaclases nos apoyaremos en la gramática diseñada, y explicaremos línea a línea el significado de las instrucciones que la componen. La Figura~\ref{fig:initGram} muestra las primeras 23 líneas de la gramática para nuestro lenguaje. 
-%%=================================================================%%
-%% NOTA(Pablo): Refresca aquí un poco el proceso de desarrollo de  %%
-%%              gramáticas con EMFText, en uno o dos parráfos a    %%
-%%              muy alto nivel                                     %%   
-%%=================================================================%%
+Además de las reglas, en EMFText hay que definir otra serie de claúsulas que permiten configurar ciertos aspectos de la gramática. Para explicar tanto estas directrices como las reglas de las metaclases nos apoyaremos en la gramática diseñada, la cual se muestra en la Figura~\ref{fig:initGram}.
 
-%%=================================================================%%
-%% NOTA(Pablo): Tal como está escrito, es difícil seguir el hilo   %%
-%%              argumental, vuelvo a escribirlo de forma top-down, %%
-%%              describiendo, sin enrollarte mucho, lo que aparece %%
-%%              en las figuras. Empieza por la segunda, por la     %%
-%%              línea 1, y sigue para abajo                        %%
-%%              Piensa en añadirle números de líneas a las figuras %%
-%%              para hacer más fácil su descripción.               %%
-%%              Haz especial hincapié en como se relacionan la     %% 
-%%              gramática con el metamodelo. 
-%%              Evista el término producción, que es muy 
-%%              específico de procesdores de lenguajes, y no todos
-%%              los miembros del tribunal lo van a entender
-%%              Planteate usar el entorno listing para mostrar 
-%%              código
-%%=================================================================%%
-
-%%=================================================================%%
-%% NOTA(Pablo): Estas figuras se ven fatal, no las metas como      %%
-%%              capturas de pantalla o pásalas a EPS mejor         %%
-%%=================================================================%%
-
-\begin{figure}[t]
-\includegraphics[scale=0.35]{gramatica/iniciogram.eps}
-\caption{Implementación del inicio de la gramática con EMFText. Con las figuras \ref{fig:opersUno} y \ref{fig:opersDos} se completa la gramática}
-\label{fig:initGram}
+\begin{figure}[!tb]
+    \includegraphics[scale=0.35]{gramatica/iniciogram.eps}
+    \caption{Gramática EMFText del lenguaje HCL (I)}
+    \label{fig:initGram}
 \end{figure}
 
-La primera línea muestra la claúsula SYNTAXDEF, que sirve para indicar la extensión que queramos que tengan los ficheros correspondientes a nuestro lenguaje. En nuestro caso, hemos elegido la extensión \emph{hydraconst}. A continuación, la directriz FOR sirve para vincular la gramática con el metamodelo mediante una dirección de Eclipse llamada \emph{URI}. La siguiente línea contiene la cláusula START, que indica cuál es la metaclase inicial del metamodelo, es decir, la primera a la que se le aplica una regla. Cualqueir gramática que se quiera construir en EMFText ha de empezar por estas tres directrices.
+La primera línea muestra la claúsula \emph{SYNTAXDEF}, que sirve para indicar la extensión que queramos que tengan los ficheros correspondientes a nuestro lenguaje. En nuestro caso, hemos elegido la extensión \emph{hydraconst}. A continuación, la directriz \emph{FOR} sirve para vincular la gramática con el metamodelo. La siguiente línea contiene la cláusula \emph{START}, que indica cuál es la metaclase inicial del metamodelo. En nuestro caso, dicha metaclase es \emph{Model}.
 
-Las líneas de [05-07] corresponden al bloque OPTIONS. Dentro de este bloque EMFText permite especificar diversas opciones para configurar nuestra gramática de diversos modos, que en su mayoría afectan a la posterior generación del código que implementará  el lenguaje. En nuestro caso solo hemos activado una opción, que permite usar los Tokens definidos por defecto en EMFText.
+Las líneas 05-07 corresponden al bloque \emph{OPTIONS}. Dentro de este bloque EMFText permite especificar diversas opciones que configuran su funcionamiento. En nuestro caso solo hemos activado una opción, que permite usar los tokens, símbolos terminales, definidos por defecto en EMFText.
 
-Entre las líneas [09-12] se encuentra el bloque TOKENS. Este bloque sirve para definir los Tokens que usaremos en nuestra gramática. Un Token es un elemento terminal, es decir, uno cuyo derivación no supone ninguna regla adicional para la gramática. En nuestro caso usaremos los Tokens para inicializar diversos atributos del metamodelo. El Token DIGIT será el que dé valor al atributo \emph{numValue} de la metaclase \emph{Number}, y el token DIRECCION será el utilizado para inicializar el atributo \emph{featureList} de la metaclase Model. Además, usaremos el token TEXT para inicializar el atributo \emph{featureName} de las metaclases \emph{SimpleFeature} y \emph{MultipleFeature}. Este Token no hay que definirlo, ya que está disponible por defecto al habilitar la opción previa \emph{usePredefinedTokens}.
+A continuación, líneas 09-12, se encuentra el bloque \emph{TOKENS}. Este bloque sirve para definir los tokens, símbolos terminales, que usaremos en nuestra gramática. El token \emph{DIGIT} representa un número natural, y el token \emph{DIRECCION} que representa una cadena de caracteres que pueden ser rutas a archivos. Además, usaremos el token predefinido \emph{TEXT} para las cadenas de caracteres.
 
-Desde la línea 14 y hasta el final de la gramática estará contenido el bloque RULES, que es en el que se definen las reglas de las que hablábamos. La línea 16 contiene la regla de la metaclase inicial, Model. Esto significa que los textos que escribamos en nuestros lenguajes han de empezar siguiendo esta regla. En ella se define que la primera línea de cualquier código escrito en nuestro lenguaje ha de empezar por la palabra reservada \emph{import}, y a continuación se introduce la dirección que contiene el modelo de características sobre el que queremos aplicar las restricciones. Esta dirección se define por el Token DIRECCION y se guarda en el atributo \emph{featureList}. A partir de ahí, se indica que se han de escribir las restricciones.
+A partir de este punto comienza la definición de las reglas de la gramática. El punto de inicio es la regla de la regla de la línea 16, que define la regla de producción para el símbolo \emph{Model}. Esto significa que los textos que escribamos en nuestros lenguajes han de empezar siguiendo esta regla. En ella se define que la primera línea de cualquier fichero de restricciones ha de empezar por la palabra reservada \emph{import}, y a continuación se introduce la dirección que contiene el modelo de características sobre el que queremos aplicar las restricciones. Esta dirección se define mediante un token \emph{DIRECCION} y se guarda en el atributo \emph{featureList} de la clase \emph{Model}. A continuación, aparecerán un número no acotado de restricciones, que se almacenan en el atributo \emph{constraints} de la clase \emph{Model}.
 
-La línea 17 contiene la regla correspondiente a la metaclase \emph{Constraint}. En ella simplemente se indica que a continuación hay que escribir los diversos operadores, y se actualizan en el metamodelo las relación llamada \emph{operators}. Las líneas [18-21] sirven para implementar la prioridad en las operaciones, es decir, permitir la inclusión de paréntesis en las operaciones.
+Las restricciones se derivan mediante la regla correspondiente a la metaclase \emph{Constraint} (línea 17). En ella simplemente se indica que una restricción ha de estar compuesta por un operador, pudiendo enmarcarse la restricción entre paréntesis. Dependiendo de la aridad de cada operador, éste tendrá que venir acompañado de diversos operandos. Las reglas de las líneas 18-21 sirven para implementar la prioridad en las operaciones, permitiendo la inclusión de paréntesis.
 
-\begin{figure}[t]
+\begin{figure}[!tb]
     \includegraphics[scale=0.3]{gramatica/operaciones1.eps}
-    \caption{Primera parte de la implementación de las operaciones de nuestro editor com EMFText}
+    \caption{Gramática EMFText del lenguaje HCL (II)}
     \label{fig:opersUno}
 \end{figure}
 
-La Figura~\ref{fig:opersUno} continúa directamente el trozo de gramática de la Figura~\ref{fig:initGram} y muestra las reglas correspondientes a una parte de las operaciones. 
-
-Las líneas [23-28] muestran las reglas para las operaciones lógicas. Indican que la palabra reservada para la operación de la metaclase \emph{And} es \emph{and}, y del mismo modo con las metaclases \emph{Or}, \emph{Xor} e \emph{Implies}. La palabra reservada para la operación de la metaclase \emph{Not} es !. En estas reglas también se inicializan las relaciones \emph{binaryOp1}, \emph{binaryOp2} y \emph{unaryOp} al valor correspondiente. 
-
-Las líneas [30-34] muestran las reglas para las operaciones aritméticas. Indican que la palabra reservada para la operación de la metaclase \emph{Plus} es $+$, para \emph{Minus} es $-$, para \emph{Mul} es $*$ y para \emph{Div} es $/$. En estas reglas también se inicializan las relaciones \emph{numOp1} y \emph{numOp2} al valor correspondiente. 
-
-La línea 37 implementa la regla para la operación correspondiente a la metaclase \emph{Context}. En ella se indica que un contexto se compone del operador \emph{contextOp2} rodeado entre corchetes precedido del operador \emph{contextOp1}. Ambos operadores son instanciados en sus debidas relaciones en el metamodelo.
+La Figura~\ref{fig:opersUno} muestra la definición de las operaciones básicas, tanto lógicas como numéricas. Cada operador concreto se corresponde con una metaclase del metamodelo definido en la Figura~\ref{chap:metamodelo}. Las operaciones con contexto se definen mediante la regla de la línea 37 . En ella se indica que un contexto se compone un operador de contexto, que debe ser una \emph{MultipleFeature}, más una restricción, la cual debe de aparecer entre corchetes. Obsérvese, que aunque, por ejemplo, en la regla de las operaciones de contexto aparezca \emph{contextOp2} como el elemento que debe aparecer entre corchetes, de acuerdo a las reglas definidas por nuestro metamodelo, \emph{contextOp2} debe ser una \emph{constraint}. EMFText tiene en cuenta estas restricciones para ayudarnos a definir la gramática.
 
 \begin{figure}[t]
     \includegraphics[scale=0.3]{gramatica/operaciones2.eps}
-    \caption{Segunda parte de la implementación de las operaciones de nuestro editor com EMFText}
+    \caption{Gramática EMFText del lenguaje HCL (III)}
     \label{fig:opersDos}
 \end{figure}
 
-La Figura~\ref{fig:opersDos} continúa directamente el trozo de gramática de la Figura~\ref{fig:opersUno} y muestra la siguiente parte de la implementación de las reglas de las operaciones.
+Finalmente, se definen las operaciones de comparación, cuantificación y las primitivas del lenguaje, tal como ilustra la Figura~\ref{fig:opersDos}. 
+Las reglas para las primitivas indican que son símbolos terminales, y que el token procesado debe almacenarse en un atributo de la correspondiente metaclase. Por ejemplo, una \emph{SimpleFeature} se representará como una cadena de caracteres que se almacenará en el atributo \emph{featureName} de la correspondiente metaclase. 
 
-Las líneas [39-40] muestran las reglas para las operaciones correspondientes a las metaclases \emph{All} y \emph{Any}. En ambas se indica que la palabra reservada que las identifica es \emph{all} y \emph{any} respectivamente, y que a continuación se ha de indicar el operador \emph{selectionOp}. Si miramos el metamodelo, veremos que este operador corresponde a una relación con una operación de contexto, con lo cual en este momento habría que introducir una restricción entre corchetes precedida de una característica que marque el contexto en que se evalúa. 
+Con esto completaríamos la definición de la gramática que especifica nuestra sintaxis textual concreta. A continuación, utilizando las facilidades de EMFText, generamos un editor, un analizador para nuestro lenguaje, más la lógica necesaria para desplegar dichos elementos como un \emph{plug-in} para Eclipse. Tras ello, realizamos una serie de pruebas para probar su correcto funcionamiento. La siguiente sección describe dichas pruebas.
 
-Las líneas [43-49] muestran las reglas para las operaciones de comparación. Indican que la palabra reservada para la operación de la metaclase \emph{More} es $>$, para \emph{MoreOrEqual} es $>=$, para \emph{Less} es $<$, para \emph{LessOrEqual} es $<=$, para \emph{NotEqual} es $!=$ y para \emph{Equal} es $==$. En estas reglas también se inicializan las relaciones \emph{compOp1} y \emph{compOp2} al valor correspondiente. 
-
-Para finalizar, las líneas [51-54] muestran las operaciones primitivas. En el lenguaje, estas reglas corresponden a inicializar el atributo \emph{featureName} con el nombre de la característica que hayamos introducido, y del mismo modo, el atributo \emph{numValue} con el del número que hayamos escrito.
 %La parte más trivial e inmediata del diseño de la gramática es la concerniente a la implementación de las operaciones, pues las producciones necesarias simplemente requieren la inclusión de los operandos involucrados y los caracteres que deseemos que definan la operación. La figura \ref{figopers} muestra la implementación de estas operaciones.
 %
 %\begin{figure}[t]
