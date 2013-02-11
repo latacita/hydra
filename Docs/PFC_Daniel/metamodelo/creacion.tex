@@ -7,7 +7,7 @@
 %% Sintaxis abstracta, creacion metamodelo                          %%
 %%==================================================================%%
 
-Una vez hemos conocidos cuáles son los requisitos que debía satisfacer nuestro lenguaje, procedimos a construir un metamodelo en Ecore que cumpla tales requisitos. Dicho metamodelo se muestra en la Figura~\ref{figmetameta}.
+Una vez hemos conocido cuáles son los requisitos que debía satisfacer nuestro lenguaje, procedemos a construir un metamodelo en Ecore que cumpla tales requisitos. Dicho metamodelo se muestra en la Figura~\ref{figmetameta}.
 
 %%==================================================================%%
 %% NOTA(Pablo): Intenta meter esta figura de forma apaisada         %%
@@ -24,7 +24,7 @@ Una vez hemos conocidos cuáles son los requisitos que debía satisfacer nuestro l
 
 La clase \emph{Model} es la que sirve de punto de entrada y contender para el resto de las clases de nuestro metamodelo. 
 
-Cómo se ha comentado anteriormente, debemos vincular un conjunto de restricciones con el árbol de características al cual deben aplicarse. Dicho árbol de características debe haber sido previamente creado usando la herramienta \emph{Hydra}, de acuerdo con los objetivos generales del proyecto. Eso reduce mucho el número de factores de los que hay preocuparse, viéndose reducidos en este punto a tener que almacenar únicamente la localización del fichero que contiene dicho árbol de característica, con objeto de poder cargarlo cuando se necesite. La ruta de dicho fichero se almacena en el atributo \emph{featureList} de la clase \emph{Model}.
+Como se ha comentado anteriormente, debemos vincular un conjunto de restricciones con el árbol de características al cual deben aplicarse. Dicho árbol de características debe haber sido previamente creado usando la herramienta \emph{Hydra}, de acuerdo con los objetivos generales del proyecto. Eso reduce mucho el número de factores de los que hay preocuparse, viéndose reducidos en este punto a tener que almacenar únicamente la localización del fichero que contiene dicho árbol de características, con objeto de poder cargarlo cuando se necesite. La ruta de dicho fichero se almacena en el atributo \emph{featureList} de la clase \emph{Model}.
 
 Un modelo de restricciones permite especificar un número indeterminado de restricciones, representadas por la clase \emph{Constraint}. Por tanto, la clase \emph{Model} contendrá 0 o más restricciones (en principio se permiten definir ficheros sin restricciones, que se entiende se refinarán postriormente). 
 
