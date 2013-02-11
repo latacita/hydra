@@ -1,13 +1,31 @@
 %%==================================================================%%
-%% Author : Tejedo Gonz·lez, Daniel                                 %%
-%%          S·nchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 27/11/2012                                         %%                   
-%% Version: 2.0, 09/02/2013                                         %%                   
+%% Author : Tejedo Gonz√°lez, Daniel                                 %%
+%%          S√°nchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 27/11/2012                                         %%
+%% Version: 2.0, 09/03/2013                                         %%
 %%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Gram·tica, IntroducciÛn                                                %%
+%% Gram√°tica, Introduccion                                          %%
 %%==================================================================%%
 
-Siguiendo la metodologÌa impuesta por la IngenierÌa de Lenguajes Dirigida por Modelos, la siguiente parte del desarrollo de nuestro lenguaje pasa por definir la sintaxis concreta textual del mismo. Para poder llevar a cabo esta tarea es necesario escribir una gram·tica, que se encargar· de transformar el cÛdigo que escribamos en nuestro lenguaje en instancias v·lidas del metamodelo inicial. La captura de requisitos de la gram·tica es pr·cticamente idÈntica a la que se hizo en el capÌtulo anterior para diseÒar el metamodelo, pues en ambos casos es necesario conocer las operaciones del lenguaje y su sintaxis. 
 
-El capÌtulo se estrucurar· del siguiente modo: en primer lugar hablaremos sin entrar en mucho detalle de la herramienta \emph{EMFText}, que es la que hemos escogido para diseÒar nuestra gram·tica. A continuaciÛn, y en la misma secciÛn, describiremos esta gram·tica y las partes que la componen. Por ˙ltimo mostraremos las pruebas a las que fue sometida para corroborar que su funcionamiento era el apropiado.
+De acuerdo con la metodolog√≠a expuesta en \todo{Completar}
+
+%%==================================================================%%
+%% NOTA(Pablo): Cuando llegues a la parte en la cual hablas de      %%
+%%              requisitos insertas esto                            %%
+%%==================================================================%%
+
+Los requisitos que nuestra gram√°tica deb√≠a cumplir ya estaban pr√°cticamente definidos, pues la gram√°tica BNF definida por el profesor Pablo S√°nchez, mostrada en la Figura~\ref{fig:constraintBNF} pr√°cticamente fijaba la misma.
+
+No obstante, hubo que a√±adir una serie de consideraciones adicionales para refinar dicha gram√°tica. Concretamente, tuvimos que a√±adir los siguientes requisitos a la notaci√≥n BNF de nuestra gram√°tica:
+
+\begin{itemize}
+    \item Deb√≠a permitirse la posibilidad de especificar prioridad en las operaciones, es decir, de poder delimitar las operaciones con par√©ntesis que denoten el orden de realizaci√≥n de las mismas.
+    \item Todo fichero de especificaci√≥n de restricciones debe comenzar con una l√≠nea que indique la ruta donde se encuentra el √°rbol de caracter√≠sticas al que han de aplicarse las restricciones. La sintaxis de este aspecto ser√° $import ruta$, donde ruta es una direcci√≥n que indique un fichero en nuestro computador.
+    \item Todas las restricciones han de separarse entre ellas mediante el car√°cter `\texttt{;}'.
+\end{itemize}
+
+%%==================================================================%%
+%% NOTA(Pablo): y luego sigue con la introducci√≥n                   %%
+%%==================================================================%%
