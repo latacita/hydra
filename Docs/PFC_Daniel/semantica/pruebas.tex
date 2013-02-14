@@ -1,0 +1,26 @@
+%%==================================================================%%
+%% Author : Tejedo González, Daniel                                 %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 10/12/2012                                         %%                   
+%% Version: 2.0, 11/03/2013                                         %%                   
+%%                                                                  %%
+%% Memoria del Proyecto Fin de Carrera                              %%
+%% semantica, pruebas                                              %%
+%%==================================================================%%
+
+Como ya se ha comentado, las pruebas relativas a la semántica han de ser todo lo completas y exhaustivas que sea posible, pues engloban el funcionamiento completo de la aplicación. Por lo tanto, en este punto hay que asegurarse que todos los componentes desempeñan la labor que les fue encomendada de manera correcta.
+
+Para realizar esta batería de pruebas se ha llevado a cabo una técnica de caja negra. Esta estrategia se basa en intentar poner a prueba todos los conjuntos posibles de variables de entradas y salidas para todas y cada de una de las operaciones que nuestro software pueda llevar a cabo. 
+
+\begin{figure}[!tb]
+    \includegraphics[scale=0.3]{semantica/pruebaOr.eps}
+    \caption{Batería de pruebas para la operación Or}
+    \label{fig:pruebaOr}
+\end{figure}
+
+
+La Figura  muestra la tabla de pruebas llevadas a cabo para la operación lógica \emph{or}, así como su resultado. Como se puede apreciar, también hemos aprovechado para realizar pruebas más exhaustivas de los mecanismos implementados mediante Validation Framework, ya que antes fueron imposibles de ser realizadas a este nivel de precisión. Una batería de pruebas similar a esta ha sido realizada para el resto de operaciones lógicas, aritméticas y de comparación.
+
+Sin embargo, las operaciones de contexto no pueden ser sometidas a una tabla como la mostrada. Para probarlas, se han tenido en cuenta el número de características que las operaciones \emph{all} y \emph{any} tenían que comprobar, así como el resultado esperado de la restricción o la presencia de contextos ternarios. En algún caso, las pruebas sirvieron para arreglar algún aspecto de la aplicación que no había sido implementada de modo apropiado.
+
+El informe de pruebas es demasiado largo para ser incluido completo en ese informe. Se incluye el archivo \emph{pruebas.pdf} en el CD adjunto, en caso de querer ser consultado.

@@ -8,9 +8,9 @@
 %% semantica, semantica                                             %%
 %%==================================================================%%
 
-La implementación la semántica del lenguaje es el último paso que restaba  para dar por concluido el desarrollo de nuestro lenguaje. La semántica del lenguaje había sido especifica de informalmente por el profesor Pablo Sánchez de acuerdo a la estrategia descrita en la Sección~\ref{sec:meta:requisitos}.
+La implementación la semántica del lenguaje es el último paso que restaba para dar por concluido el desarrollo de nuestro lenguaje. La semántica del lenguaje había sido especificada  informalmente por el profesor Pablo Sánchez de acuerdo a la estrategia descrita en la Sección~\ref{sec:meta:requisitos}.
 
-El primer paso para poder evaluar las restricciones era cargar un fichero de configuración para el árbol de características sobre el cual se definían las restricciones. Dicho de otra forma, era necesario cargar una selección de características del árbol de características original, con objeto de comprobar que dicha selección satisfacía las restricciones especificadas. 
+El primer paso para poder evaluar las restricciones era cargar un fichero de configuración para el árbol de características sobre el cual definir las restricciones. Dicho de otra forma, era necesario cargar una selección de características del árbol de características original, con objeto de comprobar que dicha selección satisfacía las restricciones especificadas. 
 
 El proceso de evaluación por tanto, analiza si cada restricción se evalúa a verdadero o falso. Si una restricción se evalúa a falso, el resultado de la evaluación será negativo. Cada restricción evaluada a falso se guarda en una lista que se utilizará al final del proceso de validación para construir un informe de incidencias que se mostrará al usuario. 
 
@@ -20,6 +20,6 @@ Evaluar un número simplemente consiste simplemente en retornar su valor. Evaluar
 
 En general, la implementación del método \emph{evaluate} para la mayoría de las operaciones es trivial y no conlleva más de un par de líneas de código (como el caso de la suma anteriormente comentado). No obstante, algunas operaciones son algo más complicadas y requieren algo más de reflexión, como, por ejemplo, las operaciones con contexto. Como se ha comentado con anterioridad, las operaciones con contexto se restringen a un subárbol del árbol de configuración. Por tanto, para buscar una característica simple o contar el número de instancias de una característica múltiple, debemos buscar sólo desde la raíz del correspondiente subárbol hacia abajo. 
 
-Tras implementar la semántica del lenguaje, realizamos su correspondiente proceso de prueba para verificar que las evaluaciones se realizaban de forma correcta. 
+Tras implementar la semántica del lenguaje, realizamos la interfaz para poder ejecutarla debidamente.
 
 
