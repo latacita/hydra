@@ -1,3 +1,81 @@
-This is BibTeX, Version 0.99cThe top-level auxiliary file: pfc.aux
-I found no \bibstyle command---while reading file pfc.aux
-(There was 1 error message)
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pfc.aux
+The style file: abbrv.bst
+Database file #1: references/references.bib.bib
+Warning--can't use both volume and number fields in danilo:2003
+Warning--can't use both author and editor fields in kleine:1999
+Warning--can't use both volume and number fields in kleine:1999
+Warning--can't use both author and editor fields in clayberg:2008
+Warning--can't use both volume and number fields in clayberg:2008
+Warning--can't use both author and editor fields in clements:2002
+Warning--can't use both volume and number fields in clements:2002
+Warning--can't use both author and editor fields in cook:2007
+Warning--can't use both volume and number fields in cook:2007
+Warning--can't use both volume and number fields in czarnecky:2005
+Warning--can't use both author and editor fields in eisenecker:2000
+Warning--can't use both volume and number fields in eisenecker:2000
+Warning--can't use both author and editor fields in martin:2010
+Warning--can't use both volume and number fields in martin:2010
+Warning--can't use both author and editor fields in gronback:2009
+Warning--can't use both volume and number fields in gronback:2009
+Warning--can't use both author and editor fields in ocl:2005
+Warning--can't use both volume and number fields in ocl:2005
+Warning--can't use both author and editor fields in iso:1996
+Warning--can't use both volume and number fields in iso:1996
+Warning--can't use both volume and number fields in jouault:2006
+Warning--can't use both volume and number fields in tcs:2006
+Warning--can't use both author and editor fields in anneke:2008
+Warning--can't use both volume and number fields in anneke:2008
+Warning--can't use both author and editor fields in kakola:2006
+Warning--can't use both volume and number fields in kakola:2006
+Warning--can't use both author and editor fields in pastor:2007
+Warning--can't use both volume and number fields in pastor:2007
+Warning--can't use both author and editor fields in pohl:2005
+Warning--can't use both volume and number fields in pohl:2005
+Warning--can't use both author and editor fields in russell:2012
+Warning--can't use both volume and number fields in russell:2012
+Warning--can't use both author and editor fields in steinberg:2008
+Warning--can't use both volume and number fields in steinberg:2008
+You've used 22 entries,
+            2118 wiz_defined-function locations,
+            611 strings with 6822 characters,
+and the built_in function-call counts, 7448 in all, are:
+= -- 711
+> -- 321
+< -- 27
++ -- 124
+- -- 102
+* -- 694
+:= -- 1219
+add.period$ -- 92
+call.type$ -- 22
+change.case$ -- 119
+chr.to.int$ -- 0
+cite$ -- 56
+duplicate$ -- 317
+empty$ -- 557
+format.name$ -- 102
+if$ -- 1542
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 34
+newline$ -- 135
+num.names$ -- 52
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 93
+quote$ -- 0
+skip$ -- 176
+stack$ -- 0
+substring$ -- 201
+swap$ -- 125
+text.length$ -- 27
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 34
+while$ -- 56
+width$ -- 24
+write$ -- 337
+(There were 34 warnings)

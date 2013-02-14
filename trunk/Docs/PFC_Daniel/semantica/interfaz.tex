@@ -11,8 +11,8 @@
 Una vez implementada y probada la semántica del lenguaje, lo único que nos quedaba era integrar el editor generado y su semántica en en entorno Eclipse y en la herramienta Hydra. La Figura~\ref{figeditor} muestra la interfaz del editor en funcionamiento. Las características del editor creado por defecto por EMFText no eran suficientes para satisfacer todos los requisitos de nuestra aplicación. El editor generado permitía procesar ficheros de restricciones, pero no evaluarlos sobre configuraciones concretas. Para poder realizar esta operación de validación, añadimos a Eclipse un botón denominado \emph{Validate}. Dicho botón, al ser pulsado, permite cargar una configuración del modelo de características al cual se refiere nuestro fichero de restricciones. Una vez cargado, el manejador del botón inicia el proceso de validación descrito en la sección anterior. A la conclusión del proceso de validación, se recoge el informe generado por el proceso de validación y se muestra al usuario.
 
 \begin{figure}[!tb]
-    \includegraphics[scale=0.34]{semantica/editor.eps}
-    \caption{Interfaz gráfica del editor para el lenguaje HCL}
+    \includegraphics[scale=0.135]{semantica/editor.eps}
+    \caption{Interfaz gráfica del editor para el lenguaje HCL. El círculo rojo muestra el botón añadido para la validación de las restricciones.}
     \label{figeditor}
 \end{figure}
 
