@@ -1,17 +1,18 @@
 %%==================================================================%%
 %% Author : Tejedo, Daniel                                          %%
-%%          Sï¿½nchez Barreiro, Pablo                                 %%
-%% Version: 1.0, 08/10/2012                                         %%                   %%                                                                  %%
+%%          Sánchez Barreiro, Pablo                                 %%
+%% Version: 1.0, 08/10/2012                                         %%
+%%                                                                  %%
 %% Memoria del Proyecto Fin de Carrera                              %%
-%% Archivo raï¿½z                                                     %%
+%% Archivo raíz                                                     %%
 %%==================================================================%%
 
-\documentclass[a4paper,11pt]{itsas_pfc}
+\documentclass[a4paper,10pt]{itsas_pfc}
 
 %=====================================================================%
 %                       My imported packages                          %
 %=====================================================================%
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{url}
@@ -60,44 +61,44 @@
 \input{config/begin.tex}
 
 % acknowledgement
-%\input{cover/acknowledgements.tex} % acknowledgements
+% \input{cover/acknowledgements.tex} % acknowledgements
 
 % Preface
-%\input{introduction/preface-lff.tex}   % preface
+\input{introduction/preface.tex}   % preface
 
 % Toc
 \input{config/toc.tex}
-
+%
 \input{config/headers.tex}
-
+%
 \input{config/chapters.tex}
-
-% Capítulo 1: Introducción
+%
+%% Capítulo 1: Introducción
 \input{introduction/introduction.tex} % Chapter 1
-
-% Capítulo 2: Resumen del Estado del Arte
+%
+%% Capítulo 2: Resumen del Estado del Arte
 \input{background/background.tex}
-
-% Capítulo 3: Creación de la sintaxis abstracta
+%
+%% Capítulo 3: Creación de la sintaxis abstracta
 \input{metamodelo/metamodelo.tex}
-
-% Capítulo 4: Creacion de la gramatica
+%
+%% Capítulo 4: Creacion de la gramatica
 \input{gramatica/raiz.tex}
-
-% Capítulo 5: Creacion de la semantica
+%
+%% Capítulo 5: Creacion de la semantica
 \input{semantica/raiz.tex}
-
-% Capítulo 6: Conclusiones y Trabajos Futuros
+%
+%% Capítulo 6: Conclusiones y Trabajos Futuros
 \input{conclusiones/raiz.tex}
-
-% CONTENT: Appendices, if desired
-% \input{config/appendix.tex}
-
-% Appendix A:
-% \input{populo/populo.tex} % Appendix I
-
-% CONFIG: Bibliography style
+%
+%% CONTENT: Appendices, if desired
+%% \input{config/appendix.tex}
+%
+%% Appendix A:
+%% \input{populo/populo.tex} % Appendix I
+%
+%% CONFIG: Bibliography style
 \input{config/bibliography.tex}
-\bibliography{references/references.bib}
+\bibliography{references/references}
 
 \end{document}
