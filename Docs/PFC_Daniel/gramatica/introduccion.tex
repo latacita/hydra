@@ -9,23 +9,25 @@
 %%==================================================================%%
 
 
-De acuerdo con la metodologÃ­a expuesta en \todo{Completar}
+De acuerdo con la metodologí­a impuesta por la Ingeniería de Lenguajes Dirigida por Modelos, el siguiente paso para desarrollar el lenguaje HCL pasa por desarrollar una sintaxis textual que sea capaz de vincular el metamodelo construido con las líneas de código que escribamos en nuestro lenguaje.  Esta sintaxis textual se construye a través de una gramática, en la que especificamos una serie de reglas para cada una de las metaclases, de modo que esas reglas satisfagan la sintaxis y los requisitos de nuestro lenguaje. 
 
 %%==================================================================%%
 %% NOTA(Pablo): Cuando llegues a la parte en la cual hablas de      %%
 %%              requisitos insertas esto                            %%
 %%==================================================================%%
 
-Los requisitos que nuestra gramÃ¡tica debÃ­a cumplir ya estaban prÃ¡cticamente definidos, pues la gramÃ¡tica BNF definida por el profesor Pablo SÃ¡nchez, mostrada en la Figura~\ref{fig:constraintBNF} prÃ¡cticamente fijaba la misma.
+Los requisitos que nuestra gramática debe cumplir ya estaban prácticamente definidos, pues la gramática BNF definida por el profesor Pablo Sánchez, mostrada en la Figura~\ref{fig:constraintBNF}, es más o menos la misma que hemos tenido que implementar (con la salvedad que añade cambiar de lenguaje BNF a EMFText).
 
-No obstante, hubo que aÃ±adir una serie de consideraciones adicionales para refinar dicha gramÃ¡tica. Concretamente, tuvimos que aÃ±adir los siguientes requisitos a la notaciÃ³n BNF de nuestra gramÃ¡tica:
+No obstante, hubo que añadir una serie de consideraciones adicionales para refinar dicha gramática. Concretamente, tuvimos que añadir los siguientes requisitos a la notación BNF de nuestra gramática:
 
 \begin{itemize}
-    \item DebÃ­a permitirse la posibilidad de especificar prioridad en las operaciones, es decir, de poder delimitar las operaciones con parÃ©ntesis que denoten el orden de realizaciÃ³n de las mismas.
-    \item Todo fichero de especificaciÃ³n de restricciones debe comenzar con una lÃ­nea que indique la ruta donde se encuentra el Ã¡rbol de caracterÃ­sticas al que han de aplicarse las restricciones. La sintaxis de este aspecto serÃ¡ $import ruta$, donde ruta es una direcciÃ³n que indique un fichero en nuestro computador.
-    \item Todas las restricciones han de separarse entre ellas mediante el carÃ¡cter `\texttt{;}'.
+    \item Debía permitirse la posibilidad de especificar prioridad en las operaciones, es decir, de poder delimitar las operaciones con paréntesis que denoten el orden de realización de las mismas.
+    \item Todo fichero de especificación de restricciones debe comenzar con una línea que indique la ruta donde se encuentra el árbol de características al que han de aplicarse las restricciones. La sintaxis de este aspecto será $import ruta$, donde ruta es una dirección que indique un fichero en nuestro computador.
+    \item Todas las restricciones han de separarse entre ellas mediante el carácter `\texttt{;}'.
 \end{itemize}
 
 %%==================================================================%%
 %% NOTA(Pablo): y luego sigue con la introducciÃ³n                   %%
 %%==================================================================%%
+
+Para hablar de la gramática, el capítulo se estructurará del siguiente modo: Tras esta introducción, habrá una sección en la que se hablará de la implementación de la gramática. Se explicará paso a paso cada una de las líneas que la componen, además de su relación con el metamodelo. A continuación, se hablará en otra sección de las pruebas a las que fue sometida la gramática para corroborar su correcto funcionamiento.
