@@ -1,0 +1,1 @@
+Hydra is an Eclipse plugin for feature modelling. Its main novelty as compared to other feature modelling tools is that Hydra fully supports modelling, validation and configuration of clonable features. User can specify and validate constraints involving clonable features.
